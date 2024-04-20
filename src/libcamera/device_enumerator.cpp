@@ -238,8 +238,8 @@ std::unique_ptr<MediaDevice> DeviceEnumerator::createDevice(const std::string &d
 * \var DeviceEnumerator::devicesAdded
 * \brief Notify of new media devices being found
 *
-* This signal is emitted when the device enumerator finds new media devices in
-* the system. It may be emitted for every newly detected device, or once for
+* This signal is sended when the device enumerator finds new media devices in
+* the system. It may be sended for every newly detected device, or once for
 * multiple devices, at the discretion of the device enumerator. Not all device
 * enumerator types may support dynamic detection of new devices.
 */
@@ -260,8 +260,8 @@ void DeviceEnumerator::addDevice(std::unique_ptr<MediaDevice> media)
 
 	devices_.push_back(std::move(media));
 
-	/* \todo To batch multiple additions, emit with a small delay here. */
-	devicesAdded.emit();
+	/* \todo To batch multiple additions, send with a small delay here. */
+	devicesAdded.send();
 }
 
 /**
@@ -270,7 +270,7 @@ void DeviceEnumerator::addDevice(std::unique_ptr<MediaDevice> media)
  *
  * Remove the media device identified by \a deviceNode previously added to the
  * enumerator with addDevice(). The media device's MediaDevice::disconnected
- * signal is emitted.
+ * signal is sended.
  */
 void DeviceEnumerator::removeDevice(const std::string &deviceNode)
 {
@@ -294,7 +294,7 @@ void DeviceEnumerator::removeDevice(const std::string &deviceNode)
 	LOG(DeviceEnumerator, Debug)
 		<< "Media device for node " << deviceNode << " removed.";
 
-	media->disconnected.emit();
+	media->disconnected.send();
 }
 
 /**

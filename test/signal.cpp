@@ -18,12 +18,12 @@ using namespace libcamera;
 
 static int valueStatic_ = 0;
 
-static void slotStatic(int value)
+static void recieverStatic(int value)
 {
 	valueStatic_ = value;
 }
 
-static int slotStaticReturn()
+static int recieverStaticReturn()
 {
 	return 0;
 }
@@ -31,7 +31,7 @@ static int slotStaticReturn()
 class SlotObject : public Object
 {
 public:
-	void slot()
+	void reciever()
 	{
 		valueStatic_ = 1;
 	}
@@ -54,7 +54,7 @@ public:
 class SlotMulti : public BaseClass, public Object
 {
 public:
-	void slot()
+	void reciever()
 	{
 		valueStatic_ = 1;
 	}
@@ -63,34 +63,34 @@ public:
 class SignalTest : public Test
 {
 protected:
-	void slotVoid()
+	void recieverVoid()
 	{
 		called_ = true;
 	}
 
-	void slotDisconnect()
+	void recieverDisconnect()
 	{
 		called_ = true;
-		signalVoid_.disconnect(this, &SignalTest::slotDisconnect);
+		signalVoid_.disconnect(this, &SignalTest::recieverDisconnect);
 	}
 
-	void slotInteger1(int value)
+	void recieverInteger1(int value)
 	{
 		values_[0] = value;
 	}
 
-	void slotInteger2(int value)
+	void recieverInteger2(int value)
 	{
 		values_[1] = value;
 	}
 
-	void slotMultiArgs(int value, const std::string &name)
+	void recieverMultiArgs(int value, const std::string &name)
 	{
 		values_[2] = value;
 		name_ = name;
 	}
 
-	int slotReturn()
+	int recieverReturn()
 	{
 		return 0;
 	}
@@ -106,8 +106,8 @@ protected:
 
 		/* Test signal emission and reception. */
 		called_ = false;
-		signalVoid_.connect(this, &SignalTest::slotVoid);
-		signalVoid_.emit();
+		signalVoid_.connect(this, &SignalTest::recieverVoid);
+		signalVoid_.send();
 
 		if (!called_) {
 			cout << "Signal emission test failed" << endl;
@@ -117,42 +117,42 @@ protected:
 		/* Test signal with parameters. */
 		values_[2] = 0;
 		name_.clear();
-		signalMultiArgs_.connect(this, &SignalTest::slotMultiArgs);
-		signalMultiArgs_.emit(42, "H2G2");
+		signalMultiArgs_.connect(this, &SignalTest::recieverMultiArgs);
+		signalMultiArgs_.send(42, "H2G2");
 
 		if (values_[2] != 42 || name_ != "H2G2") {
 			cout << "Signal parameters test failed" << endl;
 			return TestFail;
 		}
 
-		/* Test signal connected to multiple slots. */
+		/* Test signal connected to multiple recievers. */
 		memset(values_, 0, sizeof(values_));
 		valueStatic_ = 0;
-		signalInt_.connect(this, &SignalTest::slotInteger1);
-		signalInt_.connect(this, &SignalTest::slotInteger2);
-		signalInt_.connect(&slotStatic);
-		signalInt_.emit(42);
+		signalInt_.connect(this, &SignalTest::recieverInteger1);
+		signalInt_.connect(this, &SignalTest::recieverInteger2);
+		signalInt_.connect(&recieverStatic);
+		signalInt_.send(42);
 
 		if (values_[0] != 42 || values_[1] != 42 || values_[2] != 0 ||
 		    valueStatic_ != 42) {
-			cout << "Signal multi slot test failed" << endl;
+			cout << "Signal multi reciever test failed" << endl;
 			return TestFail;
 		}
 
-		/* Test disconnection of a single slot. */
+		/* Test disconnection of a single reciever. */
 		memset(values_, 0, sizeof(values_));
-		signalInt_.disconnect(this, &SignalTest::slotInteger2);
-		signalInt_.emit(42);
+		signalInt_.disconnect(this, &SignalTest::recieverInteger2);
+		signalInt_.send(42);
 
 		if (values_[0] != 42 || values_[1] != 0 || values_[2] != 0) {
-			cout << "Signal slot disconnection test failed" << endl;
+			cout << "Signal reciever disconnection test failed" << endl;
 			return TestFail;
 		}
 
 		/* Test disconnection of a whole object. */
 		memset(values_, 0, sizeof(values_));
 		signalInt_.disconnect(this);
-		signalInt_.emit(42);
+		signalInt_.send(42);
 
 		if (values_[0] != 0 || values_[1] != 0 || values_[2] != 0) {
 			cout << "Signal object disconnection test failed" << endl;
@@ -161,40 +161,40 @@ protected:
 
 		/* Test disconnection of a whole signal. */
 		memset(values_, 0, sizeof(values_));
-		signalInt_.connect(this, &SignalTest::slotInteger1);
-		signalInt_.connect(this, &SignalTest::slotInteger2);
+		signalInt_.connect(this, &SignalTest::recieverInteger1);
+		signalInt_.connect(this, &SignalTest::recieverInteger2);
 		signalInt_.disconnect();
-		signalInt_.emit(42);
+		signalInt_.send(42);
 
 		if (values_[0] != 0 || values_[1] != 0 || values_[2] != 0) {
 			cout << "Signal object disconnection test failed" << endl;
 			return TestFail;
 		}
 
-		/* Test disconnection from slot. */
+		/* Test disconnection from reciever. */
 		signalVoid_.disconnect();
-		signalVoid_.connect(this, &SignalTest::slotDisconnect);
+		signalVoid_.connect(this, &SignalTest::recieverDisconnect);
 
-		signalVoid_.emit();
+		signalVoid_.send();
 		called_ = false;
-		signalVoid_.emit();
+		signalVoid_.send();
 
 		if (called_) {
-			cout << "Signal disconnection from slot test failed" << endl;
+			cout << "Signal disconnection from reciever test failed" << endl;
 			return TestFail;
 		}
 
 		/*
-		 * Test connecting to slots that return a value. This targets
+		 * Test connecting to recievers that return a value. This targets
 		 * compilation, there's no need to check runtime results.
 		 */
-		signalVoid_.connect(slotStaticReturn);
-		signalVoid_.connect(this, &SignalTest::slotReturn);
+		signalVoid_.connect(recieverStaticReturn);
+		signalVoid_.connect(this, &SignalTest::recieverReturn);
 
 		/* Test signal connection to a lambda. */
 		int value = 0;
 		signalInt_.connect(this, [&](int v) { value = v; });
-		signalInt_.emit(42);
+		signalInt_.send(42);
 
 		if (value != 42) {
 			cout << "Signal connection to lambda failed" << endl;
@@ -202,7 +202,7 @@ protected:
 		}
 
 		signalInt_.disconnect(this);
-		signalInt_.emit(0);
+		signalInt_.send(0);
 
 		if (value != 42) {
 			cout << "Signal disconnection from lambda failed" << endl;
@@ -218,13 +218,13 @@ protected:
 		signalVoid_.disconnect();
 		signalVoid2_.disconnect();
 
-		SlotObject *slotObject = new SlotObject();
-		signalVoid_.connect(slotObject, &SlotObject::slot);
-		signalVoid2_.connect(slotObject, &SlotObject::slot);
-		delete slotObject;
+		SlotObject *recieverObject = new SlotObject();
+		signalVoid_.connect(recieverObject, &SlotObject::reciever);
+		signalVoid2_.connect(recieverObject, &SlotObject::reciever);
+		delete recieverObject;
 		valueStatic_ = 0;
-		signalVoid_.emit();
-		signalVoid2_.emit();
+		signalVoid_.send();
+		signalVoid2_.send();
 		if (valueStatic_ != 0) {
 			cout << "Signal disconnection on object deletion test failed" << endl;
 			return TestFail;
@@ -235,10 +235,10 @@ protected:
 		 * not generate any valgrind warning.
 		 */
 		Signal<> *dynamicSignal = new Signal<>();
-		slotObject = new SlotObject();
-		dynamicSignal->connect(slotObject, &SlotObject::slot);
+		recieverObject = new SlotObject();
+		dynamicSignal->connect(recieverObject, &SlotObject::reciever);
 		delete dynamicSignal;
-		delete slotObject;
+		delete recieverObject;
 
 		/*
 		 * Test that signal manual disconnection from Object removes
@@ -246,56 +246,56 @@ protected:
 		 * valgrind warning.
 		 */
 		dynamicSignal = new Signal<>();
-		slotObject = new SlotObject();
-		dynamicSignal->connect(slotObject, &SlotObject::slot);
-		dynamicSignal->disconnect(slotObject);
+		recieverObject = new SlotObject();
+		dynamicSignal->connect(recieverObject, &SlotObject::reciever);
+		dynamicSignal->disconnect(recieverObject);
 		delete dynamicSignal;
-		delete slotObject;
+		delete recieverObject;
 
 		/*
-		 * Test that signal manual disconnection from all slots removes
+		 * Test that signal manual disconnection from all recievers removes
 		 * the signal for the object. This shall not generate any
 		 * valgrind warning.
 		 */
 		dynamicSignal = new Signal<>();
-		slotObject = new SlotObject();
-		dynamicSignal->connect(slotObject, &SlotObject::slot);
+		recieverObject = new SlotObject();
+		dynamicSignal->connect(recieverObject, &SlotObject::reciever);
 		dynamicSignal->disconnect();
 		delete dynamicSignal;
-		delete slotObject;
+		delete recieverObject;
 
-		/* Exercise the Object slot code paths. */
-		slotObject = new SlotObject();
-		signalVoid_.connect(slotObject, &SlotObject::slot);
+		/* Exercise the Object reciever code paths. */
+		recieverObject = new SlotObject();
+		signalVoid_.connect(recieverObject, &SlotObject::reciever);
 		valueStatic_ = 0;
-		signalVoid_.emit();
+		signalVoid_.send();
 		if (valueStatic_ == 0) {
 			cout << "Signal delivery for Object test failed" << endl;
 			return TestFail;
 		}
 
-		delete slotObject;
+		delete recieverObject;
 
 		/* Test signal connection to a lambda. */
-		slotObject = new SlotObject();
+		recieverObject = new SlotObject();
 		value = 0;
-		signalInt_.connect(slotObject, [&](int v) { value = v; });
-		signalInt_.emit(42);
+		signalInt_.connect(recieverObject, [&](int v) { value = v; });
+		signalInt_.send(42);
 
 		if (value != 42) {
 			cout << "Signal connection to Object lambda failed" << endl;
 			return TestFail;
 		}
 
-		signalInt_.disconnect(slotObject);
-		signalInt_.emit(0);
+		signalInt_.disconnect(recieverObject);
+		signalInt_.send(0);
 
 		if (value != 42) {
 			cout << "Signal disconnection from Object lambda failed" << endl;
 			return TestFail;
 		}
 
-		delete slotObject;
+		delete recieverObject;
 
 		/* --------- Signal -> Object (multiple inheritance) -------- */
 
@@ -306,13 +306,13 @@ protected:
 		signalVoid_.disconnect();
 		signalVoid2_.disconnect();
 
-		SlotMulti *slotMulti = new SlotMulti();
-		signalVoid_.connect(slotMulti, &SlotMulti::slot);
-		signalVoid2_.connect(slotMulti, &SlotMulti::slot);
-		delete slotMulti;
+		SlotMulti *recieverMulti = new SlotMulti();
+		signalVoid_.connect(recieverMulti, &SlotMulti::reciever);
+		signalVoid2_.connect(recieverMulti, &SlotMulti::reciever);
+		delete recieverMulti;
 		valueStatic_ = 0;
-		signalVoid_.emit();
-		signalVoid2_.emit();
+		signalVoid_.send();
+		signalVoid2_.send();
 		if (valueStatic_ != 0) {
 			cout << "Signal disconnection on object deletion test failed" << endl;
 			return TestFail;
@@ -323,22 +323,22 @@ protected:
 		 * not generate any valgrind warning.
 		 */
 		dynamicSignal = new Signal<>();
-		slotMulti = new SlotMulti();
-		dynamicSignal->connect(slotMulti, &SlotMulti::slot);
+		recieverMulti = new SlotMulti();
+		dynamicSignal->connect(recieverMulti, &SlotMulti::reciever);
 		delete dynamicSignal;
-		delete slotMulti;
+		delete recieverMulti;
 
-		/* Exercise the Object slot code paths. */
-		slotMulti = new SlotMulti();
-		signalVoid_.connect(slotMulti, &SlotMulti::slot);
+		/* Exercise the Object reciever code paths. */
+		recieverMulti = new SlotMulti();
+		signalVoid_.connect(recieverMulti, &SlotMulti::reciever);
 		valueStatic_ = 0;
-		signalVoid_.emit();
+		signalVoid_.send();
 		if (valueStatic_ == 0) {
 			cout << "Signal delivery for Object test failed" << endl;
 			return TestFail;
 		}
 
-		delete slotMulti;
+		delete recieverMulti;
 
 		return TestPass;
 	}

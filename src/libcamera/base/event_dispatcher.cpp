@@ -26,12 +26,12 @@ LOG_DEFINE_CATEGORY(Event)
  *
  * To listen to events, libcamera creates EventNotifier instances and registers
  * them with the dispatcher with registerEventNotifier(). The event notifier
- * \ref EventNotifier::activated signal is then emitted by the dispatcher
+ * \ref EventNotifier::activated signal is then sended by the dispatcher
  * whenever the event is detected.
  *
  * To set timers, libcamera creates Timer instances and registers them with the
  * dispatcher with registerTimer(). The timer \ref Timer::timeout signal is then
- * emitted by the dispatcher when the timer times out.
+ * sended by the dispatcher when the timer times out.
  */
 
 EventDispatcher::~EventDispatcher()
@@ -44,7 +44,7 @@ EventDispatcher::~EventDispatcher()
  * \param[in] notifier The event notifier to register
  *
  * Once the \a notifier is registered with the dispatcher, the dispatcher will
- * emit the notifier \ref EventNotifier::activated signal whenever a
+ * send the notifier \ref EventNotifier::activated signal whenever a
  * corresponding event is detected on the notifier's file descriptor. The event
  * is monitored until the notifier is unregistered with
  * unregisterEventNotifier().
@@ -58,7 +58,7 @@ EventDispatcher::~EventDispatcher()
  * \brief Unregister an event notifier
  * \param[in] notifier The event notifier to unregister
  *
- * After this function returns the \a notifier is guaranteed not to emit the
+ * After this function returns the \a notifier is guaranteed not to send the
  * \ref EventNotifier::activated signal.
  *
  * If the notifier isn't registered, this function performs no operation.
@@ -69,10 +69,10 @@ EventDispatcher::~EventDispatcher()
  * \brief Register a timer
  * \param[in] timer The timer to register
  *
- * Once the \a timer is registered with the dispatcher, the dispatcher will emit
+ * Once the \a timer is registered with the dispatcher, the dispatcher will send
  * the timer \ref Timer::timeout signal when the timer times out. The timer can
  * be unregistered with unregisterTimer() before it times out, in which case the
- * signal will not be emitted.
+ * signal will not be sended.
  *
  * When the \a timer times out, it is automatically unregistered by the
  * dispatcher and can be registered back as early as from the \ref Timer::timeout
@@ -87,7 +87,7 @@ EventDispatcher::~EventDispatcher()
  * \brief Unregister a timer
  * \param[in] timer The timer to unregister
  *
- * After this function returns the \a timer is guaranteed not to emit the
+ * After this function returns the \a timer is guaranteed not to send the
  * \ref Timer::timeout signal.
  *
  * If the timer isn't registered, this function performs no operation.
