@@ -1,6 +1,6 @@
 /* SPDX-License-Identifier: BSD-2-Clause */
 /*
- * Copyright (C) 2024, Raspberry Pi Ltd
+ * Copyright (C) 2021, Raspberry Pi Ltd
  *
  * cam_helper_Imx283.cpp - camera information for Imx283 sensor
  */
@@ -8,7 +8,7 @@
 #include <assert.h>
 
 #include "cam_helper.h"
-
+#include "math.h"
 using namespace RPiController;
 
 class CamHelperImx283 : public CamHelper
@@ -28,7 +28,7 @@ private:
 };
 
 /*
- * Imx283 doesn't output metadata, so we have to use the delayed controls which
+ * Imx283 doesn't output metadata, so we have to use the "unicam parser" which
  * works by counting frames.
  */
 
