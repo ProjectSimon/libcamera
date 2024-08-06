@@ -564,6 +564,7 @@ int PipelineHandlerBase::configure(Camera *camera, CameraConfiguration *config)
 	for (auto const &c : result.controlInfo)
 		ctrlMap.emplace(c.first, c.second);
 
+<<<<<<< HEAD
 	const auto cropParamsIt = data->cropParams_.find(0);
 	if (cropParamsIt != data->cropParams_.end()) {
 		const CameraData::CropParams &cropParams = cropParamsIt->second;
@@ -586,6 +587,12 @@ int PipelineHandlerBase::configure(Camera *camera, CameraConfiguration *config)
 					    ctrlMap[&controls::ScalerCrop].def());
 		}
 	}
+=======
+	/* Add the ScalerCrop control limits based on the current mode. */
+	Rectangle ispMinCrop = data->scaleIspCrop(Rectangle(data->ispMinCropSize_));
+	ctrlMap[&controls::ScalerCrop] = ControlInfo(ispMinCrop, data->sensorInfo_.analogCrop,
+						     data->scaleIspCrop(data->ispCrop_));
+>>>>>>> 7b6faf5a (pipeline: rpi: Remove CameraData::scalerCrop_)
 
 	data->controlInfo_ = ControlInfoMap(std::move(ctrlMap), result.controlInfo.idmap());
 
@@ -1355,9 +1362,16 @@ void CameraData::applyScalerCrop(const ControlList &controls)
 		Size size = ispCrop.size().expandedTo(minSize);
 		ispCrop = size.centeredTo(ispCrop.center()).enclosedIn(Rectangle(sensorInfo_.outputSize));
 
+<<<<<<< HEAD
 		if (ispCrop != cropParams_.at(i).ispCrop) {
 			cropParams_.at(i).ispCrop = ispCrop;
 			platformSetIspCrop(cropParams_.at(i).ispIndex, ispCrop);
+=======
+		if (ispCrop != ispCrop_) {
+			ispCrop_ = ispCrop;
+			platformSetIspCrop();
+
+>>>>>>> 7b6faf5a (pipeline: rpi: Remove CameraData::scalerCrop_)
 		}
 	}
 }
@@ -1516,6 +1530,7 @@ void CameraData::fillRequestMetadata(const ControlList &bufferControls, Request 
 	request->metadata().set(controls::FrameWallClock,
 				bufferControls.get(controls::FrameWallClock).value_or(0));
 
+<<<<<<< HEAD
 	if (cropParams_.size()) {
 		std::vector<Rectangle> crops;
 
@@ -1528,6 +1543,9 @@ void CameraData::fillRequestMetadata(const ControlList &bufferControls, Request 
 						Span<const Rectangle>(crops.data(), crops.size()));
 		}
 	}
+=======
+	request->metadata().set(controls::ScalerCrop, scaleIspCrop(ispCrop_));
+>>>>>>> 7b6faf5a (pipeline: rpi: Remove CameraData::scalerCrop_)
 }
 
 } /* namespace libcamera */
