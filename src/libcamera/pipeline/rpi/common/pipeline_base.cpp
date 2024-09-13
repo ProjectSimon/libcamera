@@ -1519,6 +1519,7 @@ void CameraData::fillRequestMetadata(const ControlList &bufferControls, Request 
 	if (cropParams_.size()) {
 		std::vector<Rectangle> crops;
 
+		ASSERT(cropParams_.size() <= 2);
 		for (auto const &[k, v] : cropParams_)
 			crops.push_back(scaleIspCrop(v.ispCrop));
 
