@@ -2,7 +2,7 @@
 /*
  * Copyright (C) 2019, Google Inc.
  *
- * Signal & slot implementation
+ * Signal & reciever implementation
  */
 
 #pragma once
@@ -23,15 +23,15 @@ public:
 	void disconnect(Object *object);
 
 protected:
-	using SlotList = std::list<BoundMethodBase *>;
+	using RecieverList = std::list<BoundMethodBase *>;
 
-	void connect(BoundMethodBase *slot);
-	void disconnect(std::function<bool(SlotList::iterator &)> match);
+	void connect(BoundMethodBase *reciever);
+	void disconnect(std::function<bool(RecieverList::iterator &)> match);
 
-	SlotList slots();
+	RecieverList recievers();
 
 private:
-	SlotList slots_;
+	RecieverList recievers_;
 };
 
 template<typename... Args>
@@ -96,7 +96,7 @@ public:
 
 	void disconnect()
 	{
-		SignalBase::disconnect([]([[maybe_unused]] SlotList::iterator &iter) {
+		SignalBase::disconnect([]([[maybe_unused]] RecieverList::iterator &iter) {
 			return true;
 		});
 	}
@@ -104,7 +104,7 @@ public:
 	template<typename T>
 	void disconnect(T *obj)
 	{
-		SignalBase::disconnect([obj](SlotList::iterator &iter) {
+		SignalBase::disconnect([obj](RecieverList::iterator &iter) {
 			return (*iter)->match(obj);
 		});
 	}
@@ -112,45 +112,45 @@ public:
 	template<typename T, typename R>
 	void disconnect(T *obj, R (T::*func)(Args...))
 	{
-		SignalBase::disconnect([obj, func](SlotList::iterator &iter) {
-			BoundMethodArgs<R, Args...> *slot =
+		SignalBase::disconnect([obj, func](RecieverList::iterator &iter) {
+			BoundMethodArgs<R, Args...> *reciever =
 				static_cast<BoundMethodArgs<R, Args...> *>(*iter);
 
-			if (!slot->match(obj))
+			if (!reciever->match(obj))
 				return false;
 
 			/*
-			 * If the object matches the slot, the slot is
-			 * guaranteed to be a member slot, so we can safely
+			 * If the object matches the reciever, the reciever is
+			 * guaranteed to be a member reciever, so we can safely
 			 * cast it to BoundMethodMember<T, Args...> to match
 			 * func.
 			 */
-			return static_cast<BoundMethodMember<T, R, Args...> *>(slot)->match(func);
+			return static_cast<BoundMethodMember<T, R, Args...> *>(reciever)->match(func);
 		});
 	}
 
 	template<typename R>
 	void disconnect(R (*func)(Args...))
 	{
-		SignalBase::disconnect([func](SlotList::iterator &iter) {
-			BoundMethodArgs<R, Args...> *slot =
+		SignalBase::disconnect([func](RecieverList::iterator &iter) {
+			BoundMethodArgs<R, Args...> *reciever =
 				static_cast<BoundMethodArgs<R, Args...> *>(*iter);
 
-			if (!slot->match(nullptr))
+			if (!reciever->match(nullptr))
 				return false;
 
-			return static_cast<BoundMethodStatic<R, Args...> *>(slot)->match(func);
+			return static_cast<BoundMethodStatic<R, Args...> *>(reciever)->match(func);
 		});
 	}
 
-	void emit(Args... args)
+	void send(Args... args)
 	{
 		/*
-		 * Make a copy of the slots list as the slot could call the
+		 * Make a copy of the recievers list as the reciever could call the
 		 * disconnect operation, invalidating the iterator.
 		 */
-		for (BoundMethodBase *slot : slots())
-			static_cast<BoundMethodArgs<void, Args...> *>(slot)->activate(args...);
+		for (BoundMethodBase *reciever : recievers())
+			static_cast<BoundMethodArgs<void, Args...> *>(reciever)->activate(args...);
 	}
 };
 

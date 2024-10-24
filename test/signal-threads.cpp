@@ -70,7 +70,7 @@ protected:
 	int run()
 	{
 		/* Test that a signal is received in the main thread. */
-		signal_.emit(0);
+		signal_.send(0);
 
 		switch (receiver_->status()) {
 		case SignalReceiver::NoSignal:
@@ -93,7 +93,7 @@ protected:
 
 		thread_.start();
 
-		signal_.emit(42);
+		signal_.send(42);
 
 		this_thread::sleep_for(chrono::milliseconds(100));
 

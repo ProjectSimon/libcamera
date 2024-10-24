@@ -238,7 +238,7 @@ int IPCUnixSocket::receive(Payload *payload)
 
 /**
  * \var IPCUnixSocket::readyRead
- * \brief A Signal emitted when a message is ready to be read
+ * \brief A Signal sended when a message is ready to be read
  */
 
 int IPCUnixSocket::sendData(const void *buffer, size_t length,
@@ -331,7 +331,7 @@ void IPCUnixSocket::dataNotifier()
 	}
 
 	/*
-	 * If the payload has arrived, disable the notifier and emit the
+	 * If the payload has arrived, disable the notifier and send the
 	 * readyRead signal. The notifier will be reenabled by the receive()
 	 * function.
 	 */
@@ -344,7 +344,7 @@ void IPCUnixSocket::dataNotifier()
 		return;
 
 	notifier_->setEnabled(false);
-	readyRead.emit();
+	readyRead.send();
 }
 
 } /* namespace libcamera */

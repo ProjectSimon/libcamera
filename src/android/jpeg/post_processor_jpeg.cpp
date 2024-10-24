@@ -205,7 +205,7 @@ void PostProcessorJpeg::process(Camera3RequestDescriptor::StreamBuffer *streamBu
 	int jpeg_size = encoder_->encode(streamBuffer, exif.data(), quality);
 	if (jpeg_size < 0) {
 		LOG(JPEG, Error) << "Failed to encode stream image";
-		processComplete.emit(streamBuffer, PostProcessor::Status::Error);
+		processComplete.send(streamBuffer, PostProcessor::Status::Error);
 		return;
 	}
 
@@ -219,5 +219,5 @@ void PostProcessorJpeg::process(Camera3RequestDescriptor::StreamBuffer *streamBu
 
 	/* Update the JPEG result Metadata. */
 	resultMetadata->addEntry(ANDROID_JPEG_SIZE, jpeg_size);
-	processComplete.emit(streamBuffer, PostProcessor::Status::Success);
+	processComplete.send(streamBuffer, PostProcessor::Status::Success);
 }

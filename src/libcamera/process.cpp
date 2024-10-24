@@ -322,7 +322,7 @@ int Process::isolate()
  * \param[in] wstatus The status as output by waitpid()
  *
  * This function is called when the process associated with Process terminates.
- * It emits the Process::finished signal.
+ * It sends the Process::finished signal.
  */
 void Process::died(int wstatus)
 {
@@ -330,7 +330,7 @@ void Process::died(int wstatus)
 	exitStatus_ = WIFEXITED(wstatus) ? NormalExit : SignalExit;
 	exitCode_ = exitStatus_ == NormalExit ? WEXITSTATUS(wstatus) : -1;
 
-	finished.emit(exitStatus_, exitCode_);
+	finished.send(exitStatus_, exitCode_);
 }
 
 /**
@@ -358,7 +358,7 @@ void Process::died(int wstatus)
 /**
  * \var Process::finished
  *
- * Signal that is emitted when the process is confirmed to have terminated.
+ * Signal that is sended when the process is confirmed to have terminated.
  */
 
 /**

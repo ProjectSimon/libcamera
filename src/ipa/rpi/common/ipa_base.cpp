@@ -475,7 +475,7 @@ void IpaBase::prepareIsp(const PrepareParams &params)
 		reportMetadata(ipaContext);
 
 	/* Ready to push the input buffer into the ISP. */
-	prepareIspComplete.emit(params.buffers, stitchSwapBuffers_);
+	prepareIspComplete.send(params.buffers, stitchSwapBuffers_);
 }
 
 void IpaBase::processStats(const ProcessParams &params)
@@ -517,7 +517,7 @@ void IpaBase::processStats(const ProcessParams &params)
 		if (rpiMetadata.get("agc.status", agcStatus) == 0) {
 			ControlList ctrls(sensorCtrls_);
 			applyAGC(&agcStatus, ctrls, offset);
-			setDelayedControls.emit(ctrls, ipaContext);
+			setDelayedControls.send(ctrls, ipaContext);
 			setCameraTimeoutValue();
 		}
 	}
@@ -529,7 +529,7 @@ void IpaBase::processStats(const ProcessParams &params)
 	if (!controller_.getHardwareConfig().statsInline)
 		reportMetadata(ipaContext);
 
-	processStatsComplete.emit(params.buffers);
+	processStatsComplete.send(params.buffers);
 }
 
 void IpaBase::setMode(const IPACameraSensorInfo &sensorInfo)
@@ -648,7 +648,7 @@ void IpaBase::setCameraTimeoutValue()
 	auto max = std::max_element(frameLengths_.begin(), frameLengths_.end());
 
 	if (*max != lastTimeout_) {
-		setCameraTimeout.emit(max->get<std::milli>());
+		setCameraTimeout.send(max->get<std::milli>());
 		lastTimeout_ = *max;
 	}
 }
@@ -1236,7 +1236,7 @@ void IpaBase::applyControls(const ControlList &controls)
 				if (af->setLensPosition(ctrl.second.get<float>(), &hwpos)) {
 					ControlList lensCtrls(lensCtrls_);
 					lensCtrls.set(V4L2_CID_FOCUS_ABSOLUTE, hwpos);
-					setLensControls.emit(lensCtrls);
+					setLensControls.send(lensCtrls);
 				}
 			} else {
 				LOG(IPARPI, Warning)
@@ -1522,52 +1522,7 @@ void IpaBase::reportMetadata(unsigned int ipaContext)
 			libcameraMetadata_.set(controls::HdrChannel, controls::HdrChannelNone);
 	}
 
-	const std::shared_ptr<uint8_t[]> *inputTensor =
-		rpiMetadata.getLocked<std::shared_ptr<uint8_t[]>>("cnn.input_tensor");
-	if (cnnEnableInputTensor_ && inputTensor) {
-		unsigned int size = *rpiMetadata.getLocked<unsigned int>("cnn.input_tensor_size");
-		Span<const uint8_t> tensor{ inputTensor->get(), size };
-		libcameraMetadata_.set(controls::rpi::CnnInputTensor, tensor);
-		/* No need to keep these big buffers any more. */
-		rpiMetadata.eraseLocked("cnn.input_tensor");
-	}
-
-	const RPiController::CnnInputTensorInfo *inputTensorInfo =
-		rpiMetadata.getLocked<RPiController::CnnInputTensorInfo>("cnn.input_tensor_info");
-	if (inputTensorInfo) {
-		Span<const uint8_t> tensorInfo{ reinterpret_cast<const uint8_t *>(inputTensorInfo),
-						sizeof(*inputTensorInfo) };
-		libcameraMetadata_.set(controls::rpi::CnnInputTensorInfo, tensorInfo);
-	}
-
-	const std::shared_ptr<float[]> *outputTensor =
-		rpiMetadata.getLocked<std::shared_ptr<float[]>>("cnn.output_tensor");
-	if (outputTensor) {
-		unsigned int size = *rpiMetadata.getLocked<unsigned int>("cnn.output_tensor_size");
-		Span<const float> tensor{ reinterpret_cast<const float *>(outputTensor->get()),
-					  size };
-		libcameraMetadata_.set(controls::rpi::CnnOutputTensor, tensor);
-		/* No need to keep these big buffers any more. */
-		rpiMetadata.eraseLocked("cnn.output_tensor");
-	}
-
-	const RPiController::CnnOutputTensorInfo *outputTensorInfo =
-		rpiMetadata.getLocked<RPiController::CnnOutputTensorInfo>("cnn.output_tensor_info");
-	if (outputTensorInfo) {
-		Span<const uint8_t> tensorInfo{ reinterpret_cast<const uint8_t *>(outputTensorInfo),
-						sizeof(*outputTensorInfo) };
-		libcameraMetadata_.set(controls::rpi::CnnOutputTensorInfo, tensorInfo);
-	}
-
-	const RPiController::CnnKpiInfo *kpiInfo =
-		rpiMetadata.getLocked<RPiController::CnnKpiInfo>("cnn.kpi_info");
-	if (kpiInfo) {
-		libcameraMetadata_.set(controls::rpi::CnnKpiInfo,
-				       { static_cast<int32_t>(kpiInfo->dnnRuntime),
-					 static_cast<int32_t>(kpiInfo->dspRuntime) });
-	}
-
-	metadataReady.emit(libcameraMetadata_);
+	metadataReady.send(libcameraMetadata_);
 }
 
 void IpaBase::applyFrameDurations(Duration minFrameDuration, Duration maxFrameDuration)

@@ -29,8 +29,8 @@ LOG_DEFINE_CATEGORY(Object)
  * \class Object
  * \brief Base object to support automatic signal disconnection
  *
- * The Object class simplifies signal/slot handling for classes implementing
- * slots. By inheriting from Object, an object is automatically disconnected
+ * The Object class simplifies signal/reciever handling for classes implementing
+ * recievers. By inheriting from Object, an object is automatically disconnected
  * from all connected signals when it gets destroyed.
  *
  * Object instances are bound to the thread of their parent, or the thread in
@@ -44,14 +44,14 @@ LOG_DEFINE_CATEGORY(Object)
  * parent or child of the object gets deleted concurrently. See
  * Object::~Object() for more information.
  *
- * Object slots connected to signals will also run in the context of the
+ * Object recievers connected to signals will also run in the context of the
  * object's thread, regardless of whether the signal is emitted in the same or
  * in another thread.
  *
  * Objects can be connected to multiple signals, but they can only be connected
  * to each signal once. Attempting to create multiple concurrent connections
  * between the same signal and the same Object (to either the same or differents
- * slots of the object) will cause an assertion failure. While it would be
+ * recievers of the object) will cause an assertion failure. While it would be
  * possible to allow the implementation to let objects connect to the same
  * signal multiple times, there are no expected use cases for this in libcamera
  * and this behaviour is restricted to favour defensive programming.
@@ -79,7 +79,7 @@ Object::Object(Object *parent)
  * \brief Destroy an Object instance
  *
  * Deleting an Object automatically disconnects all signals from the Object's
- * slots. All the Object's children are made orphan, but stay bound to their
+ * recievers. All the Object's children are made orphan, but stay bound to their
  * current thread.
  *
  * Object instances shall be destroyed from the thread they are bound to,

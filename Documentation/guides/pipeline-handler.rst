@@ -1419,16 +1419,16 @@ value translation operations:
 Frame completion and event handling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-libcamera implements a signals and slots mechanism (similar to `Qt Signals and
+libcamera implements a signals and recievers mechanism (similar to `Qt Signals and
 Slots`_) to connect event sources with callbacks to handle them.
 
-As a general summary, a ``Slot`` can be connected to a ``Signal``, which when
-emitted triggers the execution of the connected slots.  A detailed description
-of the libcamera implementation is available in the `libcamera Signal and Slot`_
+As a general summary, a ``Reciever`` can be connected to a ``Signal``, which when
+sended triggers the execution of the connected recievers.  A detailed description
+of the libcamera implementation is available in the `libcamera Signal and Reciever`_
 classes documentation.
 
 .. _Qt Signals and Slots: https://doc.qt.io/qt-6/signalsandslots.html
-.. _libcamera Signal and Slot: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1Signal.html#details
+.. _libcamera Signal and Reciever: https://libcamera.org/api-html/classlibcamera_1_1Signal.html#details
 
 In order to notify applications about the availability of new frames and data,
 the ``Camera`` device exposes two ``Signals`` to which applications can connect
@@ -1440,13 +1440,13 @@ implementation of partial request completion, which allows an application to
 inspect completed buffers associated with the single streams without waiting for
 all of them to be ready.
 
-The ``bufferComplete`` and ``requestComplete`` signals are emitted by the
+The ``bufferComplete`` and ``requestComplete`` signals are sended by the
 ``Camera`` device upon notifications received from the pipeline handler, which
 tracks the buffers and request completion status.
 
 The single buffer completion notification is implemented by pipeline handlers by
 `connecting`_ the ``bufferReady`` signal of the capture devices they have queued
-buffers to, to a member function slot that handles processing of the completed
+buffers to, to a member function reciever that handles processing of the completed
 frames. When a buffer is ready, the pipeline handler must propagate the
 completion of that buffer to the Camera by using the PipelineHandler base class
 ``completeBuffer`` function. When all of the buffers referenced by a ``Request``

@@ -219,7 +219,7 @@ void CameraManager::Private::addCamera(std::shared_ptr<Camera> camera)
 
 	/* Report the addition to the public signal */
 	CameraManager *const o = LIBCAMERA_O_PTR();
-	o->cameraAdded.emit(cameras_[index]);
+	o->cameraAdded.send(cameras_[index]);
 }
 
 /**
@@ -252,7 +252,7 @@ void CameraManager::Private::removeCamera(std::shared_ptr<Camera> camera)
 
 	/* Report the removal to the public signal */
 	CameraManager *const o = LIBCAMERA_O_PTR();
-	o->cameraRemoved.emit(camera);
+	o->cameraRemoved.send(camera);
 }
 
 /**
@@ -400,13 +400,13 @@ std::shared_ptr<Camera> CameraManager::get(const std::string &id)
  * \var CameraManager::cameraAdded
  * \brief Notify of a new camera added to the system
  *
- * This signal is emitted when a new camera is detected and successfully handled
+ * This signal is sendted when a new camera is detected and successfully handled
  * by the camera manager. The notification occurs alike for cameras detected
  * when the manager is started with start() or when new cameras are later
- * connected to the system. When the signal is emitted the new camera is already
+ * connected to the system. When the signal is sendted the new camera is already
  * available from the list of cameras().
  *
- * The signal is emitted from the CameraManager thread. Applications shall
+ * The signal is sendted from the CameraManager thread. Applications shall
  * minimize the time spent in the signal handler and shall in particular not
  * perform any blocking operation.
  */
@@ -415,11 +415,11 @@ std::shared_ptr<Camera> CameraManager::get(const std::string &id)
  * \var CameraManager::cameraRemoved
  * \brief Notify of a new camera removed from the system
  *
- * This signal is emitted when a camera is removed from the system. When the
- * signal is emitted the camera is not available from the list of cameras()
+ * This signal is sendted when a camera is removed from the system. When the
+ * signal is sendted the camera is not available from the list of cameras()
  * anymore.
  *
- * The signal is emitted from the CameraManager thread. Applications shall
+ * The signal is sendted from the CameraManager thread. Applications shall
  * minimize the time spent in the signal handler and shall in particular not
  * perform any blocking operation.
  */

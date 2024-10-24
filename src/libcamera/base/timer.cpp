@@ -42,7 +42,7 @@ LOG_DEFINE_CATEGORY(Timer)
  * past, the timer will time out immediately when execution returns to the
  * event loop of the timer's thread.
  *
- * Timers run in the thread they belong to, and thus emit the \a ref timeout
+ * Timers run in the thread they belong to, and thus send the \a ref timeout
  * signal from that thread. To avoid race conditions they must not be started
  * or stopped from a different thread, attempts to do so will be rejected and
  * logged, and may cause undefined behaviour.
@@ -103,7 +103,7 @@ void Timer::start(std::chrono::steady_clock::time_point deadline)
 /**
  * \brief Stop the timer
  *
- * After this function returns the timer is guaranteed not to emit the
+ * After this function returns the timer is guaranteed not to send the
  * \ref timeout signal.
  *
  * If the timer is not running this function performs no operation.

@@ -711,7 +711,7 @@ void Device::pageFlipComplete([[maybe_unused]] int fd,
 			      void *user_data)
 {
 	AtomicRequest *request = static_cast<AtomicRequest *>(user_data);
-	request->device()->requestComplete.emit(request);
+	request->device()->requestComplete.send(request);
 }
 
 } /* namespace DRM */

@@ -231,7 +231,7 @@ void {{proxy_name}}::recvMessage(const IPCMessage &data)
 {{proxy_funcs.func_sig(proxy_name, method, "Thread")}}
 {
 	ASSERT(state_ != ProxyStopped);
-	{{method.mojom_name}}.emit({{method.parameters|params_comma_sep}});
+	{{method.mojom_name}}.send({{method.parameters|params_comma_sep}});
 }
 
 void {{proxy_name}}::{{method.mojom_name}}IPC(
@@ -243,7 +243,7 @@ void {{proxy_name}}::{{method.mojom_name}}IPC(
 	{{param|name}} {{param.mojom_name}};
 {%- endfor %}
 {{proxy_funcs.deserialize_call(method.parameters, 'data', 'fds', false, false, true, 'dataSize')}}
-	{{method.mojom_name}}.emit({{method.parameters|params_comma_sep}});
+	{{method.mojom_name}}.send({{method.parameters|params_comma_sep}});
 }
 {% endfor %}
 

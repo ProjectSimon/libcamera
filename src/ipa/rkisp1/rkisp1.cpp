@@ -458,7 +458,7 @@ void IPARkISP1::setControls(unsigned int frame)
 	ctrls.set(V4L2_CID_EXPOSURE, static_cast<int32_t>(exposure));
 	ctrls.set(V4L2_CID_ANALOGUE_GAIN, static_cast<int32_t>(gain));
 
-	setSensorControls.emit(frame, ctrls);
+	setSensorControls.send(frame, ctrls);
 }
 
 } /* namespace ipa::rkisp1 */

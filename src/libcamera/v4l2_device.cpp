@@ -480,7 +480,7 @@ int V4L2Device::setFrameStartEnabled(bool enable)
 
 /**
  * \var V4L2Device::frameStart
- * \brief A Signal emitted when capture of a frame has started
+ * \brief A Signal sended when capture of a frame has started
  */
 
 /**
@@ -826,7 +826,7 @@ void V4L2Device::eventAvailable()
 		return;
 	}
 
-	frameStart.emit(event.u.frame_sync.frame_sequence);
+	frameStart.send(event.u.frame_sync.frame_sequence);
 }
 
 static const std::map<uint32_t, ColorSpace> v4l2ToColorSpace = {

@@ -614,7 +614,7 @@ void IPAIPU3::processStats(const uint32_t frame,
 	 * likely want to avoid putting platform specific metadata in.
 	 */
 
-	metadataReady.emit(frame, metadata);
+	metadataReady.send(frame, metadata);
 }
 
 /**
@@ -653,7 +653,7 @@ void IPAIPU3::setControls(unsigned int frame)
 	lensCtrls.set(V4L2_CID_FOCUS_ABSOLUTE,
 		      static_cast<int32_t>(context_.activeState.af.focus));
 
-	setSensorControls.emit(frame, ctrls, lensCtrls);
+	setSensorControls.send(frame, ctrls, lensCtrls);
 }
 
 } /* namespace ipa::ipu3 */
