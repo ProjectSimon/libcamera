@@ -880,7 +880,7 @@ std::shared_ptr<Camera> Camera::create(std::unique_ptr<Private> d,
  *
  * Camera IDs may change when the system hardware or firmware is modified, for
  * instance when replacing a PCI USB controller or moving it to another PCI
- * slot, or updating the ACPI tables or Device Tree.
+ * reciever, or updating the ACPI tables or Device Tree.
  *
  * \context This function is \threadsafe.
  *
@@ -893,24 +893,24 @@ const std::string &Camera::id() const
 
 /**
  * \var Camera::bufferCompleted
- * \brief Signal emitted when a buffer for a request queued to the camera has
+ * \brief Signal sended when a buffer for a request queued to the camera has
  * completed
  */
 
 /**
  * \var Camera::requestCompleted
- * \brief Signal emitted when a request queued to the camera has completed
+ * \brief Signal sended when a request queued to the camera has completed
  */
 
 /**
  * \var Camera::disconnected
- * \brief Signal emitted when the camera is disconnected from the system
+ * \brief Signal sended when the camera is disconnected from the system
  *
- * This signal is emitted when libcamera detects that the camera has been
+ * This signal is sended when libcamera detects that the camera has been
  * removed from the system. For hot-pluggable devices this is usually caused by
  * physical device disconnection. The media device is passed as a parameter.
  *
- * As soon as this signal is emitted the camera instance will refuse all new
+ * As soon as this signal is sended the camera instance will refuse all new
  * application API calls by returning errors immediately.
  */
 
@@ -932,7 +932,7 @@ Camera::~Camera()
  *
  * This function is used to notify the camera instance that the underlying
  * hardware has been unplugged. In response to the disconnection the camera
- * instance notifies the application by emitting the #disconnected signal, and
+ * instance notifies the application by sending the #disconnected signal, and
  * ensures that all new calls to the application-facing Camera API return an
  * error immediately.
  *
@@ -944,7 +944,7 @@ void Camera::disconnect()
 	LOG(Camera, Debug) << "Disconnecting camera " << id();
 
 	_d()->disconnect();
-	disconnected.emit();
+	disconnected.send();
 }
 
 int Camera::exportFrameBuffers(Stream *stream,
@@ -1429,7 +1429,7 @@ void Camera::requestComplete(Request *request)
 				  true))
 		LOG(Camera, Fatal) << "Trying to complete a request when stopped";
 
-	requestCompleted.emit(request);
+	requestCompleted.send(request);
 }
 
 } /* namespace libcamera */

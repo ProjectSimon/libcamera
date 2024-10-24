@@ -47,7 +47,7 @@ they must be defined separately in the `mojo Interface Definition Language`_
 to the definitions. Every interface is defined in a mojom file and includes:
 
 - the functions that the pipeline handler can call from the IPA
-- signals in the pipeline handler that the IPA can emit
+- signals in the pipeline handler that the IPA can send
 - any data structures that are to be passed between the pipeline handler and the IPA
 
 All IPA modules of a given pipeline handler use the same IPA interface. The IPA
@@ -159,7 +159,7 @@ The Main IPA interface
 The IPA interface is split in two parts, the Main IPA interface, which
 describes the functions that the pipeline handler can call from the IPA,
 and the Event IPA interface, which describes the signals received by the
-pipeline handler that the IPA can emit. Both must be defined. This section
+pipeline handler that the IPA can send. Both must be defined. This section
 focuses on the Main IPA interface.
 
 The main interface must be named as IPA{interface_name}Interface.
@@ -250,7 +250,7 @@ The Event IPA interface
 -----------------------
 
 The event IPA interface describes the signals received by the pipeline handler
-that the IPA can emit. It must be defined. If there are no event functions,
+that the IPA can send. It must be defined. If there are no event functions,
 then it may be empty. These emissions are meant to notify the pipeline handler
 of some event, such as request data is ready, and *must not* be used to drive
 the camera pipeline from the IPA.
@@ -262,8 +262,8 @@ Thus they cannot return any value. Specifying the [async] tag is not
 necessary.
 
 Functions defined in the event interface will become signals in the IPA
-interface. The IPA can emit signals, while the pipeline handler can connect
-slots to them.
+interface. The IPA can send signals, while the pipeline handler can connect
+recievers to them.
 
 The following is an example of an event interface definition:
 
@@ -404,7 +404,7 @@ IPARPiInterface, in the "The Main IPA interface" section.
 The return value of IPAManager::createIPA shall be error-checked, to confirm
 that the returned pointer is not a nullptr.
 
-After this, before initializing the IPA, slots should be connected to all of
+After this, before initializing the IPA, recievers should be connected to all of
 the IPA's signals, as defined in the Event IPA interface:
 
 .. code-block:: C++
@@ -415,7 +415,7 @@ the IPA's signals, as defined in the Event IPA interface:
 	ipa_->setIsp.connect(this, &RPiCameraData::setIsp);
 	ipa_->setStaggered.connect(this, &RPiCameraData::setStaggered);
 
-The slot functions have a function signature based on the function definition
+The reciever functions have a function signature based on the function definition
 in the Event IPA interface. All plain old data (POD) types are as-is (with
 their C++ versions, eg. uint32 -> uint32_t), and all structs are const references.
 
@@ -432,7 +432,7 @@ signal:
 
    void statsMetadataComplete(uint32_t bufferId, const ControlList &controls);
 
-After connecting the slots to the signals, the IPA should be initialized
+After connecting the recievers to the signals, the IPA should be initialized
 (using the main interface definition example from earlier):
 
 .. code-block:: C++
@@ -479,7 +479,7 @@ ipa::rpi namespace comes from the namespace that we defined in the mojo data
 definition file, in the "Namespacing" section. The name of the interface is the
 same as the name given to the Main IPA interface.
 
-The function signature rules are the same as for the slots in the pipeline
+The function signature rules are the same as for the recievers in the pipeline
 handler side; PODs are passed by value, and structs are passed by const
 reference. For the Main IPA interface, output values are also allowed (only
 for synchronous calls), so there may be output parameters as well. If the
@@ -516,7 +516,7 @@ pointers. The non-POD input parameters become const references, and the POD
 input parameter is passed by value.
 
 At any time after start() and before stop() (though usually only in response to
-an IPA call), the IPA may send data to the pipeline handler by emitting
+an IPA call), the IPA may send data to the pipeline handler by sending
 signals. These signals are defined in the C++ IPA interface class (which is in
 the generated and included header).
 
@@ -526,8 +526,8 @@ For example, for the following function defined in the Event IPA interface:
 
    statsMetadataComplete(uint32 bufferId, libcamera.ControlList controls);
 
-We can emit a signal like so:
+We can send a signal like so:
 
 .. code-block:: C++
 
-   statsMetadataComplete.emit(bufferId & RPi::BufferMask::ID, libcameraMetadata_);
+   statsMetadataComplete.send(bufferId & RPi::BufferMask::ID, libcameraMetadata_);

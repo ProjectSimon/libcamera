@@ -439,7 +439,7 @@ void IpaPiSP::platformPrepareIsp([[maybe_unused]] const PrepareParams &params,
 		ControlList lensctrls(lensCtrls_);
 		applyAF(afStatus, lensctrls);
 		if (!lensctrls.empty())
-			setLensControls.emit(lensctrls);
+			setLensControls.send(lensctrls);
 	}
 }
 

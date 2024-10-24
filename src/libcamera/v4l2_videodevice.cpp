@@ -1689,7 +1689,7 @@ void V4L2VideoDevice::bufferAvailable()
 		return;
 
 	/* Notify anyone listening to the device. */
-	bufferReady.emit(buffer);
+	bufferReady.send(buffer);
 }
 
 /**
@@ -2097,7 +2097,7 @@ int V4L2VideoDevice::streamOff()
 
 		cache_->put(it.first);
 		metadata.status = FrameMetadata::FrameCancelled;
-		bufferReady.emit(buffer);
+		bufferReady.send(buffer);
 	}
 
 	ASSERT(cache_->isEmpty());
@@ -2143,14 +2143,14 @@ void V4L2VideoDevice::setDequeueTimeout(utils::Duration timeout)
  * \brief Slot to handle an expired dequeue timer
  *
  * When this slot is called, the time between successive dequeue events is over
- * the required timeout. Emit the \ref V4L2VideoDevice::dequeueTimeout signal.
+ * the required timeout. Send the \ref V4L2VideoDevice::dequeueTimeout signal.
  */
 void V4L2VideoDevice::watchdogExpired()
 {
 	LOG(V4L2, Warning)
 		<< "Dequeue timer of " << watchdogDuration_ << " has expired!";
 
-	dequeueTimeout.emit();
+	dequeueTimeout.send();
 }
 
 /**

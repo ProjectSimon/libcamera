@@ -321,7 +321,7 @@ void CameraStream::PostProcessorWorker::run()
 		locker.unlock();
 
 		while (!requests.empty()) {
-			postProcessor_->processComplete.emit(
+			postProcessor_->processComplete.send(
 				requests.front(), PostProcessor::Status::Error);
 			requests.pop();
 		}

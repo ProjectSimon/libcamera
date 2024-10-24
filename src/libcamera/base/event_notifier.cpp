@@ -29,7 +29,7 @@ LOG_DECLARE_CATEGORY(Event)
  *
  * The EventNotifier models a file descriptor event source that can be
  * monitored. It is created with the file descriptor to be monitored and the
- * type of event, and is enabled by default. It will emit the \ref activated
+ * type of event, and is enabled by default. It will send the \ref activated
  * signal whenever an event of the monitored type occurs on the file descriptor.
  *
  * Supported type of events are EventNotifier::Read, EventNotifier::Write and
@@ -39,7 +39,7 @@ LOG_DECLARE_CATEGORY(Event)
  * created.
  *
  * The notifier can be disabled with the setEnabled() function. When the notifier
- * is disabled it ignores events and does not emit the \ref activated signal.
+ * is disabled it ignores events and does not send the \ref activated signal.
  * The notifier can then be re-enabled with the setEnabled() function.
  *
  * Creating multiple notifiers of the same type for the same file descriptor is
@@ -101,7 +101,7 @@ EventNotifier::~EventNotifier()
  * \param[in] enable True to enable the notifier, false to disable it
  *
  * This function enables or disables the notifier. A disabled notifier ignores
- * events and does not emit the \ref activated signal.
+ * events and does not send the \ref activated signal.
  *
  * \context This function is \threadbound.
  */

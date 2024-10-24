@@ -1,5 +1,20 @@
 .. SPDX-License-Identifier: CC-BY-SA-4.0
 
+.. section-begin-warning
+
+===========
+ WARNING
+===========
+
+This branch is still under development. Some important changes were made in
+``libcamera`` code source that impacted the whole library.
+
+Be careful before installing this library once compiled. It could impacted
+other libraries depending on this one.
+
+.. section-end-warning
+.. section-begin-libcamera
+
 ===========
  libcamera
 ===========

@@ -523,7 +523,7 @@ void KMSSink::requestComplete([[maybe_unused]] DRM::AtomicRequest *request)
 
 	/* Complete the active request, if any. */
 	if (active_)
-		requestProcessed.emit(active_->camRequest_);
+		requestProcessed.send(active_->camRequest_);
 
 	/* The queued request becomes active. */
 	active_ = std::move(queued_);

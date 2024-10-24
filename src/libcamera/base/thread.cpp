@@ -323,7 +323,7 @@ int Thread::exec()
  * custom work, either custom initialization and cleanup before and after
  * calling the Thread::exec() function, or a custom thread loop altogether. When
  * this function returns the thread execution is stopped, and the \ref finished
- * signal is emitted.
+ * signal is sendted.
  *
  * Note that if this function is overridden and doesn't call Thread::exec(), no
  * events will be dispatched to the objects living in the thread. These objects
@@ -350,7 +350,7 @@ void Thread::finishThread()
 	data_->running_ = false;
 	data_->mutex_.unlock();
 
-	finished.emit();
+	finished.send();
 	data_->cv_.notify_all();
 }
 
