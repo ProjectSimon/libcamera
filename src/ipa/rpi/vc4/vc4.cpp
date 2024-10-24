@@ -188,11 +188,11 @@ void IpaVc4::platformPrepareIsp([[maybe_unused]] const PrepareParams &params,
 		ControlList lensctrls(lensCtrls_);
 		applyAF(afStatus, lensctrls);
 		if (!lensctrls.empty())
-			setLensControls.emit(lensctrls);
+			setLensControls.send(lensctrls);
 	}
 
 	if (!ctrls.empty())
-		setIspControls.emit(ctrls);
+		setIspControls.send(ctrls);
 }
 
 RPiController::StatisticsPtr IpaVc4::platformProcessStats(Span<uint8_t> mem)

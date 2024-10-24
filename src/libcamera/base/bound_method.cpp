@@ -23,7 +23,7 @@ namespace libcamera {
  * \brief Connection type for asynchronous communication
  *
  * This enumeration describes the possible types of asynchronous communication
- * between a sender and a receiver. It applies to Signal::emit() and
+ * between a sender and a receiver. It applies to Signal::send() and
  * Object::invokeMethod().
  *
  * \var ConnectionTypeAuto

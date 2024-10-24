@@ -109,7 +109,7 @@ void IPCPipeUnixSocket::readyRead()
 	}
 
 	/* Received unexpected data, this means it's a call from the IPA. */
-	recv.emit(ipcMessage);
+	recv.send(ipcMessage);
 }
 
 int IPCPipeUnixSocket::call(const IPCUnixSocket::Payload &message,

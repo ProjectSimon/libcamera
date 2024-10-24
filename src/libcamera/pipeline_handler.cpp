@@ -531,7 +531,7 @@ void PipelineHandler::doQueueRequests()
 bool PipelineHandler::completeBuffer(Request *request, FrameBuffer *buffer)
 {
 	Camera *camera = request->_d()->camera();
-	camera->bufferCompleted.emit(request, buffer);
+	camera->bufferCompleted.send(request, buffer);
 	return request->_d()->completeBuffer(buffer);
 }
 
@@ -685,7 +685,7 @@ void PipelineHandler::hotplugMediaDevice(MediaDevice *media)
 }
 
 /**
- * \brief Slot for the MediaDevice disconnected signal
+ * \brief Reciever for the MediaDevice disconnected signal
  */
 void PipelineHandler::mediaDeviceDisconnected(MediaDevice *media)
 {

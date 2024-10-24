@@ -58,7 +58,7 @@ int FrameSink::stop()
  *
  * When the request is processed asynchronously, the FrameSink temporarily takes
  * ownership of the \a request. The function shall return false, and the
- * FrameSink shall emit the requestProcessed signal when the request processing
+ * FrameSink shall send the requestProcessed signal when the request processing
  * completes. If the stop() function is called before the request processing
  * completes, it shall release the request synchronously.
  *

@@ -1256,7 +1256,7 @@ void IPU3CameraData::metadataReady(unsigned int id, const ControlList &metadata)
 }
 
 /* -----------------------------------------------------------------------------
- * Buffer Ready slots
+ * Buffer Ready recievers
  */
 
 /**

@@ -389,9 +389,9 @@ void CameraSession::processRequest(Request *request)
 {
 	/*
 	 * If we've reached the capture limit, we're done. This doesn't
-	 * duplicate the check below that emits the captureDone signal, as this
+	 * duplicate the check below that sends the captureDone signal, as this
 	 * function will be called for each request still in flight after the
-	 * capture limit is reached and we don't want to emit the signal every
+	 * capture limit is reached and we don't want to send the signal every
 	 * single time.
 	 */
 	if (captureLimit_ && captureCount_ >= captureLimit_)
@@ -452,7 +452,7 @@ void CameraSession::processRequest(Request *request)
 	 */
 	captureCount_++;
 	if (captureLimit_ && captureCount_ >= captureLimit_) {
-		captureDone.emit();
+		captureDone.send();
 		return;
 	}
 

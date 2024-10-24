@@ -159,7 +159,7 @@ void IPAVimc::fillParamsBuffer([[maybe_unused]] uint32_t frame, uint32_t bufferI
 	}
 
 	Flags<ipa::vimc::TestFlag> flags;
-	paramsBufferReady.emit(bufferId, flags);
+	paramsBufferReady.send(bufferId, flags);
 }
 
 void IPAVimc::initTrace()
