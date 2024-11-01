@@ -5,7 +5,7 @@ on:
     tags: # vX.Y.Z+rptYYYMMDD
       - 'v[0-9]+.[0-9]+.[0-9]+\+rpt[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'
     branches:
-      - feature/gh_pages
+      - feature/dev/gh_pages
   workflow_dispatch:
 jobs:
   build-and-deploy:
@@ -38,7 +38,8 @@ jobs:
           meson setup build --buildtype=release -Dpipelines=rpi/vc4,rpi/pisp -Dipas=rpi/vc4,rpi/pisp -Dv4l2=true -Dgstreamer=enabled -Dtest=false -Dlc-compliance=disabled -Dcam=disabled -Dqcam=disabled -Ddocumentation=enabled -Dpycamera=enabled
           sudo ninja -C build install
       - name: "Deploy Github Pages"
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          branch: gh-pages  # <- Branche sur laquelle seront commités les fichiers
-          folder: build/Documentation/html/ # <- Dossier contenant notre documentation générée
+          github_token : ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: build/Documentation/ # <- Dossier contenant notre documentation générée
+          exclude_assets: 'Doxyfile-*'
