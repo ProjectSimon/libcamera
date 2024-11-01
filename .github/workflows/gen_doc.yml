@@ -4,8 +4,6 @@ on:
   push:
     tags: # vX.Y.Z+rptYYYMMDD
       - 'v[0-9]+.[0-9]+.[0-9]+\+rpt[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'
-    branches:
-      - feature/dev/gh_pages
   workflow_dispatch:
 jobs:
   build-and-deploy:
