@@ -37,7 +37,8 @@ author = u'Kieran Bingham, Jacopo Mondi, Laurent Pinchart, Niklas Söderlund'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.graphviz'
+    'sphinx.ext.graphviz',
+    'sphinx.ext.githubpages',
 ]
 
 graphviz_output_format = 'svg'
@@ -92,7 +93,7 @@ html_theme_path = ['.']
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = []
+html_static_path = ["_static"]
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
