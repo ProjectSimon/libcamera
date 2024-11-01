@@ -1,7 +1,7 @@
 /**
 \mainpage libcamera API reference
 
-Welcome to the API reference for <a href="https://libcamera.org/">libcamera</a>,
+Welcome to the API reference for <a href="https://projectsimon.github.io/libcamera/">libcamera</a>,
 a complex camera support library for Linux, Android and ChromeOS. These pages
 are automatically generated from the libcamera source code and describe the API
 in detail - if this is your first interaction with libcamera then you may find

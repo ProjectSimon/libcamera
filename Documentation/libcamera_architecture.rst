@@ -70,7 +70,7 @@ Camera Manager
 
   Read the `Camera Manager API`_ documentation for more details.
 
-.. _Camera Manager API: https://libcamera.org/api-html/classlibcamera_1_1CameraManager.html
+.. _Camera Manager API: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1CameraManager.html
 
 Camera Device
   The Camera class represents a single item of camera hardware that is capable
@@ -87,7 +87,7 @@ Camera Device
 
   Read the `Camera API`_ documentation for more details.
 
-.. _Camera API: https://libcamera.org/api-html/classlibcamera_1_1Camera.html
+.. _Camera API: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1Camera.html
 
 Pipeline Handler
   The Pipeline Handler manages the complex pipelines exposed by the kernel
@@ -110,7 +110,7 @@ Pipeline Handler
   More details can be found in the `PipelineHandler API`_ documentation, and the
   :doc:`Pipeline Handler Writers Guide <guides/pipeline-handler>`.
 
-.. _PipelineHandler API: https://libcamera.org/api-html/classlibcamera_1_1PipelineHandler.html
+.. _PipelineHandler API: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1PipelineHandler.html
 
 Image Processing Algorithms
   Together with the hardware image processing and hardware statistics

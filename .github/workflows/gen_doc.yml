@@ -1,0 +1,43 @@
+name: Build and deploy Github Pages
+run-name: Build and deploy Github Pages
+on:
+  push:
+    tags: # vX.Y.Z+rptYYYMMDD
+      - 'v[0-9]+.[0-9]+.[0-9]+\+rpt[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'
+  workflow_dispatch:
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install dependencies
+        run: | # Local cmake needs to be removed for pybind11 to be detected
+          sudo rm -rf /usr/local/bin/cmake
+          sudo rm -rf /home/runner/work/libcamera/libcamera/build
+          sudo pip3 install sphinx
+          sudo pip3 install meson
+          sudo apt-get update
+          sudo apt-get install -y texlive-full
+          sudo apt-get install -y graphviz
+          sudo apt-get install -y doxygen
+          sudo apt-get install -y libboost-dev
+          sudo apt-get install -y libgnutls28-dev openssl libtiff-dev pybind11-dev
+          sudo apt-get install -y qtbase5-dev libqt5core5a libqt5widgets5
+          sudo apt-get install -y libunwind-dev
+          sudo apt-get install -y libglib2.0-dev libgstreamer-plugins-base1.0-dev
+          sudo apt-get install -y ninja-build pkgconf cmake libgtest-dev libyaml-dev python3 python3-dev pybind11-dev python3-jinja2 python3-ply python3-yaml
+      - name: Check out repository code
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          lfs: true
+          fetch-depth: 0 # Required for 'git describe' to work
+      - name: Generate documentation
+        run: |
+          meson setup build --buildtype=release -Dpipelines=rpi/vc4,rpi/pisp -Dipas=rpi/vc4,rpi/pisp -Dv4l2=true -Dgstreamer=enabled -Dtest=false -Dlc-compliance=disabled -Dcam=disabled -Dqcam=disabled -Ddocumentation=enabled -Dpycamera=enabled
+          sudo ninja -C build install
+      - name: "Deploy Github Pages"
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token : ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: build/Documentation/ # <- Dossier contenant notre documentation générée
+          exclude_assets: 'Doxyfile-*'

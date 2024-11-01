@@ -152,7 +152,7 @@ if sphinx.found()
                   command : [sphinx, '-D', release, '-q', '-W', '-b', 'html',
                              meson.current_source_dir(), '@OUTPUT@'],
                   input : docs_sources,
-                  output : 'html',
+                  output : '.',
                   build_by_default : true,
                   install : true,
                   install_dir : doc_install_dir,
