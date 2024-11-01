@@ -83,49 +83,49 @@ functionalities described above. Below is a brief overview of each of those:
 .. TODO: (MediaDevice) Reference to the Media Device API (possibly with versioning requirements)
 .. TODO: (IPAInterface) refer to the IPA guide
 
--  `MediaDevice <https://libcamera.org/api-html/classlibcamera_1_1MediaDevice.html>`_:
+-  `MediaDevice <https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1MediaDevice.html>`_:
    Instances of this class are associated with a kernel media controller
    device and its connected objects.
 
--  `DeviceEnumerator <https://libcamera.org/api-html/classlibcamera_1_1DeviceEnumerator.html>`_:
+-  `DeviceEnumerator <https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1DeviceEnumerator.html>`_:
    Enumerates all media devices attached to the system and the media entities
    registered with it, by creating instances of the ``MediaDevice`` class and
    storing them.
 
--  `DeviceMatch <https://libcamera.org/api-html/classlibcamera_1_1DeviceMatch.html>`_:
+-  `DeviceMatch <https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1DeviceMatch.html>`_:
    Describes a media device search pattern using entity names, or other
    properties.
 
--  `V4L2VideoDevice <https://libcamera.org/api-html/classlibcamera_1_1V4L2VideoDevice.html>`_:
+-  `V4L2VideoDevice <https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1V4L2VideoDevice.html>`_:
    Models an instance of a V4L2 video device constructed with the path to a V4L2
    video device node.
 
--  `V4L2SubDevice <https://libcamera.org/api-html/classlibcamera_1_1V4L2Subdevice.html>`_:
+-  `V4L2SubDevice <https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1V4L2Subdevice.html>`_:
    Provides an API to the sub-devices that model the hardware components of a
    V4L2 device.
 
--  `CameraSensor <https://libcamera.org/api-html/classlibcamera_1_1CameraSensor.html>`_:
+-  `CameraSensor <https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1CameraSensor.html>`_:
    Abstracts camera sensor handling by hiding the details of the V4L2 subdevice
    kernel API and caching sensor information.
 
--  `Camera::Private <https://libcamera.org/api-html/classlibcamera_1_1Camera_1_1Private.html>`_:
+-  `Camera::Private <https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1Camera_1_1Private.html>`_:
    Represents device-specific data a pipeline handler associates to each Camera
    instance.
 
--  `StreamConfiguration <https://libcamera.org/api-html/structlibcamera_1_1StreamConfiguration.html>`_:
+-  `StreamConfiguration <https://projectsimon.github.io/libcamera/api-html/structlibcamera_1_1StreamConfiguration.html>`_:
    Models the current configuration of an image stream produced by the camera by
    reporting its format and sizes.
 
--  `CameraConfiguration <https://libcamera.org/api-html/classlibcamera_1_1CameraConfiguration.html>`_:
+-  `CameraConfiguration <https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1CameraConfiguration.html>`_:
    Represents the current configuration of a camera, which includes a list of
    stream configurations for each active stream in a capture session. When
    validated, it is applied to the camera.
 
--  `IPAInterface <https://libcamera.org/api-html/classlibcamera_1_1IPAInterface.html>`_:
+-  `IPAInterface <https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1IPAInterface.html>`_:
    The interface to the Image Processing Algorithm (IPA) module which performs
    the computation of the image processing pipeline tuning parameters.
 
--  `ControlList <https://libcamera.org/api-html/classlibcamera_1_1ControlList.html>`_:
+-  `ControlList <https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1ControlList.html>`_:
    A list of control items, indexed by Control<> instances or by numerical index
    which contains values used by application and IPA to change parameters of
    image streams, used to return to applications and share with IPA the metadata
@@ -194,7 +194,7 @@ In *vivid.cpp* add the pipeline handler to the ``libcamera`` namespace, defining
 a `PipelineHandler`_ derived class named PipelineHandlerVivid, and add stub
 implementations for the overridden class members.
 
-.. _PipelineHandler: https://libcamera.org/api-html/classlibcamera_1_1PipelineHandler.html
+.. _PipelineHandler: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1PipelineHandler.html
 
 .. code-block:: cpp
 
@@ -272,7 +272,7 @@ available to try and match devices.
 String "vivid" is the name assigned to the pipeline, matching the pipeline
 subdirectory name in the source tree.
 
-.. _REGISTER_PIPELINE_HANDLER: https://libcamera.org/api-html/pipeline__handler_8h.html
+.. _REGISTER_PIPELINE_HANDLER: https://projectsimon.github.io/libcamera/api-html/pipeline__handler_8h.html
 
 For debugging and testing a pipeline handler during development, you can define
 a log message category for the pipeline handler. The ``LOG_DEFINE_CATEGORY``
@@ -280,7 +280,7 @@ macro and ``LIBCAMERA_LOG_LEVELS`` environment variable help you use the inbuilt
 libcamera `logging infrastructure`_ that allow for the inspection of internal
 operations in a user-configurable way.
 
-.. _logging infrastructure: https://libcamera.org/api-html/log_8h.html
+.. _logging infrastructure: https://projectsimon.github.io/libcamera/api-html/log_8h.html
 
 Add the following before the ``PipelineHandlerVivid`` class declaration:
 
@@ -339,8 +339,8 @@ You can specify the search further by adding specific media entities to the
 search using the ``.add()`` function on the DeviceMatch.
 
 .. _match(): https://www.libcamera.org/api-html/classlibcamera_1_1PipelineHandler.html#a7cd5b652a2414b543ec20ba9dabf61b6
-.. _start(): https://libcamera.org/api-html/classlibcamera_1_1CameraManager.html#a49e322880a2a26013bb0076788b298c5
-.. _DeviceMatch: https://libcamera.org/api-html/classlibcamera_1_1DeviceMatch.html
+.. _start(): https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1CameraManager.html#a49e322880a2a26013bb0076788b298c5
+.. _DeviceMatch: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1DeviceMatch.html
 
 This example uses search patterns that match vivid, but when developing a new
 pipeline handler, you should change this value to suit your device identifier.
@@ -359,7 +359,7 @@ to the matching media controller device with the `acquireMediaDevice`_ function.
 If the function attempts to acquire a device it has already matched, it returns
 ``false``.
 
-.. _acquireMediaDevice: https://libcamera.org/api-html/classlibcamera_1_1PipelineHandler.html#a77e424fe704e7b26094164b9189e0f84
+.. _acquireMediaDevice: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1PipelineHandler.html#a77e424fe704e7b26094164b9189e0f84
 
 Add the following below ``dm.add("vivid-000-vid-cap");``:
 
@@ -424,7 +424,7 @@ with the Camera.
 Each Camera has instance-specific data represented using the `Camera::Private`_
 class, which can be extended for the specific needs of the pipeline handler.
 
-.. _Camera::Private: https://libcamera.org/api-html/classlibcamera_1_1Camera_1_1Private.html
+.. _Camera::Private: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1Camera_1_1Private.html
 
 
 To support the Camera we will later register, we need to create a Camera::Private
@@ -480,7 +480,7 @@ the `MediaDevice::getEntityByName`_ function from the MediaDevice. As our
 example is based upon the simplistic Vivid test device, we only need to open a
 single capture device named 'vivid-000-vid-cap' by the device.
 
-.. _MediaDevice::getEntityByName: https://libcamera.org/api-html/classlibcamera_1_1MediaDevice.html#ad5d9279329ef4987ceece2694b33e230
+.. _MediaDevice::getEntityByName: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1MediaDevice.html#ad5d9279329ef4987ceece2694b33e230
 
 .. code-block:: cpp
 
@@ -521,8 +521,8 @@ handler and camera manager using `registerCamera`_.
 Finally with a successful construction, we return 'true' indicating that the
 PipelineHandler successfully matched and constructed a device.
 
-.. _Camera::create: https://libcamera.org/api-html/classlibcamera_1_1Camera.html#a453740e0d2a2f495048ae307a85a2574
-.. _registerCamera: https://libcamera.org/api-html/classlibcamera_1_1PipelineHandler.html#adf02a7f1bbd87aca73c0e8d8e0e6c98b
+.. _Camera::create: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1Camera.html#a453740e0d2a2f495048ae307a85a2574
+.. _registerCamera: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1PipelineHandler.html#adf02a7f1bbd87aca73c0e8d8e0e6c98b
 
 .. code-block:: cpp
 
@@ -595,9 +595,9 @@ processed to automatically generate documentation and interfaces. Controls are
 defined by the src/libcamera/`control_ids_core.yaml`_ file and camera properties
 are defined by src/libcamera/`properties_ids_core.yaml`_.
 
-.. _controls framework: https://libcamera.org/api-html/controls_8h.html
-.. _control_ids_core.yaml: https://libcamera.org/api-html/control__ids_8h.html
-.. _properties_ids_core.yaml: https://libcamera.org/api-html/property__ids_8h.html
+.. _controls framework: https://projectsimon.github.io/libcamera/api-html/controls_8h.html
+.. _control_ids_core.yaml: https://projectsimon.github.io/libcamera/api-html/control__ids_8h.html
+.. _properties_ids_core.yaml: https://projectsimon.github.io/libcamera/api-html/property__ids_8h.html
 
 Pipeline handlers can optionally register the list of controls an application
 can set as well as a list of immutable camera properties. Being both
@@ -605,14 +605,14 @@ Camera-specific values, they are represented in the ``Camera::Private`` base
 class, which provides two members for this purpose: the
 `Camera::Private::controlInfo_`_ and the `Camera::Private::properties_`_ fields.
 
-.. _Camera::Private::controlInfo_: https://libcamera.org/api-html/classlibcamera_1_1Camera_1_1Private.html#ab4e183eb4dabe929d1b2bbbb519b969f
-.. _Camera::Private::properties_: https://libcamera.org/api-html/classlibcamera_1_1Camera_1_1Private.html#ad31f12f5ed9c1fbe25750902f4791064
+.. _Camera::Private::controlInfo_: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1Camera_1_1Private.html#ab4e183eb4dabe929d1b2bbbb519b969f
+.. _Camera::Private::properties_: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1Camera_1_1Private.html#ad31f12f5ed9c1fbe25750902f4791064
 
 The ``controlInfo_`` field represents a map of ``ControlId`` instances
 associated with the limits of valid values supported for the control. More
 information can be found in the `ControlInfoMap`_ class documentation.
 
-.. _ControlInfoMap: https://libcamera.org/api-html/classlibcamera_1_1ControlInfoMap.html
+.. _ControlInfoMap: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1ControlInfoMap.html
 
 Pipeline handlers register controls to expose the tunable device and IPA
 parameters to applications. Our example pipeline handler only exposes trivial
@@ -757,7 +757,7 @@ To support validation in our example pipeline handler, Create a new class called
 ``VividCameraConfiguration`` derived from the base `CameraConfiguration`_ class
 which we can implement and use within our ``PipelineHandlerVivid`` class.
 
-.. _CameraConfiguration: https://libcamera.org/api-html/classlibcamera_1_1CameraConfiguration.html
+.. _CameraConfiguration: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1CameraConfiguration.html
 
 The derived ``CameraConfiguration`` class must override the base class
 ``validate()`` function, where the stream configuration inspection and
@@ -783,8 +783,8 @@ Applications generate a ``CameraConfiguration`` instance by calling the
 implementation of the overridden `PipelineHandler::generateConfiguration()`_
 function.
 
-.. _Camera::generateConfiguration(): https://libcamera.org/api-html/classlibcamera_1_1Camera.html#a25c80eb7fc9b1cf32692ce0c7f09991d
-.. _PipelineHandler::generateConfiguration(): https://libcamera.org/api-html/classlibcamera_1_1PipelineHandler.html#a7932e87735695500ce1f8c7ae449b65b
+.. _Camera::generateConfiguration(): https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1Camera.html#a25c80eb7fc9b1cf32692ce0c7f09991d
+.. _PipelineHandler::generateConfiguration(): https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1PipelineHandler.html#a7932e87735695500ce1f8c7ae449b65b
 
 Configurations are generated by receiving a list of ``StreamRole`` instances,
 which libcamera uses as predefined ways an application intends to use a camera
@@ -792,7 +792,7 @@ which libcamera uses as predefined ways an application intends to use a camera
 optional hints on how an application intends to use a stream, and a pipeline
 handler should return an ideal configuration for each role that is requested.
 
-.. _StreamRole API: https://libcamera.org/api-html/stream_8h.html#file_a295d1f5e7828d95c0b0aabc0a8baac03
+.. _StreamRole API: https://projectsimon.github.io/libcamera/api-html/stream_8h.html#file_a295d1f5e7828d95c0b0aabc0a8baac03
 
 In the pipeline handler ``generateConfiguration`` implementation, remove the
 ``return nullptr;``, create a new instance of the ``CameraConfiguration``
@@ -854,7 +854,7 @@ The `StreamFormats`_ class holds information about the pixel formats and frame
 sizes that a stream can support. The class groups size information by the pixel
 format, which can produce it.
 
-.. _StreamFormats: https://libcamera.org/api-html/classlibcamera_1_1StreamFormats.html
+.. _StreamFormats: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1StreamFormats.html
 
 The code below uses the ``StreamFormats`` class to represent all of the
 supported pixel formats, associated with a list of frame sizes. It then
@@ -907,7 +907,7 @@ If changes are made, it marks the configuration as ``Adjusted``, however if the
 requested configuration is not supported and cannot be adjusted it shall be
 refused and marked as ``Invalid``.
 
-.. _CameraConfiguration::validate(): https://libcamera.org/api-html/classlibcamera_1_1CameraConfiguration.html#a29f8f263384c6149775b6011c7397093
+.. _CameraConfiguration::validate(): https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1CameraConfiguration.html#a29f8f263384c6149775b6011c7397093
 
 The validation phase makes sure all the platform-specific constraints are
 respected by the requested configuration. The most trivial examples being making
@@ -1007,8 +1007,8 @@ The `PipelineHandler::configure()`_ function receives a valid
 parameters to prepare a device for a streaming session with the desired
 properties.
 
-.. _PipelineHandler::configure(): https://libcamera.org/api-html/classlibcamera_1_1PipelineHandler.html#a930f2a9cdfb51dfb4b9ca3824e84fc29
-.. _CameraConfiguration: https://libcamera.org/api-html/classlibcamera_1_1CameraConfiguration.html
+.. _PipelineHandler::configure(): https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1PipelineHandler.html#a930f2a9cdfb51dfb4b9ca3824e84fc29
+.. _CameraConfiguration: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1CameraConfiguration.html
 
 Replace the contents of the stubbed ``PipelineHandlerVivid::configure`` function
 with the following to obtain the camera data and stream configuration. This
@@ -1031,8 +1031,8 @@ plane configuration for multiplanar formats, so you must explicitly convert it
 using the helper ``V4L2VideoDevice::toV4L2PixelFormat()`` provided by the
 V4L2VideoDevice instance that the format will be applied on.
 
-.. _V4L2DeviceFormat: https://libcamera.org/api-html/classlibcamera_1_1V4L2DeviceFormat.html
-.. _V4L2PixelFormat: https://libcamera.org/api-html/classlibcamera_1_1V4L2PixelFormat.html
+.. _V4L2DeviceFormat: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1V4L2DeviceFormat.html
+.. _V4L2PixelFormat: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1V4L2PixelFormat.html
 
 Add the following code beneath the code from above:
 
@@ -1048,7 +1048,7 @@ driver has adjusted the format, as this shows the pipeline handler has failed to
 handle the validation stages correctly, and the configure operation shall also
 fail.
 
-.. _V4L2VideoDevice::setFormat(): https://libcamera.org/api-html/classlibcamera_1_1V4L2VideoDevice.html#ad67b47dd9327ce5df43350b80c083cca
+.. _V4L2VideoDevice::setFormat(): https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1V4L2VideoDevice.html#ad67b47dd9327ce5df43350b80c083cca
 
 Continue the implementation with the following code:
 
@@ -1067,7 +1067,7 @@ Associate the configuration with the stream by using the
 `StreamConfiguration::setStream`_ function, and set the values of individual
 stream configuration members as required.
 
-.. _StreamConfiguration::setStream: https://libcamera.org/api-html/structlibcamera_1_1StreamConfiguration.html#a74a0eb44dad1b00112c7c0443ae54a12
+.. _StreamConfiguration::setStream: https://projectsimon.github.io/libcamera/api-html/structlibcamera_1_1StreamConfiguration.html#a74a0eb44dad1b00112c7c0443ae54a12
 
 .. NOTE: the cfg.setStream() call here associates the stream to the
    StreamConfiguration however that should quite likely be done as part of
@@ -1092,7 +1092,7 @@ controls at system configuration time, to make sure they are defaulted to sane
 values. Handling of device controls is again performed using the libcamera
 `controls framework`_.
 
-.. _Controls Framework: https://libcamera.org/api-html/controls_8h.html
+.. _Controls Framework: https://projectsimon.github.io/libcamera/api-html/controls_8h.html
 
 This section is particularly specific to Vivid as it sets the initial values of
 controls to match `Vivid Controls`_ defined by the kernel driver. You won't need
@@ -1115,8 +1115,8 @@ come directly from the kernel sources:
 We can now use the V4L2 control IDs to prepare a list of controls with the
 `ControlList`_ class, and set them using the `ControlList::set()`_ function.
 
-.. _ControlList: https://libcamera.org/api-html/classlibcamera_1_1ControlList.html
-.. _ControlList::set(): https://libcamera.org/api-html/classlibcamera_1_1ControlList.html#a74a1a29abff5243e6e37ace8e24eb4ba
+.. _ControlList: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1ControlList.html
+.. _ControlList::set(): https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1ControlList.html#a74a1a29abff5243e6e37ace8e24eb4ba
 
 In our pipeline ``configure`` function, add the following code after the format
 has been set and checked to initialise the ControlList and apply it to the
@@ -1170,16 +1170,16 @@ libcamera also provides an API to allocate and export memory to applications
 realized through the `exportFrameBuffers`_ function and the
 `FrameBufferAllocator`_ class which will be presented later.
 
-.. _exportFrameBuffers: https://libcamera.org/api-html/classlibcamera_1_1PipelineHandler.html#a6312a69da7129c2ed41f9d9f790adf7c
-.. _FrameBufferAllocator: https://libcamera.org/api-html/classlibcamera_1_1FrameBufferAllocator.html
+.. _exportFrameBuffers: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1PipelineHandler.html#a6312a69da7129c2ed41f9d9f790adf7c
+.. _FrameBufferAllocator: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1FrameBufferAllocator.html
 
 Please refer to the V4L2VideoDevice API documentation, specifically the
 `allocateBuffers`_, `importBuffers`_ and `exportBuffers`_ functions for a
 detailed description of the video device memory management.
 
-.. _allocateBuffers: https://libcamera.org/api-html/classlibcamera_1_1V4L2VideoDevice.html#a3a1a77e5e6c220ea7878e89485864a1c
-.. _importBuffers: https://libcamera.org/api-html/classlibcamera_1_1V4L2VideoDevice.html#a154f5283d16ebd5e15d63e212745cb64
-.. _exportBuffers: https://libcamera.org/api-html/classlibcamera_1_1V4L2VideoDevice.html#ae9c0b0a68f350725b63b73a6da5a2ecd
+.. _allocateBuffers: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1V4L2VideoDevice.html#a3a1a77e5e6c220ea7878e89485864a1c
+.. _importBuffers: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1V4L2VideoDevice.html#a154f5283d16ebd5e15d63e212745cb64
+.. _exportBuffers: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1V4L2VideoDevice.html#ae9c0b0a68f350725b63b73a6da5a2ecd
 
 Video memory buffers are represented in libcamera by the `FrameBuffer`_ class.
 A ``FrameBuffer`` instance has to be associated to each ``Stream`` which is part
@@ -1188,7 +1188,7 @@ by importing the dma-buf file descriptors it needs to operate on. This operation
 is performed by using the ``V4L2VideoDevice`` API, which provides an
 ``importBuffers()`` function that prepares the video device accordingly.
 
-.. _FrameBuffer: https://libcamera.org/api-html/classlibcamera_1_1FrameBuffer.html
+.. _FrameBuffer: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1FrameBuffer.html
 
 Implement the pipeline handler ``start()`` function by replacing the stub
 version with the following code:
@@ -1219,13 +1219,13 @@ and exports it as dma-buf file descriptors. From this point on, the allocated
 imported by the pipeline hander in exactly the same fashion as if they were
 allocated elsewhere.
 
-.. _FrameBufferAllocator: https://libcamera.org/api-html/classlibcamera_1_1FrameBufferAllocator.html
+.. _FrameBufferAllocator: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1FrameBufferAllocator.html
 
 Pipeline handlers support the ``FrameBufferAllocator`` operations by
 implementing the `exportFrameBuffers`_ function, which will allocate memory in
 the video device associated with a stream and export it.
 
-.. _exportFrameBuffers: https://libcamera.org/api-html/classlibcamera_1_1PipelineHandler.html#a6312a69da7129c2ed41f9d9f790adf7c
+.. _exportFrameBuffers: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1PipelineHandler.html#a6312a69da7129c2ed41f9d9f790adf7c
 
 Implement the ``exportFrameBuffers`` stub function with the following code to
 handle this:
@@ -1257,14 +1257,14 @@ caller and the `releaseBuffers`_ function releases any buffers to leave the
 device in a consistent state. If your pipeline handler uses any image processing
 algorithms, or other devices you should also stop them.
 
-.. _streamOn: https://libcamera.org/api-html/classlibcamera_1_1V4L2VideoDevice.html#a588a5dc9d6f4c54c61136ac43ff9a8cc
-.. _releaseBuffers: https://libcamera.org/api-html/classlibcamera_1_1V4L2VideoDevice.html#a191619c152f764e03bc461611f3fcd35
+.. _streamOn: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1V4L2VideoDevice.html#a588a5dc9d6f4c54c61136ac43ff9a8cc
+.. _releaseBuffers: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1V4L2VideoDevice.html#a191619c152f764e03bc461611f3fcd35
 
 Of course we also need to handle the corresponding actions to stop streaming on
 a device, Add the following to the ``stop`` function, to stop the stream with
 the `streamOff`_ function and release all buffers.
 
-.. _streamOff: https://libcamera.org/api-html/classlibcamera_1_1V4L2VideoDevice.html#a61998710615bdf7aa25a046c8565ed66
+.. _streamOff: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1V4L2VideoDevice.html#a61998710615bdf7aa25a046c8565ed66
 
 .. code-block:: cpp
 
@@ -1287,8 +1287,8 @@ This example pipeline handler identifies the buffer using the `findBuffer`_
 helper from the only supported stream and queues it to the capture device
 directly with the `queueBuffer`_ function provided by the V4L2VideoDevice.
 
-.. _findBuffer: https://libcamera.org/api-html/classlibcamera_1_1Request.html#ac66050aeb9b92c64218945158559c4d4
-.. _queueBuffer: https://libcamera.org/api-html/classlibcamera_1_1V4L2VideoDevice.html#a594cd594686a8c1cf9ae8dba0b2a8a75
+.. _findBuffer: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1Request.html#ac66050aeb9b92c64218945158559c4d4
+.. _queueBuffer: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1V4L2VideoDevice.html#a594cd594686a8c1cf9ae8dba0b2a8a75
 
 Replace the stubbed contents of ``queueRequestDevice`` with the following:
 
@@ -1387,7 +1387,7 @@ This example pipeline handler applies controls during the `queueRequestDevice`_
 function for each request, and applies them to the capture device through the
 capture node.
 
-.. _queueRequestDevice: https://libcamera.org/api-html/classlibcamera_1_1PipelineHandler.html#a106914cca210640c9da9ee1f0419e83c
+.. _queueRequestDevice: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1PipelineHandler.html#a106914cca210640c9da9ee1f0419e83c
 
 In the ``queueRequestDevice`` function, replace the following:
 
@@ -1428,7 +1428,7 @@ of the libcamera implementation is available in the `libcamera Signal and Slot`_
 classes documentation.
 
 .. _Qt Signals and Slots: https://doc.qt.io/qt-6/signalsandslots.html
-.. _libcamera Signal and Slot: https://libcamera.org/api-html/classlibcamera_1_1Signal.html#details
+.. _libcamera Signal and Slot: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1Signal.html#details
 
 In order to notify applications about the availability of new frames and data,
 the ``Camera`` device exposes two ``Signals`` to which applications can connect
@@ -1455,7 +1455,7 @@ the PipelineHandler base class ``completeRequest`` function. The PipelineHandler
 class implementation makes sure the request completion notifications are
 delivered to applications in the same order as they have been submitted.
 
-.. _connecting: https://libcamera.org/api-html/classlibcamera_1_1Signal.html#aa04db72d5b3091ffbb4920565aeed382
+.. _connecting: https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1Signal.html#aa04db72d5b3091ffbb4920565aeed382
 
 Returning to the ``int VividCameraData::init()`` function, add the following
 above the closing ``return 0;`` to connect the pipeline handler ``bufferReady``
