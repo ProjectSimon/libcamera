@@ -1,0 +1,269 @@
+
+
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Environment variables &mdash; libcamera v0.3.2+rpt20241101+6-22e19df9 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="libcamera v0.3.2+rpt20241101+6-22e19df9 documentation" href="index.html"/>
+        <link rel="next" title="Feature Requirements" href="feature_requirements.html"/>
+        <link rel="prev" title="The libcamera camera sensor model" href="camera-sensor-model.html"/> 
+
+</head>
+
+<body role="document">
+  <header>
+    <div id="navbar">
+      <div class="navbar-brand">
+        <div class="navbar-logo">   _
++-/ \-+
+| (o) |
++-----+</div>
+        <div class="navbar-name"><span class="text-light">lib</span>camera</div>
+      </div>
+
+      <div class="navbar">
+        <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/application-developer.html">Application Writer's Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="camera-sensor-model.html">Camera Sensor Model</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_requirements.html">Feature Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/ipa.html">IPA Writer's guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lens_driver_requirements.html">Lens driver requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libcamera_architecture.html">libcamera Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/pipeline-handler.html">Pipeline Handler Writer's Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-bindings.html">Python Bindings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensor_driver_requirements.html">Sensor driver requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software-isp-benchmarking.html">SoftwareISP Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/tracing.html">Tracing guide</a></li>
+</ul>
+
+        <div class="searchbox" role="search">
+          <form class="search" action="search.html" method="get">
+            <input type="text" name="q" />
+	    <input type="submit" value="Go" />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <div id="content">
+    
+    <div class="block">
+      
+  <div class="documentation-nav docutils container">
+<ul>
+<li><p><strong>Documentation for Users</strong></p></li>
+<li><p><a class="reference internal" href="introduction.html"><span class="doc">Introduction</span></a></p></li>
+<li><p><a class="reference internal" href="feature_requirements.html"><span class="doc">Feature Requirements</span></a></p></li>
+<li><p><a class="reference internal" href="guides/application-developer.html"><span class="doc">Using libcamera in a C++ application</span></a></p></li>
+<li><p><a class="reference internal" href="python-bindings.html"><span class="doc">Python Bindings for libcamera</span></a></p></li>
+<li><p><a class="reference internal" href="#"><span class="doc">Environment variables</span></a></p></li>
+<li><p><a class="reference internal" href="api-html/index.html"><span class="doc">API Reference</span></a></p></li>
+<li><p><a class="reference internal" href="code-of-conduct.html"><span class="doc">Contributor Covenant Code of Conduct</span></a></p></li>
+<li><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p><strong>Documentation for Developers</strong></p></li>
+<li><p><a class="reference internal" href="libcamera_architecture.html"><span class="doc">libcamera Architecture</span></a></p></li>
+<li><p><a class="reference internal" href="guides/pipeline-handler.html"><span class="doc">Pipeline Handler Writers Guide</span></a></p></li>
+<li><p><a class="reference internal" href="guides/ipa.html"><span class="doc">IPA Writer’s Guide</span></a></p></li>
+<li><p><a class="reference internal" href="camera-sensor-model.html"><span class="doc">The libcamera camera sensor model</span></a></p></li>
+<li><p><a class="reference internal" href="guides/tracing.html"><span class="doc">Tracing Guide</span></a></p></li>
+<li><p><a class="reference internal" href="software-isp-benchmarking.html"><span class="doc">Software ISP benchmarking</span></a></p></li>
+<li><p><a class="reference internal" href="coding-style.html"><span class="doc">Coding Style Guidelines</span></a></p></li>
+<li><p><a class="reference internal" href="internal-api-html/index.html"><span class="doc">Internal API Reference</span></a></p></li>
+<li><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p><strong>Documentation for System Integrators</strong></p></li>
+<li><p><a class="reference internal" href="lens_driver_requirements.html"><span class="doc">Lens Driver Requirements</span></a></p></li>
+<li><p><a class="reference internal" href="sensor_driver_requirements.html"><span class="doc">Sensor Driver Requirements</span></a></p></li>
+</ul>
+</div>
+<section class="documentation" id="environment-variables">
+<h1>Environment variables<a class="headerlink" href="#environment-variables" title="Link to this heading">¶</a></h1>
+<p>The libcamera behaviour can be tuned through environment variables. This
+document lists all the available variables and describes their usage.</p>
+<section id="list-of-variables">
+<h2>List of variables<a class="headerlink" href="#list-of-variables" title="Link to this heading">¶</a></h2>
+<dl>
+<dt>LIBCAMERA_LOG_FILE</dt><dd><p>The custom destination for log output.</p>
+<p>Example value: <code class="docutils literal notranslate"><span class="pre">/home/{user}/camera_log.log</span></code></p>
+</dd>
+<dt>LIBCAMERA_LOG_LEVELS</dt><dd><p>Configure the verbosity of log messages for different categories (<a class="reference internal" href="#log-levels">more</a>).</p>
+<p>Example value: <code class="docutils literal notranslate"><span class="pre">*:DEBUG</span></code></p>
+</dd>
+<dt>LIBCAMERA_LOG_NO_COLOR</dt><dd><p>Disable coloring of log messages (<a class="reference internal" href="#notes-about-debugging">more</a>).</p>
+</dd>
+<dt>LIBCAMERA_IPA_CONFIG_PATH</dt><dd><p>Define custom search locations for IPA configurations (<a class="reference internal" href="#ipa-configuration">more</a>).</p>
+<p>Example value: <code class="docutils literal notranslate"><span class="pre">${HOME}/.libcamera/share/ipa:/opt/libcamera/vendor/share/ipa</span></code></p>
+</dd>
+<dt>LIBCAMERA_IPA_FORCE_ISOLATION</dt><dd><p>When set to a non-empty string, force process isolation of all IPA modules.</p>
+<p>Example value: <code class="docutils literal notranslate"><span class="pre">1</span></code></p>
+</dd>
+<dt>LIBCAMERA_IPA_MODULE_PATH</dt><dd><p>Define custom search locations for IPA modules (<a class="reference internal" href="#ipa-module">more</a>).</p>
+<p>Example value: <code class="docutils literal notranslate"><span class="pre">${HOME}/.libcamera/lib:/opt/libcamera/vendor/lib</span></code></p>
+</dd>
+<dt>LIBCAMERA_IPA_PROXY_PATH</dt><dd><p>Define custom full path for a proxy worker for a given executable name.</p>
+<p>Example value: <code class="docutils literal notranslate"><span class="pre">${HOME}/.libcamera/proxy/worker:/opt/libcamera/vendor/proxy/worker</span></code></p>
+</dd>
+<dt>LIBCAMERA_PIPELINES_MATCH_LIST</dt><dd><p>Define an ordered list of pipeline names to be used to match the media
+devices in the system. The pipeline handler names used to populate the
+variable are the ones passed to the REGISTER_PIPELINE_HANDLER() macro in the
+source code.</p>
+<p>Example value: <code class="docutils literal notranslate"><span class="pre">rkisp1,simple</span></code></p>
+</dd>
+<dt>LIBCAMERA_RPI_CONFIG_FILE</dt><dd><p>Define a custom configuration file to use in the Raspberry Pi pipeline handler.</p>
+<p>Example value: <code class="docutils literal notranslate"><span class="pre">/usr/local/share/libcamera/pipeline/rpi/vc4/minimal_mem.yaml</span></code></p>
+</dd>
+<dt>LIBCAMERA_RPI_TUNING_FILE</dt><dd><p>Define a custom JSON tuning file to use in the Raspberry Pi.</p>
+<p>Example value: <code class="docutils literal notranslate"><span class="pre">/usr/local/share/libcamera/ipa/rpi/vc4/custom_sensor.json</span></code></p>
+</dd>
+</dl>
+</section>
+<section id="further-details">
+<h2>Further details<a class="headerlink" href="#further-details" title="Link to this heading">¶</a></h2>
+<section id="notes-about-debugging">
+<h3>Notes about debugging<a class="headerlink" href="#notes-about-debugging" title="Link to this heading">¶</a></h3>
+<p>The environment variables <code class="docutils literal notranslate"><span class="pre">LIBCAMERA_LOG_FILE</span></code>, <code class="docutils literal notranslate"><span class="pre">LIBCAMERA_LOG_LEVELS</span></code> and
+<code class="docutils literal notranslate"><span class="pre">LIBCAMERA_LOG_NO_COLOR</span></code> are used to modify the default configuration of the
+libcamera logger.</p>
+<p>By default, libcamera logs all messages to the standard error (std::cerr).
+Messages are colored by default depending on the log level. Coloring can be
+disabled by setting the <code class="docutils literal notranslate"><span class="pre">LIBCAMERA_LOG_NO_COLOR</span></code> environment variable.</p>
+<p>The default log destination can also be directed to a file by setting the
+<code class="docutils literal notranslate"><span class="pre">LIBCAMERA_LOG_FILE</span></code> environment variable to the log file name. This also
+disables coloring.</p>
+<p>Log levels are controlled through the <code class="docutils literal notranslate"><span class="pre">LIBCAMERA_LOG_LEVELS</span></code> variable, which
+accepts a comma-separated list of ‘category:level’ pairs.</p>
+<p>The <a class="reference internal" href="#log-levels">level</a> part is mandatory and can either be specified by
+name or by numerical index associated with each level.</p>
+<p>The optional <a class="reference internal" href="#log-categories">category</a> is a string matching the categories
+defined by each file in the source base using the logging infrastructure. It
+can include a wildcard (‘*’) character at the end to match multiple categories.</p>
+<p>For more information refer to the <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/log_8h.html#details">API documentation</a>.</p>
+<p>Examples:</p>
+<p>Enable full debug output to a separate file, for every <a class="reference internal" href="#log-categories">category</a>
+within a local environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>:~$<span class="w"> </span><span class="nv">LIBCAMERA_LOG_FILE</span><span class="o">=</span><span class="s1">&#39;/tmp/example_log.log&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">LIBCAMERA_LOG_LEVELS</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>cam<span class="w"> </span>--list
+</pre></div>
+</div>
+<p>Enable full debug output for the categories <code class="docutils literal notranslate"><span class="pre">Camera</span></code> and <code class="docutils literal notranslate"><span class="pre">V4L2</span></code> within a
+global environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>:~$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">LIBCAMERA_LOG_LEVELS</span><span class="o">=</span><span class="s1">&#39;Camera:DEBUG,V4L2:DEBUG&#39;</span>
+:~$<span class="w"> </span>cam<span class="w"> </span>--list
+</pre></div>
+</div>
+</section>
+<section id="log-levels">
+<h3>Log levels<a class="headerlink" href="#log-levels" title="Link to this heading">¶</a></h3>
+<p>This is the list of available log levels, notice that all levels below
+the chosen one are printed, while those above are discarded.</p>
+<ul class="simple">
+<li><p>DEBUG (0)</p></li>
+<li><p>INFO (1)</p></li>
+<li><p>WARN (2)</p></li>
+<li><p>ERROR (3)</p></li>
+<li><p>FATAL (4)</p></li>
+</ul>
+<p>Example:
+If you choose WARN (2), you will be able to see WARN (2), ERROR (3) and FATAL (4)
+but not DEBUG (0) and INFO (1).</p>
+</section>
+<section id="log-categories">
+<h3>Log categories<a class="headerlink" href="#log-categories" title="Link to this heading">¶</a></h3>
+<p>Every category represents a specific area of the libcamera codebase,
+the names can be located within the source code, for example:
+<a class="reference external" href="https://git.libcamera.org/libcamera/libcamera.git/tree/src/libcamera/camera_manager.cpp#n35">src/libcamera/camera_manager.cpp</a></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">LOG_DEFINE_CATEGORY</span><span class="p">(</span><span class="n">Camera</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>There are two available macros used to assign a category name to a part of the
+libcamera codebase:</p>
+<dl class="simple">
+<dt>LOG_DEFINE_CATEGORY</dt><dd><p>This macro is required, in order to use the <code class="docutils literal notranslate"><span class="pre">LOGC</span></code> macro for a particular
+category. It can only be used once for each category. If you want to create
+log messages within multiple compilation units for the same category utilize
+the <code class="docutils literal notranslate"><span class="pre">LOG_DECLARE_CATEGORY</span></code> macro, in every file except the definition file.</p>
+</dd>
+<dt>LOG_DECLARE_CATEGORY</dt><dd><p>Used for sharing an already defined category between multiple separate
+compilation units.</p>
+</dd>
+</dl>
+<p>Both macros have to be used within the libcamera namespace of the C++ source
+code.</p>
+</section>
+<section id="ipa-configuration">
+<h3>IPA configuration<a class="headerlink" href="#ipa-configuration" title="Link to this heading">¶</a></h3>
+<p>IPA modules use configuration files to store parameters. The format and
+contents of the configuration files is specific to the IPA module. They usually
+contain tuning parameters for the algorithms, in JSON format.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">LIBCAMERA_IPA_CONFIG_PATH</span></code> variable can be used to specify custom
+storage locations to search for those configuration files.</p>
+<p><a class="reference external" href="https://git.libcamera.org/libcamera/libcamera.git/tree/src/ipa/rpi/vc4/data">Examples</a></p>
+</section>
+<section id="ipa-module">
+<h3>IPA module<a class="headerlink" href="#ipa-module" title="Link to this heading">¶</a></h3>
+<p>In order to locate the correct IPA module for your hardware, libcamera gathers
+existing IPA modules from multiple locations. The default locations for this
+operation are the installed system path (for example on Debian:
+<code class="docutils literal notranslate"><span class="pre">/usr/local/x86_64-pc-linux-gnu/libcamera</span></code>) and the build directory.
+With the <code class="docutils literal notranslate"><span class="pre">LIBCAMERA_IPA_MODULE_PATH</span></code>, you can specify a non-default location
+to search for IPA modules.</p>
+</section>
+</section>
+</section>
+
+
+    </div>
+  </div>
+
+  
+<footer>
+  <div id="signature">
+        &copy; Copyright 2018-2019, The libcamera documentation authors.
+  </div>
+</footer>
+</body>
+</html>

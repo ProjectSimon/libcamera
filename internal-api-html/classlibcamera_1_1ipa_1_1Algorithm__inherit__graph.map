@@ -1,0 +1,8 @@
+<map id="libcamera::ipa::Algorithm&lt; _Module &gt;" name="libcamera::ipa::Algorithm&lt; _Module &gt;">
+<area shape="rect" id="node1" title="The base class for all IPA algorithms." alt="" coords="5,136,192,177"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1Af.html" title="An auto&#45;focus algorithm based on IPU3 statistics." alt="" coords="263,5,463,47"/>
+<area shape="rect" id="node3" href="$classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1Agc.html" title="A mean&#45;based auto&#45;exposure algorithm." alt="" coords="258,71,469,112"/>
+<area shape="rect" id="node4" href="$classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1Awb.html" title="A Grey world white balance correction algorithm." alt="" coords="256,136,471,177"/>
+<area shape="rect" id="node5" href="$classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1BlackLevelCorrection.html" title="A class to handle black level correction." alt="" coords="240,202,487,258"/>
+<area shape="rect" id="node6" href="$classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1ToneMapping.html" title="A class to handle tone mapping based on gamma." alt="" coords="266,282,461,338"/>
+</map>

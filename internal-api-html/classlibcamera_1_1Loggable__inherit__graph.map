@@ -1,0 +1,12 @@
+<map id="libcamera::Loggable" name="libcamera::Loggable">
+<area shape="rect" id="node1" title="Base class to support log message extensions." alt="" coords="5,132,160,159"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1CameraLens.html" title="A camera lens based on V4L2 subdevices." alt="" coords="223,5,399,32"/>
+<area shape="rect" id="node3" href="$classlibcamera_1_1CameraSensor.html" title="A camera sensor based on V4L2 subdevices." alt="" coords="216,56,407,83"/>
+<area shape="rect" id="node4" href="$classlibcamera_1_1IPAModule.html" title="Wrapper around IPA module shared object." alt="" coords="230,107,393,133"/>
+<area shape="rect" id="node5" href="$classlibcamera_1_1MediaDevice.html" title="The MediaDevice represents a Media Controller device with its full graph of connected objects." alt="" coords="221,157,401,184"/>
+<area shape="rect" id="node6" href="$classlibcamera_1_1V4L2Device.html" title="Base class for V4L2VideoDevice and V4L2Subdevice." alt="" coords="225,208,397,235"/>
+<area shape="rect" id="node9" href="$classlibcamera_1_1ipa_1_1Module.html" title="The base class for all IPA modules." alt="" coords="208,265,415,321"/>
+<area shape="rect" id="node7" href="$classlibcamera_1_1V4L2Subdevice.html" title="A V4L2 subdevice as exposed by the Linux kernel." alt="" coords="483,157,678,184"/>
+<area shape="rect" id="node8" href="$classlibcamera_1_1V4L2VideoDevice.html" title="V4L2VideoDevice object and API." alt="" coords="476,208,685,235"/>
+<area shape="rect" id="node10" href="$classlibcamera_1_1ipa_1_1ipu3_1_1IPAIPU3.html" title="The IPU3 IPA implementation." alt="" coords="463,259,699,344"/>
+</map>

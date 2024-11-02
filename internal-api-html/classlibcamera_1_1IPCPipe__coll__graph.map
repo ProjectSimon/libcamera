@@ -1,0 +1,5 @@
+<map id="libcamera::IPCPipe" name="libcamera::IPCPipe">
+<area shape="rect" id="node1" title="IPC message pipe for IPA isolation." alt="" coords="57,185,201,212"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1Signal.html" title=" " alt="" coords="5,81,252,123"/>
+<area shape="rect" id="node3" title=" " alt="" coords="45,5,212,32"/>
+</map>

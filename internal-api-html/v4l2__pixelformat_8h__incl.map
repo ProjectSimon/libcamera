@@ -1,0 +1,10 @@
+<map id="include/libcamera/internal/v4l2_pixelformat.h" name="include/libcamera/internal/v4l2_pixelformat.h">
+<area shape="rect" id="node1" title="V4L2 Pixel Format." alt="" coords="215,5,407,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,95,92,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="133,169,209,196"/>
+<area shape="rect" id="node4" title=" " alt="" coords="255,169,325,196"/>
+<area shape="rect" id="node5" title=" " alt="" coords="381,169,439,196"/>
+<area shape="rect" id="node6" title=" " alt="" coords="480,95,543,121"/>
+<area shape="rect" id="node7" title=" " alt="" coords="567,95,706,121"/>
+<area shape="rect" id="node8" href="$pixel__format_8h.html" title="libcamera pixel format" alt="" coords="219,95,404,121"/>
+</map>

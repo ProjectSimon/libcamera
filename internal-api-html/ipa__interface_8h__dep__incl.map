@@ -1,0 +1,11 @@
+<map id="include/libcamera/ipa/ipa_interface.h" name="include/libcamera/ipa/ipa_interface.h">
+<area shape="rect" id="node1" title="Image Processing Algorithm interface." alt="" coords="287,5,449,47"/>
+<area shape="rect" id="node2" href="$ipa__data__serializer_8h.html" title="IPA Data Serializer." alt="" coords="5,95,197,136"/>
+<area shape="rect" id="node3" href="$ipa__manager_8h.html" title="Image Processing Algorithm module manager." alt="" coords="272,184,464,225"/>
+<area shape="rect" id="node5" href="$ipa__module_8h.html" title="Image Processing Algorithm module." alt="" coords="272,95,464,136"/>
+<area shape="rect" id="node6" href="$ipa__proxy_8h.html" title="IPA Proxy." alt="" coords="488,95,680,136"/>
+<area shape="rect" id="node7" href="$core__ipa__interface_8h.html" title="libcamera structs for IPAs" alt="" coords="705,95,887,136"/>
+<area shape="rect" id="node4" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="391,363,561,404"/>
+<area shape="rect" id="node8" href="$camera__sensor_8h.html" title="A camera sensor." alt="" coords="593,184,785,225"/>
+<area shape="rect" id="node9" href="$software__isp_8h_source.html" title=" " alt="" coords="462,273,669,315"/>
+</map>

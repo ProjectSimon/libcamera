@@ -1,0 +1,4 @@
+<map id="libcamera::EventDispatcherPoll" name="libcamera::EventDispatcherPoll">
+<area shape="rect" id="node1" title="A poll&#45;based event dispatcher." alt="" coords="5,80,232,107"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1EventDispatcher.html" title="Interface to manage the libcamera events and timers." alt="" coords="17,5,220,32"/>
+</map>

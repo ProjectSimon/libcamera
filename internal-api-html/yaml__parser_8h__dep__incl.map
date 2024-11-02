@@ -1,0 +1,12 @@
+<map id="include/libcamera/internal/yaml_parser.h" name="include/libcamera/internal/yaml_parser.h">
+<area shape="rect" id="node1" title="A YAML parser helper." alt="" coords="463,5,655,47"/>
+<area shape="rect" id="node2" href="$agc__mean__luminance_8h.html" title="Base class implementing mean luminance AEGC." alt="" coords="14,95,167,136"/>
+<area shape="rect" id="node4" href="$interpolator_8h.html" title="Helper class for linear interpolating a set of objects." alt="" coords="191,102,387,129"/>
+<area shape="rect" id="node5" href="$lsc__polynomial_8h.html" title="LscPolynomial class." alt="" coords="411,95,538,136"/>
+<area shape="rect" id="node6" href="$matrix_8h.html" title="Matrix class." alt="" coords="562,102,726,129"/>
+<area shape="rect" id="node7" href="$vector_8h.html" title="Vector class." alt="" coords="591,191,753,218"/>
+<area shape="rect" id="node9" href="$libipa_2module_8h.html" title="IPA Module common interface." alt="" coords="801,102,972,129"/>
+<area shape="rect" id="node3" href="$agc_8h.html" title=" " alt="" coords="5,184,176,225"/>
+<area shape="rect" id="node8" href="$pwl_8h.html" title="Piecewise linear functions." alt="" coords="600,273,744,300"/>
+<area shape="rect" id="node10" href="$ipu3_2module_8h_source.html" title=" " alt="" coords="805,191,968,218"/>
+</map>

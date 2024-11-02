@@ -1,0 +1,30 @@
+<map id="include/libcamera/base/signal.h" name="include/libcamera/base/signal.h">
+<area shape="rect" id="node1" title="Signal &amp; slot implementation." alt="" coords="1213,5,1386,47"/>
+<area shape="rect" id="node2" href="$event__notifier_8h.html" title="File descriptor event notifier." alt="" coords="529,95,702,136"/>
+<area shape="rect" id="node4" href="$thread_8h.html" title="Thread support." alt="" coords="1702,95,1876,136"/>
+<area shape="rect" id="node8" href="$software__isp_8h_source.html" title=" " alt="" coords="904,363,1111,404"/>
+<area shape="rect" id="node9" href="$timer_8h.html" title="Generic timer." alt="" coords="332,95,505,136"/>
+<area shape="rect" id="node10" href="$v4l2__videodevice_8h.html" title="V4L2 Video Device." alt="" coords="281,184,473,225"/>
+<area shape="rect" id="node11" href="$camera_8h.html" title="Camera device handling." alt="" coords="1132,191,1334,218"/>
+<area shape="rect" id="node14" href="$camera__manager_8h.html" title="The camera manager." alt="" coords="1487,95,1678,136"/>
+<area shape="rect" id="node15" href="$converter__v4l2__m2m_8h.html" title="V4L2 M2M based converter." alt="" coords="744,184,986,225"/>
+<area shape="rect" id="node16" href="$converter_8h.html" title="Abstract converter." alt="" coords="777,95,969,136"/>
+<area shape="rect" id="node17" href="$device__enumerator_8h.html" title="Enumeration and matching of media devices." alt="" coords="1270,95,1462,136"/>
+<area shape="rect" id="node18" href="$ipc__pipe_8h.html" title="IPC mechanism for IPA isolation." alt="" coords="2357,184,2549,225"/>
+<area shape="rect" id="node19" href="$ipc__unixsocket_8h.html" title="IPC mechanism based on Unix sockets." alt="" coords="2332,95,2524,136"/>
+<area shape="rect" id="node20" href="$media__device_8h.html" title="Provide a representation of a Linux kernel Media Controller device that exposes the full graph topolo..." alt="" coords="1900,95,2092,136"/>
+<area shape="rect" id="node21" href="$process_8h.html" title="Process object." alt="" coords="2116,95,2308,136"/>
+<area shape="rect" id="node22" href="$v4l2__device_8h.html" title="Common base for V4L2 devices and subdevices." alt="" coords="65,95,257,136"/>
+<area shape="rect" id="node25" href="$request_8h.html" title="Describes a frame capture request to be processed by a camera." alt="" coords="993,102,1196,129"/>
+<area shape="rect" id="node26" href="$debayer_8h_source.html" title=" " alt="" coords="2598,95,2769,136"/>
+<area shape="rect" id="node28" href="$swstats__cpu_8h_source.html" title=" " alt="" coords="2793,95,2964,136"/>
+<area shape="rect" id="node3" href="$internal_2request_8h.html" title="Internal support for request handling." alt="" coords="520,184,712,225"/>
+<area shape="rect" id="node5" href="$internal_2camera__manager_8h.html" title="Internal camera manager support." alt="" coords="1693,184,1885,225"/>
+<area shape="rect" id="node6" href="$ipa__manager_8h.html" title="Image Processing Algorithm module manager." alt="" coords="1693,363,1885,404"/>
+<area shape="rect" id="node7" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="1704,452,1874,493"/>
+<area shape="rect" id="node12" href="$internal_2camera_8h.html" title="Internal camera device handling." alt="" coords="1014,273,1206,315"/>
+<area shape="rect" id="node13" href="$libcamera_8h_source.html" title=" " alt="" coords="1231,273,1406,315"/>
+<area shape="rect" id="node23" href="$v4l2__subdevice_8h.html" title="V4L2 Subdevice API." alt="" coords="65,184,257,225"/>
+<area shape="rect" id="node24" href="$camera__sensor_8h.html" title="A camera sensor." alt="" coords="474,273,666,315"/>
+<area shape="rect" id="node27" href="$debayer__cpu_8h_source.html" title=" " alt="" coords="2598,184,2769,225"/>
+</map>

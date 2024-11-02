@@ -1,0 +1,6 @@
+<map id="libcamera::Camera" name="libcamera::Camera">
+<area shape="rect" id="node1" title="Camera device." alt="" coords="179,95,326,121"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1Object.html" title="Base object to support automatic signal disconnection." alt="" coords="5,13,143,39"/>
+<area shape="rect" id="node3" title=" " alt="" coords="167,5,339,47"/>
+<area shape="rect" id="node4" href="$classlibcamera_1_1Extensible.html" title="Base class to manage private data through a d&#45;pointer." alt="" coords="363,13,526,39"/>
+</map>

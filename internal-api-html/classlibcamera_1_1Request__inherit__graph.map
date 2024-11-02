@@ -1,0 +1,4 @@
+<map id="libcamera::Request" name="libcamera::Request">
+<area shape="rect" id="node1" title="A frame capture request." alt="" coords="13,80,161,107"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1Extensible.html" title="Base class to manage private data through a d&#45;pointer." alt="" coords="5,5,168,32"/>
+</map>

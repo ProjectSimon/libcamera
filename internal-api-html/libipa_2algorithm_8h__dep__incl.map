@@ -1,0 +1,11 @@
+<map id="src/ipa/libipa/algorithm.h" name="src/ipa/libipa/algorithm.h">
+<area shape="rect" id="node1" title="Algorithm common interface." alt="" coords="611,5,795,32"/>
+<area shape="rect" id="node2" href="$ipu3_2algorithms_2algorithm_8h_source.html" title=" " alt="" coords="521,80,691,121"/>
+<area shape="rect" id="node8" href="$libipa_2module_8h.html" title="IPA Module common interface." alt="" coords="859,87,1030,114"/>
+<area shape="rect" id="node3" href="$af_8h.html" title=" " alt="" coords="5,177,204,203"/>
+<area shape="rect" id="node4" href="$agc_8h.html" title=" " alt="" coords="229,169,399,211"/>
+<area shape="rect" id="node5" href="$awb_8h.html" title=" " alt="" coords="423,169,594,211"/>
+<area shape="rect" id="node6" href="$blc_8h.html" title="IPU3 Black Level Correction control." alt="" coords="618,169,789,211"/>
+<area shape="rect" id="node7" href="$tone__mapping_8h.html" title=" " alt="" coords="813,169,983,211"/>
+<area shape="rect" id="node9" href="$ipu3_2module_8h_source.html" title=" " alt="" coords="1007,177,1170,203"/>
+</map>

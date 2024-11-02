@@ -1,0 +1,4 @@
+<map id="libcamera::CameraSensor" name="libcamera::CameraSensor">
+<area shape="rect" id="node1" title="A camera sensor based on V4L2 subdevices." alt="" coords="5,80,196,107"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1Loggable.html" title="Base class to support log message extensions." alt="" coords="23,5,178,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="libcamera::ipa::FrameContext" name="libcamera::ipa::FrameContext">
+<area shape="rect" id="node1" title="Context for a frame." alt="" coords="5,5,220,32"/>
+<area shape="rect" id="node2" href="$structlibcamera_1_1ipa_1_1ipu3_1_1IPAFrameContext.html" title="IPU3&#45;specific FrameContext." alt="" coords="37,80,188,121"/>
+</map>

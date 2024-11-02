@@ -1,0 +1,9 @@
+<map id="libcamera::Object" name="libcamera::Object">
+<area shape="rect" id="node1" title="Base object to support automatic signal disconnection." alt="" coords="5,132,143,159"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1Camera.html" title="Camera device." alt="" coords="219,5,365,32"/>
+<area shape="rect" id="node3" href="$classlibcamera_1_1CameraManager.html" title="Provide access and manage all cameras in the system." alt="" coords="191,56,393,83"/>
+<area shape="rect" id="node4" href="$classlibcamera_1_1DebayerCpu.html" title="Class for debayering on the CPU." alt="" coords="205,107,379,133"/>
+<area shape="rect" id="node5" href="$classlibcamera_1_1EventNotifier.html" title="Notify of activity on a file descriptor." alt="" coords="202,157,382,184"/>
+<area shape="rect" id="node6" href="$classlibcamera_1_1PipelineHandler.html" title="Create and manage cameras based on a set of media devices." alt="" coords="193,208,391,235"/>
+<area shape="rect" id="node7" href="$classlibcamera_1_1Timer.html" title="Single&#45;shot timer interface." alt="" coords="225,259,359,285"/>
+</map>

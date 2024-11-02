@@ -1,0 +1,4 @@
+<map id="libcamera::Timer" name="libcamera::Timer">
+<area shape="rect" id="node1" title="Single&#45;shot timer interface." alt="" coords="7,80,141,107"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1Object.html" title="Base object to support automatic signal disconnection." alt="" coords="5,5,143,32"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="build/include/libcamera/control_ids.h" name="build/include/libcamera/control_ids.h">
+<area shape="rect" id="node1" title="Camera controls identifiers." alt="" coords="359,5,533,47"/>
+<area shape="rect" id="node2" href="$camera__sensor_8h.html" title="A camera sensor." alt="" coords="13,95,205,136"/>
+<area shape="rect" id="node5" href="$camera__sensor__properties_8h.html" title="Database of camera sensor properties." alt="" coords="229,95,439,136"/>
+<area shape="rect" id="node6" href="$ipa__data__serializer_8h.html" title="IPA Data Serializer." alt="" coords="463,95,655,136"/>
+<area shape="rect" id="node7" href="$libcamera_8h_source.html" title=" " alt="" coords="680,95,855,136"/>
+<area shape="rect" id="node3" href="$software__isp_8h_source.html" title=" " alt="" coords="5,184,212,225"/>
+<area shape="rect" id="node4" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="23,273,194,315"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="libcamera::V4L2Device" name="libcamera::V4L2Device">
+<area shape="rect" id="node1" title="Base class for V4L2VideoDevice and V4L2Subdevice." alt="" coords="51,185,223,212"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1Loggable.html" title="Base class to support log message extensions." alt="" coords="5,89,160,115"/>
+<area shape="rect" id="node3" href="$classlibcamera_1_1Signal.html" title=" " alt="" coords="184,81,331,123"/>
+<area shape="rect" id="node4" title=" " alt="" coords="174,5,341,32"/>
+</map>

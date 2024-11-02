@@ -1,0 +1,7 @@
+<map id="include/libcamera/request.h" name="include/libcamera/request.h">
+<area shape="rect" id="node1" title="Describes a frame capture request to be processed by a camera." alt="" coords="208,5,411,32"/>
+<area shape="rect" id="node2" href="$camera_8h.html" title="Camera device handling." alt="" coords="69,87,272,114"/>
+<area shape="rect" id="node4" href="$libcamera_8h_source.html" title=" " alt="" coords="222,169,397,211"/>
+<area shape="rect" id="node5" href="$internal_2request_8h.html" title="Internal support for request handling." alt="" coords="347,80,539,121"/>
+<area shape="rect" id="node3" href="$internal_2camera_8h.html" title="Internal camera device handling." alt="" coords="5,169,197,211"/>
+</map>

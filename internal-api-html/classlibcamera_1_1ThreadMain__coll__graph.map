@@ -1,0 +1,6 @@
+<map id="libcamera::ThreadMain" name="libcamera::ThreadMain">
+<area shape="rect" id="node1" title="Thread wrapper for the main thread." alt="" coords="5,261,177,288"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1Thread.html" title="A thread of execution." alt="" coords="21,185,161,212"/>
+<area shape="rect" id="node3" href="$classlibcamera_1_1Signal.html" title="Generic signal and slot communication mechanism." alt="" coords="18,81,165,123"/>
+<area shape="rect" id="node4" title=" " alt="" coords="8,5,175,32"/>
+</map>

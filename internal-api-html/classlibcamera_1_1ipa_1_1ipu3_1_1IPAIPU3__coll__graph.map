@@ -1,0 +1,6 @@
+<map id="libcamera::ipa::ipu3::IPAIPU3" name="libcamera::ipa::ipu3::IPAIPU3">
+<area shape="rect" id="node1" title="The IPU3 IPA implementation." alt="" coords="58,155,209,196"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,80,136,107"/>
+<area shape="rect" id="node3" href="$classlibcamera_1_1ipa_1_1Module.html" title="The base class for all IPA modules." alt="" coords="161,80,231,107"/>
+<area shape="rect" id="node4" href="$classlibcamera_1_1Loggable.html" title="Base class to support log message extensions." alt="" coords="119,5,273,32"/>
+</map>

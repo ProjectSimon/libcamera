@@ -1,0 +1,260 @@
+
+
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Feature Requirements &mdash; libcamera v0.3.2+rpt20241101+6-22e19df9 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="libcamera v0.3.2+rpt20241101+6-22e19df9 documentation" href="index.html"/>
+        <link rel="next" title="IPA Writer’s Guide" href="guides/ipa.html"/>
+        <link rel="prev" title="Environment variables" href="environment_variables.html"/> 
+
+</head>
+
+<body role="document">
+  <header>
+    <div id="navbar">
+      <div class="navbar-brand">
+        <div class="navbar-logo">   _
++-/ \-+
+| (o) |
++-----+</div>
+        <div class="navbar-name"><span class="text-light">lib</span>camera</div>
+      </div>
+
+      <div class="navbar">
+        <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/application-developer.html">Application Writer's Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="camera-sensor-model.html">Camera Sensor Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">Environment variables</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Feature Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/ipa.html">IPA Writer's guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lens_driver_requirements.html">Lens driver requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libcamera_architecture.html">libcamera Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/pipeline-handler.html">Pipeline Handler Writer's Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-bindings.html">Python Bindings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensor_driver_requirements.html">Sensor driver requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software-isp-benchmarking.html">SoftwareISP Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/tracing.html">Tracing guide</a></li>
+</ul>
+
+        <div class="searchbox" role="search">
+          <form class="search" action="search.html" method="get">
+            <input type="text" name="q" />
+	    <input type="submit" value="Go" />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <div id="content">
+    
+    <div class="block">
+      
+  <div class="documentation-nav docutils container">
+<ul>
+<li><p><strong>Documentation for Users</strong></p></li>
+<li><p><a class="reference internal" href="introduction.html"><span class="doc">Introduction</span></a></p></li>
+<li><p><a class="reference internal" href="#"><span class="doc">Feature Requirements</span></a></p></li>
+<li><p><a class="reference internal" href="guides/application-developer.html"><span class="doc">Using libcamera in a C++ application</span></a></p></li>
+<li><p><a class="reference internal" href="python-bindings.html"><span class="doc">Python Bindings for libcamera</span></a></p></li>
+<li><p><a class="reference internal" href="environment_variables.html"><span class="doc">Environment variables</span></a></p></li>
+<li><p><a class="reference internal" href="api-html/index.html"><span class="doc">API Reference</span></a></p></li>
+<li><p><a class="reference internal" href="code-of-conduct.html"><span class="doc">Contributor Covenant Code of Conduct</span></a></p></li>
+<li><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p><strong>Documentation for Developers</strong></p></li>
+<li><p><a class="reference internal" href="libcamera_architecture.html"><span class="doc">libcamera Architecture</span></a></p></li>
+<li><p><a class="reference internal" href="guides/pipeline-handler.html"><span class="doc">Pipeline Handler Writers Guide</span></a></p></li>
+<li><p><a class="reference internal" href="guides/ipa.html"><span class="doc">IPA Writer’s Guide</span></a></p></li>
+<li><p><a class="reference internal" href="camera-sensor-model.html"><span class="doc">The libcamera camera sensor model</span></a></p></li>
+<li><p><a class="reference internal" href="guides/tracing.html"><span class="doc">Tracing Guide</span></a></p></li>
+<li><p><a class="reference internal" href="software-isp-benchmarking.html"><span class="doc">Software ISP benchmarking</span></a></p></li>
+<li><p><a class="reference internal" href="coding-style.html"><span class="doc">Coding Style Guidelines</span></a></p></li>
+<li><p><a class="reference internal" href="internal-api-html/index.html"><span class="doc">Internal API Reference</span></a></p></li>
+<li><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p><strong>Documentation for System Integrators</strong></p></li>
+<li><p><a class="reference internal" href="lens_driver_requirements.html"><span class="doc">Lens Driver Requirements</span></a></p></li>
+<li><p><a class="reference internal" href="sensor_driver_requirements.html"><span class="doc">Sensor Driver Requirements</span></a></p></li>
+</ul>
+</div>
+<section class="documentation" id="feature-requirements">
+<h1>Feature Requirements<a class="headerlink" href="#feature-requirements" title="Link to this heading">¶</a></h1>
+<section id="device-enumeration">
+<h2>Device enumeration<a class="headerlink" href="#device-enumeration" title="Link to this heading">¶</a></h2>
+<p>The library shall support enumerating all camera devices available in the
+system, including both fixed cameras and hotpluggable cameras. It shall
+support cameras plugged and unplugged after the initialization of the
+library, and shall offer a mechanism to notify applications of camera plug
+and unplug.</p>
+<p>The following types of cameras shall be supported:</p>
+<ul class="simple">
+<li><p>Internal cameras designed for point-and-shoot still image and video
+capture usage, either controlled directly by the CPU, or exposed through
+an internal USB bus as a UVC device.</p></li>
+<li><p>External UVC cameras designed for video conferencing usage.</p></li>
+</ul>
+<p>Other types of camera, including analog cameras, depth cameras, thermal
+cameras, external digital picture or movie cameras, are out of scope for
+this project.</p>
+<p>A hardware device that includes independent camera sensors, such as front
+and back sensors in a phone, shall be considered as multiple camera devices
+for the purpose of this library.</p>
+</section>
+<section id="independent-camera-devices">
+<h2>Independent Camera Devices<a class="headerlink" href="#independent-camera-devices" title="Link to this heading">¶</a></h2>
+<p>When multiple cameras are present in the system and are able to operate
+independently from each other, the library shall expose them as multiple
+camera devices and support parallel operation without any additional usage
+restriction apart from the limitations inherent to the hardware (such as
+memory bandwidth, CPU usage or number of CSI-2 receivers for instance).</p>
+<p>Independent processes shall be able to use independent cameras devices
+without interfering with each other. A single camera device shall be
+usable by a single process at a time.</p>
+</section>
+<section id="multiple-streams-support">
+<h2>Multiple streams support<a class="headerlink" href="#multiple-streams-support" title="Link to this heading">¶</a></h2>
+<p>The library shall support multiple video streams running in parallel
+for each camera device, within the limits imposed by the system.</p>
+</section>
+<section id="per-frame-controls">
+<h2>Per frame controls<a class="headerlink" href="#per-frame-controls" title="Link to this heading">¶</a></h2>
+<p>The library shall support controlling capture parameters for each stream
+on a per-frame basis, on a best effort basis based on the capabilities of the
+hardware and underlying software stack (including kernel drivers and
+firmware). It shall apply capture parameters to the frame they target, and
+report the value of the parameters that have effectively been used for each
+captured frame.</p>
+<p>When a camera device supports multiple streams, the library shall allow both
+control of each stream independently, and control of multiple streams
+together. Streams that are controlled together shall be synchronized. No
+synchronization is required for streams controlled independently.</p>
+</section>
+<section id="capability-enumeration">
+<h2>Capability Enumeration<a class="headerlink" href="#capability-enumeration" title="Link to this heading">¶</a></h2>
+<p>The library shall expose capabilities of each camera device in a way that
+allows applications to discover those capabilities dynamically. Applications
+shall be allowed to cache capabilities for as long as they are using the
+library. If capabilities can change at runtime, the library shall offer a
+mechanism to notify applications of such changes. Applications shall not
+cache capabilities in long term storage between runs.</p>
+<p>Capabilities shall be discovered dynamically at runtime from the device when
+possible, and may come, in part or in full, from platform configuration
+data.</p>
+</section>
+<section id="device-profiles">
+<h2>Device Profiles<a class="headerlink" href="#device-profiles" title="Link to this heading">¶</a></h2>
+<p>The library may define different camera device profiles, each with a minimum
+set of required capabilities. Applications may use those profiles to quickly
+determine the level of features exposed by a device without parsing the full
+list of capabilities. Camera devices may implement additional capabilities
+on top of the minimum required set for the profile they expose.</p>
+</section>
+<section id="a-and-image-enhancement-algorithms">
+<h2>3A and Image Enhancement Algorithms<a class="headerlink" href="#a-and-image-enhancement-algorithms" title="Link to this heading">¶</a></h2>
+<p>The library shall provide a basic implementation of Image Processing Algorithms
+to serve as a reference for the internal API. This shall including auto exposure
+and gain and auto white balance. Camera devices that include a focus lens shall
+implement auto focus. Additional image enhancement algorithms, such as noise
+reduction or video stabilization, may be implemented. Device vendors are
+expected to provide a fully-fledged implementation compatible with their
+Pipeline Handler. One goal of the libcamera project is to create an environment
+in which the community will be able to compete with the closed-source vendor
+biaries and develop a high quality open source implementation.</p>
+<p>All algorithms may be implemented in hardware or firmware outside of the
+library, or in software in the library. They shall all be controllable by
+applications.</p>
+<p>The library shall be architectured to isolate the 3A and image enhancement
+algorithms in a component with a documented API, respectively called the 3A
+component and the 3A API. The 3A API shall be stable, and shall allow both
+open-source and closed-source implementations of the 3A component.</p>
+<p>The library may include statically-linked open-source 3A components, and
+shall support dynamically-linked open-source and closed-source 3A
+components.</p>
+</section>
+<section id="closed-source-3a-component-sandboxing">
+<h2>Closed-source 3A Component Sandboxing<a class="headerlink" href="#closed-source-3a-component-sandboxing" title="Link to this heading">¶</a></h2>
+<p>For security purposes, it may be desired to run closed-source 3A components
+in a separate process. The 3A API would in such a case be transported over
+IPC. The 3A API shall make it possible to use any IPC mechanism that
+supports passing file descriptors.</p>
+<p>The library may implement an IPC mechanism, and shall support third-party
+platform-specific IPC mechanisms through the implementation of a
+platform-specific 3A API wrapper. No modification to the library shall be
+needed to use such third-party IPC mechanisms.</p>
+<p>The 3A component shall not directly access any device node on the system.
+Such accesses shall instead be performed through the 3A API. The library
+shall validate all accesses and restrict them to what is absolutely required
+by 3A components.</p>
+</section>
+<section id="v4l2-compatibility-layer">
+<h2>V4L2 Compatibility Layer<a class="headerlink" href="#v4l2-compatibility-layer" title="Link to this heading">¶</a></h2>
+<p>The project shall support traditional V4L2 application through an additional
+libcamera wrapper library. The wrapper library shall trap all accesses to
+camera devices through <cite>LD_PRELOAD</cite>, and route them through libcamera to
+emulate a high-level V4L2 camera device. It shall expose camera device
+features on a best-effort basis, and aim for the level of features
+traditionally available from a UVC camera designed for video conferencing.</p>
+</section>
+<section id="android-camera-hal-v3-compatibility">
+<h2>Android Camera HAL v3 Compatibility<a class="headerlink" href="#android-camera-hal-v3-compatibility" title="Link to this heading">¶</a></h2>
+<p>The library API shall expose all the features required to implement an
+Android Camera HAL v3 on top of libcamera. Some features of the HAL may be
+omitted as long as they can be implemented separately in the HAL, such as
+JPEG encoding, or YUV reprocessing.</p>
+</section>
+</section>
+
+
+    </div>
+  </div>
+
+  
+<footer>
+  <div id="signature">
+        &copy; Copyright 2018-2019, The libcamera documentation authors.
+  </div>
+</footer>
+</body>
+</html>

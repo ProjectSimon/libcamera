@@ -1,0 +1,192 @@
+
+
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Software ISP benchmarking &mdash; libcamera v0.3.2+rpt20241101+6-22e19df9 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="libcamera v0.3.2+rpt20241101+6-22e19df9 documentation" href="index.html"/>
+        <link rel="next" title="Tracing Guide" href="guides/tracing.html"/>
+        <link rel="prev" title="Sensor Driver Requirements" href="sensor_driver_requirements.html"/> 
+
+</head>
+
+<body role="document">
+  <header>
+    <div id="navbar">
+      <div class="navbar-brand">
+        <div class="navbar-logo">   _
++-/ \-+
+| (o) |
++-----+</div>
+        <div class="navbar-name"><span class="text-light">lib</span>camera</div>
+      </div>
+
+      <div class="navbar">
+        <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/application-developer.html">Application Writer's Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="camera-sensor-model.html">Camera Sensor Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_requirements.html">Feature Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/ipa.html">IPA Writer's guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lens_driver_requirements.html">Lens driver requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libcamera_architecture.html">libcamera Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/pipeline-handler.html">Pipeline Handler Writer's Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-bindings.html">Python Bindings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensor_driver_requirements.html">Sensor driver requirements</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SoftwareISP Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/tracing.html">Tracing guide</a></li>
+</ul>
+
+        <div class="searchbox" role="search">
+          <form class="search" action="search.html" method="get">
+            <input type="text" name="q" />
+	    <input type="submit" value="Go" />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <div id="content">
+    
+    <div class="block">
+      
+  <div class="documentation-nav docutils container">
+<ul>
+<li><p><strong>Documentation for Users</strong></p></li>
+<li><p><a class="reference internal" href="introduction.html"><span class="doc">Introduction</span></a></p></li>
+<li><p><a class="reference internal" href="feature_requirements.html"><span class="doc">Feature Requirements</span></a></p></li>
+<li><p><a class="reference internal" href="guides/application-developer.html"><span class="doc">Using libcamera in a C++ application</span></a></p></li>
+<li><p><a class="reference internal" href="python-bindings.html"><span class="doc">Python Bindings for libcamera</span></a></p></li>
+<li><p><a class="reference internal" href="environment_variables.html"><span class="doc">Environment variables</span></a></p></li>
+<li><p><a class="reference internal" href="api-html/index.html"><span class="doc">API Reference</span></a></p></li>
+<li><p><a class="reference internal" href="code-of-conduct.html"><span class="doc">Contributor Covenant Code of Conduct</span></a></p></li>
+<li><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p><strong>Documentation for Developers</strong></p></li>
+<li><p><a class="reference internal" href="libcamera_architecture.html"><span class="doc">libcamera Architecture</span></a></p></li>
+<li><p><a class="reference internal" href="guides/pipeline-handler.html"><span class="doc">Pipeline Handler Writers Guide</span></a></p></li>
+<li><p><a class="reference internal" href="guides/ipa.html"><span class="doc">IPA Writer’s Guide</span></a></p></li>
+<li><p><a class="reference internal" href="camera-sensor-model.html"><span class="doc">The libcamera camera sensor model</span></a></p></li>
+<li><p><a class="reference internal" href="guides/tracing.html"><span class="doc">Tracing Guide</span></a></p></li>
+<li><p><a class="reference internal" href="#"><span class="doc">Software ISP benchmarking</span></a></p></li>
+<li><p><a class="reference internal" href="coding-style.html"><span class="doc">Coding Style Guidelines</span></a></p></li>
+<li><p><a class="reference internal" href="internal-api-html/index.html"><span class="doc">Internal API Reference</span></a></p></li>
+<li><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p><strong>Documentation for System Integrators</strong></p></li>
+<li><p><a class="reference internal" href="lens_driver_requirements.html"><span class="doc">Lens Driver Requirements</span></a></p></li>
+<li><p><a class="reference internal" href="sensor_driver_requirements.html"><span class="doc">Sensor Driver Requirements</span></a></p></li>
+</ul>
+</div>
+<section class="documentation" id="software-isp-benchmarking">
+<span id="id1"></span><h1>Software ISP benchmarking<a class="headerlink" href="#software-isp-benchmarking" title="Link to this heading">¶</a></h1>
+<p>The Software ISP is particularly sensitive to performance regressions therefore
+it is a good idea to always benchmark the Software ISP before and after making
+changes to it and ensure that there are no performance regressions.</p>
+<section id="debayercpu-class-builtin-benchmark">
+<h2>DebayerCpu class builtin benchmark<a class="headerlink" href="#debayercpu-class-builtin-benchmark" title="Link to this heading">¶</a></h2>
+<p>The DebayerCpu class has a builtin benchmark. This benchmark measures the time
+spent on processing (collecting statistics and debayering) only, it does not
+measure the time spent on capturing or outputting the frames.</p>
+<p>The builtin benchmark always runs. So this can be used by simply running “cam”
+or “qcam” with a pipeline using the Software ISP.</p>
+<p>When it runs it will skip measuring the first 30 frames to allow the caches and
+the CPU temperature (turbo-ing) to warm-up and then it measures 30 fps and shows
+the total and per frame processing time using an info level log message:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>INFO Debayer debayer_cpu.cpp:907 Processed 30 frames in 244317us, 8143 us/frame
+</pre></div>
+</div>
+<p>To get stable measurements it is advised to disable any other processes which
+may cause significant CPU usage (e.g. disable wifi, bluetooth and browsers).
+When possible it is also advisable to disable CPU turbo-ing and
+frequency-scaling.</p>
+<p>For example when benchmarking on a Lenovo ThinkPad X1 Yoga Gen 8, with the
+charger plugged in, the CPU can be fixed to run at 2 GHz using:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>x86_energy_perf_policy<span class="w"> </span>--turbo-enable<span class="w"> </span><span class="m">0</span>
+sudo<span class="w"> </span>cpupower<span class="w"> </span>frequency-set<span class="w"> </span>-d<span class="w"> </span>2GHz<span class="w"> </span>-u<span class="w"> </span>2GHz
+</pre></div>
+</div>
+<p>with these settings the builtin bench reports a processing time of ~7.8ms/frame
+on this laptop for FHD SGRBG10 (unpacked) bayer data.</p>
+</section>
+<section id="measuring-power-consumption">
+<h2>Measuring power consumption<a class="headerlink" href="#measuring-power-consumption" title="Link to this heading">¶</a></h2>
+<p>Since the Software ISP is often used on mobile devices it is also important to
+measure power consumption and ensure that that does not regress.</p>
+<p>For example to measure power consumption on a Lenovo ThinkPad X1 Yoga Gen 8 it
+needs to be running on battery and it should be configured with its
+platform-profile (/sys/firmware/acpi/platform_profile) set to balanced and with
+its default turbo and frequency-scaling behavior to match real world usage.</p>
+<p>Then start qcam to capture a FHD picture at 30 fps and position the qcam window
+so that it is fully visible. After this run the following command to monitor the
+power consumption:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>watch<span class="w"> </span>-n<span class="w"> </span><span class="m">10</span><span class="w"> </span>cat<span class="w"> </span>/sys/class/power_supply/BAT0/power_now<span class="w"> </span>/sys/class/hwmon/hwmon6/fan?_input
+</pre></div>
+</div>
+<p>Note this not only measures the power consumption in µW it also monitors the
+speed of this laptop’s 2 fans. This is important because depending on the
+ambient temperature the 2 fans may spin up while testing and this will cause an
+additional power consumption of approx. 0.5 W messing up the measurement.</p>
+<p>After starting qcam + the watch command let the laptop sit without using it for
+2 minutes for the readings to stabilize. Then check that the fans have not
+turned on and manually take a couple of consecutive power readings and average
+these.</p>
+<p>On the example Lenovo ThinkPad X1 Yoga Gen 8 laptop this results in a measured
+power consumption of approx. 13 W while running qcam versus approx. 4-5 W while
+setting idle with its OLED panel on.</p>
+</section>
+</section>
+
+
+    </div>
+  </div>
+
+  
+<footer>
+  <div id="signature">
+        &copy; Copyright 2018-2019, The libcamera documentation authors.
+  </div>
+</footer>
+</body>
+</html>

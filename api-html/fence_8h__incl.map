@@ -1,0 +1,7 @@
+<map id="include/libcamera/fence.h" name="include/libcamera/fence.h">
+<area shape="rect" id="node1" title="Definition of the Fence class." alt="" coords="65,5,255,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,155,176,181"/>
+<area shape="rect" id="node3" href="$unique__fd_8h.html" title="File descriptor wrapper that owns a file descriptor." alt="" coords="128,80,331,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="201,155,261,181"/>
+<area shape="rect" id="node5" href="$compiler_8h_source.html" title=" " alt="" coords="285,155,480,181"/>
+</map>

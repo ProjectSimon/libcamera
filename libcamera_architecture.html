@@ -1,0 +1,284 @@
+
+
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>libcamera Architecture &mdash; libcamera v0.3.2+rpt20241101+6-22e19df9 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="libcamera v0.3.2+rpt20241101+6-22e19df9 documentation" href="index.html"/>
+        <link rel="next" title="Pipeline Handler Writers Guide" href="guides/pipeline-handler.html"/>
+        <link rel="prev" title="Lens Driver Requirements" href="lens_driver_requirements.html"/> 
+
+</head>
+
+<body role="document">
+  <header>
+    <div id="navbar">
+      <div class="navbar-brand">
+        <div class="navbar-logo">   _
++-/ \-+
+| (o) |
++-----+</div>
+        <div class="navbar-name"><span class="text-light">lib</span>camera</div>
+      </div>
+
+      <div class="navbar">
+        <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/application-developer.html">Application Writer's Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="camera-sensor-model.html">Camera Sensor Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_requirements.html">Feature Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/ipa.html">IPA Writer's guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lens_driver_requirements.html">Lens driver requirements</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">libcamera Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/pipeline-handler.html">Pipeline Handler Writer's Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-bindings.html">Python Bindings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensor_driver_requirements.html">Sensor driver requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software-isp-benchmarking.html">SoftwareISP Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/tracing.html">Tracing guide</a></li>
+</ul>
+
+        <div class="searchbox" role="search">
+          <form class="search" action="search.html" method="get">
+            <input type="text" name="q" />
+	    <input type="submit" value="Go" />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <div id="content">
+    
+    <div class="block">
+      
+  <div class="documentation-nav docutils container">
+<ul>
+<li><p><strong>Documentation for Users</strong></p></li>
+<li><p><a class="reference internal" href="introduction.html"><span class="doc">Introduction</span></a></p></li>
+<li><p><a class="reference internal" href="feature_requirements.html"><span class="doc">Feature Requirements</span></a></p></li>
+<li><p><a class="reference internal" href="guides/application-developer.html"><span class="doc">Using libcamera in a C++ application</span></a></p></li>
+<li><p><a class="reference internal" href="python-bindings.html"><span class="doc">Python Bindings for libcamera</span></a></p></li>
+<li><p><a class="reference internal" href="environment_variables.html"><span class="doc">Environment variables</span></a></p></li>
+<li><p><a class="reference internal" href="api-html/index.html"><span class="doc">API Reference</span></a></p></li>
+<li><p><a class="reference internal" href="code-of-conduct.html"><span class="doc">Contributor Covenant Code of Conduct</span></a></p></li>
+<li><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p><strong>Documentation for Developers</strong></p></li>
+<li><p><a class="reference internal" href="#"><span class="doc">libcamera Architecture</span></a></p></li>
+<li><p><a class="reference internal" href="guides/pipeline-handler.html"><span class="doc">Pipeline Handler Writers Guide</span></a></p></li>
+<li><p><a class="reference internal" href="guides/ipa.html"><span class="doc">IPA Writer’s Guide</span></a></p></li>
+<li><p><a class="reference internal" href="camera-sensor-model.html"><span class="doc">The libcamera camera sensor model</span></a></p></li>
+<li><p><a class="reference internal" href="guides/tracing.html"><span class="doc">Tracing Guide</span></a></p></li>
+<li><p><a class="reference internal" href="software-isp-benchmarking.html"><span class="doc">Software ISP benchmarking</span></a></p></li>
+<li><p><a class="reference internal" href="coding-style.html"><span class="doc">Coding Style Guidelines</span></a></p></li>
+<li><p><a class="reference internal" href="internal-api-html/index.html"><span class="doc">Internal API Reference</span></a></p></li>
+<li><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p><strong>Documentation for System Integrators</strong></p></li>
+<li><p><a class="reference internal" href="lens_driver_requirements.html"><span class="doc">Lens Driver Requirements</span></a></p></li>
+<li><p><a class="reference internal" href="sensor_driver_requirements.html"><span class="doc">Sensor Driver Requirements</span></a></p></li>
+</ul>
+</div>
+<section class="documentation" id="libcamera-architecture">
+<h1>libcamera Architecture<a class="headerlink" href="#libcamera-architecture" title="Link to this heading">¶</a></h1>
+<p>While offering a unified API towards upper layers, and presenting itself as a
+single library, libcamera isn’t monolithic. It exposes multiple components
+through its public API and is built around a set of separate helpers internally.
+Hardware abstractions are handled through the use of device-specific components
+where required and dynamically loadable plugins are used to separate image
+processing algorithms from the core libcamera codebase.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--------------------------&lt;</span> <span class="n">libcamera</span> <span class="n">Public</span> <span class="n">API</span> <span class="o">&gt;---------------------------</span>
+              <span class="o">^</span>                                          <span class="o">^</span>
+              <span class="o">|</span>                                          <span class="o">|</span>
+              <span class="n">v</span>                                          <span class="n">v</span>
+       <span class="o">+-------------+</span>  <span class="o">+---------------------------------------------------+</span>
+       <span class="o">|</span>   <span class="n">Camera</span>    <span class="o">|</span>  <span class="o">|</span>  <span class="n">Camera</span> <span class="n">Device</span>                                    <span class="o">|</span>
+       <span class="o">|</span>   <span class="n">Manager</span>   <span class="o">|</span>  <span class="o">|</span> <span class="o">+-----------------------------------------------+</span> <span class="o">|</span>
+       <span class="o">+-------------+</span>  <span class="o">|</span> <span class="o">|</span> <span class="n">Device</span><span class="o">-</span><span class="n">Agnostic</span>                               <span class="o">|</span> <span class="o">|</span>
+              <span class="o">^</span>         <span class="o">|</span> <span class="o">|</span>                                               <span class="o">|</span> <span class="o">|</span>
+              <span class="o">|</span>         <span class="o">|</span> <span class="o">|</span>                    <span class="o">+--------------------------+</span> <span class="o">|</span>
+              <span class="o">|</span>         <span class="o">|</span> <span class="o">|</span>                    <span class="o">|</span>   <span class="o">~~~~~~~~~~~~~~~~~~~~~~~</span>  <span class="o">|</span>
+              <span class="o">|</span>         <span class="o">|</span> <span class="o">|</span>                    <span class="o">|</span>  <span class="p">{</span>  <span class="o">+-----------------+</span>  <span class="p">}</span> <span class="o">|</span>
+              <span class="o">|</span>         <span class="o">|</span> <span class="o">|</span>                    <span class="o">|</span>  <span class="p">}</span>  <span class="o">|</span> <span class="o">////</span> <span class="n">Image</span> <span class="o">////</span> <span class="o">|</span>  <span class="p">{</span> <span class="o">|</span>
+              <span class="o">|</span>         <span class="o">|</span> <span class="o">|</span>                    <span class="o">|</span> <span class="o">&lt;-&gt;</span> <span class="o">|</span> <span class="o">/</span> <span class="n">Processing</span> <span class="o">//</span> <span class="o">|</span>  <span class="p">}</span> <span class="o">|</span>
+              <span class="o">|</span>         <span class="o">|</span> <span class="o">|</span>                    <span class="o">|</span>  <span class="p">}</span>  <span class="o">|</span> <span class="o">/</span> <span class="n">Algorithms</span> <span class="o">//</span> <span class="o">|</span>  <span class="p">{</span> <span class="o">|</span>
+              <span class="o">|</span>         <span class="o">|</span> <span class="o">|</span>                    <span class="o">|</span>  <span class="p">{</span>  <span class="o">+-----------------+</span>  <span class="p">}</span> <span class="o">|</span>
+              <span class="o">|</span>         <span class="o">|</span> <span class="o">|</span>                    <span class="o">|</span>   <span class="o">~~~~~~~~~~~~~~~~~~~~~~~</span>  <span class="o">|</span>
+              <span class="o">|</span>         <span class="o">|</span> <span class="o">|</span>                    <span class="o">|</span> <span class="o">==========================</span> <span class="o">|</span>
+              <span class="o">|</span>         <span class="o">|</span> <span class="o">|</span>                    <span class="o">|</span>     <span class="o">+-----------------+</span>    <span class="o">|</span>
+              <span class="o">|</span>         <span class="o">|</span> <span class="o">|</span>                    <span class="o">|</span>     <span class="o">|</span> <span class="o">//</span> <span class="n">Pipeline</span> <span class="o">///</span> <span class="o">|</span>    <span class="o">|</span>
+              <span class="o">|</span>         <span class="o">|</span> <span class="o">|</span>                    <span class="o">|</span> <span class="o">&lt;-&gt;</span> <span class="o">|</span> <span class="o">///</span> <span class="n">Handler</span> <span class="o">///</span> <span class="o">|</span>    <span class="o">|</span>
+              <span class="o">|</span>         <span class="o">|</span> <span class="o">|</span>                    <span class="o">|</span>     <span class="o">|</span> <span class="o">///////////////</span> <span class="o">|</span>    <span class="o">|</span>
+              <span class="o">|</span>         <span class="o">|</span> <span class="o">+--------------------+</span>     <span class="o">+-----------------+</span>    <span class="o">|</span>
+              <span class="o">|</span>         <span class="o">|</span>                                   <span class="n">Device</span><span class="o">-</span><span class="n">Specific</span> <span class="o">|</span>
+              <span class="o">|</span>         <span class="o">+---------------------------------------------------+</span>
+              <span class="o">|</span>                          <span class="o">^</span>                         <span class="o">^</span>
+              <span class="o">|</span>                          <span class="o">|</span>                         <span class="o">|</span>
+              <span class="n">v</span>                          <span class="n">v</span>                         <span class="n">v</span>
+       <span class="o">+--------------------------------------------------------------------+</span>
+       <span class="o">|</span> <span class="n">Helpers</span> <span class="ow">and</span> <span class="n">Support</span> <span class="n">Classes</span>                                        <span class="o">|</span>
+       <span class="o">|</span> <span class="o">+-------------+</span>  <span class="o">+-------------+</span>  <span class="o">+-------------+</span>  <span class="o">+-------------+</span> <span class="o">|</span>
+       <span class="o">|</span> <span class="o">|</span>  <span class="n">MC</span> <span class="o">&amp;</span> <span class="n">V4L2</span>  <span class="o">|</span>  <span class="o">|</span>   <span class="n">Buffers</span>   <span class="o">|</span>  <span class="o">|</span> <span class="n">Sandboxing</span>  <span class="o">|</span>  <span class="o">|</span>   <span class="n">Plugins</span>   <span class="o">|</span> <span class="o">|</span>
+       <span class="o">|</span> <span class="o">|</span>   <span class="n">Support</span>   <span class="o">|</span>  <span class="o">|</span>  <span class="n">Allocator</span>  <span class="o">|</span>  <span class="o">|</span>     <span class="n">IPC</span>     <span class="o">|</span>  <span class="o">|</span>   <span class="n">Manager</span>   <span class="o">|</span> <span class="o">|</span>
+       <span class="o">|</span> <span class="o">+-------------+</span>  <span class="o">+-------------+</span>  <span class="o">+-------------+</span>  <span class="o">+-------------+</span> <span class="o">|</span>
+       <span class="o">|</span> <span class="o">+-------------+</span>  <span class="o">+-------------+</span>                                   <span class="o">|</span>
+       <span class="o">|</span> <span class="o">|</span>  <span class="n">Pipeline</span>   <span class="o">|</span>  <span class="o">|</span>     <span class="o">...</span>     <span class="o">|</span>                                   <span class="o">|</span>
+       <span class="o">|</span> <span class="o">|</span>   <span class="n">Runner</span>    <span class="o">|</span>  <span class="o">|</span>             <span class="o">|</span>                                   <span class="o">|</span>
+       <span class="o">|</span> <span class="o">+-------------+</span>  <span class="o">+-------------+</span>                                   <span class="o">|</span>
+       <span class="o">+--------------------------------------------------------------------+</span>
+
+         <span class="o">///</span> <span class="n">Device</span><span class="o">-</span><span class="n">Specific</span> <span class="n">Components</span>
+         <span class="o">~~~</span> <span class="n">Sandboxing</span>
+</pre></div>
+</div>
+<dl>
+<dt>Camera Manager</dt><dd><p>The Camera Manager enumerates cameras and instantiates Pipeline Handlers to
+manage each Camera that libcamera supports. The Camera Manager supports
+hotplug detection and notification events when supported by the underlying
+kernel devices.</p>
+<p>There is only ever one instance of the Camera Manager running per application.
+Each application’s instance of the Camera Manager ensures that only a single
+application can take control of a camera device at once.</p>
+<p>Read the <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1CameraManager.html">Camera Manager API</a> documentation for more details.</p>
+</dd>
+</dl>
+<dl>
+<dt>Camera Device</dt><dd><p>The Camera class represents a single item of camera hardware that is capable
+of producing one or more image streams, and provides the API to interact with
+the underlying device.</p>
+<p>If a system has multiple instances of the same hardware attached, each has its
+own instance of the camera class.</p>
+<p>The API exposes full control of the device to upper layers of libcamera through
+the public API, making it the highest level object libcamera exposes, and the
+object that all other API operations interact with from configuration to
+capture.</p>
+<p>Read the <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1Camera.html">Camera API</a> documentation for more details.</p>
+</dd>
+</dl>
+<dl>
+<dt>Pipeline Handler</dt><dd><p>The Pipeline Handler manages the complex pipelines exposed by the kernel
+drivers through the Media Controller and V4L2 APIs. It abstracts pipeline
+handling to hide device-specific details from the rest of the library, and
+implements both pipeline configuration based on stream configuration, and
+pipeline runtime execution and scheduling when needed by the device.</p>
+<p>The Pipeline Handler lives in the same process as the rest of the library, and
+has access to all helpers and kernel camera-related devices.</p>
+<p>Hardware abstraction is handled by device specific Pipeline Handlers which are
+derived from the Pipeline Handler base class allowing commonality to be shared
+among the implementations.</p>
+<p>Derived pipeline handlers create Camera device instances based on the devices
+they detect and support on the running system, and are responsible for
+managing the interactions with a camera device.</p>
+<p>More details can be found in the <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1PipelineHandler.html">PipelineHandler API</a> documentation, and the
+<a class="reference internal" href="guides/pipeline-handler.html"><span class="doc">Pipeline Handler Writers Guide</span></a>.</p>
+</dd>
+</dl>
+<dl>
+<dt>Image Processing Algorithms</dt><dd><p>Together with the hardware image processing and hardware statistics
+collection, the Image Processing Algorithms (IPA) implement 3A (Auto-Exposure,
+Auto-White Balance and Auto-Focus) and other algorithms. They run on the CPU
+and control hardware image processing based on the parameters supplied by
+upper layers, closing the control loop of the ISP.</p>
+<p>IPAs are loaded as external plugins named IPA Modules. IPA Modules can be part
+of the libcamera code base or provided externally by camera vendors as
+open-source or closed-source components.</p>
+<p>Open source IPA Modules built with libcamera are run in the same process space
+as libcamera. External IPA Modules are run in a separate sandboxed process. In
+either case, they can only interact with libcamera through the API provided by
+the Pipeline Handler. They have a restricted view of the system, with no direct
+access to kernel camera devices, no access to networking APIs, and limited
+access to file systems. All their accesses to image and metadata are mediated
+by dmabuf instances explicitly passed by the Pipeline Handler to the IPA
+Module.</p>
+<p>IPA Modules are only required for platforms and devices with an ISP controlled
+by the host CPU. Camera sensors which have an integrated ISP are not
+controlled through the IPA Module.</p>
+</dd>
+<dt>Helpers and Support Classes</dt><dd><p>While Pipeline Handlers are device-specific, implementations are expected to
+share code due to usage of identical APIs towards the kernel camera drivers
+and the Image Processing Algorithms. This includes without limitation handling
+of the MC and V4L2 APIs, buffer management through dmabuf, and pipeline
+discovery, configuration and scheduling. Such code will be factored out to
+helpers when applicable.</p>
+<p>Other parts of libcamera will also benefit from factoring code out to
+self-contained support classes, even if such code is present only once in the
+code base, in order to keep the source code clean and easy to read. This
+should be the case for instance for plugin management.</p>
+</dd>
+</dl>
+<section id="platform-support">
+<h2>Platform Support<a class="headerlink" href="#platform-support" title="Link to this heading">¶</a></h2>
+<p>The library currently supports the following hardware platforms specifically
+with dedicated pipeline handlers:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Arm Mali-C55</p></li>
+<li><p>Intel IPU3 (ipu3)</p></li>
+<li><p>NXP i.MX8MP (imx8-isi and rkisp1)</p></li>
+<li><p>RaspberryPi 3, 4 and zero (rpi/vc4)</p></li>
+<li><p>Rockchip RK3399 (rkisp1)</p></li>
+</ul>
+</div></blockquote>
+<p>Furthermore, generic platform support is provided for the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>USB video device class cameras (uvcvideo)</p></li>
+<li><p>iMX7, IPU6, Allwinner Sun6i (simple)</p></li>
+<li><p>Virtual media controller driver for test use cases (vimc)</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+
+
+    </div>
+  </div>
+
+  
+<footer>
+  <div id="signature">
+        &copy; Copyright 2018-2019, The libcamera documentation authors.
+  </div>
+</footer>
+</body>
+</html>

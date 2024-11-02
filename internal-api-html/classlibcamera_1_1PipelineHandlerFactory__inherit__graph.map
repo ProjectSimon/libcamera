@@ -1,0 +1,4 @@
+<map id="libcamera::PipelineHandlerFactory&lt; _PipelineHandler &gt;" name="libcamera::PipelineHandlerFactory&lt; _PipelineHandler &gt;">
+<area shape="rect" id="node1" title="Registration of PipelineHandler classes and creation of instances." alt="" coords="5,95,215,136"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1PipelineHandlerFactoryBase.html" title="Base class for pipeline handler factories." alt="" coords="11,5,209,47"/>
+</map>

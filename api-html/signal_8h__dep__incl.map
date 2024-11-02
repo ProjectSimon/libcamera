@@ -1,0 +1,7 @@
+<map id="include/libcamera/base/signal.h" name="include/libcamera/base/signal.h">
+<area shape="rect" id="node1" title="Signal &amp; slot implementation." alt="" coords="166,5,339,47"/>
+<area shape="rect" id="node2" href="$camera_8h.html" title="Camera device handling." alt="" coords="221,177,423,203"/>
+<area shape="rect" id="node4" href="$camera__manager_8h.html" title="The camera manager." alt="" coords="5,169,196,211"/>
+<area shape="rect" id="node5" href="$request_8h.html" title="Describes a frame capture request to be processed by a camera." alt="" coords="290,95,493,121"/>
+<area shape="rect" id="node3" href="$libcamera_8h_source.html" title=" " alt="" coords="235,259,409,300"/>
+</map>

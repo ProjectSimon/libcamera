@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classlibcamera_1_1SharedMem.html" title="Helper class to allocate and manage memory shareable between processes." alt="" coords="5,78,179,105"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1SharedMemObject.html" title=" " alt="" coords="227,5,455,47"/>
+<area shape="rect" id="node3" href="$classlibcamera_1_1SharedMemObject.html" title=" " alt="" coords="233,71,448,112"/>
+<area shape="rect" id="node4" href="$classlibcamera_1_1SharedMemObject.html" title="Helper class to allocate an object in shareable memory." alt="" coords="233,136,448,177"/>
+</map>

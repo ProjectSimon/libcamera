@@ -1,0 +1,7 @@
+<map id="include/libcamera/transform.h" name="include/libcamera/transform.h">
+<area shape="rect" id="node1" title="Enum to represent and manipulate 2D plane transforms." alt="" coords="103,5,322,32"/>
+<area shape="rect" id="node2" href="$camera__sensor_8h.html" title="A camera sensor." alt="" coords="13,80,205,121"/>
+<area shape="rect" id="node5" href="$libcamera_8h_source.html" title=" " alt="" coords="229,80,404,121"/>
+<area shape="rect" id="node3" href="$software__isp_8h_source.html" title=" " alt="" coords="5,169,212,211"/>
+<area shape="rect" id="node4" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="23,259,194,300"/>
+</map>

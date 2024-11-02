@@ -1,0 +1,6 @@
+\_form#0=81x18:$gain=\frac{m0x+c0}{m1x+c1}$
+\_form#1=81x18:$gain=\frac{c0}{m1x+c1}$
+\_form#2=39x16:$\frac{m0x+c0}{c1}$
+\_form#3=81x11:$gain = a \cdot 2^{m \cdot x}$
+\_form#4=44x15:$log_{2}{10^{\frac{1}{20}}}$
+\_form#5=50x16:$LP = \frac{1\mathrm{m}}{D}$

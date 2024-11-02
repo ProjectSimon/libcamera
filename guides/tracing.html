@@ -1,0 +1,249 @@
+
+
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tracing Guide &mdash; libcamera v0.3.2+rpt20241101+6-22e19df9 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="libcamera v0.3.2+rpt20241101+6-22e19df9 documentation" href="../index.html"/>
+        <link rel="next" title="Introduction" href="../introduction.html"/>
+        <link rel="prev" title="Software ISP benchmarking" href="../software-isp-benchmarking.html"/> 
+
+</head>
+
+<body role="document">
+  <header>
+    <div id="navbar">
+      <div class="navbar-brand">
+        <div class="navbar-logo">   _
++-/ \-+
+| (o) |
++-----+</div>
+        <div class="navbar-name"><span class="text-light">lib</span>camera</div>
+      </div>
+
+      <div class="navbar">
+        <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="application-developer.html">Application Writer's Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../camera-sensor-model.html">Camera Sensor Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment_variables.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feature_requirements.html">Feature Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipa.html">IPA Writer's guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lens_driver_requirements.html">Lens driver requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../libcamera_architecture.html">libcamera Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipeline-handler.html">Pipeline Handler Writer's Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-bindings.html">Python Bindings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sensor_driver_requirements.html">Sensor driver requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software-isp-benchmarking.html">SoftwareISP Benchmarking</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tracing guide</a></li>
+</ul>
+
+        <div class="searchbox" role="search">
+          <form class="search" action="../search.html" method="get">
+            <input type="text" name="q" />
+	    <input type="submit" value="Go" />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <div id="content">
+    
+    <div class="block">
+      
+  <div class="documentation-nav docutils container">
+<ul>
+<li><p><strong>Documentation for Users</strong></p></li>
+<li><p><a class="reference internal" href="../introduction.html"><span class="doc">Introduction</span></a></p></li>
+<li><p><a class="reference internal" href="../feature_requirements.html"><span class="doc">Feature Requirements</span></a></p></li>
+<li><p><a class="reference internal" href="application-developer.html"><span class="doc">Using libcamera in a C++ application</span></a></p></li>
+<li><p><a class="reference internal" href="../python-bindings.html"><span class="doc">Python Bindings for libcamera</span></a></p></li>
+<li><p><a class="reference internal" href="../environment_variables.html"><span class="doc">Environment variables</span></a></p></li>
+<li><p><a class="reference internal" href="../api-html/index.html"><span class="doc">API Reference</span></a></p></li>
+<li><p><a class="reference internal" href="../code-of-conduct.html"><span class="doc">Contributor Covenant Code of Conduct</span></a></p></li>
+<li><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p><strong>Documentation for Developers</strong></p></li>
+<li><p><a class="reference internal" href="../libcamera_architecture.html"><span class="doc">libcamera Architecture</span></a></p></li>
+<li><p><a class="reference internal" href="pipeline-handler.html"><span class="doc">Pipeline Handler Writers Guide</span></a></p></li>
+<li><p><a class="reference internal" href="ipa.html"><span class="doc">IPA Writer’s Guide</span></a></p></li>
+<li><p><a class="reference internal" href="../camera-sensor-model.html"><span class="doc">The libcamera camera sensor model</span></a></p></li>
+<li><p><a class="reference internal" href="#"><span class="doc">Tracing Guide</span></a></p></li>
+<li><p><a class="reference internal" href="../software-isp-benchmarking.html"><span class="doc">Software ISP benchmarking</span></a></p></li>
+<li><p><a class="reference internal" href="../coding-style.html"><span class="doc">Coding Style Guidelines</span></a></p></li>
+<li><p><a class="reference internal" href="../internal-api-html/index.html"><span class="doc">Internal API Reference</span></a></p></li>
+<li><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p><strong>Documentation for System Integrators</strong></p></li>
+<li><p><a class="reference internal" href="../lens_driver_requirements.html"><span class="doc">Lens Driver Requirements</span></a></p></li>
+<li><p><a class="reference internal" href="../sensor_driver_requirements.html"><span class="doc">Sensor Driver Requirements</span></a></p></li>
+</ul>
+</div>
+<section class="documentation" id="tracing-guide">
+<h1>Tracing Guide<a class="headerlink" href="#tracing-guide" title="Link to this heading">¶</a></h1>
+<p>Guide to tracing in libcamera.</p>
+<section id="profiling-vs-tracing">
+<h2>Profiling vs Tracing<a class="headerlink" href="#profiling-vs-tracing" title="Link to this heading">¶</a></h2>
+<p>Tracing is recording timestamps at specific locations. libcamera provides a
+tracing facility. This guide shows how to use this tracing facility.</p>
+<p>Tracing should not be confused with profiling, which samples execution
+at periodic points in time. This can be done with other tools such as
+callgrind, perf, gprof, etc., without modification to the application,
+and is out of scope for this guide.</p>
+</section>
+<section id="compiling">
+<h2>Compiling<a class="headerlink" href="#compiling" title="Link to this heading">¶</a></h2>
+<p>To compile libcamera with tracing support, it must be enabled through the
+meson <code class="docutils literal notranslate"><span class="pre">tracing</span></code> option. It depends on the lttng-ust library (available in the
+<code class="docutils literal notranslate"><span class="pre">liblttng-ust-dev</span></code> package for Debian-based distributions).
+By default the tracing option in meson is set to <code class="docutils literal notranslate"><span class="pre">auto</span></code>, so if
+liblttng is detected, it will be enabled by default. Conversely, if the option
+is set to disabled, then libcamera will be compiled without tracing support.</p>
+</section>
+<section id="defining-tracepoints">
+<h2>Defining tracepoints<a class="headerlink" href="#defining-tracepoints" title="Link to this heading">¶</a></h2>
+<p>libcamera already contains a set of tracepoints. To define additional
+tracepoints, create a file
+<code class="docutils literal notranslate"><span class="pre">include/libcamera/internal/tracepoints/{file}.tp</span></code>, where <code class="docutils literal notranslate"><span class="pre">file</span></code> is a
+reasonable name related to the category of tracepoints that you wish to
+define. For example, the tracepoints file for the Request object is called
+<code class="docutils literal notranslate"><span class="pre">request.tp</span></code>. An entry for this file must be added in
+<code class="docutils literal notranslate"><span class="pre">include/libcamera/internal/tracepoints/meson.build</span></code>.</p>
+<p>In this tracepoints file, define your tracepoints <a class="reference external" href="https://lttng.org/man/3/lttng-ust">as mandated by lttng</a>. The header boilerplate must <em>not</em> be
+included (as it will conflict with the rest of our infrastructure), and
+only the tracepoint definitions (with the <code class="docutils literal notranslate"><span class="pre">TRACEPOINT_*</span></code> macros) should be
+included.</p>
+<p>All tracepoint providers shall be <code class="docutils literal notranslate"><span class="pre">libcamera</span></code>. According to lttng, the
+tracepoint provider should be per-project; this is the rationale for this
+decision. To group tracepoint events, we recommend using
+<code class="docutils literal notranslate"><span class="pre">{class_name}_{tracepoint_name}</span></code>, for example, <code class="docutils literal notranslate"><span class="pre">request_construct</span></code> for a
+tracepoint for the constructor of the Request class.</p>
+<p>Tracepoint arguments may take C++ objects pointers, in which case the usual
+C++ namespacing rules apply. The header that contains the necessary class
+definitions must be included at the top of the tracepoint provider file.</p>
+<p>Note: the final parameter in <code class="docutils literal notranslate"><span class="pre">TP_ARGS</span></code> <em>must not</em> have a trailing comma, and
+the parameters to <code class="docutils literal notranslate"><span class="pre">TP_FIELDS</span></code> are <em>space-separated</em>. Not following these will
+cause compilation errors.</p>
+</section>
+<section id="using-tracepoints-in-libcamera">
+<h2>Using tracepoints (in libcamera)<a class="headerlink" href="#using-tracepoints-in-libcamera" title="Link to this heading">¶</a></h2>
+<p>To use tracepoints in libcamera, first the header needs to be included:</p>
+<p><code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&quot;libcamera/internal/tracepoints.h&quot;</span></code></p>
+<p>Then to use the tracepoint:</p>
+<p><code class="docutils literal notranslate"><span class="pre">LIBCAMERA_TRACEPOINT({tracepoint_event},</span> <span class="pre">args...)</span></code></p>
+<p>This macro must be used, as opposed to lttng’s macros directly, because
+lttng is an optional dependency of libcamera, so the code must compile and run
+even when lttng is not present or when tracing is disabled.</p>
+<p>The tracepoint provider name, as declared in the tracepoint definition, is not
+included in the parameters of the tracepoint.</p>
+<p>There are also two special tracepoints available for tracing IPA calls:</p>
+<p><code class="docutils literal notranslate"><span class="pre">LIBCAMERA_TRACEPOINT_IPA_BEGIN({pipeline_name},</span> <span class="pre">{ipa_function})</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">LIBCAMERA_TRACEPOINT_IPA_END({pipeline_name},</span> <span class="pre">{ipa_function})</span></code></p>
+<p>These shall be placed where an IPA function is called from the pipeline handler,
+and when the pipeline handler receives the corresponding response from the IPA,
+respectively. These are the tracepoints that our sample analysis script
+(see “Analyzing a trace”) scans for when computing statistics on IPA call time.</p>
+</section>
+<section id="using-tracepoints-from-an-application">
+<h2>Using tracepoints (from an application)<a class="headerlink" href="#using-tracepoints-from-an-application" title="Link to this heading">¶</a></h2>
+<p>As applications are not part of libcamera, but rather users of libcamera,
+applications should seek their own tracing mechanisms. For ease of tracing
+the application alongside tracing libcamera, it is recommended to also
+<a class="reference external" href="https://lttng.org/docs/#doc-tracing-your-own-user-application">use lttng</a>.</p>
+</section>
+<section id="using-tracepoints-from-closed-source-ipa">
+<h2>Using tracepoints (from closed-source IPA)<a class="headerlink" href="#using-tracepoints-from-closed-source-ipa" title="Link to this heading">¶</a></h2>
+<p>Similar to applications, closed-source IPAs can simply use lttng on their own,
+or any other tracing mechanism if desired.</p>
+</section>
+<section id="collecting-a-trace">
+<h2>Collecting a trace<a class="headerlink" href="#collecting-a-trace" title="Link to this heading">¶</a></h2>
+<p>A trace can be collected fairly simply from lttng:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>lttng<span class="w"> </span>create<span class="w"> </span><span class="nv">$SESSION_NAME</span>
+lttng<span class="w"> </span>enable-event<span class="w"> </span>-u<span class="w"> </span>libcamera:<span class="se">\*</span>
+lttng<span class="w"> </span>start
+<span class="c1"># run libcamera application</span>
+lttng<span class="w"> </span>stop
+lttng<span class="w"> </span>view
+lttng<span class="w"> </span>destroy<span class="w"> </span><span class="nv">$SESSION_NAME</span>
+</pre></div>
+</div>
+<p>See the <a class="reference external" href="https://lttng.org/docs/">lttng documentation</a> for further details.</p>
+<p>The location of the trace file is printed when running
+<code class="docutils literal notranslate"><span class="pre">lttng</span> <span class="pre">create</span> <span class="pre">$SESSION_NAME</span></code>. After destroying the session, it can still be
+viewed by: <code class="docutils literal notranslate"><span class="pre">lttng</span> <span class="pre">view</span> <span class="pre">-t</span> <span class="pre">$PATH_TO_TRACE</span></code>, where <code class="docutils literal notranslate"><span class="pre">$PATH_TO_TRACE</span></code> is the
+path that was printed when the session was created. This is the same path that
+is used when analyzing traces programatically, as described in the next section.</p>
+</section>
+<section id="analyzing-a-trace">
+<h2>Analyzing a trace<a class="headerlink" href="#analyzing-a-trace" title="Link to this heading">¶</a></h2>
+<p>As mentioned above, while an lttng tracing session exists and the trace is not
+running, the trace output can be viewed as text by <code class="docutils literal notranslate"><span class="pre">lttng</span> <span class="pre">view</span></code>.</p>
+<p>The trace log can also be viewed as text using babeltrace2.  See the
+<a class="reference external" href="https://lttng.org/docs/#doc-viewing-and-analyzing-your-traces-bt">lttng trace analysis documentation</a>
+for further details.</p>
+<p>babeltrace2 also has a C API and python bindings that can be used to process
+traces. See the
+<a class="reference external" href="https://babeltrace.org/docs/v2.0/python/bt2/">lttng python bindings documentation</a>
+and the
+<a class="reference external" href="https://babeltrace.org/docs/v2.0/libbabeltrace2/">lttng C API documentation</a>
+for more details.</p>
+<p>As an example, there is a script <code class="docutils literal notranslate"><span class="pre">utils/tracepoints/analyze-ipa-trace.py</span></code>
+that gathers statistics for the time taken for an IPA function call, by
+measuring the time difference between pairs of events
+<code class="docutils literal notranslate"><span class="pre">libcamera:ipa_call_start</span></code> and <code class="docutils literal notranslate"><span class="pre">libcamera:ipa_call_finish</span></code>.</p>
+</section>
+</section>
+
+
+    </div>
+  </div>
+
+  
+<footer>
+  <div id="signature">
+        &copy; Copyright 2018-2019, The libcamera documentation authors.
+  </div>
+</footer>
+</body>
+</html>

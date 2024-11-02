@@ -1,0 +1,8 @@
+<map id="include/libcamera/base/semaphore.h" name="include/libcamera/base/semaphore.h">
+<area shape="rect" id="node1" title="General&#45;purpose counting semaphore." alt="" coords="40,5,213,47"/>
+<area shape="rect" id="node2" href="$private_8h_source.html" title=" " alt="" coords="5,259,189,285"/>
+<area shape="rect" id="node3" href="$mutex_8h.html" title="Mutex classes with clang thread safety annotation." alt="" coords="117,95,297,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="135,177,278,203"/>
+<area shape="rect" id="node5" title=" " alt="" coords="303,177,367,203"/>
+<area shape="rect" id="node6" href="$thread__annotations_8h_source.html" title=" " alt="" coords="391,169,559,211"/>
+</map>

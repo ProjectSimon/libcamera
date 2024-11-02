@@ -1,0 +1,13 @@
+<map id="include/libcamera/internal/v4l2_pixelformat.h" name="include/libcamera/internal/v4l2_pixelformat.h">
+<area shape="rect" id="node1" title="V4L2 Pixel Format." alt="" coords="303,5,495,47"/>
+<area shape="rect" id="node2" href="$bayer__format_8h.html" title="Class to represent Bayer formats and manipulate them." alt="" coords="30,273,222,315"/>
+<area shape="rect" id="node8" href="$include_2libcamera_2internal_2formats_8h.html" title="Types and helper functions to handle libcamera image formats." alt="" coords="303,95,495,136"/>
+<area shape="rect" id="node11" href="$v4l2__videodevice_8h.html" title="V4L2 Video Device." alt="" coords="462,273,654,315"/>
+<area shape="rect" id="node3" href="$camera__sensor_8h.html" title="A camera sensor." alt="" coords="246,363,438,404"/>
+<area shape="rect" id="node5" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="22,541,193,583"/>
+<area shape="rect" id="node6" href="$debayer__cpu_8h_source.html" title=" " alt="" coords="22,452,193,493"/>
+<area shape="rect" id="node7" href="$swstats__cpu_8h_source.html" title=" " alt="" coords="51,363,222,404"/>
+<area shape="rect" id="node4" href="$software__isp_8h_source.html" title=" " alt="" coords="228,452,435,493"/>
+<area shape="rect" id="node9" href="$v4l2__device_8h.html" title="Common base for V4L2 devices and subdevices." alt="" coords="303,184,495,225"/>
+<area shape="rect" id="node10" href="$v4l2__subdevice_8h.html" title="V4L2 Subdevice API." alt="" coords="246,273,438,315"/>
+</map>

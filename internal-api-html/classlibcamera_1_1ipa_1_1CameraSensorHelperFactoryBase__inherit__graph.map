@@ -1,0 +1,4 @@
+<map id="libcamera::ipa::CameraSensorHelperFactoryBase" name="libcamera::ipa::CameraSensorHelperFactoryBase">
+<area shape="rect" id="node1" title="Base class for camera sensor helper factories." alt="" coords="5,5,224,47"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1ipa_1_1CameraSensorHelperFactory.html" title="Registration of CameraSensorHelperFactory classes and creation of instances." alt="" coords="5,95,224,136"/>
+</map>

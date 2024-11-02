@@ -1,0 +1,5 @@
+<map id="libcamera::StreamConfiguration" name="libcamera::StreamConfiguration">
+<area shape="rect" id="node1" title="Configuration parameters for a stream." alt="" coords="62,95,291,121"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1PixelFormat.html" title="libcamera image pixel format" alt="" coords="5,5,177,32"/>
+<area shape="rect" id="node3" href="$classlibcamera_1_1Size.html" title="Describe a two&#45;dimensional size." alt="" coords="202,5,325,32"/>
+</map>

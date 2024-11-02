@@ -1,0 +1,4 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classlibcamera_1_1EventDispatcher.html" title="Interface to manage the libcamera events and timers." alt="" coords="5,5,208,32"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1EventDispatcherPoll.html" title="A poll&#45;based event dispatcher." alt="" coords="256,5,483,32"/>
+</map>

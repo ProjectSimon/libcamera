@@ -1,0 +1,14 @@
+<map id="include/libcamera/base/event_notifier.h" name="include/libcamera/base/event_notifier.h">
+<area shape="rect" id="node1" title="File descriptor event notifier." alt="" coords="216,5,389,47"/>
+<area shape="rect" id="node2" href="$private_8h_source.html" title=" " alt="" coords="5,95,189,121"/>
+<area shape="rect" id="node3" href="$object_8h.html" title="Base object to support automatic signal disconnection." alt="" coords="213,95,392,121"/>
+<area shape="rect" id="node11" href="$signal_8h.html" title="Signal &amp; slot implementation." alt="" coords="417,95,594,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="317,177,360,203"/>
+<area shape="rect" id="node5" title=" " alt="" coords="211,259,288,285"/>
+<area shape="rect" id="node6" title=" " alt="" coords="230,177,293,203"/>
+<area shape="rect" id="node7" href="$bound__method_8h.html" title="Method bind and invocation." alt="" coords="385,169,551,211"/>
+<area shape="rect" id="node8" title=" " alt="" coords="365,259,419,285"/>
+<area shape="rect" id="node9" title=" " alt="" coords="538,259,630,285"/>
+<area shape="rect" id="node10" title=" " alt="" coords="443,259,503,285"/>
+<area shape="rect" id="node12" title=" " alt="" coords="627,177,714,203"/>
+</map>

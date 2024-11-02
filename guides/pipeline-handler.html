@@ -1,0 +1,1337 @@
+
+
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Pipeline Handler Writers Guide &mdash; libcamera v0.3.2+rpt20241101+6-22e19df9 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="libcamera v0.3.2+rpt20241101+6-22e19df9 documentation" href="../index.html"/>
+        <link rel="next" title="Python Bindings for libcamera" href="../python-bindings.html"/>
+        <link rel="prev" title="libcamera Architecture" href="../libcamera_architecture.html"/> 
+
+</head>
+
+<body role="document">
+  <header>
+    <div id="navbar">
+      <div class="navbar-brand">
+        <div class="navbar-logo">   _
++-/ \-+
+| (o) |
++-----+</div>
+        <div class="navbar-name"><span class="text-light">lib</span>camera</div>
+      </div>
+
+      <div class="navbar">
+        <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="application-developer.html">Application Writer's Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../camera-sensor-model.html">Camera Sensor Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment_variables.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feature_requirements.html">Feature Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipa.html">IPA Writer's guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lens_driver_requirements.html">Lens driver requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../libcamera_architecture.html">libcamera Architecture</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Pipeline Handler Writer's Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-bindings.html">Python Bindings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sensor_driver_requirements.html">Sensor driver requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software-isp-benchmarking.html">SoftwareISP Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracing.html">Tracing guide</a></li>
+</ul>
+
+        <div class="searchbox" role="search">
+          <form class="search" action="../search.html" method="get">
+            <input type="text" name="q" />
+	    <input type="submit" value="Go" />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <div id="content">
+    
+    <div class="block">
+      
+  <div class="documentation-nav docutils container">
+<ul>
+<li><p><strong>Documentation for Users</strong></p></li>
+<li><p><a class="reference internal" href="../introduction.html"><span class="doc">Introduction</span></a></p></li>
+<li><p><a class="reference internal" href="../feature_requirements.html"><span class="doc">Feature Requirements</span></a></p></li>
+<li><p><a class="reference internal" href="application-developer.html"><span class="doc">Using libcamera in a C++ application</span></a></p></li>
+<li><p><a class="reference internal" href="../python-bindings.html"><span class="doc">Python Bindings for libcamera</span></a></p></li>
+<li><p><a class="reference internal" href="../environment_variables.html"><span class="doc">Environment variables</span></a></p></li>
+<li><p><a class="reference internal" href="../api-html/index.html"><span class="doc">API Reference</span></a></p></li>
+<li><p><a class="reference internal" href="../code-of-conduct.html"><span class="doc">Contributor Covenant Code of Conduct</span></a></p></li>
+<li><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p><strong>Documentation for Developers</strong></p></li>
+<li><p><a class="reference internal" href="../libcamera_architecture.html"><span class="doc">libcamera Architecture</span></a></p></li>
+<li><p><a class="reference internal" href="#"><span class="doc">Pipeline Handler Writers Guide</span></a></p></li>
+<li><p><a class="reference internal" href="ipa.html"><span class="doc">IPA Writer’s Guide</span></a></p></li>
+<li><p><a class="reference internal" href="../camera-sensor-model.html"><span class="doc">The libcamera camera sensor model</span></a></p></li>
+<li><p><a class="reference internal" href="tracing.html"><span class="doc">Tracing Guide</span></a></p></li>
+<li><p><a class="reference internal" href="../software-isp-benchmarking.html"><span class="doc">Software ISP benchmarking</span></a></p></li>
+<li><p><a class="reference internal" href="../coding-style.html"><span class="doc">Coding Style Guidelines</span></a></p></li>
+<li><p><a class="reference internal" href="../internal-api-html/index.html"><span class="doc">Internal API Reference</span></a></p></li>
+<li><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p><strong>Documentation for System Integrators</strong></p></li>
+<li><p><a class="reference internal" href="../lens_driver_requirements.html"><span class="doc">Lens Driver Requirements</span></a></p></li>
+<li><p><a class="reference internal" href="../sensor_driver_requirements.html"><span class="doc">Sensor Driver Requirements</span></a></p></li>
+</ul>
+</div>
+<section class="documentation" id="pipeline-handler-writers-guide">
+<h1>Pipeline Handler Writers Guide<a class="headerlink" href="#pipeline-handler-writers-guide" title="Link to this heading">¶</a></h1>
+<p>Pipeline handlers are the abstraction layer for device-specific hardware
+configuration. They access and control hardware through the V4L2 and Media
+Controller kernel interfaces, and implement an internal API to control the ISP
+and capture components of a pipeline directly.</p>
+<section id="prerequisite-knowledge-system-architecture">
+<h2>Prerequisite knowledge: system architecture<a class="headerlink" href="#prerequisite-knowledge-system-architecture" title="Link to this heading">¶</a></h2>
+<p>A pipeline handler configures and manages the image acquisition and
+transformation pipeline realized by specialized system peripherals combined with
+an image source connected to the system through a data and control bus. The
+presence, number and characteristics of them vary depending on the system design
+and the product integration of the target platform.</p>
+<p>System components can be classified in three macro-categories:</p>
+<ul class="simple">
+<li><p>Input ports: Interfaces to external devices, usually image sensors,
+which transfer data from the physical bus to locations accessible by other
+system peripherals. An input port needs to be configured according to the
+input image format and size and could optionally apply basic transformations
+on the received images, most typically cropping/scaling and some formats
+conversion. The industry standard for the system typically targeted by
+libcamera is to have receivers compliant with the MIPI CSI-2 specifications,
+implemented on a compatible physical layer such as MIPI D-PHY or MIPI C-PHY.
+Other design are possible but less common, such as LVDS or the legacy BT.601
+and BT.656 parallel protocols.</p></li>
+<li><p>Image Signal Processor (ISP): A specialized media processor which applies
+digital transformations on image streams. ISPs can be integrated as part of
+the SoC as a memory interfaced system peripheral or packaged as stand-alone
+chips connected to the application processor through a bus. Most hardware used
+by libcamera makes use of in-system ISP designs but pipelines can equally
+support external ISP chips or be instrumented to use other system resources
+such as a GPU or an FPGA IP block. ISPs expose a software programming
+interface that allows the configuration of multiple processing blocks which
+form an “Image Transformation Pipeline”. An ISP usually produces ‘processed’
+image streams along with the metadata describing the processing steps which
+have been applied to generate the output frames.</p></li>
+<li><p>Camera Sensor: Digital components that integrate an image sensor with control
+electronics and usually a lens. It interfaces to the SoC image receiver ports
+and is programmed to produce images in a format and size suitable for the
+current system configuration. Complex camera modules can integrate on-board
+ISP or DSP chips and process images before delivering them to the system. Most
+systems with a dedicated ISP processor will usually integrate camera sensors
+which produce images in Raw Bayer format and defer processing to it.</p></li>
+</ul>
+<p>It is the responsibility of the pipeline handler to interface with these (and
+possibly other) components of the system and implement the following
+functionalities:</p>
+<ul class="simple">
+<li><p>Detect and register camera devices available in the system with an associated
+set of image streams.</p></li>
+<li><p>Configure the image acquisition and processing pipeline by assigning the
+system resources (memory, shared components, etc.) to satisfy the
+configuration requested by the application.</p></li>
+<li><p>Start and stop the image acquisition and processing sessions.</p></li>
+<li><p>Apply configuration settings requested by applications and computed by image
+processing algorithms integrated in libcamera to the hardware devices.</p></li>
+<li><p>Notify applications of the availability of new images and deliver them to the
+correct locations.</p></li>
+</ul>
+</section>
+<section id="prerequisite-knowledge-libcamera-architecture">
+<h2>Prerequisite knowledge: libcamera architecture<a class="headerlink" href="#prerequisite-knowledge-libcamera-architecture" title="Link to this heading">¶</a></h2>
+<p>A pipeline handler makes use of the following libcamera classes to realize the
+functionalities described above. Below is a brief overview of each of those:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1MediaDevice.html">MediaDevice</a>:
+Instances of this class are associated with a kernel media controller
+device and its connected objects.</p></li>
+<li><p><a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1DeviceEnumerator.html">DeviceEnumerator</a>:
+Enumerates all media devices attached to the system and the media entities
+registered with it, by creating instances of the <code class="docutils literal notranslate"><span class="pre">MediaDevice</span></code> class and
+storing them.</p></li>
+<li><p><a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1DeviceMatch.html">DeviceMatch</a>:
+Describes a media device search pattern using entity names, or other
+properties.</p></li>
+<li><p><a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1V4L2VideoDevice.html">V4L2VideoDevice</a>:
+Models an instance of a V4L2 video device constructed with the path to a V4L2
+video device node.</p></li>
+<li><p><a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1V4L2Subdevice.html">V4L2SubDevice</a>:
+Provides an API to the sub-devices that model the hardware components of a
+V4L2 device.</p></li>
+<li><p><a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1CameraSensor.html">CameraSensor</a>:
+Abstracts camera sensor handling by hiding the details of the V4L2 subdevice
+kernel API and caching sensor information.</p></li>
+<li><p><a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1Camera_1_1Private.html">Camera::Private</a>:
+Represents device-specific data a pipeline handler associates to each Camera
+instance.</p></li>
+<li><p><a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/structlibcamera_1_1StreamConfiguration.html">StreamConfiguration</a>:
+Models the current configuration of an image stream produced by the camera by
+reporting its format and sizes.</p></li>
+<li><p><a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1CameraConfiguration.html">CameraConfiguration</a>:
+Represents the current configuration of a camera, which includes a list of
+stream configurations for each active stream in a capture session. When
+validated, it is applied to the camera.</p></li>
+<li><p><a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1IPAInterface.html">IPAInterface</a>:
+The interface to the Image Processing Algorithm (IPA) module which performs
+the computation of the image processing pipeline tuning parameters.</p></li>
+<li><p><a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1ControlList.html">ControlList</a>:
+A list of control items, indexed by Control&lt;&gt; instances or by numerical index
+which contains values used by application and IPA to change parameters of
+image streams, used to return to applications and share with IPA the metadata
+associated with the captured images, and to advertise the immutable camera
+characteristics enumerated at system initialization time.</p></li>
+</ul>
+</section>
+<section id="creating-a-pipelinehandler">
+<h2>Creating a PipelineHandler<a class="headerlink" href="#creating-a-pipelinehandler" title="Link to this heading">¶</a></h2>
+<p>This guide walks through the steps to create a simple pipeline handler
+called “Vivid” that supports the <a class="reference external" href="https://www.kernel.org/doc/html/latest/admin-guide/media/vivid.html">V4L2 Virtual Video Test Driver</a> (vivid).</p>
+<p>To use the vivid test driver, you first need to check that the vivid kernel
+module is loaded, for example with the <code class="docutils literal notranslate"><span class="pre">modprobe</span> <span class="pre">vivid</span></code> command.</p>
+<section id="create-the-skeleton-file-structure">
+<h3>Create the skeleton file structure<a class="headerlink" href="#create-the-skeleton-file-structure" title="Link to this heading">¶</a></h3>
+<p>To add a new pipeline handler, create a directory to hold the pipeline code in
+the <em>src/libcamera/pipeline/</em> directory that matches the name of the pipeline
+(in this case <em>vivid</em>). Inside the new directory add a <em>meson.build</em> file that
+integrates with the libcamera build system, and a <em>vivid.cpp</em> file that matches
+the name of the pipeline.</p>
+<p>In the <em>meson.build</em> file, add the <em>vivid.cpp</em> file as a build source for
+libcamera by adding it to the global meson <code class="docutils literal notranslate"><span class="pre">libcamera_internal_sources</span></code>
+variable:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># SPDX-License-Identifier: CC0-1.0
+
+libcamera_internal_sources += files([
+    &#39;vivid.cpp&#39;,
+])
+</pre></div>
+</div>
+<p>Users of libcamera can selectively enable pipelines while building libcamera
+using the <code class="docutils literal notranslate"><span class="pre">pipelines</span></code> option.</p>
+<p>For example, to enable only the IPU3, UVC, and VIVID pipelines, specify them as
+a comma separated list with <code class="docutils literal notranslate"><span class="pre">-Dpipelines</span></code> when generating a build directory:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>meson<span class="w"> </span>build<span class="w"> </span>-Dpipelines<span class="o">=</span>ipu3,uvcvideo,vivid
+</pre></div>
+</div>
+<p>Read the <a class="reference external" href="https://mesonbuild.com/Configuring-a-build-directory.html">Meson build configuration</a> documentation for more information on
+configuring a build directory.</p>
+<p>To add the new pipeline handler to this list of options, add its directory name
+to the libcamera build options in the top level <code class="docutils literal notranslate"><span class="pre">meson_options.txt</span></code>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>option(&#39;pipelines&#39;,
+        type : &#39;array&#39;,
+        choices : [&#39;ipu3&#39;, &#39;rkisp1&#39;, &#39;rpi/pisp&#39;, &#39;rpi/vc4&#39;, &#39;simple&#39;, &#39;uvcvideo&#39;, &#39;vimc&#39;, &#39;vivid&#39;],
+        description : &#39;Select which pipeline handlers to include&#39;)
+</pre></div>
+</div>
+<p>In <em>vivid.cpp</em> add the pipeline handler to the <code class="docutils literal notranslate"><span class="pre">libcamera</span></code> namespace, defining
+a <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1PipelineHandler.html">PipelineHandler</a> derived class named PipelineHandlerVivid, and add stub
+implementations for the overridden class members.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span><span class="w"> </span><span class="nn">libcamera</span><span class="w"> </span><span class="p">{</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">PipelineHandlerVivid</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">PipelineHandler</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">       </span><span class="n">PipelineHandlerVivid</span><span class="p">(</span><span class="n">CameraManager</span><span class="w"> </span><span class="o">*</span><span class="n">manager</span><span class="p">);</span>
+
+<span class="w">       </span><span class="n">CameraConfiguration</span><span class="w"> </span><span class="o">*</span><span class="nf">generateConfiguration</span><span class="p">(</span><span class="n">Camera</span><span class="w"> </span><span class="o">*</span><span class="n">camera</span><span class="p">,</span>
+<span class="w">       </span><span class="n">Span</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">StreamRole</span><span class="o">&gt;</span><span class="w"> </span><span class="n">roles</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
+<span class="w">       </span><span class="kt">int</span><span class="w"> </span><span class="nf">configure</span><span class="p">(</span><span class="n">Camera</span><span class="w"> </span><span class="o">*</span><span class="n">camera</span><span class="p">,</span><span class="w"> </span><span class="n">CameraConfiguration</span><span class="w"> </span><span class="o">*</span><span class="n">config</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
+
+<span class="w">       </span><span class="kt">int</span><span class="w"> </span><span class="nf">exportFrameBuffers</span><span class="p">(</span><span class="n">Camera</span><span class="w"> </span><span class="o">*</span><span class="n">camera</span><span class="p">,</span><span class="w"> </span><span class="n">Stream</span><span class="w"> </span><span class="o">*</span><span class="n">stream</span><span class="p">,</span>
+<span class="w">       </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">FrameBuffer</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="o">*</span><span class="n">buffers</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
+
+<span class="w">       </span><span class="kt">int</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="n">Camera</span><span class="w"> </span><span class="o">*</span><span class="n">camera</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">ControlList</span><span class="w"> </span><span class="o">*</span><span class="n">controls</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
+<span class="w">       </span><span class="kt">void</span><span class="w"> </span><span class="nf">stop</span><span class="p">(</span><span class="n">Camera</span><span class="w"> </span><span class="o">*</span><span class="n">camera</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
+
+<span class="w">       </span><span class="kt">int</span><span class="w"> </span><span class="nf">queueRequestDevice</span><span class="p">(</span><span class="n">Camera</span><span class="w"> </span><span class="o">*</span><span class="n">camera</span><span class="p">,</span><span class="w"> </span><span class="n">Request</span><span class="w"> </span><span class="o">*</span><span class="n">request</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
+
+<span class="w">       </span><span class="kt">bool</span><span class="w"> </span><span class="nf">match</span><span class="p">(</span><span class="n">DeviceEnumerator</span><span class="w"> </span><span class="o">*</span><span class="n">enumerator</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="n">PipelineHandlerVivid</span><span class="o">::</span><span class="n">PipelineHandlerVivid</span><span class="p">(</span><span class="n">CameraManager</span><span class="w"> </span><span class="o">*</span><span class="n">manager</span><span class="p">)</span>
+<span class="w">       </span><span class="o">:</span><span class="w"> </span><span class="n">PipelineHandler</span><span class="p">(</span><span class="n">manager</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="n">CameraConfiguration</span><span class="w"> </span><span class="o">*</span><span class="n">PipelineHandlerVivid</span><span class="o">::</span><span class="n">generateConfiguration</span><span class="p">(</span><span class="n">Camera</span><span class="w"> </span><span class="o">*</span><span class="n">camera</span><span class="p">,</span>
+<span class="w">                                                                 </span><span class="n">Span</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">StreamRole</span><span class="o">&gt;</span><span class="w"> </span><span class="n">roles</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">       </span><span class="k">return</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">PipelineHandlerVivid</span><span class="o">::</span><span class="n">configure</span><span class="p">(</span><span class="n">Camera</span><span class="w"> </span><span class="o">*</span><span class="n">camera</span><span class="p">,</span><span class="w"> </span><span class="n">CameraConfiguration</span><span class="w"> </span><span class="o">*</span><span class="n">config</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">       </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">PipelineHandlerVivid</span><span class="o">::</span><span class="n">exportFrameBuffers</span><span class="p">(</span><span class="n">Camera</span><span class="w"> </span><span class="o">*</span><span class="n">camera</span><span class="p">,</span><span class="w"> </span><span class="n">Stream</span><span class="w"> </span><span class="o">*</span><span class="n">stream</span><span class="p">,</span>
+<span class="w">                                             </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">FrameBuffer</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="o">*</span><span class="n">buffers</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">       </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">PipelineHandlerVivid</span><span class="o">::</span><span class="n">start</span><span class="p">(</span><span class="n">Camera</span><span class="w"> </span><span class="o">*</span><span class="n">camera</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">ControlList</span><span class="w"> </span><span class="o">*</span><span class="n">controls</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">       </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">PipelineHandlerVivid</span><span class="o">::</span><span class="n">stop</span><span class="p">(</span><span class="n">Camera</span><span class="w"> </span><span class="o">*</span><span class="n">camera</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">PipelineHandlerVivid</span><span class="o">::</span><span class="n">queueRequestDevice</span><span class="p">(</span><span class="n">Camera</span><span class="w"> </span><span class="o">*</span><span class="n">camera</span><span class="p">,</span><span class="w"> </span><span class="n">Request</span><span class="w"> </span><span class="o">*</span><span class="n">request</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">       </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="n">PipelineHandlerVivid</span><span class="o">::</span><span class="n">match</span><span class="p">(</span><span class="n">DeviceEnumerator</span><span class="w"> </span><span class="o">*</span><span class="n">enumerator</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">       </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">REGISTER_PIPELINE_HANDLER</span><span class="p">(</span><span class="n">PipelineHandlerVivid</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;vivid&quot;</span><span class="p">)</span>
+
+<span class="p">}</span><span class="w"> </span><span class="cm">/* namespace libcamera */</span>
+</pre></div>
+</div>
+<p>Note that you must register the <code class="docutils literal notranslate"><span class="pre">PipelineHandler</span></code> subclass with the pipeline
+handler factory using the <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/pipeline__handler_8h.html">REGISTER_PIPELINE_HANDLER</a> macro which
+registers it and creates a global symbol to reference the class and make it
+available to try and match devices.
+String “vivid” is the name assigned to the pipeline, matching the pipeline
+subdirectory name in the source tree.</p>
+<p>For debugging and testing a pipeline handler during development, you can define
+a log message category for the pipeline handler. The <code class="docutils literal notranslate"><span class="pre">LOG_DEFINE_CATEGORY</span></code>
+macro and <code class="docutils literal notranslate"><span class="pre">LIBCAMERA_LOG_LEVELS</span></code> environment variable help you use the inbuilt
+libcamera <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/log_8h.html">logging infrastructure</a> that allow for the inspection of internal
+operations in a user-configurable way.</p>
+<p>Add the following before the <code class="docutils literal notranslate"><span class="pre">PipelineHandlerVivid</span></code> class declaration:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">LOG_DEFINE_CATEGORY</span><span class="p">(</span><span class="n">VIVID</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>At this point you need the following includes for logging and pipeline handler
+features:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;libcamera/base/log.h&gt;</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;libcamera/internal/pipeline_handler.h&quot;</span>
+</pre></div>
+</div>
+<p>Run the following commands:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>meson<span class="w"> </span>build
+ninja<span class="w"> </span>-C<span class="w"> </span>build
+</pre></div>
+</div>
+<p>To build the libcamera code base, and confirm that the build system found the
+new pipeline handler by running:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">LIBCAMERA_LOG_LEVELS</span><span class="o">=</span>Camera:0<span class="w"> </span>./build/src/cam/cam<span class="w"> </span>-l
+</pre></div>
+</div>
+<p>And you should see output like the below:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>DEBUG<span class="w"> </span>Camera<span class="w"> </span>camera_manager.cpp:148<span class="w"> </span>Found<span class="w"> </span>registered<span class="w"> </span>pipeline<span class="w"> </span>handler<span class="w"> </span><span class="s1">&#39;PipelineHandlerVivid&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="matching-devices">
+<h3>Matching devices<a class="headerlink" href="#matching-devices" title="Link to this heading">¶</a></h3>
+<p>Each pipeline handler registered in libcamera gets tested against the current
+system configuration, by matching a <code class="docutils literal notranslate"><span class="pre">DeviceMatch</span></code> with the system
+<code class="docutils literal notranslate"><span class="pre">DeviceEnumerator</span></code>. A successful match makes sure all the requested components
+have been registered in the system and allows the pipeline handler to be
+initialized.</p>
+<p>The main entry point of a pipeline handler is the <a class="reference external" href="https://www.libcamera.org/api-html/classlibcamera_1_1PipelineHandler.html#a7cd5b652a2414b543ec20ba9dabf61b6">match()</a> class member
+function. When the <code class="docutils literal notranslate"><span class="pre">CameraManager</span></code> is started (using the <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1CameraManager.html#a49e322880a2a26013bb0076788b298c5">start()</a> function),
+all the registered pipeline handlers are iterated and their <code class="docutils literal notranslate"><span class="pre">match</span></code> function
+called with an enumerator of all devices it found on a system.</p>
+<p>The match function should identify if there are suitable devices available in
+the <code class="docutils literal notranslate"><span class="pre">DeviceEnumerator</span></code> which the pipeline supports, returning <code class="docutils literal notranslate"><span class="pre">true</span></code> if it
+matches a device, and <code class="docutils literal notranslate"><span class="pre">false</span></code> if it does not. To do this, construct a
+<a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1DeviceMatch.html">DeviceMatch</a> class with the name of the <code class="docutils literal notranslate"><span class="pre">MediaController</span></code> device to match.
+You can specify the search further by adding specific media entities to the
+search using the <code class="docutils literal notranslate"><span class="pre">.add()</span></code> function on the DeviceMatch.</p>
+<p>This example uses search patterns that match vivid, but when developing a new
+pipeline handler, you should change this value to suit your device identifier.</p>
+<p>Replace the contents of the <code class="docutils literal notranslate"><span class="pre">PipelineHandlerVivid::match</span></code> function with the
+following:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">DeviceMatch</span><span class="w"> </span><span class="n">dm</span><span class="p">(</span><span class="s">&quot;vivid&quot;</span><span class="p">);</span>
+<span class="n">dm</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;vivid-000-vid-cap&quot;</span><span class="p">);</span>
+<span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"> </span><span class="c1">// Prevent infinite loops for now</span>
+</pre></div>
+</div>
+<p>With the device matching criteria defined, attempt to acquire exclusive access
+to the matching media controller device with the <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1PipelineHandler.html#a77e424fe704e7b26094164b9189e0f84">acquireMediaDevice</a> function.
+If the function attempts to acquire a device it has already matched, it returns
+<code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<p>Add the following below <code class="docutils literal notranslate"><span class="pre">dm.add(&quot;vivid-000-vid-cap&quot;);</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">MediaDevice</span><span class="w"> </span><span class="o">*</span><span class="n">media</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">acquireMediaDevice</span><span class="p">(</span><span class="n">enumerator</span><span class="p">,</span><span class="w"> </span><span class="n">dm</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">media</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The pipeline handler now needs an additional include. Add the following to the
+existing include block for device enumeration functionality:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;libcamera/internal/device_enumerator.h&quot;</span>
+</pre></div>
+</div>
+<p>At this stage, you should test that the pipeline handler can successfully match
+the devices, but have not yet added any code to create a Camera which libcamera
+reports to applications.</p>
+<p>As a temporary validation step, add a debug print with</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">LOG</span><span class="p">(</span><span class="n">VIVID</span><span class="p">,</span><span class="w"> </span><span class="n">Debug</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Vivid Device Identified&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>before the final closing return statement in the <code class="docutils literal notranslate"><span class="pre">PipelineHandlerVivid::match</span></code>
+function for when when the pipeline handler successfully matches the
+<code class="docutils literal notranslate"><span class="pre">MediaDevice</span></code> and <code class="docutils literal notranslate"><span class="pre">MediaEntity</span></code> names.</p>
+<p>Test that the pipeline handler matches and finds a device by rebuilding, and
+running</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ninja<span class="w"> </span>-C<span class="w"> </span>build
+<span class="nv">LIBCAMERA_LOG_LEVELS</span><span class="o">=</span>Pipeline,VIVID:0<span class="w"> </span>./build/src/cam/cam<span class="w"> </span>-l
+</pre></div>
+</div>
+<p>And you should see output like the below:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>DEBUG<span class="w"> </span>VIVID<span class="w"> </span>vivid.cpp:74<span class="w"> </span>Vivid<span class="w"> </span>Device<span class="w"> </span>Identified
+</pre></div>
+</div>
+</section>
+<section id="creating-camera-devices">
+<h3>Creating camera devices<a class="headerlink" href="#creating-camera-devices" title="Link to this heading">¶</a></h3>
+<p>If the pipeline handler successfully matches with the system it is running on,
+it can proceed to initialization, by creating all the required instances of the
+<code class="docutils literal notranslate"><span class="pre">V4L2VideoDevice</span></code>, <code class="docutils literal notranslate"><span class="pre">V4L2Subdevice</span></code> and <code class="docutils literal notranslate"><span class="pre">CameraSensor</span></code> hardware abstraction
+classes. If the Pipeline handler supports an ISP, it can then also initialise
+the IPA module before proceeding to the creation of the Camera devices.</p>
+<p>An image <code class="docutils literal notranslate"><span class="pre">Stream</span></code> represents a sequence of images and data of known size and
+format, stored in application-accessible memory locations. Typical examples of
+streams are the ISP processed outputs and the raw images captured at the
+receivers port output.</p>
+<p>The Pipeline Handler is responsible for defining the set of Streams associated
+with the Camera.</p>
+<p>Each Camera has instance-specific data represented using the <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1Camera_1_1Private.html">Camera::Private</a>
+class, which can be extended for the specific needs of the pipeline handler.</p>
+<p>To support the Camera we will later register, we need to create a Camera::Private
+class that we can implement for our specific Pipeline Handler.</p>
+<p>Define a new <code class="docutils literal notranslate"><span class="pre">VividCameraPrivate()</span></code> class derived from <code class="docutils literal notranslate"><span class="pre">Camera::Private</span></code> by
+adding the following code before the PipelineHandlerVivid class definition where
+it will be used:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">VividCameraData</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Camera</span><span class="o">::</span><span class="n">Private</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">       </span><span class="n">VividCameraData</span><span class="p">(</span><span class="n">PipelineHandler</span><span class="w"> </span><span class="o">*</span><span class="n">pipe</span><span class="p">,</span><span class="w"> </span><span class="n">MediaDevice</span><span class="w"> </span><span class="o">*</span><span class="n">media</span><span class="p">)</span>
+<span class="w">             </span><span class="o">:</span><span class="w"> </span><span class="n">Camera</span><span class="o">::</span><span class="n">Private</span><span class="p">(</span><span class="n">pipe</span><span class="p">),</span><span class="w"> </span><span class="n">media_</span><span class="p">(</span><span class="n">media</span><span class="p">),</span><span class="w"> </span><span class="n">video_</span><span class="p">(</span><span class="k">nullptr</span><span class="p">)</span>
+<span class="w">       </span><span class="p">{</span>
+<span class="w">       </span><span class="p">}</span>
+
+<span class="w">       </span><span class="o">~</span><span class="n">VividCameraData</span><span class="p">()</span>
+<span class="w">       </span><span class="p">{</span>
+<span class="w">             </span><span class="k">delete</span><span class="w"> </span><span class="n">video_</span><span class="p">;</span>
+<span class="w">       </span><span class="p">}</span>
+
+<span class="w">       </span><span class="kt">int</span><span class="w"> </span><span class="n">init</span><span class="p">();</span>
+<span class="w">       </span><span class="kt">void</span><span class="w"> </span><span class="nf">bufferReady</span><span class="p">(</span><span class="n">FrameBuffer</span><span class="w"> </span><span class="o">*</span><span class="n">buffer</span><span class="p">);</span>
+
+<span class="w">       </span><span class="n">MediaDevice</span><span class="w"> </span><span class="o">*</span><span class="n">media_</span><span class="p">;</span>
+<span class="w">       </span><span class="n">V4L2VideoDevice</span><span class="w"> </span><span class="o">*</span><span class="n">video_</span><span class="p">;</span>
+<span class="w">       </span><span class="n">Stream</span><span class="w"> </span><span class="n">stream_</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>This example pipeline handler handles a single video device and supports a
+single stream, represented by the <code class="docutils literal notranslate"><span class="pre">VividCameraData</span></code> class members. More
+complex pipeline handlers might register cameras composed of several video
+devices and sub-devices, or multiple streams per camera that represent the
+several components of the image capture pipeline. You should represent all these
+components in the <code class="docutils literal notranslate"><span class="pre">Camera::Private</span></code> derived class when developing a custom
+PipelineHandler.</p>
+<p>In our example VividCameraData we implement an <code class="docutils literal notranslate"><span class="pre">init()</span></code> function to prepare
+the object from our PipelineHandler, however the Camera::Private class does not
+specify the interface for initialisation and PipelineHandlers can manage this
+based on their own needs. Derived Camera::Private classes are used only by their
+respective pipeline handlers.</p>
+<p>The Camera::Private class stores the context required for each camera instance
+and is usually responsible for opening all Devices used in the capture pipeline.</p>
+<p>We can now implement the <code class="docutils literal notranslate"><span class="pre">init</span></code> function for our example Pipeline Handler to
+create a new V4L2 video device from the media entity, which we can specify using
+the <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1MediaDevice.html#ad5d9279329ef4987ceece2694b33e230">MediaDevice::getEntityByName</a> function from the MediaDevice. As our
+example is based upon the simplistic Vivid test device, we only need to open a
+single capture device named ‘vivid-000-vid-cap’ by the device.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">VividCameraData::init</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">       </span><span class="n">video_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">V4L2VideoDevice</span><span class="p">(</span><span class="n">media_</span><span class="o">-&gt;</span><span class="n">getEntityByName</span><span class="p">(</span><span class="s">&quot;vivid-000-vid-cap&quot;</span><span class="p">));</span>
+<span class="w">       </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">video_</span><span class="o">-&gt;</span><span class="n">open</span><span class="p">())</span>
+<span class="w">             </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="n">ENODEV</span><span class="p">;</span>
+
+<span class="w">       </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The VividCameraData should be created and initialised before we move on to
+register a new Camera device so we need to construct and initialise our
+VividCameraData after we have identified our device within
+PipelineHandlerVivid::match(). The VividCameraData is wrapped by a
+std::unique_ptr to help manage the lifetime of the instance.</p>
+<p>If the camera data initialization fails, return <code class="docutils literal notranslate"><span class="pre">false</span></code> to indicate the
+failure to the <code class="docutils literal notranslate"><span class="pre">match()</span></code> function and prevent retrying of the pipeline
+handler.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">VividCameraData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">VividCameraData</span><span class="o">&gt;</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">media</span><span class="p">);</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">data</span><span class="o">-&gt;</span><span class="n">init</span><span class="p">())</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Once the camera data has been initialized, the Camera device instances and the
+associated streams have to be registered. Create a set of streams for the
+camera, which for this device is only one. You create a camera using the static
+<a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1Camera.html#a453740e0d2a2f495048ae307a85a2574">Camera::create</a> function, passing the Camera::Private instance, the id of the
+camera, and the streams available. Then register the camera with the pipeline
+handler and camera manager using <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1PipelineHandler.html#adf02a7f1bbd87aca73c0e8d8e0e6c98b">registerCamera</a>.</p>
+<p>Finally with a successful construction, we return ‘true’ indicating that the
+PipelineHandler successfully matched and constructed a device.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">set</span><span class="o">&lt;</span><span class="n">Stream</span><span class="w"> </span><span class="o">*&gt;</span><span class="w"> </span><span class="n">streams</span><span class="p">{</span><span class="w"> </span><span class="o">&amp;</span><span class="n">data</span><span class="o">-&gt;</span><span class="n">stream_</span><span class="w"> </span><span class="p">};</span>
+<span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Camera</span><span class="o">&gt;</span><span class="w"> </span><span class="n">camera</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Camera</span><span class="o">::</span><span class="n">create</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">video_</span><span class="o">-&gt;</span><span class="n">deviceName</span><span class="p">(),</span><span class="w"> </span><span class="n">streams</span><span class="p">);</span>
+<span class="n">registerCamera</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">camera</span><span class="p">),</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">data</span><span class="p">));</span>
+
+<span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Our match function should now look like the following:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="nf">PipelineHandlerVivid::match</span><span class="p">(</span><span class="n">DeviceEnumerator</span><span class="w"> </span><span class="o">*</span><span class="n">enumerator</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">     </span><span class="n">DeviceMatch</span><span class="w"> </span><span class="n">dm</span><span class="p">(</span><span class="s">&quot;vivid&quot;</span><span class="p">);</span>
+<span class="w">     </span><span class="n">dm</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;vivid-000-vid-cap&quot;</span><span class="p">);</span>
+
+<span class="w">     </span><span class="n">MediaDevice</span><span class="w"> </span><span class="o">*</span><span class="n">media</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">acquireMediaDevice</span><span class="p">(</span><span class="n">enumerator</span><span class="p">,</span><span class="w"> </span><span class="n">dm</span><span class="p">);</span>
+<span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">media</span><span class="p">)</span>
+<span class="w">             </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+
+<span class="w">     </span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">VividCameraData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">VividCameraData</span><span class="o">&gt;</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">media</span><span class="p">);</span>
+
+<span class="w">     </span><span class="cm">/* Locate and open the capture video node. */</span>
+<span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">data</span><span class="o">-&gt;</span><span class="n">init</span><span class="p">())</span>
+<span class="w">             </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+
+<span class="w">     </span><span class="cm">/* Create and register the camera. */</span>
+<span class="w">     </span><span class="n">std</span><span class="o">::</span><span class="n">set</span><span class="o">&lt;</span><span class="n">Stream</span><span class="w"> </span><span class="o">*&gt;</span><span class="w"> </span><span class="n">streams</span><span class="p">{</span><span class="w"> </span><span class="o">&amp;</span><span class="n">data</span><span class="o">-&gt;</span><span class="n">stream_</span><span class="w"> </span><span class="p">};</span>
+<span class="w">     </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">video_</span><span class="o">-&gt;</span><span class="n">deviceName</span><span class="p">();</span>
+<span class="w">     </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Camera</span><span class="o">&gt;</span><span class="w"> </span><span class="n">camera</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Camera</span><span class="o">::</span><span class="n">create</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">release</span><span class="p">(),</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">streams</span><span class="p">);</span>
+<span class="w">     </span><span class="n">registerCamera</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">camera</span><span class="p">));</span>
+
+<span class="w">     </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>We will need to use our custom VividCameraData class frequently throughout the
+pipeline handler, so we add a private convenience helper to our Pipeline handler
+to obtain and cast the custom VividCameraData instance from a Camera::Private
+instance.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="o">:</span>
+<span class="w">    </span><span class="n">VividCameraData</span><span class="w"> </span><span class="o">*</span><span class="n">cameraData</span><span class="p">(</span><span class="n">Camera</span><span class="w"> </span><span class="o">*</span><span class="n">camera</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">VividCameraData</span><span class="w"> </span><span class="o">*&gt;</span><span class="p">(</span><span class="n">camera</span><span class="o">-&gt;</span><span class="n">_d</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+</pre></div>
+</div>
+<p>At this point, you need to add the following new includes to provide the Camera
+interface, and device interaction interfaces.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;libcamera/camera.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;libcamera/internal/media_device.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;libcamera/internal/v4l2_videodevice.h&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="registering-controls-and-properties">
+<h3>Registering controls and properties<a class="headerlink" href="#registering-controls-and-properties" title="Link to this heading">¶</a></h3>
+<p>The libcamera <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/controls_8h.html">controls framework</a> allows an application to configure the
+streams capture parameters on a per-frame basis and is also used to advertise
+immutable properties of the <code class="docutils literal notranslate"><span class="pre">Camera</span></code> device.</p>
+<p>The libcamera controls and properties are defined in YAML form which is
+processed to automatically generate documentation and interfaces. Controls are
+defined by the src/libcamera/<a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/control__ids_8h.html">control_ids_core.yaml</a> file and camera properties
+are defined by src/libcamera/<a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/property__ids_8h.html">properties_ids_core.yaml</a>.</p>
+<p>Pipeline handlers can optionally register the list of controls an application
+can set as well as a list of immutable camera properties. Being both
+Camera-specific values, they are represented in the <code class="docutils literal notranslate"><span class="pre">Camera::Private</span></code> base
+class, which provides two members for this purpose: the
+<a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1Camera_1_1Private.html#ab4e183eb4dabe929d1b2bbbb519b969f">Camera::Private::controlInfo_</a> and the <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1Camera_1_1Private.html#ad31f12f5ed9c1fbe25750902f4791064">Camera::Private::properties_</a> fields.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">controlInfo_</span></code> field represents a map of <code class="docutils literal notranslate"><span class="pre">ControlId</span></code> instances
+associated with the limits of valid values supported for the control. More
+information can be found in the <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1ControlInfoMap.html">ControlInfoMap</a> class documentation.</p>
+<p>Pipeline handlers register controls to expose the tunable device and IPA
+parameters to applications. Our example pipeline handler only exposes trivial
+controls of the video device, by registering a <code class="docutils literal notranslate"><span class="pre">ControlId</span></code> instance with
+associated values for each supported V4L2 control but demonstrates the mapping
+of V4L2 Controls to libcamera ControlIDs.</p>
+<p>Complete the initialization of the <code class="docutils literal notranslate"><span class="pre">VividCameraData</span></code> class by adding the
+following code to the <code class="docutils literal notranslate"><span class="pre">VividCameraData::init()</span></code> function to initialise the
+controls. For more complex control configurations, this could of course be
+broken out to a separate function, but for now we just initialise the small set
+inline in our VividCameraData init:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Initialise the supported controls. */</span>
+<span class="k">const</span><span class="w"> </span><span class="n">ControlInfoMap</span><span class="w"> </span><span class="o">&amp;</span><span class="n">controls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">video_</span><span class="o">-&gt;</span><span class="n">controls</span><span class="p">();</span>
+<span class="n">ControlInfoMap</span><span class="o">::</span><span class="n">Map</span><span class="w"> </span><span class="n">ctrls</span><span class="p">;</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ctrl</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">controls</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">ControlId</span><span class="w"> </span><span class="o">*</span><span class="n">id</span><span class="p">;</span>
+<span class="w">        </span><span class="n">ControlInfo</span><span class="w"> </span><span class="n">info</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">ctrl</span><span class="p">.</span><span class="n">first</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">V4L2_CID_BRIGHTNESS</span><span class="p">:</span>
+<span class="w">                </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">controls</span><span class="o">::</span><span class="n">Brightness</span><span class="p">;</span>
+<span class="w">                </span><span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ControlInfo</span><span class="p">{</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mf">-1.0f</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mf">1.0f</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mf">0.0f</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">};</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">V4L2_CID_CONTRAST</span><span class="p">:</span>
+<span class="w">                </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">controls</span><span class="o">::</span><span class="n">Contrast</span><span class="p">;</span>
+<span class="w">                </span><span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ControlInfo</span><span class="p">{</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mf">0.0f</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mf">2.0f</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mf">1.0f</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">};</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">V4L2_CID_SATURATION</span><span class="p">:</span>
+<span class="w">                </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">controls</span><span class="o">::</span><span class="n">Saturation</span><span class="p">;</span>
+<span class="w">                </span><span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ControlInfo</span><span class="p">{</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mf">0.0f</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mf">2.0f</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mf">1.0f</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">};</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="k">default</span><span class="o">:</span>
+<span class="w">                </span><span class="k">continue</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">ctrls</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">info</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">controlInfo_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ControlInfoMap</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">ctrls</span><span class="p">),</span><span class="w"> </span><span class="n">controls</span><span class="o">::</span><span class="n">controls</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">properties_</span></code> field is  a list of <code class="docutils literal notranslate"><span class="pre">ControlId</span></code> instances
+associated with immutable values, which represent static characteristics that can
+be used by applications to identify camera devices in the system. Properties can be
+registered by inspecting the values of V4L2 controls from the video devices and
+camera sensor (for example to retrieve the position and orientation of a camera)
+or to express other immutable characteristics. The example pipeline handler does
+not register any property, but examples are available in the libcamera code
+base.</p>
+<p>At this point you need to add the following includes to the top of the file for
+handling controls:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;libcamera/controls.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;libcamera/control_ids.h&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="vendor-specific-controls-and-properties">
+<h3>Vendor-specific controls and properties<a class="headerlink" href="#vendor-specific-controls-and-properties" title="Link to this heading">¶</a></h3>
+<p>Vendor-specific controls and properties must be defined in a separate YAML file
+and included in the build by defining the pipeline handler to file mapping in
+include/libcamera/meson.build. These YAML files live in the src/libcamera
+directory.</p>
+<p>For example, adding a Raspberry Pi vendor control file for the PiSP pipeline
+handler is done with the following mapping:</p>
+<div class="highlight-meson notranslate"><div class="highlight"><pre><span></span><span class="n">controls_map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="s">&#39;controls&#39;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="s">&#39;draft&#39;</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;control_ids_draft.yaml&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="s">&#39;libcamera&#39;</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;control_ids_core.yaml&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="s">&#39;rpi/pisp&#39;</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;control_ids_rpi.yaml&#39;</span><span class="p">,</span>
+<span class="w">   </span><span class="p">},</span>
+
+<span class="w">   </span><span class="s">&#39;properties&#39;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="s">&#39;draft&#39;</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;property_ids_draft.yaml&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="s">&#39;libcamera&#39;</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;property_ids_core.yaml&#39;</span><span class="p">,</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The pipeline handler named above must match the pipeline handler option string
+specified in the meson build configuration.</p>
+<p>Vendor-specific controls and properties must contain a <cite>vendor: &lt;vendor_string&gt;</cite>
+tag in the YAML file. Every unique vendor tag must define a unique and
+non-overlapping range of reserved control IDs in src/libcamera/control_ranges.yaml.</p>
+<p>For example, the following block defines a vendor-specific control with the
+<cite>rpi</cite> vendor tag:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">vendor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rpi</span>
+<span class="nt">controls</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">PispConfigDumpFile</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">        </span><span class="no">Triggers the Raspberry Pi PiSP pipeline handler to generate a JSON</span>
+<span class="w">        </span><span class="no">formatted dump of the Backend configuration to the filename given by the</span>
+<span class="w">        </span><span class="no">value of the control.</span>
+</pre></div>
+</div>
+<p>The controls will be generated in the vendor-specific namespace
+<cite>libcamera::controls::rpi</cite>. Additionally a <cite>#define
+LIBCAMERA_HAS_RPI_VENDOR_CONTROLS</cite> will be available to allow applications to
+test for the availability of these controls.</p>
+</section>
+<section id="generating-a-default-configuration">
+<h3>Generating a default configuration<a class="headerlink" href="#generating-a-default-configuration" title="Link to this heading">¶</a></h3>
+<p>Once <code class="docutils literal notranslate"><span class="pre">Camera</span></code> devices and the associated <code class="docutils literal notranslate"><span class="pre">Streams</span></code> have been registered, an
+application can proceed to acquire and configure the camera to prepare it for a
+frame capture session.</p>
+<p>Applications specify the requested configuration by assigning a
+<code class="docutils literal notranslate"><span class="pre">StreamConfiguration</span></code> instance to each stream they want to enable which
+expresses the desired image size and pixel format. The stream configurations are
+grouped in a <code class="docutils literal notranslate"><span class="pre">CameraConfiguration</span></code> which is inspected by the pipeline handler
+and validated to adjust it to a supported configuration. This may involve
+adjusting the formats or image sizes or alignments for example to match the
+capabilities of the device.</p>
+<p>Applications may choose to repeat validation stages, adjusting parameters until
+a set of validated StreamConfigurations are returned that is acceptable for the
+applications needs. When the pipeline handler receives a valid camera
+configuration it can use the image stream configurations to apply settings to
+the hardware devices.</p>
+<p>This configuration and validation process is managed with another Pipeline
+specific class derived from a common base implementation and interface.</p>
+<p>To support validation in our example pipeline handler, Create a new class called
+<code class="docutils literal notranslate"><span class="pre">VividCameraConfiguration</span></code> derived from the base <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1CameraConfiguration.html">CameraConfiguration</a> class
+which we can implement and use within our <code class="docutils literal notranslate"><span class="pre">PipelineHandlerVivid</span></code> class.</p>
+<p>The derived <code class="docutils literal notranslate"><span class="pre">CameraConfiguration</span></code> class must override the base class
+<code class="docutils literal notranslate"><span class="pre">validate()</span></code> function, where the stream configuration inspection and
+adjustment happens.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">VividCameraConfiguration</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">CameraConfiguration</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">       </span><span class="n">VividCameraConfiguration</span><span class="p">();</span>
+
+<span class="w">       </span><span class="n">Status</span><span class="w"> </span><span class="nf">validate</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="n">VividCameraConfiguration</span><span class="o">::</span><span class="n">VividCameraConfiguration</span><span class="p">()</span>
+<span class="w">       </span><span class="o">:</span><span class="w"> </span><span class="n">CameraConfiguration</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Applications generate a <code class="docutils literal notranslate"><span class="pre">CameraConfiguration</span></code> instance by calling the
+<a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1Camera.html#a25c80eb7fc9b1cf32692ce0c7f09991d">Camera::generateConfiguration()</a> function, which calls into the pipeline
+implementation of the overridden <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1PipelineHandler.html#a7932e87735695500ce1f8c7ae449b65b">PipelineHandler::generateConfiguration()</a>
+function.</p>
+<p>Configurations are generated by receiving a list of <code class="docutils literal notranslate"><span class="pre">StreamRole</span></code> instances,
+which libcamera uses as predefined ways an application intends to use a camera
+(You can read the full list in the <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/stream_8h.html#file_a295d1f5e7828d95c0b0aabc0a8baac03">StreamRole API</a> documentation). These are
+optional hints on how an application intends to use a stream, and a pipeline
+handler should return an ideal configuration for each role that is requested.</p>
+<p>In the pipeline handler <code class="docutils literal notranslate"><span class="pre">generateConfiguration</span></code> implementation, remove the
+<code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">nullptr;</span></code>, create a new instance of the <code class="docutils literal notranslate"><span class="pre">CameraConfiguration</span></code>
+derived class, and assign it to a base class pointer.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">VividCameraData</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cameraData</span><span class="p">(</span><span class="n">camera</span><span class="p">);</span>
+<span class="n">CameraConfiguration</span><span class="w"> </span><span class="o">*</span><span class="n">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">VividCameraConfiguration</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">CameraConfiguration</span></code> is specific to each pipeline, so you can only create
+it from the pipeline handler code path. Applications can also generate an empty
+configuration and add desired stream configurations manually. Pipelines must
+allow for this by returning an empty configuration if no roles are requested.</p>
+<p>To support this in our PipelineHandlerVivid, next add the following check in
+<code class="docutils literal notranslate"><span class="pre">generateConfiguration</span></code> after the Cameraconfiguration has been constructed:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">roles</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">config</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>A production pipeline handler should generate the <code class="docutils literal notranslate"><span class="pre">StreamConfiguration</span></code> for
+all the appropriate stream roles a camera device supports. For this simpler
+example (with only one stream), the pipeline handler always returns the same
+configuration, inferred from the underlying V4L2VideoDevice.</p>
+<p>How it does this is shown below, but examination of the more full-featured
+pipelines for IPU3, RKISP1 and RaspberryPi are recommended to explore more
+complex examples.</p>
+<p>To generate a <code class="docutils literal notranslate"><span class="pre">StreamConfiguration</span></code>, you need a list of pixel formats and
+frame sizes which are supported as outputs of the stream. You can fetch a map of
+the <code class="docutils literal notranslate"><span class="pre">V4LPixelFormat</span></code> and <code class="docutils literal notranslate"><span class="pre">SizeRange</span></code> supported by the underlying output
+device, but the pipeline handler needs to convert this to a
+<code class="docutils literal notranslate"><span class="pre">libcamera::PixelFormat</span></code> type to pass to applications. We do this here using
+<code class="docutils literal notranslate"><span class="pre">std::transform</span></code> to convert the formats and populate a new <code class="docutils literal notranslate"><span class="pre">PixelFormat</span></code> map
+as shown below.</p>
+<p>Continue adding the following code example to our <code class="docutils literal notranslate"><span class="pre">generateConfiguration</span></code>
+implementation.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">V4L2PixelFormat</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">SizeRange</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">v4l2Formats</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">video_</span><span class="o">-&gt;</span><span class="n">formats</span><span class="p">();</span>
+<span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">PixelFormat</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">SizeRange</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">deviceFormats</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">transform</span><span class="p">(</span><span class="n">v4l2Formats</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">v4l2Formats</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span>
+<span class="w">       </span><span class="n">std</span><span class="o">::</span><span class="n">inserter</span><span class="p">(</span><span class="n">deviceFormats</span><span class="p">,</span><span class="w"> </span><span class="n">deviceFormats</span><span class="p">.</span><span class="n">begin</span><span class="p">()),</span>
+<span class="w">       </span><span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">const</span><span class="w"> </span><span class="k">decltype</span><span class="p">(</span><span class="n">v4l2Formats</span><span class="p">)</span><span class="o">::</span><span class="n">value_type</span><span class="w"> </span><span class="o">&amp;</span><span class="n">format</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">           </span><span class="k">return</span><span class="w"> </span><span class="k">decltype</span><span class="p">(</span><span class="n">deviceFormats</span><span class="p">)</span><span class="o">::</span><span class="n">value_type</span><span class="p">{</span>
+<span class="w">               </span><span class="n">format</span><span class="p">.</span><span class="n">first</span><span class="p">.</span><span class="n">toPixelFormat</span><span class="p">(),</span>
+<span class="w">               </span><span class="n">format</span><span class="p">.</span><span class="n">second</span>
+<span class="w">           </span><span class="p">};</span>
+<span class="w">       </span><span class="p">});</span>
+</pre></div>
+</div>
+<p>The <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1StreamFormats.html">StreamFormats</a> class holds information about the pixel formats and frame
+sizes that a stream can support. The class groups size information by the pixel
+format, which can produce it.</p>
+<p>The code below uses the <code class="docutils literal notranslate"><span class="pre">StreamFormats</span></code> class to represent all of the
+supported pixel formats, associated with a list of frame sizes. It then
+generates a supported StreamConfiguration to model the information an
+application can use to configure a single stream.</p>
+<p>Continue adding the following code to support this:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">StreamFormats</span><span class="w"> </span><span class="nf">formats</span><span class="p">(</span><span class="n">deviceFormats</span><span class="p">);</span>
+<span class="n">StreamConfiguration</span><span class="w"> </span><span class="nf">cfg</span><span class="p">(</span><span class="n">formats</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>As well as a list of supported StreamFormats, the StreamConfiguration is also
+expected to provide an initialised default configuration. This may be arbitrary,
+but depending on use case you may wish to select an output that matches the
+Sensor output, or prefer a pixelformat which might provide higher performance on
+the hardware. The bufferCount represents the number of buffers required to
+support functional continuous processing on this stream.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">cfg</span><span class="p">.</span><span class="n">pixelFormat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">formats</span><span class="o">::</span><span class="n">BGR888</span><span class="p">;</span>
+<span class="n">cfg</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">1280</span><span class="p">,</span><span class="w"> </span><span class="mi">720</span><span class="w"> </span><span class="p">};</span>
+<span class="n">cfg</span><span class="p">.</span><span class="n">bufferCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Finally add each <code class="docutils literal notranslate"><span class="pre">StreamConfiguration</span></code> generated to the
+<code class="docutils literal notranslate"><span class="pre">CameraConfiguration</span></code>, and ensure that it has been validated before returning
+it to the application. With only a single supported stream, this code adds only
+a single StreamConfiguration. However a StreamConfiguration should be added for
+each supported role in a device that can handle more streams.</p>
+<p>Add the following code to complete the implementation of
+<code class="docutils literal notranslate"><span class="pre">generateConfiguration</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">config</span><span class="o">-&gt;</span><span class="n">addConfiguration</span><span class="p">(</span><span class="n">cfg</span><span class="p">);</span>
+
+<span class="n">config</span><span class="o">-&gt;</span><span class="n">validate</span><span class="p">();</span>
+
+<span class="k">return</span><span class="w"> </span><span class="n">config</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>To validate a camera configuration, a pipeline handler must implement the
+<a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1CameraConfiguration.html#a29f8f263384c6149775b6011c7397093">CameraConfiguration::validate()</a> function in its derived class to inspect all
+the stream configuration associated to it, make any adjustments required to make
+the configuration valid, and return the validation status.</p>
+<p>If changes are made, it marks the configuration as <code class="docutils literal notranslate"><span class="pre">Adjusted</span></code>, however if the
+requested configuration is not supported and cannot be adjusted it shall be
+refused and marked as <code class="docutils literal notranslate"><span class="pre">Invalid</span></code>.</p>
+<p>The validation phase makes sure all the platform-specific constraints are
+respected by the requested configuration. The most trivial examples being making
+sure the requested image formats are supported and the image alignment
+restrictions adhered to. The pipeline handler specific implementation of
+<code class="docutils literal notranslate"><span class="pre">validate()</span></code> shall inspect all the configuration parameters received and never
+assume they are correct, as applications are free to change the requested stream
+parameters after the configuration has been generated.</p>
+<p>Again, this example pipeline handler is simpler, look at the more complex
+implementations for a realistic example.</p>
+<p>Add the following function implementation to your file:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">CameraConfiguration</span><span class="o">::</span><span class="n">Status</span><span class="w"> </span><span class="nf">VividCameraConfiguration::validate</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">        </span><span class="n">Status</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Valid</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">config_</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+<span class="w">               </span><span class="k">return</span><span class="w"> </span><span class="n">Invalid</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">config_</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="n">config_</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">               </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Adjusted</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">StreamConfiguration</span><span class="w"> </span><span class="o">&amp;</span><span class="n">cfg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">config_</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">libcamera</span><span class="o">::</span><span class="n">PixelFormat</span><span class="o">&gt;</span><span class="w"> </span><span class="n">formats</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cfg</span><span class="p">.</span><span class="n">formats</span><span class="p">().</span><span class="n">pixelformats</span><span class="p">();</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">find</span><span class="p">(</span><span class="n">formats</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">formats</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="n">cfg</span><span class="p">.</span><span class="n">pixelFormat</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">formats</span><span class="p">.</span><span class="n">end</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="n">cfg</span><span class="p">.</span><span class="n">pixelFormat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cfg</span><span class="p">.</span><span class="n">formats</span><span class="p">().</span><span class="n">pixelformats</span><span class="p">()[</span><span class="mi">0</span><span class="p">];</span>
+<span class="w">               </span><span class="n">LOG</span><span class="p">(</span><span class="n">VIVID</span><span class="p">,</span><span class="w"> </span><span class="n">Debug</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Adjusting format to &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">cfg</span><span class="p">.</span><span class="n">pixelFormat</span><span class="p">.</span><span class="n">toString</span><span class="p">();</span>
+<span class="w">               </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Adjusted</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">cfg</span><span class="p">.</span><span class="n">bufferCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">status</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Now that we are handling the <code class="docutils literal notranslate"><span class="pre">PixelFormat</span></code> type, we also need to add
+<code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&lt;libcamera/formats.h&gt;</span></code> to the include section before we rebuild the
+codebase, and test:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ninja<span class="w"> </span>-C<span class="w"> </span>build
+<span class="nv">LIBCAMERA_LOG_LEVELS</span><span class="o">=</span>Pipeline,VIVID:0<span class="w"> </span>./build/src/cam/cam<span class="w"> </span>-c<span class="w"> </span>vivid<span class="w"> </span>-I
+</pre></div>
+</div>
+<p>You should see the following output showing the capabilites of our new pipeline
+handler, and showing that our configurations have been generated:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Using<span class="w"> </span>camera<span class="w"> </span>vivid
+<span class="m">0</span>:<span class="w"> </span>1280x720-BGR888
+*<span class="w"> </span>Pixelformat:<span class="w"> </span>NV21<span class="w"> </span><span class="o">(</span>320x180<span class="o">)</span>-<span class="o">(</span>3840x2160<span class="o">)</span>/<span class="o">(</span>+0,+0<span class="o">)</span>
+-<span class="w"> </span>320x180
+-<span class="w"> </span>640x360
+-<span class="w"> </span>640x480
+-<span class="w"> </span>1280x720
+-<span class="w"> </span>1920x1080
+-<span class="w"> </span>3840x2160
+*<span class="w"> </span>Pixelformat:<span class="w"> </span>NV12<span class="w"> </span><span class="o">(</span>320x180<span class="o">)</span>-<span class="o">(</span>3840x2160<span class="o">)</span>/<span class="o">(</span>+0,+0<span class="o">)</span>
+-<span class="w"> </span>320x180
+-<span class="w"> </span>640x360
+-<span class="w"> </span>640x480
+-<span class="w"> </span>1280x720
+-<span class="w"> </span>1920x1080
+-<span class="w"> </span>3840x2160
+*<span class="w"> </span>Pixelformat:<span class="w"> </span>BGRA8888<span class="w"> </span><span class="o">(</span>320x180<span class="o">)</span>-<span class="o">(</span>3840x2160<span class="o">)</span>/<span class="o">(</span>+0,+0<span class="o">)</span>
+-<span class="w"> </span>320x180
+-<span class="w"> </span>640x360
+-<span class="w"> </span>640x480
+-<span class="w"> </span>1280x720
+-<span class="w"> </span>1920x1080
+-<span class="w"> </span>3840x2160
+*<span class="w"> </span>Pixelformat:<span class="w"> </span>RGBA8888<span class="w"> </span><span class="o">(</span>320x180<span class="o">)</span>-<span class="o">(</span>3840x2160<span class="o">)</span>/<span class="o">(</span>+0,+0<span class="o">)</span>
+-<span class="w"> </span>320x180
+-<span class="w"> </span>640x360
+-<span class="w"> </span>640x480
+-<span class="w"> </span>1280x720
+-<span class="w"> </span>1920x1080
+-<span class="w"> </span>3840x2160
+</pre></div>
+</div>
+</section>
+<section id="configuring-a-device">
+<h3>Configuring a device<a class="headerlink" href="#configuring-a-device" title="Link to this heading">¶</a></h3>
+<p>With the configuration generated, and optionally modified and re-validated, a
+pipeline handler needs a function that allows an application to apply a
+configuration to the hardware devices.</p>
+<p>The <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1PipelineHandler.html#a930f2a9cdfb51dfb4b9ca3824e84fc29">PipelineHandler::configure()</a> function receives a valid
+<a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1CameraConfiguration.html">CameraConfiguration</a> and applies the settings to hardware devices, using its
+parameters to prepare a device for a streaming session with the desired
+properties.</p>
+<p>Replace the contents of the stubbed <code class="docutils literal notranslate"><span class="pre">PipelineHandlerVivid::configure</span></code> function
+with the following to obtain the camera data and stream configuration. This
+pipeline handler supports only a single stream, so it directly obtains the first
+<code class="docutils literal notranslate"><span class="pre">StreamConfiguration</span></code> from the camera configuration. A pipeline handler with
+multiple streams should inspect each StreamConfiguration and configure the
+system accordingly.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">VividCameraData</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cameraData</span><span class="p">(</span><span class="n">camera</span><span class="p">);</span>
+<span class="n">StreamConfiguration</span><span class="w"> </span><span class="o">&amp;</span><span class="n">cfg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">config</span><span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The Vivid capture device is a V4L2 video device, so we use a <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1V4L2DeviceFormat.html">V4L2DeviceFormat</a>
+with the fourcc and size attributes to apply directly to the capture device
+node. The fourcc attribute is a <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1V4L2PixelFormat.html">V4L2PixelFormat</a> and differs from the
+<code class="docutils literal notranslate"><span class="pre">libcamera::PixelFormat</span></code>. Converting the format requires knowledge of the
+plane configuration for multiplanar formats, so you must explicitly convert it
+using the helper <code class="docutils literal notranslate"><span class="pre">V4L2VideoDevice::toV4L2PixelFormat()</span></code> provided by the
+V4L2VideoDevice instance that the format will be applied on.</p>
+<p>Add the following code beneath the code from above:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">V4L2DeviceFormat</span><span class="w"> </span><span class="n">format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span>
+<span class="n">format</span><span class="p">.</span><span class="n">fourcc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">video_</span><span class="o">-&gt;</span><span class="n">toV4L2PixelFormat</span><span class="p">(</span><span class="n">cfg</span><span class="p">.</span><span class="n">pixelFormat</span><span class="p">);</span>
+<span class="n">format</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cfg</span><span class="p">.</span><span class="n">size</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Set the video device format defined above using the
+<a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1V4L2VideoDevice.html#ad67b47dd9327ce5df43350b80c083cca">V4L2VideoDevice::setFormat()</a> function. You should check if the kernel
+driver has adjusted the format, as this shows the pipeline handler has failed to
+handle the validation stages correctly, and the configure operation shall also
+fail.</p>
+<p>Continue the implementation with the following code:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">video_</span><span class="o">-&gt;</span><span class="n">setFormat</span><span class="p">(</span><span class="o">&amp;</span><span class="n">format</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+<span class="w">       </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">format</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">cfg</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="o">||</span>
+<span class="w">       </span><span class="n">format</span><span class="p">.</span><span class="n">fourcc</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">video_</span><span class="o">-&gt;</span><span class="n">toV4L2PixelFormat</span><span class="p">(</span><span class="n">cfg</span><span class="p">.</span><span class="n">pixelFormat</span><span class="p">))</span>
+<span class="w">       </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="n">EINVAL</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Finally, store and set stream-specific data reflecting the state of the stream.
+Associate the configuration with the stream by using the
+<a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/structlibcamera_1_1StreamConfiguration.html#a74a0eb44dad1b00112c7c0443ae54a12">StreamConfiguration::setStream</a> function, and set the values of individual
+stream configuration members as required.</p>
+<p>Complete the configure implementation with the following code:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">cfg</span><span class="p">.</span><span class="n">setStream</span><span class="p">(</span><span class="o">&amp;</span><span class="n">data</span><span class="o">-&gt;</span><span class="n">stream_</span><span class="p">);</span>
+<span class="n">cfg</span><span class="p">.</span><span class="n">stride</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">format</span><span class="p">.</span><span class="n">planes</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">bpl</span><span class="p">;</span>
+
+<span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="initializing-device-controls">
+<h3>Initializing device controls<a class="headerlink" href="#initializing-device-controls" title="Link to this heading">¶</a></h3>
+<p>Pipeline handlers can optionally initialize the video devices and camera sensor
+controls at system configuration time, to make sure they are defaulted to sane
+values. Handling of device controls is again performed using the libcamera
+<a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/controls_8h.html">controls framework</a>.</p>
+<p>This section is particularly specific to Vivid as it sets the initial values of
+controls to match <a class="reference external" href="https://www.kernel.org/doc/html/latest/admin-guide/media/vivid.html#controls">Vivid Controls</a> defined by the kernel driver. You won’t need
+any of the code below for your pipeline handler, but it’s included as an example
+of how to implement functionality your pipeline handler might need.</p>
+<p>We need to add some definitions at the top of the file for convenience. These
+come directly from the kernel sources:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#define VIVID_CID_VIVID_BASE            (0x00f00000 | 0xf000)</span>
+<span class="cp">#define VIVID_CID_VIVID_CLASS           (0x00f00000 | 1)</span>
+<span class="cp">#define VIVID_CID_TEST_PATTERN          (VIVID_CID_VIVID_BASE  + 0)</span>
+<span class="cp">#define VIVID_CID_OSD_TEXT_MODE         (VIVID_CID_VIVID_BASE  + 1)</span>
+<span class="cp">#define VIVID_CID_HOR_MOVEMENT          (VIVID_CID_VIVID_BASE  + 2)</span>
+</pre></div>
+</div>
+<p>We can now use the V4L2 control IDs to prepare a list of controls with the
+<a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1ControlList.html">ControlList</a> class, and set them using the <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1ControlList.html#a74a1a29abff5243e6e37ace8e24eb4ba">ControlList::set()</a> function.</p>
+<p>In our pipeline <code class="docutils literal notranslate"><span class="pre">configure</span></code> function, add the following code after the format
+has been set and checked to initialise the ControlList and apply it to the
+device:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ControlList</span><span class="w"> </span><span class="nf">controls</span><span class="p">(</span><span class="n">data</span><span class="o">-&gt;</span><span class="n">video_</span><span class="o">-&gt;</span><span class="n">controls</span><span class="p">());</span>
+<span class="n">controls</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">VIVID_CID_TEST_PATTERN</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="n">controls</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">VIVID_CID_OSD_TEXT_MODE</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+
+<span class="n">controls</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">V4L2_CID_BRIGHTNESS</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">);</span>
+<span class="n">controls</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">V4L2_CID_CONTRAST</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">);</span>
+<span class="n">controls</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">V4L2_CID_SATURATION</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">);</span>
+
+<span class="n">controls</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">VIVID_CID_HOR_MOVEMENT</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span>
+
+<span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">video_</span><span class="o">-&gt;</span><span class="n">setControls</span><span class="p">(</span><span class="o">&amp;</span><span class="n">controls</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="n">LOG</span><span class="p">(</span><span class="n">VIVID</span><span class="p">,</span><span class="w"> </span><span class="n">Error</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Failed to set controls: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+<span class="w">       </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="n">EINVAL</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>These controls configure VIVID to use a default test pattern, and enable all
+on-screen display text, while configuring sensible brightness, contrast and
+saturation values. Use the <code class="docutils literal notranslate"><span class="pre">controls.set</span></code> function to set individual controls.</p>
+</section>
+<section id="buffer-handling-and-stream-control">
+<h3>Buffer handling and stream control<a class="headerlink" href="#buffer-handling-and-stream-control" title="Link to this heading">¶</a></h3>
+<p>Once the system has been configured with the requested parameters, it is now
+possible for applications to start capturing frames from the <code class="docutils literal notranslate"><span class="pre">Camera</span></code> device.</p>
+<p>libcamera implements a per-frame request capture model, realized by queueing
+<code class="docutils literal notranslate"><span class="pre">Request</span></code> instances to a <code class="docutils literal notranslate"><span class="pre">Camera</span></code> object. Before applications can start
+submitting capture requests the capture pipeline needs to be prepared to deliver
+frames as soon as they are requested. Memory should be initialized and made
+available to the devices which have to be started and ready to produce
+images. At the end of a capture session the <code class="docutils literal notranslate"><span class="pre">Camera</span></code> device needs to be
+stopped, to gracefully clean up any allocated memory and stop the hardware
+devices. Pipeline handlers implement two functions for these purposes, the
+<code class="docutils literal notranslate"><span class="pre">start()</span></code> and <code class="docutils literal notranslate"><span class="pre">stop()</span></code> functions.</p>
+<p>The memory initialization phase that happens at <code class="docutils literal notranslate"><span class="pre">start()</span></code> time serves to
+configure video devices to be able to use memory buffers exported as dma-buf
+file descriptors. From the pipeline handlers perspective the video devices that
+provide application facing streams always act as memory importers which use,
+in V4L2 terminology, buffers of V4L2_MEMORY_DMABUF memory type.</p>
+<p>libcamera also provides an API to allocate and export memory to applications
+realized through the <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1PipelineHandler.html#a6312a69da7129c2ed41f9d9f790adf7c">exportFrameBuffers</a> function and the
+<a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1FrameBufferAllocator.html">FrameBufferAllocator</a> class which will be presented later.</p>
+<p>Please refer to the V4L2VideoDevice API documentation, specifically the
+<a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1V4L2VideoDevice.html#a3a1a77e5e6c220ea7878e89485864a1c">allocateBuffers</a>, <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1V4L2VideoDevice.html#a154f5283d16ebd5e15d63e212745cb64">importBuffers</a> and <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1V4L2VideoDevice.html#ae9c0b0a68f350725b63b73a6da5a2ecd">exportBuffers</a> functions for a
+detailed description of the video device memory management.</p>
+<p>Video memory buffers are represented in libcamera by the <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1FrameBuffer.html">FrameBuffer</a> class.
+A <code class="docutils literal notranslate"><span class="pre">FrameBuffer</span></code> instance has to be associated to each <code class="docutils literal notranslate"><span class="pre">Stream</span></code> which is part
+of a capture <code class="docutils literal notranslate"><span class="pre">Request</span></code>. Pipeline handlers should prepare the capture devices
+by importing the dma-buf file descriptors it needs to operate on. This operation
+is performed by using the <code class="docutils literal notranslate"><span class="pre">V4L2VideoDevice</span></code> API, which provides an
+<code class="docutils literal notranslate"><span class="pre">importBuffers()</span></code> function that prepares the video device accordingly.</p>
+<p>Implement the pipeline handler <code class="docutils literal notranslate"><span class="pre">start()</span></code> function by replacing the stub
+version with the following code:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">VividCameraData</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cameraData</span><span class="p">(</span><span class="n">camera</span><span class="p">);</span>
+<span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">stream_</span><span class="p">.</span><span class="n">configuration</span><span class="p">().</span><span class="n">bufferCount</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">video_</span><span class="o">-&gt;</span><span class="n">importBuffers</span><span class="p">(</span><span class="n">count</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+
+<span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>During the startup phase pipeline handlers allocate any internal buffer pool
+required to transfer data between different components of the image capture
+pipeline, for example, between the CSI-2 receiver and the ISP input. The example
+pipeline does not require any internal pool, but examples are available in more
+complex pipeline handlers in the libcamera code base.</p>
+<p>Applications might want to use memory allocated in the video devices instead of
+allocating it from other parts of the system. libcamera provides an abstraction
+to assist with this task in the <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1FrameBufferAllocator.html">FrameBufferAllocator</a> class. The
+<code class="docutils literal notranslate"><span class="pre">FrameBufferAllocator</span></code> reserves memory for a <code class="docutils literal notranslate"><span class="pre">Stream</span></code> in the video device
+and exports it as dma-buf file descriptors. From this point on, the allocated
+<code class="docutils literal notranslate"><span class="pre">FrameBuffer</span></code> are associated to <code class="docutils literal notranslate"><span class="pre">Stream</span></code> instances in a <code class="docutils literal notranslate"><span class="pre">Request</span></code> and then
+imported by the pipeline hander in exactly the same fashion as if they were
+allocated elsewhere.</p>
+<p>Pipeline handlers support the <code class="docutils literal notranslate"><span class="pre">FrameBufferAllocator</span></code> operations by
+implementing the <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1PipelineHandler.html#a6312a69da7129c2ed41f9d9f790adf7c">exportFrameBuffers</a> function, which will allocate memory in
+the video device associated with a stream and export it.</p>
+<p>Implement the <code class="docutils literal notranslate"><span class="pre">exportFrameBuffers</span></code> stub function with the following code to
+handle this:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stream</span><span class="o">-&gt;</span><span class="n">configuration</span><span class="p">().</span><span class="n">bufferCount</span><span class="p">;</span>
+<span class="n">VividCameraData</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cameraData</span><span class="p">(</span><span class="n">camera</span><span class="p">);</span>
+
+<span class="k">return</span><span class="w"> </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">video_</span><span class="o">-&gt;</span><span class="n">exportBuffers</span><span class="p">(</span><span class="n">count</span><span class="p">,</span><span class="w"> </span><span class="n">buffers</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Once memory has been properly setup, the video devices can be started, to
+prepare for capture operations. Complete the <code class="docutils literal notranslate"><span class="pre">start</span></code> function implementation
+with the following code:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">video_</span><span class="o">-&gt;</span><span class="n">streamOn</span><span class="p">();</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">video_</span><span class="o">-&gt;</span><span class="n">releaseBuffers</span><span class="p">();</span>
+<span class="w">       </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The function starts the video device associated with the stream with the
+<a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1V4L2VideoDevice.html#a588a5dc9d6f4c54c61136ac43ff9a8cc">streamOn</a> function. If the call fails, the error value is propagated to the
+caller and the <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1V4L2VideoDevice.html#a191619c152f764e03bc461611f3fcd35">releaseBuffers</a> function releases any buffers to leave the
+device in a consistent state. If your pipeline handler uses any image processing
+algorithms, or other devices you should also stop them.</p>
+<p>Of course we also need to handle the corresponding actions to stop streaming on
+a device, Add the following to the <code class="docutils literal notranslate"><span class="pre">stop</span></code> function, to stop the stream with
+the <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1V4L2VideoDevice.html#a61998710615bdf7aa25a046c8565ed66">streamOff</a> function and release all buffers.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">VividCameraData</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cameraData</span><span class="p">(</span><span class="n">camera</span><span class="p">);</span>
+<span class="n">data</span><span class="o">-&gt;</span><span class="n">video_</span><span class="o">-&gt;</span><span class="n">streamOff</span><span class="p">();</span>
+<span class="n">data</span><span class="o">-&gt;</span><span class="n">video_</span><span class="o">-&gt;</span><span class="n">releaseBuffers</span><span class="p">();</span>
+</pre></div>
+</div>
+</section>
+<section id="queuing-requests-between-applications-and-hardware">
+<h3>Queuing requests between applications and hardware<a class="headerlink" href="#queuing-requests-between-applications-and-hardware" title="Link to this heading">¶</a></h3>
+<p>libcamera implements a streaming model based on capture requests queued by an
+application to the <code class="docutils literal notranslate"><span class="pre">Camera</span></code> device. Each request contains at least one
+<code class="docutils literal notranslate"><span class="pre">Stream</span></code> instance with an associated <code class="docutils literal notranslate"><span class="pre">FrameBuffer</span></code> object.</p>
+<p>When an application sends a capture request, the pipeline handler identifies
+which video devices have to be provided with buffers to generate a frame from
+the enabled streams.</p>
+<p>This example pipeline handler identifies the buffer using the <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1Request.html#ac66050aeb9b92c64218945158559c4d4">findBuffer</a>
+helper from the only supported stream and queues it to the capture device
+directly with the <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1V4L2VideoDevice.html#a594cd594686a8c1cf9ae8dba0b2a8a75">queueBuffer</a> function provided by the V4L2VideoDevice.</p>
+<p>Replace the stubbed contents of <code class="docutils literal notranslate"><span class="pre">queueRequestDevice</span></code> with the following:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">VividCameraData</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cameraData</span><span class="p">(</span><span class="n">camera</span><span class="p">);</span>
+<span class="n">FrameBuffer</span><span class="w"> </span><span class="o">*</span><span class="n">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="o">-&gt;</span><span class="n">findBuffer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">data</span><span class="o">-&gt;</span><span class="n">stream_</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">buffer</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="n">LOG</span><span class="p">(</span><span class="n">VIVID</span><span class="p">,</span><span class="w"> </span><span class="n">Error</span><span class="p">)</span>
+<span class="w">               </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Attempt to queue request with invalid stream&quot;</span><span class="p">;</span>
+
+<span class="w">       </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="n">ENOENT</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">video_</span><span class="o">-&gt;</span><span class="n">queueBuffer</span><span class="p">(</span><span class="n">buffer</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">       </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+
+<span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="processing-controls">
+<h3>Processing controls<a class="headerlink" href="#processing-controls" title="Link to this heading">¶</a></h3>
+<p>Capture requests not only contain streams and memory buffers, but can
+optionally contain a list of controls the application has set to modify the
+streaming parameters.</p>
+<p>Applications can set controls registered by the pipeline handler in the
+initialization phase, as explained in the <a class="reference internal" href="#registering-controls-and-properties">Registering controls and properties</a>
+section.</p>
+<p>Implement a <code class="docutils literal notranslate"><span class="pre">processControls</span></code> function above the <code class="docutils literal notranslate"><span class="pre">queueRequestDevice</span></code>
+function to loop through the control list received with each request, and
+inspect the control values. Controls may need to be converted between the
+libcamera control range definitions and their corresponding values on the device
+before being set.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">PipelineHandlerVivid::processControls</span><span class="p">(</span><span class="n">VividCameraData</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">Request</span><span class="w"> </span><span class="o">*</span><span class="n">request</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">       </span><span class="n">ControlList</span><span class="w"> </span><span class="n">controls</span><span class="p">(</span><span class="n">data</span><span class="o">-&gt;</span><span class="n">video_</span><span class="o">-&gt;</span><span class="n">controls</span><span class="p">());</span>
+
+<span class="w">       </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">request</span><span class="o">-&gt;</span><span class="n">controls</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">it</span><span class="p">.</span><span class="n">first</span><span class="p">;</span>
+<span class="w">              </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">offset</span><span class="p">;</span>
+<span class="w">              </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">cid</span><span class="p">;</span>
+
+<span class="w">              </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">controls</span><span class="o">::</span><span class="n">Brightness</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                     </span><span class="n">cid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">V4L2_CID_BRIGHTNESS</span><span class="p">;</span>
+<span class="w">                     </span><span class="n">offset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">128</span><span class="p">;</span>
+<span class="w">              </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">controls</span><span class="o">::</span><span class="n">Contrast</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                     </span><span class="n">cid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">V4L2_CID_CONTRAST</span><span class="p">;</span>
+<span class="w">                     </span><span class="n">offset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">              </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">controls</span><span class="o">::</span><span class="n">Saturation</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                     </span><span class="n">cid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">V4L2_CID_SATURATION</span><span class="p">;</span>
+<span class="w">                     </span><span class="n">offset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">              </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                     </span><span class="k">continue</span><span class="p">;</span>
+<span class="w">              </span><span class="p">}</span>
+
+<span class="w">              </span><span class="kt">int32_t</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lroundf</span><span class="p">(</span><span class="n">it</span><span class="p">.</span><span class="n">second</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">128</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">offset</span><span class="p">);</span>
+<span class="w">              </span><span class="n">controls</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">cid</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">clamp</span><span class="p">(</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">));</span>
+<span class="w">       </span><span class="p">}</span>
+
+<span class="w">       </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ctrl</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">controls</span><span class="p">)</span>
+<span class="w">              </span><span class="n">LOG</span><span class="p">(</span><span class="n">VIVID</span><span class="p">,</span><span class="w"> </span><span class="n">Debug</span><span class="p">)</span>
+<span class="w">                     </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Setting control &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">utils</span><span class="o">::</span><span class="n">hex</span><span class="p">(</span><span class="n">ctrl</span><span class="p">.</span><span class="n">first</span><span class="p">)</span>
+<span class="w">                     </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; to &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ctrl</span><span class="p">.</span><span class="n">second</span><span class="p">.</span><span class="n">toString</span><span class="p">();</span>
+
+<span class="w">       </span><span class="kt">int</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">video_</span><span class="o">-&gt;</span><span class="n">setControls</span><span class="p">(</span><span class="o">&amp;</span><span class="n">controls</span><span class="p">);</span>
+<span class="w">       </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="n">LOG</span><span class="p">(</span><span class="n">VIVID</span><span class="p">,</span><span class="w"> </span><span class="n">Error</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Failed to set controls: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+<span class="w">              </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="n">EINVAL</span><span class="p">;</span>
+<span class="w">       </span><span class="p">}</span>
+
+<span class="w">       </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Declare the function prototype for the <code class="docutils literal notranslate"><span class="pre">processControls</span></code> function within the
+private <code class="docutils literal notranslate"><span class="pre">PipelineHandlerVivid</span></code> class members, as it is only used internally as
+a helper when processing Requests.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="o">:</span>
+<span class="w">     </span><span class="kt">int</span><span class="w"> </span><span class="n">processControls</span><span class="p">(</span><span class="n">VividCameraData</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">Request</span><span class="w"> </span><span class="o">*</span><span class="n">request</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>A pipeline handler is responsible for applying controls provided in a Request to
+the relevant hardware devices. This could be directly on the capture device, or
+where appropriate by setting controls on V4L2Subdevices directly. Each pipeline
+handler is responsible for understanding the correct procedure for applying
+controls to the device they support.</p>
+<p>This example pipeline handler applies controls during the <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1PipelineHandler.html#a106914cca210640c9da9ee1f0419e83c">queueRequestDevice</a>
+function for each request, and applies them to the capture device through the
+capture node.</p>
+<p>In the <code class="docutils literal notranslate"><span class="pre">queueRequestDevice</span></code> function, replace the following:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">video_</span><span class="o">-&gt;</span><span class="n">queueBuffer</span><span class="p">(</span><span class="n">buffer</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">     </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>With the following code:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">processControls</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">request</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">     </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+
+<span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">video_</span><span class="o">-&gt;</span><span class="n">queueBuffer</span><span class="p">(</span><span class="n">buffer</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">     </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>We also need to add the following include directive to support the control
+value translation operations:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;math.h&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="frame-completion-and-event-handling">
+<h3>Frame completion and event handling<a class="headerlink" href="#frame-completion-and-event-handling" title="Link to this heading">¶</a></h3>
+<p>libcamera implements a signals and slots mechanism (similar to <a class="reference external" href="https://doc.qt.io/qt-6/signalsandslots.html">Qt Signals and
+Slots</a>) to connect event sources with callbacks to handle them.</p>
+<p>As a general summary, a <code class="docutils literal notranslate"><span class="pre">Slot</span></code> can be connected to a <code class="docutils literal notranslate"><span class="pre">Signal</span></code>, which when
+emitted triggers the execution of the connected slots.  A detailed description
+of the libcamera implementation is available in the <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1Signal.html#details">libcamera Signal and Slot</a>
+classes documentation.</p>
+<p>In order to notify applications about the availability of new frames and data,
+the <code class="docutils literal notranslate"><span class="pre">Camera</span></code> device exposes two <code class="docutils literal notranslate"><span class="pre">Signals</span></code> to which applications can connect
+to be notified of frame completion events. The <code class="docutils literal notranslate"><span class="pre">bufferComplete</span></code> signal serves
+to report to applications the completion event of a single <code class="docutils literal notranslate"><span class="pre">Stream</span></code> part of a
+<code class="docutils literal notranslate"><span class="pre">Request</span></code>, while the <code class="docutils literal notranslate"><span class="pre">requestComplete</span></code> signal notifies the completion of all
+the <code class="docutils literal notranslate"><span class="pre">Streams</span></code> and data submitted as part of a request. This mechanism allows
+implementation of partial request completion, which allows an application to
+inspect completed buffers associated with the single streams without waiting for
+all of them to be ready.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">bufferComplete</span></code> and <code class="docutils literal notranslate"><span class="pre">requestComplete</span></code> signals are emitted by the
+<code class="docutils literal notranslate"><span class="pre">Camera</span></code> device upon notifications received from the pipeline handler, which
+tracks the buffers and request completion status.</p>
+<p>The single buffer completion notification is implemented by pipeline handlers by
+<a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1Signal.html#aa04db72d5b3091ffbb4920565aeed382">connecting</a> the <code class="docutils literal notranslate"><span class="pre">bufferReady</span></code> signal of the capture devices they have queued
+buffers to, to a member function slot that handles processing of the completed
+frames. When a buffer is ready, the pipeline handler must propagate the
+completion of that buffer to the Camera by using the PipelineHandler base class
+<code class="docutils literal notranslate"><span class="pre">completeBuffer</span></code> function. When all of the buffers referenced by a <code class="docutils literal notranslate"><span class="pre">Request</span></code>
+have been completed, the pipeline handler must again notify the <code class="docutils literal notranslate"><span class="pre">Camera</span></code> using
+the PipelineHandler base class <code class="docutils literal notranslate"><span class="pre">completeRequest</span></code> function. The PipelineHandler
+class implementation makes sure the request completion notifications are
+delivered to applications in the same order as they have been submitted.</p>
+<p>Returning to the <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">VividCameraData::init()</span></code> function, add the following
+above the closing <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">0;</span></code> to connect the pipeline handler <code class="docutils literal notranslate"><span class="pre">bufferReady</span></code>
+function to the V4L2 device buffer signal.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">video_</span><span class="o">-&gt;</span><span class="n">bufferReady</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">VividCameraData</span><span class="o">::</span><span class="n">bufferReady</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Create the matching <code class="docutils literal notranslate"><span class="pre">VividCameraData::bufferReady</span></code> function after your
+VividCameradata::init() implementation.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">bufferReady</span></code> function obtains the request from the buffer using the
+<code class="docutils literal notranslate"><span class="pre">request</span></code> function, and notifies the <code class="docutils literal notranslate"><span class="pre">Camera</span></code> that the buffer and
+request are completed. In this simpler pipeline handler, there is only one
+stream, so it completes the request immediately. You can find a more complex
+example of event handling with supporting multiple streams in the libcamera
+code-base.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">VividCameraData::bufferReady</span><span class="p">(</span><span class="n">FrameBuffer</span><span class="w"> </span><span class="o">*</span><span class="n">buffer</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">       </span><span class="n">Request</span><span class="w"> </span><span class="o">*</span><span class="n">request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buffer</span><span class="o">-&gt;</span><span class="n">request</span><span class="p">();</span>
+
+<span class="w">       </span><span class="n">pipe_</span><span class="o">-&gt;</span><span class="n">completeBuffer</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">buffer</span><span class="p">);</span>
+<span class="w">       </span><span class="n">pipe_</span><span class="o">-&gt;</span><span class="n">completeRequest</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="testing-a-pipeline-handler">
+<h3>Testing a pipeline handler<a class="headerlink" href="#testing-a-pipeline-handler" title="Link to this heading">¶</a></h3>
+<p>Once you’ve built the pipeline handler, we can rebuild the code base, and test
+capture through the pipeline through both of the cam and qcam utilities.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ninja<span class="w"> </span>-C<span class="w"> </span>build
+./build/src/cam/cam<span class="w"> </span>-c<span class="w"> </span>vivid<span class="w"> </span>-C5
+</pre></div>
+</div>
+<p>To test that the pipeline handler can detect a device, and capture input.</p>
+<p>Running the command above outputs (a lot of) information about pixel formats,
+and then starts capturing frame data, and should provide an output such as the
+following:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>user@dev:/home/libcamera$ ./build/src/cam/cam -c vivid -C5
+[42:34:08.573066847] [186470]  INFO IPAManager ipa_manager.cpp:136 libcamera is not installed. Adding &#39;/home/libcamera/build/src/ipa&#39; to the IPA search path
+[42:34:08.575908115] [186470]  INFO Camera camera_manager.cpp:287 libcamera v0.0.11+876-7b27d262
+[42:34:08.610334268] [186471]  INFO IPAProxy ipa_proxy.cpp:122 libcamera is not installed. Loading IPA configuration from &#39;/home/libcamera/src/ipa/vimc/data&#39;
+Using camera vivid
+[42:34:08.618462130] [186470]  WARN V4L2 v4l2_pixelformat.cpp:176 Unsupported V4L2 pixel format Y10
+... &lt;remaining Unsupported V4L2 pixel format warnings can be ignored&gt;
+[42:34:08.619901297] [186470]  INFO Camera camera.cpp:793 configuring streams: (0) 1280x720-BGR888
+Capture 5 frames
+fps: 0.00 stream0 seq: 000000 bytesused: 2764800
+fps: 4.98 stream0 seq: 000001 bytesused: 2764800
+fps: 5.00 stream0 seq: 000002 bytesused: 2764800
+fps: 5.03 stream0 seq: 000003 bytesused: 2764800
+fps: 5.03 stream0 seq: 000004 bytesused: 2764800
+</pre></div>
+</div>
+<p>This demonstrates that the pipeline handler is successfully capturing frames,
+but it is helpful to see the visual output and validate the images are being
+processed correctly. The libcamera project also implements a Qt based
+application which will render the frames in a window for visual inspection:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./build/src/qcam/qcam<span class="w"> </span>-c<span class="w"> </span>vivid
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+    </div>
+  </div>
+
+  
+<footer>
+  <div id="signature">
+        &copy; Copyright 2018-2019, The libcamera documentation authors.
+  </div>
+</footer>
+</body>
+</html>

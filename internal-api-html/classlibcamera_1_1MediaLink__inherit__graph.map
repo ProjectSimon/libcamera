@@ -1,0 +1,4 @@
+<map id="libcamera::MediaLink" name="libcamera::MediaLink">
+<area shape="rect" id="node1" title="The MediaLink represents a link between two pads in the media graph." alt="" coords="13,80,175,107"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1MediaObject.html" title="Base class for all media objects." alt="" coords="5,5,183,32"/>
+</map>

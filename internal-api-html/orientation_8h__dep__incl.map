@@ -1,0 +1,9 @@
+<map id="include/libcamera/orientation.h" name="include/libcamera/orientation.h">
+<area shape="rect" id="node1" title="Image orientation definition." alt="" coords="217,5,442,32"/>
+<area shape="rect" id="node2" href="$camera_8h.html" title="Camera device handling." alt="" coords="89,87,292,114"/>
+<area shape="rect" id="node4" href="$libcamera_8h_source.html" title=" " alt="" coords="222,169,397,211"/>
+<area shape="rect" id="node5" href="$camera__sensor_8h.html" title="A camera sensor." alt="" coords="407,80,599,121"/>
+<area shape="rect" id="node3" href="$internal_2camera_8h.html" title="Internal camera device handling." alt="" coords="5,169,197,211"/>
+<area shape="rect" id="node6" href="$software__isp_8h_source.html" title=" " alt="" coords="421,169,627,211"/>
+<area shape="rect" id="node7" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="439,259,609,300"/>
+</map>

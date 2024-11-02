@@ -1,0 +1,13 @@
+<map id="include/libcamera/stream.h" name="include/libcamera/stream.h">
+<area shape="rect" id="node1" title="Video stream for a Camera." alt="" coords="475,5,675,32"/>
+<area shape="rect" id="node2" href="$camera_8h.html" title="Camera device handling." alt="" coords="201,87,404,114"/>
+<area shape="rect" id="node4" href="$libcamera_8h_source.html" title=" " alt="" coords="222,169,397,211"/>
+<area shape="rect" id="node5" href="$pipeline__handler_8h.html" title="Create pipelines and cameras from a set of media devices." alt="" coords="479,80,671,121"/>
+<area shape="rect" id="node7" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="644,348,815,389"/>
+<area shape="rect" id="node10" href="$debayer_8h_source.html" title=" " alt="" coords="837,80,1008,121"/>
+<area shape="rect" id="node3" href="$internal_2camera_8h.html" title="Internal camera device handling." alt="" coords="5,169,197,211"/>
+<area shape="rect" id="node6" href="$ipa__manager_8h.html" title="Image Processing Algorithm module manager." alt="" coords="339,259,531,300"/>
+<area shape="rect" id="node8" href="$ipa__module_8h.html" title="Image Processing Algorithm module." alt="" coords="472,169,664,211"/>
+<area shape="rect" id="node9" href="$software__isp_8h_source.html" title=" " alt="" coords="555,259,762,300"/>
+<area shape="rect" id="node11" href="$debayer__cpu_8h_source.html" title=" " alt="" coords="837,259,1008,300"/>
+</map>

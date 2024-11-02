@@ -1,0 +1,10 @@
+<map id="include/libcamera/base/object.h" name="include/libcamera/base/object.h">
+<area shape="rect" id="node1" title="Base object to support automatic signal disconnection." alt="" coords="33,5,207,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,102,48,129"/>
+<area shape="rect" id="node3" title=" " alt="" coords="57,184,135,211"/>
+<area shape="rect" id="node4" title=" " alt="" coords="123,102,186,129"/>
+<area shape="rect" id="node5" href="$bound__method_8h.html" title="Method bind and invocation." alt="" coords="210,95,377,136"/>
+<area shape="rect" id="node6" title=" " alt="" coords="169,184,223,211"/>
+<area shape="rect" id="node7" title=" " alt="" coords="247,184,339,211"/>
+<area shape="rect" id="node8" title=" " alt="" coords="363,184,423,211"/>
+</map>

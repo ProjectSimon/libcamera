@@ -1,0 +1,647 @@
+
+
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Using libcamera in a C++ application &mdash; libcamera v0.3.2+rpt20241101+6-22e19df9 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="libcamera v0.3.2+rpt20241101+6-22e19df9 documentation" href="../index.html"/>
+        <link rel="next" title="The libcamera camera sensor model" href="../camera-sensor-model.html"/>
+        <link rel="prev" title="Getting Started" href="../getting-started.html"/> 
+
+</head>
+
+<body role="document">
+  <header>
+    <div id="navbar">
+      <div class="navbar-brand">
+        <div class="navbar-logo">   _
++-/ \-+
+| (o) |
++-----+</div>
+        <div class="navbar-name"><span class="text-light">lib</span>camera</div>
+      </div>
+
+      <div class="navbar">
+        <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Application Writer's Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../camera-sensor-model.html">Camera Sensor Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment_variables.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feature_requirements.html">Feature Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipa.html">IPA Writer's guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lens_driver_requirements.html">Lens driver requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../libcamera_architecture.html">libcamera Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipeline-handler.html">Pipeline Handler Writer's Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-bindings.html">Python Bindings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sensor_driver_requirements.html">Sensor driver requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software-isp-benchmarking.html">SoftwareISP Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracing.html">Tracing guide</a></li>
+</ul>
+
+        <div class="searchbox" role="search">
+          <form class="search" action="../search.html" method="get">
+            <input type="text" name="q" />
+	    <input type="submit" value="Go" />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <div id="content">
+    
+    <div class="block">
+      
+  <div class="documentation-nav docutils container">
+<ul>
+<li><p><strong>Documentation for Users</strong></p></li>
+<li><p><a class="reference internal" href="../introduction.html"><span class="doc">Introduction</span></a></p></li>
+<li><p><a class="reference internal" href="../feature_requirements.html"><span class="doc">Feature Requirements</span></a></p></li>
+<li><p><a class="reference internal" href="#"><span class="doc">Using libcamera in a C++ application</span></a></p></li>
+<li><p><a class="reference internal" href="../python-bindings.html"><span class="doc">Python Bindings for libcamera</span></a></p></li>
+<li><p><a class="reference internal" href="../environment_variables.html"><span class="doc">Environment variables</span></a></p></li>
+<li><p><a class="reference internal" href="../api-html/index.html"><span class="doc">API Reference</span></a></p></li>
+<li><p><a class="reference internal" href="../code-of-conduct.html"><span class="doc">Contributor Covenant Code of Conduct</span></a></p></li>
+<li><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p><strong>Documentation for Developers</strong></p></li>
+<li><p><a class="reference internal" href="../libcamera_architecture.html"><span class="doc">libcamera Architecture</span></a></p></li>
+<li><p><a class="reference internal" href="pipeline-handler.html"><span class="doc">Pipeline Handler Writers Guide</span></a></p></li>
+<li><p><a class="reference internal" href="ipa.html"><span class="doc">IPA Writer’s Guide</span></a></p></li>
+<li><p><a class="reference internal" href="../camera-sensor-model.html"><span class="doc">The libcamera camera sensor model</span></a></p></li>
+<li><p><a class="reference internal" href="tracing.html"><span class="doc">Tracing Guide</span></a></p></li>
+<li><p><a class="reference internal" href="../software-isp-benchmarking.html"><span class="doc">Software ISP benchmarking</span></a></p></li>
+<li><p><a class="reference internal" href="../coding-style.html"><span class="doc">Coding Style Guidelines</span></a></p></li>
+<li><p><a class="reference internal" href="../internal-api-html/index.html"><span class="doc">Internal API Reference</span></a></p></li>
+<li><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p><strong>Documentation for System Integrators</strong></p></li>
+<li><p><a class="reference internal" href="../lens_driver_requirements.html"><span class="doc">Lens Driver Requirements</span></a></p></li>
+<li><p><a class="reference internal" href="../sensor_driver_requirements.html"><span class="doc">Sensor Driver Requirements</span></a></p></li>
+</ul>
+</div>
+<section class="documentation" id="using-libcamera-in-a-c-application">
+<h1>Using libcamera in a C++ application<a class="headerlink" href="#using-libcamera-in-a-c-application" title="Link to this heading">¶</a></h1>
+<p>This tutorial shows how to create a C++ application that uses libcamera to
+interface with a camera on a system, capture frames from it for 3 seconds, and
+write metadata about the frames to standard output.</p>
+<section id="application-skeleton">
+<h2>Application skeleton<a class="headerlink" href="#application-skeleton" title="Link to this heading">¶</a></h2>
+<p>Most of the code in this tutorial runs in the <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">main()</span></code> function
+with a separate global function to handle events. The two functions need
+to share data, which are stored in global variables for simplicity. A
+production-ready application would organize the various objects created
+in classes, and the event handler would be a class member function to
+provide context data without requiring global variables.</p>
+<p>Use the following code snippets as the initial application skeleton.
+It already lists all the necessary includes directives and instructs the
+compiler to use the libcamera namespace, which gives access to the libcamera
+defined names and types without the need of prefixing them.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iomanip&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;memory&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;thread&gt;</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;libcamera/libcamera.h&gt;</span>
+
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">libcamera</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="o">::</span><span class="nn">chrono_literals</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Code to follow</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="camera-manager">
+<h2>Camera Manager<a class="headerlink" href="#camera-manager" title="Link to this heading">¶</a></h2>
+<p>Every libcamera-based application needs an instance of a <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1CameraManager.html">CameraManager</a> that
+runs for the life of the application. When the Camera Manager starts, it
+enumerates all the cameras detected in the system. Behind the scenes, libcamera
+abstracts and manages the complex pipelines that kernel drivers expose through
+the <a class="reference external" href="https://www.kernel.org/doc/html/latest/media/uapi/mediactl/media-controller-intro.html">Linux Media Controller</a> and <a class="reference external" href="https://www.linuxtv.org/docs.php">Video for Linux</a> (V4L2) APIs, meaning that
+an application doesn’t need to handle device or driver specific details.</p>
+<p>Before the <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">main()</span></code> function, create a global shared pointer
+variable for the camera to support the event call back later:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Camera</span><span class="o">&gt;</span><span class="w"> </span><span class="n">camera</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Create a Camera Manager instance at the beginning of the main function, and then
+start it. An application must only create a single Camera Manager instance.</p>
+<p>The CameraManager can be stored in a unique_ptr to automate deleting the
+instance when it is no longer used, but care must be taken to ensure all
+cameras are released explicitly before this happens.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">CameraManager</span><span class="o">&gt;</span><span class="w"> </span><span class="n">cm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">CameraManager</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="n">cm</span><span class="o">-&gt;</span><span class="n">start</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>During the application initialization, the Camera Manager is started to
+enumerate all the supported devices and create cameras that the application can
+interact with.</p>
+<p>Once the camera manager is started, we can use it to iterate the available
+cameras in the system:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">&amp;</span><span class="n">camera</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">cm</span><span class="o">-&gt;</span><span class="n">cameras</span><span class="p">())</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">camera</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Printing the camera id lists the machine-readable unique identifiers, so for
+example, the output on a Linux machine with a connected USB webcam is
+<code class="docutils literal notranslate"><span class="pre">\_SB_.PCI0.XHC_.RHUB.HS08-8:1.0-5986:2115</span></code>.</p>
+<section id="what-libcamera-considers-a-camera">
+<h3>What libcamera considers a camera<a class="headerlink" href="#what-libcamera-considers-a-camera" title="Link to this heading">¶</a></h3>
+<p>The libcamera library considers any unique source of video frames, which usually
+correspond to a camera sensor, as a single camera device. Camera devices expose
+streams, which are obtained by processing data from the single image source and
+all share some basic properties such as the frame duration and the image
+exposure time, as they only depend by the image source configuration.</p>
+<p>Applications select one or multiple Camera devices they wish to operate on, and
+require frames from at least one of their Streams.</p>
+</section>
+</section>
+<section id="create-and-acquire-a-camera">
+<h2>Create and acquire a camera<a class="headerlink" href="#create-and-acquire-a-camera" title="Link to this heading">¶</a></h2>
+<p>This example application uses a single camera (the first enumerated one) that
+the Camera Manager reports as available to applications.</p>
+<p>Camera devices are stored by the CameraManager in a list accessible by index, or
+can be retrieved by name through the <code class="docutils literal notranslate"><span class="pre">CameraManager::get()</span></code> function. The
+code below retrieves the name of the first available camera and gets the camera
+by name from the Camera Manager, after making sure that at least one camera is
+available.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">cameras</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cm</span><span class="o">-&gt;</span><span class="n">cameras</span><span class="p">();</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cameras</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;No cameras were identified on the system.&quot;</span>
+<span class="w">              </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cm</span><span class="o">-&gt;</span><span class="n">stop</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">EXIT_FAILURE</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">cameraId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cameras</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">();</span>
+
+<span class="k">auto</span><span class="w"> </span><span class="n">camera</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cm</span><span class="o">-&gt;</span><span class="n">get</span><span class="p">(</span><span class="n">cameraId</span><span class="p">);</span>
+<span class="cm">/*</span>
+<span class="cm"> * Note that `camera` may not compare equal to `cameras[0]`.</span>
+<span class="cm"> * In fact, it might simply be a `nullptr`, as the particular</span>
+<span class="cm"> * device might have disappeared (and reappeared) in the meantime.</span>
+<span class="cm"> */</span>
+</pre></div>
+</div>
+<p>Once a camera has been selected an application needs to acquire an exclusive
+lock to it so no other application can use it.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">camera</span><span class="o">-&gt;</span><span class="n">acquire</span><span class="p">();</span>
+</pre></div>
+</div>
+</section>
+<section id="configure-the-camera">
+<h2>Configure the camera<a class="headerlink" href="#configure-the-camera" title="Link to this heading">¶</a></h2>
+<p>Before the application can do anything with the camera, it needs to configure
+the image format and sizes of the streams it wants to capture frames from.</p>
+<p>Stream configurations are represented by instances of the
+<code class="docutils literal notranslate"><span class="pre">StreamConfiguration</span></code> class, which are grouped together in a
+<code class="docutils literal notranslate"><span class="pre">CameraConfiguration</span></code> object. Before an application can start setting its
+desired configuration, a <code class="docutils literal notranslate"><span class="pre">CameraConfiguration</span></code> instance needs to be generated
+from the <code class="docutils literal notranslate"><span class="pre">Camera</span></code> device using the <code class="docutils literal notranslate"><span class="pre">Camera::generateConfiguration()</span></code>
+function.</p>
+<p>The libcamera library uses the <code class="docutils literal notranslate"><span class="pre">StreamRole</span></code> enumeration to define predefined
+ways an application intends to use a camera. The
+<code class="docutils literal notranslate"><span class="pre">Camera::generateConfiguration()</span></code> function accepts a list of desired roles and
+generates a <code class="docutils literal notranslate"><span class="pre">CameraConfiguration</span></code> with the best stream parameters
+configuration for each of the requested roles.  If the camera can handle the
+requested roles, it returns an initialized <code class="docutils literal notranslate"><span class="pre">CameraConfiguration</span></code> and a null
+pointer if it can’t.</p>
+<p>It is possible for applications to generate an empty <code class="docutils literal notranslate"><span class="pre">CameraConfiguration</span></code>
+instance by not providing any role. The desired configuration will have to be
+filled-in manually and manually validated.</p>
+<p>In the example application, create a new configuration variable and use the
+<code class="docutils literal notranslate"><span class="pre">Camera::generateConfiguration</span></code> function to produce a <code class="docutils literal notranslate"><span class="pre">CameraConfiguration</span></code>
+for the single <code class="docutils literal notranslate"><span class="pre">StreamRole::Viewfinder</span></code> role.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">CameraConfiguration</span><span class="o">&gt;</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">camera</span><span class="o">-&gt;</span><span class="n">generateConfiguration</span><span class="p">(</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">StreamRole</span><span class="o">::</span><span class="n">Viewfinder</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The generated <code class="docutils literal notranslate"><span class="pre">CameraConfiguration</span></code> has a <code class="docutils literal notranslate"><span class="pre">StreamConfiguration</span></code> instance for
+each <code class="docutils literal notranslate"><span class="pre">StreamRole</span></code> the application requested. Each of these has a default size
+and format that the camera assigned, and a list of supported pixel formats and
+sizes.</p>
+<p>The code below accesses the first and only <code class="docutils literal notranslate"><span class="pre">StreamConfiguration</span></code> item in the
+<code class="docutils literal notranslate"><span class="pre">CameraConfiguration</span></code> and outputs its parameters to standard output.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">StreamConfiguration</span><span class="w"> </span><span class="o">&amp;</span><span class="n">streamConfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">config</span><span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Default viewfinder configuration is: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">streamConfig</span><span class="p">.</span><span class="n">toString</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>This is expected to output something like:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">Default</span> <span class="pre">viewfinder</span> <span class="pre">configuration</span> <span class="pre">is:</span> <span class="pre">1280x720-MJPEG</span></code></p>
+</div></blockquote>
+<section id="change-and-validate-the-configuration">
+<h3>Change and validate the configuration<a class="headerlink" href="#change-and-validate-the-configuration" title="Link to this heading">¶</a></h3>
+<p>With an initialized <code class="docutils literal notranslate"><span class="pre">CameraConfiguration</span></code>, an application can make changes to
+the parameters it contains, for example, to change the width and height, use the
+following code:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">streamConfig</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">640</span><span class="p">;</span>
+<span class="n">streamConfig</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">480</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>If an application changes any parameters, it must validate the configuration
+before applying it to the camera using the <code class="docutils literal notranslate"><span class="pre">CameraConfiguration::validate()</span></code>
+function. If the new values are not supported by the <code class="docutils literal notranslate"><span class="pre">Camera</span></code> device, the
+validation process adjusts the parameters to what it considers to be the closest
+supported values.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">validate</span></code> function returns a <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1CameraConfiguration.html#a64163f21db2fe1ce0a6af5a6f6847744">Status</a> which applications shall check to
+see if the Pipeline Handler adjusted the configuration.</p>
+<p>For example, the code above set the width and height to 640x480, but if the
+camera cannot produce an image that large, it might adjust the configuration to
+the supported size of 320x240 and return <code class="docutils literal notranslate"><span class="pre">Adjusted</span></code> as validation status
+result.</p>
+<p>If the configuration to validate cannot be adjusted to a set of supported
+values, the validation procedure fails and returns the <code class="docutils literal notranslate"><span class="pre">Invalid</span></code> status.</p>
+<p>For this example application, the code below prints the adjusted values to
+standard out.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">config</span><span class="o">-&gt;</span><span class="n">validate</span><span class="p">();</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Validated viewfinder configuration is: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">streamConfig</span><span class="p">.</span><span class="n">toString</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>For example, the output might be something like</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">Validated</span> <span class="pre">viewfinder</span> <span class="pre">configuration</span> <span class="pre">is:</span> <span class="pre">320x240-MJPEG</span></code></p>
+</div></blockquote>
+<p>A validated <code class="docutils literal notranslate"><span class="pre">CameraConfiguration</span></code> can bet given to the <code class="docutils literal notranslate"><span class="pre">Camera</span></code> device to be
+applied to the system.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">camera</span><span class="o">-&gt;</span><span class="n">configure</span><span class="p">(</span><span class="n">config</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
+</pre></div>
+</div>
+<p>If an application doesn’t first validate the configuration before calling
+<code class="docutils literal notranslate"><span class="pre">Camera::configure()</span></code>, there’s a chance that calling the function can fail, if
+the given configuration would have to be adjusted.</p>
+</section>
+</section>
+<section id="allocate-framebuffers">
+<h2>Allocate FrameBuffers<a class="headerlink" href="#allocate-framebuffers" title="Link to this heading">¶</a></h2>
+<p>An application needs to reserve the memory that libcamera can write incoming
+frames and data to, and that the application can then read. The libcamera
+library uses <code class="docutils literal notranslate"><span class="pre">FrameBuffer</span></code> instances to represent memory buffers allocated in
+memory. An application should reserve enough memory for the frame size the
+streams need based on the configured image sizes and formats.</p>
+<p>The libcamera library consumes buffers provided by applications as
+<code class="docutils literal notranslate"><span class="pre">FrameBuffer</span></code> instances, which makes libcamera a consumer of buffers exported
+by other devices (such as displays or video encoders), or allocated from an
+external allocator (such as ION on Android).</p>
+<p>In some situations, applications do not have any means to allocate or get hold
+of suitable buffers, for instance, when no other device is involved, or on Linux
+platforms that lack a centralized allocator. The <code class="docutils literal notranslate"><span class="pre">FrameBufferAllocator</span></code> class
+provides a buffer allocator an application can use in these situations.</p>
+<p>An application doesn’t have to use the default <code class="docutils literal notranslate"><span class="pre">FrameBufferAllocator</span></code> that
+libcamera provides. It can instead allocate memory manually and pass the buffers
+in <code class="docutils literal notranslate"><span class="pre">Request</span></code>s (read more about <code class="docutils literal notranslate"><span class="pre">Request</span></code> in <a class="reference external" href="#frame-capture">the frame capture section</a> of this guide). The example in this guide covers using the
+<code class="docutils literal notranslate"><span class="pre">FrameBufferAllocator</span></code> that libcamera provides.</p>
+<section id="using-the-libcamera-framebufferallocator">
+<h3>Using the libcamera <code class="docutils literal notranslate"><span class="pre">FrameBufferAllocator</span></code><a class="headerlink" href="#using-the-libcamera-framebufferallocator" title="Link to this heading">¶</a></h3>
+<p>Applications create a <code class="docutils literal notranslate"><span class="pre">FrameBufferAllocator</span></code> for a Camera and use it
+to allocate buffers for streams of a <code class="docutils literal notranslate"><span class="pre">CameraConfiguration</span></code> with the
+<code class="docutils literal notranslate"><span class="pre">allocate()</span></code> function.</p>
+<p>The list of allocated buffers can be retrieved using the <code class="docutils literal notranslate"><span class="pre">Stream</span></code> instance
+as the parameter of the <code class="docutils literal notranslate"><span class="pre">FrameBufferAllocator::buffers()</span></code> function.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">FrameBufferAllocator</span><span class="w"> </span><span class="o">*</span><span class="n">allocator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FrameBufferAllocator</span><span class="p">(</span><span class="n">camera</span><span class="p">);</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">StreamConfiguration</span><span class="w"> </span><span class="o">&amp;</span><span class="n">cfg</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="o">*</span><span class="n">config</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">allocator</span><span class="o">-&gt;</span><span class="n">allocate</span><span class="p">(</span><span class="n">cfg</span><span class="p">.</span><span class="n">stream</span><span class="p">());</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cerr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Can&#39;t allocate buffers&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="n">ENOMEM</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">allocated</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">allocator</span><span class="o">-&gt;</span><span class="n">buffers</span><span class="p">(</span><span class="n">cfg</span><span class="p">.</span><span class="n">stream</span><span class="p">()).</span><span class="n">size</span><span class="p">();</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Allocated &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">allocated</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; buffers for stream&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="frame-capture">
+<h3>Frame Capture<a class="headerlink" href="#frame-capture" title="Link to this heading">¶</a></h3>
+<p>The libcamera library implements a streaming model based on per-frame requests.
+For each frame an application wants to capture it must queue a request for it to
+the camera. With libcamera, a <code class="docutils literal notranslate"><span class="pre">Request</span></code> is at least one <code class="docutils literal notranslate"><span class="pre">Stream</span></code> associated
+with a <code class="docutils literal notranslate"><span class="pre">FrameBuffer</span></code> representing the memory location where frames have to be
+stored.</p>
+<p>First, by using the <code class="docutils literal notranslate"><span class="pre">Stream</span></code> instance associated to each
+<code class="docutils literal notranslate"><span class="pre">StreamConfiguration</span></code>, retrieve the list of <code class="docutils literal notranslate"><span class="pre">FrameBuffer</span></code>s created for it
+using the frame allocator. Then create a vector of requests to be submitted to
+the camera.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Stream</span><span class="w"> </span><span class="o">*</span><span class="n">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">streamConfig</span><span class="p">.</span><span class="n">stream</span><span class="p">();</span>
+<span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">FrameBuffer</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">buffers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">allocator</span><span class="o">-&gt;</span><span class="n">buffers</span><span class="p">(</span><span class="n">stream</span><span class="p">);</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Request</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">requests</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Proceed to fill the request vector by creating <code class="docutils literal notranslate"><span class="pre">Request</span></code> instances from the
+camera device, and associate a buffer for each of them for the <code class="docutils literal notranslate"><span class="pre">Stream</span></code>.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">buffers</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Request</span><span class="o">&gt;</span><span class="w"> </span><span class="n">request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">camera</span><span class="o">-&gt;</span><span class="n">createRequest</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">request</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cerr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Can&#39;t create request&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="n">ENOMEM</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">FrameBuffer</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buffers</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="o">-&gt;</span><span class="n">addBuffer</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span><span class="w"> </span><span class="n">buffer</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cerr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Can&#39;t set buffer for request&quot;</span>
+<span class="w">              </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">requests</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">request</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="event-handling-and-callbacks">
+<h2>Event handling and callbacks<a class="headerlink" href="#event-handling-and-callbacks" title="Link to this heading">¶</a></h2>
+<p>The libcamera library uses the concept of <cite>signals and slots</cite> (similar to <a class="reference external" href="https://doc.qt.io/qt-6/signalsandslots.html">Qt
+Signals and Slots</a>) to connect events with callbacks to handle them.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Camera</span></code> device emits two signals that applications can connect to in
+order to execute callbacks on frame completion events.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Camera::bufferCompleted</span></code> signal notifies applications that a buffer with
+image data is available. Receiving notifications about the single buffer
+completion event allows applications to implement partial request completion
+support, and to inspect the buffer content before the request it is part of has
+fully completed.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Camera::requestCompleted</span></code> signal notifies applications that a request
+has completed, which means all the buffers the request contains have now
+completed. Request completion notifications are always emitted in the same order
+as the requests have been queued to the camera.</p>
+<p>To receive the signals emission notifications, connect a slot function to the
+signal to handle it in the application code.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">camera</span><span class="o">-&gt;</span><span class="n">requestCompleted</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="n">requestComplete</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>For this example application, only the <code class="docutils literal notranslate"><span class="pre">Camera::requestCompleted</span></code> signal gets
+handled and the matching <code class="docutils literal notranslate"><span class="pre">requestComplete</span></code> slot function outputs information
+about the FrameBuffer to standard output. This callback is typically where an
+application accesses the image data from the camera and does something with it.</p>
+<p>Signals operate in the libcamera <code class="docutils literal notranslate"><span class="pre">CameraManager</span></code> thread context, so it is
+important not to block the thread for a long time, as this blocks internal
+processing of the camera pipelines, and can affect realtime performance.</p>
+<section id="handle-request-completion-events">
+<h3>Handle request completion events<a class="headerlink" href="#handle-request-completion-events" title="Link to this heading">¶</a></h3>
+<p>Create the <code class="docutils literal notranslate"><span class="pre">requestComplete</span></code> function by matching the slot signature:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">requestComplete</span><span class="p">(</span><span class="n">Request</span><span class="w"> </span><span class="o">*</span><span class="n">request</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Code to follow</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Request completion events can be emitted for requests which have been canceled,
+for example, by unexpected application shutdown. To avoid an application
+processing invalid image data, it’s worth checking that the request has
+completed successfully. The list of request completion statuses is available in
+the <a class="reference external" href="https://www.libcamera.org/api-html/classlibcamera_1_1Request.html#a2209ba8d51af8167b25f6e3e94d5c45b">Request::Status</a> class enum documentation.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">request</span><span class="o">-&gt;</span><span class="n">status</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Request</span><span class="o">::</span><span class="n">RequestCancelled</span><span class="p">)</span>
+<span class="w">   </span><span class="k">return</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>If the <code class="docutils literal notranslate"><span class="pre">Request</span></code> has completed successfully, applications can access the
+completed buffers using the <code class="docutils literal notranslate"><span class="pre">Request::buffers()</span></code> function, which returns a map
+of <code class="docutils literal notranslate"><span class="pre">FrameBuffer</span></code> instances associated with the <code class="docutils literal notranslate"><span class="pre">Stream</span></code> that produced the
+images.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">Stream</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">FrameBuffer</span><span class="w"> </span><span class="o">*&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">buffers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="o">-&gt;</span><span class="n">buffers</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Iterating through the map allows applications to inspect each completed buffer
+in this request, and access the metadata associated to each frame.</p>
+<p>The metadata buffer contains information such the capture status, a timestamp,
+and the bytes used, as described in the <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/structlibcamera_1_1FrameMetadata.html">FrameMetadata</a> documentation.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">bufferPair</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">buffers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">FrameBuffer</span><span class="w"> </span><span class="o">*</span><span class="n">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bufferPair</span><span class="p">.</span><span class="n">second</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">FrameMetadata</span><span class="w"> </span><span class="o">&amp;</span><span class="n">metadata</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buffer</span><span class="o">-&gt;</span><span class="n">metadata</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>For this example application, inside the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop from above, we can print
+the Frame sequence number and details of the planes.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; seq: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">setw</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">setfill</span><span class="p">(</span><span class="sc">&#39;0&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">metadata</span><span class="p">.</span><span class="n">sequence</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; bytesused: &quot;</span><span class="p">;</span>
+
+<span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">nplane</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">FrameMetadata</span><span class="o">::</span><span class="n">Plane</span><span class="w"> </span><span class="o">&amp;</span><span class="n">plane</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">metadata</span><span class="p">.</span><span class="n">planes</span><span class="p">())</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">plane</span><span class="p">.</span><span class="n">bytesused</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">++</span><span class="n">nplane</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">metadata</span><span class="p">.</span><span class="n">planes</span><span class="p">().</span><span class="n">size</span><span class="p">())</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;/&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The expected output shows each monotonically increasing frame sequence number
+and the bytes used by planes.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>seq: 000000 bytesused: 1843200
+seq: 000002 bytesused: 1843200
+seq: 000004 bytesused: 1843200
+seq: 000006 bytesused: 1843200
+seq: 000008 bytesused: 1843200
+seq: 000010 bytesused: 1843200
+seq: 000012 bytesused: 1843200
+seq: 000014 bytesused: 1843200
+seq: 000016 bytesused: 1843200
+seq: 000018 bytesused: 1843200
+seq: 000020 bytesused: 1843200
+seq: 000022 bytesused: 1843200
+seq: 000024 bytesused: 1843200
+seq: 000026 bytesused: 1843200
+seq: 000028 bytesused: 1843200
+seq: 000030 bytesused: 1843200
+seq: 000032 bytesused: 1843200
+seq: 000034 bytesused: 1843200
+seq: 000036 bytesused: 1843200
+seq: 000038 bytesused: 1843200
+seq: 000040 bytesused: 1843200
+seq: 000042 bytesused: 1843200
+</pre></div>
+</div>
+<p>A completed buffer contains of course image data which can be accessed through
+the per-plane dma-buf file descriptor transported by the <code class="docutils literal notranslate"><span class="pre">FrameBuffer</span></code>
+instance. An example of how to write image data to disk is available in the
+<a class="reference external" href="https://git.libcamera.org/libcamera/libcamera.git/tree/src/cam/file_sink.cpp">FileSink class</a> which is a part of the <code class="docutils literal notranslate"><span class="pre">cam</span></code> utility application in the
+libcamera repository.</p>
+<p>With the handling of this request completed, it is possible to re-use the
+request and the associated buffers and re-queue it to the camera
+device:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">request</span><span class="o">-&gt;</span><span class="n">reuse</span><span class="p">(</span><span class="n">Request</span><span class="o">::</span><span class="n">ReuseBuffers</span><span class="p">);</span>
+<span class="n">camera</span><span class="o">-&gt;</span><span class="n">queueRequest</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="request-queueing">
+<h2>Request queueing<a class="headerlink" href="#request-queueing" title="Link to this heading">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">Camera</span></code> device is now ready to receive frame capture requests and
+actually start delivering frames. In order to prepare for that, an application
+needs to first start the camera, and queue requests to it for them to be
+processed.</p>
+<p>In the main() function, just after having connected the
+<code class="docutils literal notranslate"><span class="pre">Camera::requestCompleted</span></code> signal to the callback handler, start the camera
+and queue all the previously created requests.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">camera</span><span class="o">-&gt;</span><span class="n">start</span><span class="p">();</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Request</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">request</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">requests</span><span class="p">)</span>
+<span class="w">   </span><span class="n">camera</span><span class="o">-&gt;</span><span class="n">queueRequest</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
+</pre></div>
+</div>
+<section id="event-processing">
+<h3>Event processing<a class="headerlink" href="#event-processing" title="Link to this heading">¶</a></h3>
+<p>libcamera creates an internal execution thread at <a class="reference external" href="https://projectsimon.github.io/libcamera/api-html/classlibcamera_1_1CameraManager.html#a49e322880a2a26013bb0076788b298c5">CameraManager::start()</a>
+time to decouple its own event processing from the application’s main thread.
+Applications are thus free to manage their own execution opportunely, and only
+need to respond to events generated by libcamera emitted through signals.</p>
+<p>Real-world applications will likely either integrate with the event loop of the
+framework they use, or create their own event loop to respond to user events.
+For the simple application presented in this example, it is enough to prevent
+immediate termination by pausing for 3 seconds. During that time, the libcamera
+thread will generate request completion events that the application will handle
+in the <code class="docutils literal notranslate"><span class="pre">requestComplete()</span></code> slot connected to the <code class="docutils literal notranslate"><span class="pre">Camera::requestCompleted</span></code>
+signal.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">this_thread</span><span class="o">::</span><span class="n">sleep_for</span><span class="p">(</span><span class="mi">3000</span><span class="n">ms</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="clean-up-and-stop-the-application">
+<h2>Clean up and stop the application<a class="headerlink" href="#clean-up-and-stop-the-application" title="Link to this heading">¶</a></h2>
+<p>The application is now finished with the camera and the resources the camera
+uses, so needs to do the following:</p>
+<ul class="simple">
+<li><p>stop the camera</p></li>
+<li><p>free the buffers in the FrameBufferAllocator and delete it</p></li>
+<li><p>release the lock on the camera and reset the pointer to it</p></li>
+<li><p>stop the camera manager</p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">camera</span><span class="o">-&gt;</span><span class="n">stop</span><span class="p">();</span>
+<span class="n">allocator</span><span class="o">-&gt;</span><span class="n">free</span><span class="p">(</span><span class="n">stream</span><span class="p">);</span>
+<span class="k">delete</span><span class="w"> </span><span class="n">allocator</span><span class="p">;</span>
+<span class="n">camera</span><span class="o">-&gt;</span><span class="n">release</span><span class="p">();</span>
+<span class="n">camera</span><span class="p">.</span><span class="n">reset</span><span class="p">();</span>
+<span class="n">cm</span><span class="o">-&gt;</span><span class="n">stop</span><span class="p">();</span>
+
+<span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>In this instance the CameraManager will automatically be deleted by the
+unique_ptr implementation when it goes out of scope.</p>
+</section>
+<section id="build-and-run-instructions">
+<h2>Build and run instructions<a class="headerlink" href="#build-and-run-instructions" title="Link to this heading">¶</a></h2>
+<p>To build the application, we recommend that you use the <a class="reference external" href="https://mesonbuild.com/">Meson build system</a>
+which is also the official build system of the libcamera library.</p>
+<p>Make sure both <code class="docutils literal notranslate"><span class="pre">meson</span></code> and <code class="docutils literal notranslate"><span class="pre">libcamera</span></code> are installed in your system. Please
+refer to your distribution documentation to install meson and install the most
+recent version of libcamera from the <a class="reference external" href="https://git.libcamera.org/libcamera/libcamera.git/">git repository</a>. You would also need to
+install the <code class="docutils literal notranslate"><span class="pre">pkg-config</span></code> tool to correctly identify the libcamera.so object
+install location in the system.</p>
+<section id="dependencies">
+<h3>Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading">¶</a></h3>
+<p>The test application presented here depends on the libcamera library to be
+available in a path that meson can identify. The libcamera install procedure
+performed using the <code class="docutils literal notranslate"><span class="pre">ninja</span> <span class="pre">install</span></code> command may by default deploy the
+libcamera components in the <code class="docutils literal notranslate"><span class="pre">/usr/local/lib</span></code> path, or a package manager may
+install it to <code class="docutils literal notranslate"><span class="pre">/usr/lib</span></code> depending on your distribution. If meson is unable to
+find the location of the libcamera installation, you may need to instruct meson
+to look into a specific path when searching for <code class="docutils literal notranslate"><span class="pre">libcamera.so</span></code> by setting the
+<code class="docutils literal notranslate"><span class="pre">PKG_CONFIG_PATH</span></code> environment variable to the right location.</p>
+<p>Adjust the following command to use the <code class="docutils literal notranslate"><span class="pre">pkgconfig</span></code> directory where libcamera
+has been installed in your system.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PKG_CONFIG_PATH</span><span class="o">=</span>/usr/local/lib/pkgconfig/
+</pre></div>
+</div>
+<p>Verify that <code class="docutils literal notranslate"><span class="pre">pkg-config</span></code> can identify the <code class="docutils literal notranslate"><span class="pre">libcamera</span></code> library with</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pkg-config<span class="w"> </span>--libs<span class="w"> </span>--cflags<span class="w"> </span>libcamera
+<span class="w">  </span>-I/usr/local/include/libcamera<span class="w"> </span>-L/usr/local/lib<span class="w"> </span>-lcamera<span class="w"> </span>-lcamera-base
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">meson</span></code> can alternatively use <code class="docutils literal notranslate"><span class="pre">cmake</span></code> to locate packages, please refer to
+the <code class="docutils literal notranslate"><span class="pre">meson</span></code> documentation if you prefer to use it in place of <code class="docutils literal notranslate"><span class="pre">pkgconfig</span></code></p>
+</section>
+<section id="build-file">
+<h3>Build file<a class="headerlink" href="#build-file" title="Link to this heading">¶</a></h3>
+<p>With the dependencies correctly identified, prepare a <code class="docutils literal notranslate"><span class="pre">meson.build</span></code> build file
+to be placed in the same directory where the application lives. You can
+name your application as you like, but be sure to update the following snippet
+accordingly. In this example, the application file has been named
+<code class="docutils literal notranslate"><span class="pre">simple-cam.cpp</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">project</span><span class="p">(</span><span class="s1">&#39;simple-cam&#39;</span><span class="p">,</span> <span class="s1">&#39;cpp&#39;</span><span class="p">)</span>
+
+<span class="n">simple_cam</span> <span class="o">=</span> <span class="n">executable</span><span class="p">(</span><span class="s1">&#39;simple-cam&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;simple-cam.cpp&#39;</span><span class="p">,</span>
+    <span class="n">dependencies</span><span class="p">:</span> <span class="n">dependency</span><span class="p">(</span><span class="s1">&#39;libcamera&#39;</span><span class="p">,</span> <span class="n">required</span> <span class="p">:</span> <span class="n">true</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> line instructs meson to ask <code class="docutils literal notranslate"><span class="pre">pkgconfig</span></code> (or <code class="docutils literal notranslate"><span class="pre">cmake</span></code>) to
+locate the <code class="docutils literal notranslate"><span class="pre">libcamera</span></code> library,  which the test application will be
+dynamically linked against.</p>
+<p>With the build file in place, compile and run the application with:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>meson<span class="w"> </span>build
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
+$<span class="w"> </span>ninja
+$<span class="w"> </span>./simple-cam
+</pre></div>
+</div>
+<p>It is possible to increase the library debug output by using environment
+variables which control the library log filtering system:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nv">LIBCAMERA_LOG_LEVELS</span><span class="o">=</span><span class="m">0</span><span class="w"> </span>./simple-cam
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+    </div>
+  </div>
+
+  
+<footer>
+  <div id="signature">
+        &copy; Copyright 2018-2019, The libcamera documentation authors.
+  </div>
+</footer>
+</body>
+</html>

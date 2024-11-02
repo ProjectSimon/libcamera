@@ -1,0 +1,295 @@
+
+
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>The libcamera camera sensor model &mdash; libcamera v0.3.2+rpt20241101+6-22e19df9 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="libcamera v0.3.2+rpt20241101+6-22e19df9 documentation" href="index.html"/>
+        <link rel="next" title="Environment variables" href="environment_variables.html"/>
+        <link rel="prev" title="Using libcamera in a C++ application" href="guides/application-developer.html"/> 
+
+</head>
+
+<body role="document">
+  <header>
+    <div id="navbar">
+      <div class="navbar-brand">
+        <div class="navbar-logo">   _
++-/ \-+
+| (o) |
++-----+</div>
+        <div class="navbar-name"><span class="text-light">lib</span>camera</div>
+      </div>
+
+      <div class="navbar">
+        <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/application-developer.html">Application Writer's Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Camera Sensor Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_requirements.html">Feature Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/ipa.html">IPA Writer's guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lens_driver_requirements.html">Lens driver requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libcamera_architecture.html">libcamera Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/pipeline-handler.html">Pipeline Handler Writer's Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-bindings.html">Python Bindings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensor_driver_requirements.html">Sensor driver requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software-isp-benchmarking.html">SoftwareISP Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/tracing.html">Tracing guide</a></li>
+</ul>
+
+        <div class="searchbox" role="search">
+          <form class="search" action="search.html" method="get">
+            <input type="text" name="q" />
+	    <input type="submit" value="Go" />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <div id="content">
+    
+    <div class="block">
+      
+  <div class="documentation-nav docutils container">
+<ul>
+<li><p><strong>Documentation for Users</strong></p></li>
+<li><p><a class="reference internal" href="introduction.html"><span class="doc">Introduction</span></a></p></li>
+<li><p><a class="reference internal" href="feature_requirements.html"><span class="doc">Feature Requirements</span></a></p></li>
+<li><p><a class="reference internal" href="guides/application-developer.html"><span class="doc">Using libcamera in a C++ application</span></a></p></li>
+<li><p><a class="reference internal" href="python-bindings.html"><span class="doc">Python Bindings for libcamera</span></a></p></li>
+<li><p><a class="reference internal" href="environment_variables.html"><span class="doc">Environment variables</span></a></p></li>
+<li><p><a class="reference internal" href="api-html/index.html"><span class="doc">API Reference</span></a></p></li>
+<li><p><a class="reference internal" href="code-of-conduct.html"><span class="doc">Contributor Covenant Code of Conduct</span></a></p></li>
+<li><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p><strong>Documentation for Developers</strong></p></li>
+<li><p><a class="reference internal" href="libcamera_architecture.html"><span class="doc">libcamera Architecture</span></a></p></li>
+<li><p><a class="reference internal" href="guides/pipeline-handler.html"><span class="doc">Pipeline Handler Writers Guide</span></a></p></li>
+<li><p><a class="reference internal" href="guides/ipa.html"><span class="doc">IPA Writer’s Guide</span></a></p></li>
+<li><p><a class="reference internal" href="#"><span class="doc">The libcamera camera sensor model</span></a></p></li>
+<li><p><a class="reference internal" href="guides/tracing.html"><span class="doc">Tracing Guide</span></a></p></li>
+<li><p><a class="reference internal" href="software-isp-benchmarking.html"><span class="doc">Software ISP benchmarking</span></a></p></li>
+<li><p><a class="reference internal" href="coding-style.html"><span class="doc">Coding Style Guidelines</span></a></p></li>
+<li><p><a class="reference internal" href="internal-api-html/index.html"><span class="doc">Internal API Reference</span></a></p></li>
+<li><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p><strong>Documentation for System Integrators</strong></p></li>
+<li><p><a class="reference internal" href="lens_driver_requirements.html"><span class="doc">Lens Driver Requirements</span></a></p></li>
+<li><p><a class="reference internal" href="sensor_driver_requirements.html"><span class="doc">Sensor Driver Requirements</span></a></p></li>
+</ul>
+</div>
+<span class="target" id="camera-sensor-model"></span><section class="documentation" id="the-libcamera-camera-sensor-model">
+<h1>The libcamera camera sensor model<a class="headerlink" href="#the-libcamera-camera-sensor-model" title="Link to this heading">¶</a></h1>
+<p>libcamera defines an abstract camera sensor model in order to provide
+a description of each of the processing steps that result in image data being
+sent on the media bus and that form the image stream delivered to applications.</p>
+<p>Applications should use the abstract camera sensor model defined here to
+precisely control the operations of the camera sensor.</p>
+<p>The libcamera camera sensor model targets image sensors producing frames in
+RAW format, delivered through a MIPI CSI-2 compliant bus implementation.</p>
+<p>The abstract sensor model maps libcamera components to the characteristics and
+operations of an image sensor, and serves as a reference to model the libcamera
+CameraSensor class and SensorConfiguration classes and operations.</p>
+<p>In order to control the configuration of the camera sensor through the
+SensorConfiguration class, applications should understand this model and map it
+to the combination of image sensor and kernel driver in use.</p>
+<p>The camera sensor model defined here is based on the <em>MIPI CCS specification</em>,
+particularly on <em>Section 8.2 - Image readout</em> of <em>Chapter 8 - Video Timings</em>.</p>
+<section id="glossary">
+<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">¶</a></h2>
+<dl class="simple glossary">
+<dt id="term-Pixel-array">Pixel array<a class="headerlink" href="#term-Pixel-array" title="Link to this term">¶</a></dt><dd><p>The full grid of pixels, active and inactive ones</p>
+</dd>
+<dt id="term-Pixel-array-active-area">Pixel array active area<a class="headerlink" href="#term-Pixel-array-active-area" title="Link to this term">¶</a></dt><dd><p>The portion(s) of the pixel array that contains valid and readable pixels;
+corresponds to the libcamera properties::PixelArrayActiveAreas</p>
+</dd>
+<dt id="term-Analog-crop-rectangle">Analog crop rectangle<a class="headerlink" href="#term-Analog-crop-rectangle" title="Link to this term">¶</a></dt><dd><p>The portion of the <em>pixel array active area</em> which is read out and passed
+to further processing stages</p>
+</dd>
+<dt id="term-Subsampling">Subsampling<a class="headerlink" href="#term-Subsampling" title="Link to this term">¶</a></dt><dd><p>Pixel processing techniques that reduce the image size by binning or by
+skipping adjacent pixels</p>
+</dd>
+<dt id="term-Digital-crop">Digital crop<a class="headerlink" href="#term-Digital-crop" title="Link to this term">¶</a></dt><dd><p>Crop of the sub-sampled image data before scaling</p>
+</dd>
+<dt id="term-Frame-output">Frame output<a class="headerlink" href="#term-Frame-output" title="Link to this term">¶</a></dt><dd><p>The frame (image) as output on the media bus by the camera sensor</p>
+</dd>
+</dl>
+</section>
+<section id="id1">
+<h2>Camera sensor model<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<p>The abstract sensor model is described in the following diagram.</p>
+<figure class="align-default">
+<img alt="_images/sensor_model.svg" src="_images/sensor_model.svg" />
+</figure>
+<ol class="arabic">
+<li><p>The sensor reads pixels from the <em>pixel array</em>. The pixels being read out are
+selected by the <em>analog crop rectangle</em>.</p></li>
+<li><p>The pixels can be subsampled to reduce the image size without affecting the
+field of view. Two subsampling techniques can be used:</p>
+<ul>
+<li><p>Binning: combines adjacent pixels of the same colour by averaging or
+summing their values, in the analog domain and/or the digital domain.</p>
+<blockquote>
+<div><figure class="align-default">
+<img alt="_images/binning.svg" src="_images/binning.svg" />
+</figure>
+</div></blockquote>
+</li>
+<li><p>Skipping: skips the read out of a number of adjacent pixels.</p>
+<blockquote>
+<div><figure class="align-default">
+<img alt="_images/skipping.svg" src="_images/skipping.svg" />
+</figure>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p>The output of the optional sub-sampling stage is then cropped after the
+conversion of the analogue pixel values in the digital domain.</p></li>
+<li><p>The resulting output frame is sent on the media bus by the sensor.</p></li>
+</ol>
+</section>
+<section id="camera-sensor-configuration-parameters">
+<h2>Camera Sensor configuration parameters<a class="headerlink" href="#camera-sensor-configuration-parameters" title="Link to this heading">¶</a></h2>
+<p>The libcamera camera sensor model defines parameters that allow users to
+control:</p>
+<ol class="arabic">
+<li><p>The image format bit depth</p></li>
+<li><p>The size and position of the  <em>Analog crop rectangle</em></p></li>
+<li><p>The subsampling factors used to downscale the pixel array readout data to a
+smaller frame size without reducing the image <em>field of view</em>. Two
+configuration parameters are made available to control the downscaling
+factor:</p>
+<ul>
+<li><dl>
+<dt>binning</dt><dd><p>A vertical and horizontal binning factor can be specified, the image
+will be downscaled in its vertical and horizontal sizes by the specified
+factor.</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Definition: The horizontal and vertical binning factors</span><a class="headerlink" href="#id2" title="Link to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">horizontal_binning</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">xBin</span><span class="p">;</span>
+<span class="n">vertical_binning</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yBin</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>skipping</dt><dd><p>Skipping reduces the image resolution by skipping the read-out of a number
+of adjacent pixels. The skipping factor is specified by the ‘increment’
+number (number of pixels to ‘skip’) in the vertical and horizontal
+directions and for even and odd rows and columns.</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Definition: The horizontal and vertical skipping factors</span><a class="headerlink" href="#id3" title="Link to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">horizontal_skipping</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">xOddInc</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">xEvenInc</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="n">vertical_skipping</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">yOddInc</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">yEvenInc</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Different sensors perform the binning and skipping stages in different
+orders. For the sake of computing the final output image size the order of
+execution is not relevant. The overall down-scaling factor is obtained by
+combining the binning and skipping factors.</p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Definition: The total scaling factor (binning + sub-sampling)</span><a class="headerlink" href="#id4" title="Link to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">total_horizontal_downscale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">horizontal_binning</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">horizontal_skipping</span><span class="p">;</span>
+<span class="n">total_vertical_downscale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vertical_binning</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">vertical_skipping</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</li>
+<li><p>The output size is used to specify any additional cropping on the sub-sampled
+frame.</p></li>
+<li><p>The total line length and frame height (<em>visibile</em> pixels + <em>blankings</em>) as
+sent on the MIPI CSI-2 bus.</p></li>
+<li><p>The pixel transmission rate on the MIPI CSI-2 bus.</p></li>
+</ol>
+<p>The above parameters are combined to obtain the following high-level
+configurations:</p>
+<ul>
+<li><p><strong>frame output size</strong></p>
+<blockquote>
+<div><p>Obtained by applying a crop to the physical pixel array size in the analog
+domain, followed by optional binning and sub-sampling (in any order),
+followed by an optional crop step in the output digital domain.</p>
+</div></blockquote>
+</li>
+<li><p><strong>frame rate</strong></p>
+<blockquote>
+<div><p>The combination of the <em>total frame size</em>, the image format <em>bit depth</em> and
+the <em>pixel rate</em> of the data sent on the MIPI CSI-2 bus allows to compute the
+image stream frame rate. The equation is the well known:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">frame_duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">total_frame_size</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">pixel_rate</span><span class="p">;</span>
+<span class="n">frame_rate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">frame_duration</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>where the <em>pixel_rate</em> parameter is the result of the sensor’s configuration
+of the MIPI CSI-2 bus <em>(the following formula applies to MIPI CSI-2 when
+used on MIPI D-PHY physical protocol layer only)</em></p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">pixel_rate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">csi_2_link_freq</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">nr_of_lanes</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">bits_per_sample</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+
+
+    </div>
+  </div>
+
+  
+<footer>
+  <div id="signature">
+        &copy; Copyright 2018-2019, The libcamera documentation authors.
+  </div>
+</footer>
+</body>
+</html>

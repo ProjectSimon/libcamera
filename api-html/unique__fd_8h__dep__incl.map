@@ -1,0 +1,7 @@
+<map id="include/libcamera/base/unique_fd.h" name="include/libcamera/base/unique_fd.h">
+<area shape="rect" id="node1" title="File descriptor wrapper that owns a file descriptor." alt="" coords="140,5,313,47"/>
+<area shape="rect" id="node2" href="$fence_8h.html" title="Definition of the Fence class." alt="" coords="131,95,322,121"/>
+<area shape="rect" id="node3" href="$request_8h.html" title="Describes a frame capture request to be processed by a camera." alt="" coords="56,169,259,196"/>
+<area shape="rect" id="node5" href="$libcamera_8h_source.html" title=" " alt="" coords="158,319,333,360"/>
+<area shape="rect" id="node4" href="$camera_8h.html" title="Camera device handling." alt="" coords="5,244,208,271"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classlibcamera_1_1ipa_1_1AgcMeanLuminance.html" title="A mean&#45;based auto&#45;exposure algorithm." alt="" coords="5,13,260,39"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1Agc.html" title="A mean&#45;based auto&#45;exposure algorithm." alt="" coords="356,5,507,47"/>
+<area shape="rect" id="node3" href="$classlibcamera_1_1ipa_1_1Algorithm.html" title="The base class for all IPA algorithms." alt="" coords="39,136,226,177"/>
+<area shape="rect" id="node4" href="$classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1Af.html" title="An auto&#45;focus algorithm based on IPU3 statistics." alt="" coords="356,71,507,112"/>
+<area shape="rect" id="node5" href="$classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1Awb.html" title="A Grey world white balance correction algorithm." alt="" coords="356,136,507,177"/>
+<area shape="rect" id="node6" href="$classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1BlackLevelCorrection.html" title="A class to handle black level correction." alt="" coords="308,201,555,243"/>
+<area shape="rect" id="node7" href="$classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1ToneMapping.html" title="A class to handle tone mapping based on gamma." alt="" coords="334,267,529,308"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="libcamera::V4L2SubdeviceFormat" name="libcamera::V4L2SubdeviceFormat">
+<area shape="rect" id="node1" title="The V4L2 sub&#45;device image format and sizes." alt="" coords="5,95,200,136"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1Size.html" title="Describe a two&#45;dimensional size." alt="" coords="41,5,164,32"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="include/libcamera/geometry.h" name="include/libcamera/geometry.h">
+<area shape="rect" id="node1" title="Data structures related to geometric objects." alt="" coords="485,5,700,32"/>
+<area shape="rect" id="node2" href="$camera_8h.html" title="Camera device handling." alt="" coords="535,237,738,263"/>
+<area shape="rect" id="node3" href="$libcamera_8h_source.html" title=" " alt="" coords="350,319,525,360"/>
+<area shape="rect" id="node4" href="$controls_8h.html" title="Framework to manage controls related to an object." alt="" coords="325,80,532,107"/>
+<area shape="rect" id="node8" href="$stream_8h.html" title="Video stream for a Camera." alt="" coords="724,155,924,181"/>
+<area shape="rect" id="node5" href="$request_8h.html" title="Describes a frame capture request to be processed by a camera." alt="" coords="396,155,599,181"/>
+<area shape="rect" id="node6" href="$control__ids_8h.html" title="Camera controls identifiers." alt="" coords="26,229,201,271"/>
+<area shape="rect" id="node7" href="$property__ids_8h.html" title="Camera properties identifiers." alt="" coords="225,229,400,271"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="libcamera::ipa::ipu3::algorithms::BlackLevelCorrection" name="libcamera::ipa::ipu3::algorithms::BlackLevelCorrection">
+<area shape="rect" id="node1" title="A class to handle black level correction." alt="" coords="5,80,252,121"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1ipa_1_1Algorithm.html" title="The base class for all IPA algorithms." alt="" coords="85,5,172,32"/>
+</map>

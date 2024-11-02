@@ -1,0 +1,7 @@
+<map id="libcamera::Extensible" name="libcamera::Extensible">
+<area shape="rect" id="node1" title="Base class to manage private data through a d&#45;pointer." alt="" coords="5,81,168,108"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1Camera.html" title="Camera device." alt="" coords="244,5,391,32"/>
+<area shape="rect" id="node3" href="$classlibcamera_1_1CameraManager.html" title="Provide access and manage all cameras in the system." alt="" coords="216,56,419,83"/>
+<area shape="rect" id="node4" href="$classlibcamera_1_1FrameBuffer.html" title="Frame buffer data and its associated dynamic metadata." alt="" coords="230,107,405,133"/>
+<area shape="rect" id="node5" href="$classlibcamera_1_1Request.html" title="A frame capture request." alt="" coords="243,157,391,184"/>
+</map>

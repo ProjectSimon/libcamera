@@ -1,0 +1,4 @@
+<map id="libcamera::ConverterFactoryBase" name="libcamera::ConverterFactoryBase">
+<area shape="rect" id="node1" title="Base class for converter factories." alt="" coords="5,5,244,32"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1ConverterFactory.html" title="Registration of ConverterFactory classes and creation of instances." alt="" coords="21,80,228,121"/>
+</map>

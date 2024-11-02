@@ -1,0 +1,6 @@
+<map id="include/libcamera/internal/process.h" name="include/libcamera/internal/process.h">
+<area shape="rect" id="node1" title="Process object." alt="" coords="5,5,197,47"/>
+<area shape="rect" id="node2" href="$internal_2camera__manager_8h.html" title="Internal camera manager support." alt="" coords="5,95,197,136"/>
+<area shape="rect" id="node3" href="$ipa__manager_8h.html" title="Image Processing Algorithm module manager." alt="" coords="5,184,197,225"/>
+<area shape="rect" id="node4" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="16,273,187,315"/>
+</map>

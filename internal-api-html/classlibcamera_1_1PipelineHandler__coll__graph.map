@@ -1,0 +1,9 @@
+<map id="libcamera::PipelineHandler" name="libcamera::PipelineHandler">
+<area shape="rect" id="node1" title="Create and manage cameras based on a set of media devices." alt="" coords="925,71,1124,98"/>
+<area shape="rect" id="node2" title=" " alt="" coords="584,5,808,47"/>
+<area shape="rect" id="node3" href="$classlibcamera_1_1Object.html" title="Base object to support automatic signal disconnection." alt="" coords="254,79,391,106"/>
+<area shape="rect" id="node4" href="$classlibcamera_1_1CameraManager.html" title="Provide access and manage all cameras in the system." alt="" coords="595,130,797,157"/>
+<area shape="rect" id="node5" href="$classlibcamera_1_1Extensible.html" title="Base class to manage private data through a d&#45;pointer." alt="" coords="241,138,404,165"/>
+<area shape="rect" id="node6" title=" " alt="" coords="221,189,424,245"/>
+<area shape="rect" id="node7" title=" " alt="" coords="5,203,172,230"/>
+</map>

@@ -1,0 +1,15 @@
+<map id="include/libcamera/base/flags.h" name="include/libcamera/base/flags.h">
+<area shape="rect" id="node1" title="Enum&#45;based bit fields." alt="" coords="524,5,697,47"/>
+<area shape="rect" id="node2" href="$file_8h.html" title="File I/O operations." alt="" coords="5,95,179,136"/>
+<area shape="rect" id="node3" href="$memfd_8h.html" title="Anonymous file creation." alt="" coords="203,95,376,136"/>
+<area shape="rect" id="node6" href="$camera_8h.html" title="Camera device handling." alt="" coords="621,102,824,129"/>
+<area shape="rect" id="node9" href="$dma__buf__allocator_8h_source.html" title=" " alt="" coords="404,95,596,136"/>
+<area shape="rect" id="node12" href="$ipa__data__serializer_8h.html" title="IPA Data Serializer." alt="" coords="848,95,1040,136"/>
+<area shape="rect" id="node13" href="$mapped__framebuffer_8h.html" title="Frame buffer memory mapping support." alt="" coords="1044,184,1236,225"/>
+<area shape="rect" id="node4" href="$dma__buf__allocator_8cpp.html" title="dma&#45;buf allocator" alt="" coords="201,184,372,225"/>
+<area shape="rect" id="node5" href="$shared__mem__object_8cpp.html" title="Helpers for shared memory allocations." alt="" coords="18,184,177,225"/>
+<area shape="rect" id="node7" href="$internal_2camera_8h.html" title="Internal camera device handling." alt="" coords="628,184,820,225"/>
+<area shape="rect" id="node8" href="$libcamera_8h_source.html" title=" " alt="" coords="845,184,1019,225"/>
+<area shape="rect" id="node10" href="$software__isp_8h_source.html" title=" " alt="" coords="397,184,603,225"/>
+<area shape="rect" id="node11" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="735,273,905,315"/>
+</map>

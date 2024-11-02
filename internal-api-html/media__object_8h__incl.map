@@ -1,0 +1,8 @@
+<map id="include/libcamera/internal/media_object.h" name="include/libcamera/internal/media_object.h">
+<area shape="rect" id="node1" title="Provides a class hierarchy that represents the media objects exposed by the Linux kernel Media Contro..." alt="" coords="79,5,271,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,95,64,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="89,95,151,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="175,95,286,121"/>
+<area shape="rect" id="node5" href="$class_8h.html" title="Utilities to help constructing class interfaces." alt="" coords="311,95,481,121"/>
+<area shape="rect" id="node6" title=" " alt="" coords="357,169,435,196"/>
+</map>

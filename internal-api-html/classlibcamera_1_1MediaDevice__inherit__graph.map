@@ -1,0 +1,4 @@
+<map id="libcamera::MediaDevice" name="libcamera::MediaDevice">
+<area shape="rect" id="node1" title="The MediaDevice represents a Media Controller device with its full graph of connected objects." alt="" coords="5,80,185,107"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1Loggable.html" title="Base class to support log message extensions." alt="" coords="18,5,173,32"/>
+</map>

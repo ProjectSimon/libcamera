@@ -1,0 +1,17 @@
+<map id="include/libcamera/internal/ipc_unixsocket.h" name="include/libcamera/internal/ipc_unixsocket.h">
+<area shape="rect" id="node1" title="IPC mechanism based on Unix sockets." alt="" coords="157,5,349,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,95,76,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="101,95,197,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="221,95,284,121"/>
+<area shape="rect" id="node5" href="$signal_8h.html" title="Signal &amp; slot implementation." alt="" coords="308,95,485,121"/>
+<area shape="rect" id="node13" href="$unique__fd_8h.html" title="File descriptor wrapper that owns a file descriptor." alt="" coords="661,95,863,121"/>
+<area shape="rect" id="node6" title=" " alt="" coords="504,177,591,203"/>
+<area shape="rect" id="node7" title=" " alt="" coords="195,177,238,203"/>
+<area shape="rect" id="node8" title=" " alt="" coords="241,259,333,285"/>
+<area shape="rect" id="node9" href="$bound__method_8h.html" title="Method bind and invocation." alt="" coords="313,169,480,211"/>
+<area shape="rect" id="node10" title=" " alt="" coords="555,259,633,285"/>
+<area shape="rect" id="node11" title=" " alt="" coords="369,259,424,285"/>
+<area shape="rect" id="node12" title=" " alt="" coords="725,259,785,285"/>
+<area shape="rect" id="node14" href="$class_8h.html" title="Utilities to help constructing class interfaces." alt="" coords="615,177,786,203"/>
+<area shape="rect" id="node15" href="$compiler_8h_source.html" title=" " alt="" coords="861,177,1055,203"/>
+</map>

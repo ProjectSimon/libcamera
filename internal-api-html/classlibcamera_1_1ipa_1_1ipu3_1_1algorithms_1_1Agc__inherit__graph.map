@@ -1,0 +1,5 @@
+<map id="libcamera::ipa::ipu3::algorithms::Agc" name="libcamera::ipa::ipu3::algorithms::Agc">
+<area shape="rect" id="node1" title="A mean&#45;based auto&#45;exposure algorithm." alt="" coords="71,80,221,121"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1ipa_1_1Algorithm.html" title="The base class for all IPA algorithms." alt="" coords="5,5,92,32"/>
+<area shape="rect" id="node3" href="$classlibcamera_1_1ipa_1_1AgcMeanLuminance.html" title="A mean&#45;based auto&#45;exposure algorithm." alt="" coords="116,5,371,32"/>
+</map>

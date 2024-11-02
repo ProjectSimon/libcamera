@@ -1,0 +1,7 @@
+<map id="include/libcamera/base/shared_fd.h" name="include/libcamera/base/shared_fd.h">
+<area shape="rect" id="node1" title="File descriptor wrapper." alt="" coords="140,5,313,47"/>
+<area shape="rect" id="node2" href="$framebuffer_8h.html" title="Frame buffer handling." alt="" coords="111,95,342,121"/>
+<area shape="rect" id="node3" href="$stream_8h.html" title="Video stream for a Camera." alt="" coords="59,169,259,196"/>
+<area shape="rect" id="node5" href="$libcamera_8h_source.html" title=" " alt="" coords="158,319,333,360"/>
+<area shape="rect" id="node4" href="$camera_8h.html" title="Camera device handling." alt="" coords="5,244,208,271"/>
+</map>

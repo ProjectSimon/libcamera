@@ -1,0 +1,11 @@
+<map id="include/libcamera/internal/bayer_format.h" name="include/libcamera/internal/bayer_format.h">
+<area shape="rect" id="node1" title="Class to represent Bayer formats and manipulate them." alt="" coords="75,5,267,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="133,259,209,285"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,259,76,285"/>
+<area shape="rect" id="node4" title=" " alt="" coords="598,259,657,285"/>
+<area shape="rect" id="node5" href="$pixel__format_8h.html" title="libcamera pixel format" alt="" coords="79,184,264,211"/>
+<area shape="rect" id="node6" href="$v4l2__pixelformat_8h.html" title="V4L2 Pixel Format." alt="" coords="337,95,485,136"/>
+<area shape="rect" id="node7" title=" " alt="" coords="503,184,589,211"/>
+<area shape="rect" id="node8" title=" " alt="" coords="665,184,728,211"/>
+<area shape="rect" id="node9" title=" " alt="" coords="289,184,427,211"/>
+</map>

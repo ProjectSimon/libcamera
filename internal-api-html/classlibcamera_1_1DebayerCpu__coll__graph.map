@@ -1,0 +1,7 @@
+<map id="libcamera::DebayerCpu" name="libcamera::DebayerCpu">
+<area shape="rect" id="node1" title="Class for debayering on the CPU." alt="" coords="146,276,321,303"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1Debayer.html" title="Base debayering class." alt="" coords="33,200,183,227"/>
+<area shape="rect" id="node3" href="$classlibcamera_1_1Signal.html" title=" " alt="" coords="5,81,211,123"/>
+<area shape="rect" id="node4" title=" " alt="" coords="25,5,191,32"/>
+<area shape="rect" id="node5" href="$classlibcamera_1_1Object.html" title="Base object to support automatic signal disconnection." alt="" coords="207,200,345,227"/>
+</map>

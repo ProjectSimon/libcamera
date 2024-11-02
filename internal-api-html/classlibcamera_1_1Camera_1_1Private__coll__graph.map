@@ -1,0 +1,7 @@
+<map id="libcamera::Camera::Private" name="libcamera::Camera::Private">
+<area shape="rect" id="node1" title="Base class for camera private data." alt="" coords="197,215,352,256"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1Extensible_1_1Private.html" title="Base class for private data managed through a d&#45;pointer." alt="" coords="5,111,168,152"/>
+<area shape="rect" id="node3" href="$classlibcamera_1_1ControlList.html" title="Associate a list of ControlId with their values for an object." alt="" coords="192,118,357,145"/>
+<area shape="rect" id="node4" href="$classlibcamera_1_1ControlInfoMap.html" title="A map of ControlId to ControlInfo." alt="" coords="381,118,576,145"/>
+<area shape="rect" id="node5" title=" " alt="" coords="403,5,555,61"/>
+</map>

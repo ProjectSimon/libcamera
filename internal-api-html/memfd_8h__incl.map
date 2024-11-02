@@ -1,0 +1,10 @@
+<map id="include/libcamera/base/memfd.h" name="include/libcamera/base/memfd.h">
+<area shape="rect" id="node1" title="Anonymous file creation." alt="" coords="109,5,282,47"/>
+<area shape="rect" id="node2" href="$flags_8h.html" title="Enum&#45;based bit fields." alt="" coords="5,95,175,121"/>
+<area shape="rect" id="node4" href="$unique__fd_8h.html" title="File descriptor wrapper that owns a file descriptor." alt="" coords="206,95,409,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="29,169,121,196"/>
+<area shape="rect" id="node5" title=" " alt="" coords="145,169,205,196"/>
+<area shape="rect" id="node6" href="$class_8h.html" title="Utilities to help constructing class interfaces." alt="" coords="230,169,401,196"/>
+<area shape="rect" id="node8" href="$compiler_8h_source.html" title=" " alt="" coords="425,169,619,196"/>
+<area shape="rect" id="node7" title=" " alt="" coords="277,244,354,271"/>
+</map>

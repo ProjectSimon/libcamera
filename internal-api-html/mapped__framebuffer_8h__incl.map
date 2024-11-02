@@ -1,0 +1,13 @@
+<map id="include/libcamera/internal/mapped_framebuffer.h" name="include/libcamera/internal/mapped_framebuffer.h">
+<area shape="rect" id="node1" title="Frame buffer memory mapping support." alt="" coords="342,5,534,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,169,76,196"/>
+<area shape="rect" id="node3" title=" " alt="" coords="100,169,163,196"/>
+<area shape="rect" id="node4" href="$class_8h.html" title="Utilities to help constructing class interfaces." alt="" coords="547,169,718,196"/>
+<area shape="rect" id="node6" href="$flags_8h.html" title="Enum&#45;based bit fields." alt="" coords="860,95,1029,121"/>
+<area shape="rect" id="node8" title=" " alt="" coords="743,169,912,196"/>
+<area shape="rect" id="node9" href="$framebuffer_8h.html" title="Frame buffer handling." alt="" coords="286,95,465,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="301,244,378,271"/>
+<area shape="rect" id="node7" title=" " alt="" coords="936,169,1028,196"/>
+<area shape="rect" id="node10" title=" " alt="" coords="465,169,523,196"/>
+<area shape="rect" id="node11" href="$shared__fd_8h.html" title="File descriptor wrapper." alt="" coords="238,169,441,196"/>
+</map>

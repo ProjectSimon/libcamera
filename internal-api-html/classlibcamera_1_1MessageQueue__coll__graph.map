@@ -1,0 +1,4 @@
+<map id="libcamera::MessageQueue" name="libcamera::MessageQueue">
+<area shape="rect" id="node1" title="A queue of posted messages." alt="" coords="5,95,200,121"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1Mutex.html" title="std::mutex wrapper with clang thread safety annotation" alt="" coords="35,5,171,32"/>
+</map>

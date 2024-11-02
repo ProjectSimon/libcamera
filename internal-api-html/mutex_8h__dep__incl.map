@@ -1,0 +1,7 @@
+<map id="include/libcamera/base/mutex.h" name="include/libcamera/base/mutex.h">
+<area shape="rect" id="node1" title="Mutex classes with clang thread safety annotation." alt="" coords="108,5,281,47"/>
+<area shape="rect" id="node2" href="$semaphore_8h.html" title="General&#45;purpose counting semaphore." alt="" coords="5,95,179,136"/>
+<area shape="rect" id="node3" href="$internal_2camera__manager_8h.html" title="Internal camera manager support." alt="" coords="203,95,395,136"/>
+<area shape="rect" id="node4" href="$ipa__manager_8h.html" title="Image Processing Algorithm module manager." alt="" coords="203,184,395,225"/>
+<area shape="rect" id="node5" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="213,273,384,315"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="include/libcamera/internal/device_enumerator.h" name="include/libcamera/internal/device_enumerator.h">
+<area shape="rect" id="node1" title="Enumeration and matching of media devices." alt="" coords="277,5,469,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,259,83,285"/>
+<area shape="rect" id="node3" title=" " alt="" coords="416,95,475,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="499,95,562,121"/>
+<area shape="rect" id="node5" href="$signal_8h.html" title="Signal &amp; slot implementation." alt="" coords="214,95,391,121"/>
+<area shape="rect" id="node6" title=" " alt="" coords="259,177,346,203"/>
+<area shape="rect" id="node7" title=" " alt="" coords="371,177,413,203"/>
+<area shape="rect" id="node8" title=" " alt="" coords="341,259,433,285"/>
+<area shape="rect" id="node9" href="$bound__method_8h.html" title="Method bind and invocation." alt="" coords="69,169,235,211"/>
+<area shape="rect" id="node10" title=" " alt="" coords="198,259,253,285"/>
+<area shape="rect" id="node11" title=" " alt="" coords="114,259,174,285"/>
+</map>

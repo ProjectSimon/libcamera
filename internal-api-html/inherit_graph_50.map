@@ -1,0 +1,13 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" title=" " alt="" coords="246,5,377,32"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1ipa_1_1ipu3_1_1IPAIPU3.html" title="The IPU3 IPA implementation." alt="" coords="492,121,643,162"/>
+<area shape="rect" id="node3" href="$classlibcamera_1_1Loggable.html" title="Base class to support log message extensions." alt="" coords="5,183,160,209"/>
+<area shape="rect" id="node4" href="$classlibcamera_1_1CameraLens.html" title="A camera lens based on V4L2 subdevices." alt="" coords="223,56,399,83"/>
+<area shape="rect" id="node5" href="$classlibcamera_1_1CameraSensor.html" title="A camera sensor based on V4L2 subdevices." alt="" coords="216,107,407,133"/>
+<area shape="rect" id="node6" href="$classlibcamera_1_1IPAModule.html" title="Wrapper around IPA module shared object." alt="" coords="230,157,393,184"/>
+<area shape="rect" id="node7" href="$classlibcamera_1_1MediaDevice.html" title="The MediaDevice represents a Media Controller device with its full graph of connected objects." alt="" coords="221,208,401,235"/>
+<area shape="rect" id="node8" href="$classlibcamera_1_1V4L2Device.html" title="Base class for V4L2VideoDevice and V4L2Subdevice." alt="" coords="225,339,397,365"/>
+<area shape="rect" id="node11" href="$classlibcamera_1_1ipa_1_1Module.html" title="The base class for all IPA modules." alt="" coords="208,259,415,315"/>
+<area shape="rect" id="node9" href="$classlibcamera_1_1V4L2Subdevice.html" title="A V4L2 subdevice as exposed by the Linux kernel." alt="" coords="470,309,665,336"/>
+<area shape="rect" id="node10" href="$classlibcamera_1_1V4L2VideoDevice.html" title="V4L2VideoDevice object and API." alt="" coords="463,360,672,387"/>
+</map>

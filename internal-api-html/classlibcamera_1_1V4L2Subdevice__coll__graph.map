@@ -1,0 +1,7 @@
+<map id="libcamera::V4L2Subdevice" name="libcamera::V4L2Subdevice">
+<area shape="rect" id="node1" title="A V4L2 subdevice as exposed by the Linux kernel." alt="" coords="40,261,235,288"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1V4L2Device.html" title="Base class for V4L2VideoDevice and V4L2Subdevice." alt="" coords="51,185,223,212"/>
+<area shape="rect" id="node3" href="$classlibcamera_1_1Loggable.html" title="Base class to support log message extensions." alt="" coords="5,89,160,115"/>
+<area shape="rect" id="node4" href="$classlibcamera_1_1Signal.html" title=" " alt="" coords="184,81,331,123"/>
+<area shape="rect" id="node5" title=" " alt="" coords="174,5,341,32"/>
+</map>

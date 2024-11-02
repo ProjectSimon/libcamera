@@ -1,0 +1,4 @@
+<map id="libcamera::V4L2Subdevice::Route" name="libcamera::V4L2Subdevice::Route">
+<area shape="rect" id="node1" title="V4L2 subdevice routing table entry." alt="" coords="5,124,200,165"/>
+<area shape="rect" id="node2" href="$structlibcamera_1_1V4L2Subdevice_1_1Stream.html" title="V4L2 subdevice stream." alt="" coords="5,5,200,47"/>
+</map>

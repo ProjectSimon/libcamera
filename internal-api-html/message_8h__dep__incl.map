@@ -1,0 +1,8 @@
+<map id="include/libcamera/base/message.h" name="include/libcamera/base/message.h">
+<area shape="rect" id="node1" title="Message queue support." alt="" coords="127,5,300,47"/>
+<area shape="rect" id="node2" href="$thread_8h.html" title="Thread support." alt="" coords="127,95,300,136"/>
+<area shape="rect" id="node3" href="$internal_2camera__manager_8h.html" title="Internal camera manager support." alt="" coords="51,184,243,225"/>
+<area shape="rect" id="node6" href="$software__isp_8h_source.html" title=" " alt="" coords="222,273,429,315"/>
+<area shape="rect" id="node4" href="$ipa__manager_8h.html" title="Image Processing Algorithm module manager." alt="" coords="5,273,197,315"/>
+<area shape="rect" id="node5" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="128,363,299,404"/>
+</map>

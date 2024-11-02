@@ -1,0 +1,256 @@
+
+
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Started &mdash; libcamera v0.3.2+rpt20241101+6-22e19df9 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="libcamera v0.3.2+rpt20241101+6-22e19df9 documentation" href="index.html"/>
+        <link rel="next" title="Using libcamera in a C++ application" href="guides/application-developer.html"/>
+        <link rel="prev" title="Coding Style Guidelines" href="coding-style.html"/> 
+
+</head>
+
+<body role="document">
+  <header>
+    <div id="navbar">
+      <div class="navbar-brand">
+        <div class="navbar-logo">   _
++-/ \-+
+| (o) |
++-----+</div>
+        <div class="navbar-name"><span class="text-light">lib</span>camera</div>
+      </div>
+
+      <div class="navbar">
+        <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contribute</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/application-developer.html">Application Writer's Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="camera-sensor-model.html">Camera Sensor Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_requirements.html">Feature Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/ipa.html">IPA Writer's guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lens_driver_requirements.html">Lens driver requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libcamera_architecture.html">libcamera Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/pipeline-handler.html">Pipeline Handler Writer's Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-bindings.html">Python Bindings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensor_driver_requirements.html">Sensor driver requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software-isp-benchmarking.html">SoftwareISP Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/tracing.html">Tracing guide</a></li>
+</ul>
+
+        <div class="searchbox" role="search">
+          <form class="search" action="search.html" method="get">
+            <input type="text" name="q" />
+	    <input type="submit" value="Go" />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <div id="content">
+    
+    <div class="block">
+      
+  <section id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">¶</a></h1>
+<p>Only build <code class="docutils literal notranslate"><span class="pre">libcamera</span></code> from scratch if you need custom behaviour or the latest features that have not yet reached <code class="docutils literal notranslate"><span class="pre">apt</span></code> repositories.</p>
+<p>If you run <code class="docutils literal notranslate"><span class="pre">Raspberry</span> <span class="pre">Pi</span> <span class="pre">OS</span> <span class="pre">Lite</span></code>, begin by installing the following packages:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">python</span><span class="o">-</span><span class="n">pip</span> <span class="n">git</span> <span class="n">python3</span><span class="o">-</span><span class="n">jinja2</span>
+</pre></div>
+</div>
+<p>First, install the following <code class="docutils literal notranslate"><span class="pre">libcamera</span></code> dependencies:
+.. code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">libboost</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">libgnutls28</span><span class="o">-</span><span class="n">dev</span> <span class="n">openssl</span> <span class="n">libtiff</span><span class="o">-</span><span class="n">dev</span> <span class="n">pybind11</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">qtbase5</span><span class="o">-</span><span class="n">dev</span> <span class="n">libqt5core5a</span> <span class="n">libqt5widgets</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">meson</span> <span class="n">cmake</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">python3</span><span class="o">-</span><span class="n">yaml</span> <span class="n">python3</span><span class="o">-</span><span class="n">ply</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">libglib2</span><span class="mf">.0</span><span class="o">-</span><span class="n">dev</span> <span class="n">libgstreamer</span><span class="o">-</span><span class="n">plugins</span><span class="o">-</span><span class="n">base1</span><span class="mf">.0</span><span class="o">-</span><span class="n">dev</span>
+</pre></div>
+</div>
+<p>Now we’re ready to build <code class="docutils literal notranslate"><span class="pre">libcamera</span></code> itself.</p>
+<p>Download a local copy of Raspberry Pi’s fork of <code class="docutils literal notranslate"><span class="pre">libcamera</span></code> from GitHub, before building and installing freshly-build binary:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">raspberrypi</span><span class="o">/</span><span class="n">libcamera</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">libcamera</span>
+<span class="n">meson</span> <span class="n">setup</span> <span class="n">build</span> <span class="o">--</span><span class="n">buildtype</span><span class="o">=</span><span class="n">release</span> <span class="o">-</span><span class="n">Dpipelines</span><span class="o">=</span><span class="n">rpi</span><span class="o">/</span><span class="n">vc4</span><span class="p">,</span><span class="n">rpi</span><span class="o">/</span><span class="n">pisp</span> <span class="o">-</span><span class="n">Dipas</span><span class="o">=</span><span class="n">rpi</span><span class="o">/</span><span class="n">vc4</span><span class="p">,</span><span class="n">rpi</span><span class="o">/</span><span class="n">pisp</span> <span class="o">-</span><span class="n">Dv4l2</span><span class="o">=</span><span class="n">true</span> <span class="o">-</span><span class="n">Dgstreamer</span><span class="o">=</span><span class="n">enabled</span> <span class="o">-</span><span class="n">Dtest</span><span class="o">=</span><span class="n">false</span> <span class="o">-</span><span class="n">Dlc</span><span class="o">-</span><span class="n">compliance</span><span class="o">=</span><span class="n">disabled</span> <span class="o">-</span><span class="n">Dcam</span><span class="o">=</span><span class="n">disabled</span> <span class="o">-</span><span class="n">Dqcam</span><span class="o">=</span><span class="n">disabled</span> <span class="o">-</span><span class="n">Ddocumentation</span><span class="o">=</span><span class="n">disabled</span> <span class="o">-</span><span class="n">Dpycamera</span><span class="o">=</span><span class="n">enabled</span>
+<span class="n">ninja</span> <span class="o">-</span><span class="n">C</span> <span class="n">build</span> <span class="n">install</span>
+</pre></div>
+</div>
+<p>You can disable the <code class="docutils literal notranslate"><span class="pre">gstreamer</span></code> plugin by replacing <code class="docutils literal notranslate"><span class="pre">-Dgstreamer=enabled</span></code> with <code class="docutils literal notranslate"><span class="pre">-Dgstreamer=disabled</span></code> during the <code class="docutils literal notranslate"><span class="pre">meson</span></code> build configuration.
+If you disable <code class="docutils literal notranslate"><span class="pre">gstreamer</span></code>, there is no need to install the <code class="docutils literal notranslate"><span class="pre">libglib2.0-dev</span></code> and <code class="docutils literal notranslate"><span class="pre">libgstreamer-plugins-base1.0-dev</span></code> dependencies.</p>
+<p>On devices with 1GB of memory or less, the build may exceed available memory. Append the <code class="docutils literal notranslate"><span class="pre">-j</span> <span class="pre">1</span></code> flag to <code class="docutils literal notranslate"><span class="pre">ninja</span></code> commands to limit the build to a single process.
+This should prevent the build from exceeding available memory on devices like the Raspberry Pi Zero and the Raspberry Pi 3.</p>
+<p><code class="docutils literal notranslate"><span class="pre">libcamera</span></code> does not yet have a stable binary interface. Always build <code class="docutils literal notranslate"><span class="pre">rpicam-apps</span></code> after you build <code class="docutils literal notranslate"><span class="pre">libcamera</span></code>.</p>
+<p>You can find more informations at <a class="reference external" href="https://www.raspberrypi.com/documentation/computers/camera_software.html">Raspberry Pi libcamera documentation</a> pages.</p>
+<section id="dependencies">
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading">¶</a></h2>
+<p>The following Debian/Ubuntu packages are required for building libcamera.
+Other distributions may have differing package names:</p>
+<dl>
+<dt>A C++ toolchain: [required]</dt><dd><p>Either {g++, clang}</p>
+</dd>
+<dt>Meson Build system: [required]</dt><dd><p>meson (&gt;= 0.60) ninja-build pkg-config</p>
+</dd>
+<dt>for the libcamera core: [required]</dt><dd><p>libyaml-dev python3-yaml python3-ply python3-jinja2</p>
+</dd>
+<dt>for IPA module signing: [recommended]</dt><dd><p>Either libgnutls28-dev or libssl-dev, openssl</p>
+<p>Without IPA module signing, all IPA modules will be isolated in a
+separate process. This adds an unnecessary extra overhead at runtime.</p>
+</dd>
+<dt>for improved debugging: [optional]</dt><dd><p>libdw-dev libunwind-dev</p>
+<p>libdw and libunwind provide backtraces to help debugging assertion
+failures. Their functions overlap, libdw provides the most detailed
+information, and libunwind is not needed if both libdw and the glibc
+backtrace() function are available.</p>
+</dd>
+<dt>for device hotplug enumeration: [optional]</dt><dd><p>libudev-dev</p>
+</dd>
+<dt>for documentation: [optional]</dt><dd><p>python3-sphinx doxygen graphviz texlive-latex-extra</p>
+</dd>
+<dt>for gstreamer: [optional]</dt><dd><p>libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev</p>
+</dd>
+<dt>for Python bindings: [optional]</dt><dd><p>libpython3-dev pybind11-dev</p>
+</dd>
+<dt>for cam: [optional]</dt><dd><p>libevent-dev is required to support cam, however the following
+optional dependencies bring more functionality to the cam test
+tool:</p>
+<ul class="simple">
+<li><p>libdrm-dev: Enables the KMS sink</p></li>
+<li><p>libjpeg-dev: Enables MJPEG on the SDL sink</p></li>
+<li><p>libsdl2-dev: Enables the SDL sink</p></li>
+</ul>
+</dd>
+<dt>for qcam: [optional]</dt><dd><p>libtiff-dev qt6-base-dev qt6-tools-dev-tools</p>
+</dd>
+<dt>for tracing with lttng: [optional]</dt><dd><p>liblttng-ust-dev python3-jinja2 lttng-tools</p>
+</dd>
+<dt>for android: [optional]</dt><dd><p>libexif-dev libjpeg-dev</p>
+</dd>
+<dt>for Python bindings: [optional]</dt><dd><p>pybind11-dev</p>
+</dd>
+<dt>for lc-compliance: [optional]</dt><dd><p>libevent-dev libgtest-dev</p>
+</dd>
+<dt>for abi-compat.sh: [optional]</dt><dd><p>abi-compliance-checker</p>
+</dd>
+</dl>
+</section>
+<section id="basic-testing-with-cam-utility">
+<h2>Basic testing with cam utility<a class="headerlink" href="#basic-testing-with-cam-utility" title="Link to this heading">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">cam</span></code> utility can be used for basic testing. You can list the cameras
+detected on the system with <code class="docutils literal notranslate"><span class="pre">cam</span> <span class="pre">-l</span></code>, and capture ten frames from the first
+camera and save them to disk with <code class="docutils literal notranslate"><span class="pre">cam</span> <span class="pre">-c</span> <span class="pre">1</span> <span class="pre">--capture=10</span> <span class="pre">--file</span></code>. See
+<code class="docutils literal notranslate"><span class="pre">cam</span> <span class="pre">-h</span></code> for more information about the <code class="docutils literal notranslate"><span class="pre">cam</span></code> tool.</p>
+<p>In case of problems, a detailed debug log can be obtained from libcamera by
+setting the <code class="docutils literal notranslate"><span class="pre">LIBCAMERA_LOG_LEVELS</span></code> environment variable:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:~$ LIBCAMERA_LOG_LEVELS=*:DEBUG cam -l
+</pre></div>
+</div>
+</section>
+<section id="using-gstreamer-plugin">
+<h2>Using GStreamer plugin<a class="headerlink" href="#using-gstreamer-plugin" title="Link to this heading">¶</a></h2>
+<p>To use the GStreamer plugin from the source tree, use the meson <code class="docutils literal notranslate"><span class="pre">devenv</span></code>
+command.  This will create a new shell instance with the <code class="docutils literal notranslate"><span class="pre">GST_PLUGIN_PATH</span></code>
+environment set accordingly.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">meson</span> <span class="n">devenv</span> <span class="o">-</span><span class="n">C</span> <span class="n">build</span>
+</pre></div>
+</div>
+<p>The debugging tool <code class="docutils literal notranslate"><span class="pre">gst-launch-1.0</span></code> can be used to construct a pipeline and
+test it. The following pipeline will stream from the camera named “Camera 1”
+onto the OpenGL accelerated display element on your system.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>gst-launch-1.0 libcamerasrc camera-name=&quot;Camera 1&quot; ! queue ! glimagesink
+</pre></div>
+</div>
+<p>To show the first camera found you can omit the camera-name property, or you
+can list the cameras and their capabilities using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gst</span><span class="o">-</span><span class="n">device</span><span class="o">-</span><span class="n">monitor</span><span class="o">-</span><span class="mf">1.0</span> <span class="n">Video</span>
+</pre></div>
+</div>
+<p>This will also show the supported stream sizes which can be manually selected
+if desired with a pipeline such as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>gst-launch-1.0 libcamerasrc ! &#39;video/x-raw,width=1280,height=720&#39; ! \
+     queue ! glimagesink
+</pre></div>
+</div>
+<p>The libcamerasrc element has two log categories, named libcamera-provider (for
+the video device provider) and libcamerasrc (for the operation of the camera).
+All corresponding debug messages can be enabled by setting the <code class="docutils literal notranslate"><span class="pre">GST_DEBUG</span></code>
+environment variable to <code class="docutils literal notranslate"><span class="pre">libcamera*:7</span></code>.</p>
+<p>Presently, to prevent element negotiation failures it is required to specify
+the colorimetry and framerate as part of your pipeline construction. For
+instance, to capture and encode as a JPEG stream and receive on another device
+the following example could be used as a starting point:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>gst-launch-1.0 libcamerasrc ! \
+     video/x-raw,colorimetry=bt709,format=NV12,width=1280,height=720,framerate=30/1 ! \
+     queue ! jpegenc ! multipartmux ! \
+     tcpserversink host=0.0.0.0 port=5000
+</pre></div>
+</div>
+<p>Which can be received on another device over the network with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>gst-launch-1.0 tcpclientsrc host=$DEVICE_IP port=5000 ! \
+     multipartdemux ! jpegdec ! autovideosink
+</pre></div>
+</div>
+<p>The GStreamer element also supports multiple streams. This is achieved by
+requesting additional source pads. Downstream caps filters can be used
+to choose specific parameters like resolution and pixel format. The pad
+property <code class="docutils literal notranslate"><span class="pre">stream-role</span></code> can be used to select a role.</p>
+<p>The following example displays a 640x480 view finder while streaming JPEG
+encoded 800x600 video. You can use the receiver pipeline above to view the
+remote stream from another device.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>gst-launch-1.0 libcamerasrc name=cs src::stream-role=view-finder src_0::stream-role=video-recording \
+    cs.src ! queue ! video/x-raw,width=640,height=480 ! videoconvert ! autovideosink \
+    cs.src_0 ! queue ! video/x-raw,width=800,height=600 ! videoconvert ! \
+    jpegenc ! multipartmux ! tcpserversink host=0.0.0.0 port=5000
+</pre></div>
+</div>
+</section>
+</section>
+
+
+    </div>
+  </div>
+
+  
+<footer>
+  <div id="signature">
+        &copy; Copyright 2018-2019, The libcamera documentation authors.
+  </div>
+</footer>
+</body>
+</html>

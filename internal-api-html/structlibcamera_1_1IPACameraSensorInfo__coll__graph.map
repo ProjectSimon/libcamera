@@ -1,0 +1,5 @@
+<map id="libcamera::IPACameraSensorInfo" name="libcamera::IPACameraSensorInfo">
+<area shape="rect" id="node1" title="Report the image sensor characteristics." alt="" coords="51,109,285,136"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1Rectangle.html" title="Describe a rectangle&#39;s position and dimensions." alt="" coords="5,5,165,32"/>
+<area shape="rect" id="node3" href="$classlibcamera_1_1Size.html" title="Describe a two&#45;dimensional size." alt="" coords="189,5,312,32"/>
+</map>

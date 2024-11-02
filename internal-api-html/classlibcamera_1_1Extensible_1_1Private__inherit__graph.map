@@ -1,0 +1,7 @@
+<map id="libcamera::Extensible::Private" name="libcamera::Extensible::Private">
+<area shape="rect" id="node1" title="Base class for private data managed through a d&#45;pointer." alt="" coords="5,104,168,145"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1Camera_1_1Private.html" title="Base class for camera private data." alt="" coords="240,5,395,47"/>
+<area shape="rect" id="node3" title=" " alt="" coords="216,71,419,112"/>
+<area shape="rect" id="node4" href="$classlibcamera_1_1FrameBuffer_1_1Private.html" title="Base class for FrameBuffer private data." alt="" coords="230,136,405,177"/>
+<area shape="rect" id="node5" href="$classlibcamera_1_1Request_1_1Private.html" title="Request private data." alt="" coords="243,201,391,243"/>
+</map>

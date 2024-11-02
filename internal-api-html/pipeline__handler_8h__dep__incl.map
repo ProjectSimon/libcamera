@@ -1,0 +1,7 @@
+<map id="include/libcamera/internal/pipeline_handler.h" name="include/libcamera/internal/pipeline_handler.h">
+<area shape="rect" id="node1" title="Create pipelines and cameras from a set of media devices." alt="" coords="96,5,288,47"/>
+<area shape="rect" id="node2" href="$ipa__manager_8h.html" title="Image Processing Algorithm module manager." alt="" coords="5,184,197,225"/>
+<area shape="rect" id="node4" href="$ipa__module_8h.html" title="Image Processing Algorithm module." alt="" coords="96,95,288,136"/>
+<area shape="rect" id="node5" href="$software__isp_8h_source.html" title=" " alt="" coords="222,184,429,225"/>
+<area shape="rect" id="node3" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="128,273,299,315"/>
+</map>

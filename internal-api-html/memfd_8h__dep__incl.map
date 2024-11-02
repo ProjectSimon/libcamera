@@ -1,0 +1,5 @@
+<map id="include/libcamera/base/memfd.h" name="include/libcamera/base/memfd.h">
+<area shape="rect" id="node1" title="Anonymous file creation." alt="" coords="99,5,272,47"/>
+<area shape="rect" id="node2" href="$dma__buf__allocator_8cpp.html" title="dma&#45;buf allocator" alt="" coords="5,95,176,136"/>
+<area shape="rect" id="node3" href="$shared__mem__object_8cpp.html" title="Helpers for shared memory allocations." alt="" coords="201,95,359,136"/>
+</map>

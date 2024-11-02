@@ -1,0 +1,4 @@
+<map id="libcamera::Debayer" name="libcamera::Debayer">
+<area shape="rect" id="node1" title="Base debayering class." alt="" coords="17,5,168,32"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1DebayerCpu.html" title="Class for debayering on the CPU." alt="" coords="5,80,180,107"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="include/libcamera/internal/media_object.h" name="include/libcamera/internal/media_object.h">
+<area shape="rect" id="node1" title="Provides a class hierarchy that represents the media objects exposed by the Linux kernel Media Contro..." alt="" coords="113,5,305,47"/>
+<area shape="rect" id="node2" href="$media__device_8h.html" title="Provide a representation of a Linux kernel Media Controller device that exposes the full graph topolo..." alt="" coords="5,95,197,136"/>
+<area shape="rect" id="node3" href="$v4l2__subdevice_8h.html" title="V4L2 Subdevice API." alt="" coords="221,95,413,136"/>
+<area shape="rect" id="node4" href="$camera__sensor_8h.html" title="A camera sensor." alt="" coords="221,184,413,225"/>
+<area shape="rect" id="node5" href="$software__isp_8h_source.html" title=" " alt="" coords="214,273,421,315"/>
+<area shape="rect" id="node6" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="232,363,403,404"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="libcamera::CameraManager" name="libcamera::CameraManager">
+<area shape="rect" id="node1" title="Provide access and manage all cameras in the system." alt="" coords="584,56,787,83"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1Object.html" title="Base object to support automatic signal disconnection." alt="" coords="254,5,391,32"/>
+<area shape="rect" id="node3" href="$classlibcamera_1_1Extensible.html" title="Base class to manage private data through a d&#45;pointer." alt="" coords="241,56,404,83"/>
+<area shape="rect" id="node4" title=" " alt="" coords="221,107,424,163"/>
+<area shape="rect" id="node5" title=" " alt="" coords="5,121,172,148"/>
+</map>

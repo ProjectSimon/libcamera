@@ -1,0 +1,5 @@
+<map id="libcamera::ipa::Module&lt; _Context, _FrameContext, _Config, _Params, _Stats &gt;" name="libcamera::ipa::Module&lt; _Context, _FrameContext, _Config, _Params, _Stats &gt;">
+<area shape="rect" id="node1" title="The base class for all IPA modules." alt="" coords="208,20,415,76"/>
+<area shape="rect" id="node3" href="$classlibcamera_1_1ipa_1_1ipu3_1_1IPAIPU3.html" title="The IPU3 IPA implementation." alt="" coords="463,5,699,91"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1Loggable.html" title="Base class to support log message extensions." alt="" coords="5,35,160,61"/>
+</map>

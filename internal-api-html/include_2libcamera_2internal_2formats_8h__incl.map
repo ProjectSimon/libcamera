@@ -1,0 +1,15 @@
+<map id="include/libcamera/internal/formats.h" name="include/libcamera/internal/formats.h">
+<area shape="rect" id="node1" title="Types and helper functions to handle libcamera image formats." alt="" coords="289,5,481,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="241,102,297,129"/>
+<area shape="rect" id="node3" title=" " alt="" coords="322,184,385,211"/>
+<area shape="rect" id="node4" href="$geometry_8h.html" title="Data structures related to geometric objects." alt="" coords="134,184,298,211"/>
+<area shape="rect" id="node9" href="$pixel__format_8h.html" title="libcamera pixel format" alt="" coords="785,184,970,211"/>
+<area shape="rect" id="node11" href="$v4l2__pixelformat_8h.html" title="V4L2 Pixel Format." alt="" coords="509,95,657,136"/>
+<area shape="rect" id="node5" title=" " alt="" coords="224,259,309,285"/>
+<area shape="rect" id="node6" title=" " alt="" coords="385,259,461,285"/>
+<area shape="rect" id="node7" title=" " alt="" coords="607,259,665,285"/>
+<area shape="rect" id="node8" href="$compiler_8h_source.html" title=" " alt="" coords="5,259,200,285"/>
+<area shape="rect" id="node10" title=" " alt="" coords="907,259,978,285"/>
+<area shape="rect" id="node12" title=" " alt="" coords="674,184,761,211"/>
+<area shape="rect" id="node13" title=" " alt="" coords="460,184,599,211"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="libcamera::ipa::ipu3::IPAContext" name="libcamera::ipa::ipu3::IPAContext">
+<area shape="rect" id="node1" title="Global IPA context data shared between all algorithms." alt="" coords="907,113,1057,154"/>
+<area shape="rect" id="node2" href="$structlibcamera_1_1ipa_1_1ipu3_1_1IPASessionConfiguration.html" title="Session configuration for the IPA module." alt="" coords="571,47,757,89"/>
+<area shape="rect" id="node3" href="$classlibcamera_1_1utils_1_1Duration.html" title="Helper class from std::chrono::duration that represents a time duration in nanoseconds with double pr..." alt="" coords="219,25,405,52"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,18,169,59"/>
+<area shape="rect" id="node5" href="$classlibcamera_1_1Size.html" title="Describe a two&#45;dimensional size." alt="" coords="251,85,373,112"/>
+<area shape="rect" id="node6" href="$structlibcamera_1_1ipa_1_1ipu3_1_1IPAActiveState.html" title="The active state of the IPA algorithms." alt="" coords="589,113,739,154"/>
+<area shape="rect" id="node7" href="$classlibcamera_1_1ipa_1_1FCQueue.html" title=" " alt="" coords="573,179,755,235"/>
+</map>

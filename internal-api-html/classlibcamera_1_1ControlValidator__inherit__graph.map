@@ -1,0 +1,4 @@
+<map id="libcamera::ControlValidator" name="libcamera::ControlValidator">
+<area shape="rect" id="node1" title="Interface for the control validator." alt="" coords="5,5,205,32"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1CameraControlValidator.html" title="A control validator for Camera instances." alt="" coords="9,80,202,121"/>
+</map>

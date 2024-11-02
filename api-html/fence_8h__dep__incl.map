@@ -1,0 +1,6 @@
+<map id="include/libcamera/fence.h" name="include/libcamera/fence.h">
+<area shape="rect" id="node1" title="Definition of the Fence class." alt="" coords="131,5,322,32"/>
+<area shape="rect" id="node2" href="$request_8h.html" title="Describes a frame capture request to be processed by a camera." alt="" coords="56,80,259,107"/>
+<area shape="rect" id="node4" href="$libcamera_8h_source.html" title=" " alt="" coords="158,229,333,271"/>
+<area shape="rect" id="node3" href="$camera_8h.html" title="Camera device handling." alt="" coords="5,155,208,181"/>
+</map>

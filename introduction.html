@@ -1,0 +1,342 @@
+
+
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Introduction &mdash; libcamera v0.3.2+rpt20241101+6-22e19df9 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="libcamera v0.3.2+rpt20241101+6-22e19df9 documentation" href="index.html"/>
+        <link rel="prev" title="Tracing Guide" href="guides/tracing.html"/> 
+
+</head>
+
+<body role="document">
+  <header>
+    <div id="navbar">
+      <div class="navbar-brand">
+        <div class="navbar-logo">   _
++-/ \-+
+| (o) |
++-----+</div>
+        <div class="navbar-name"><span class="text-light">lib</span>camera</div>
+      </div>
+
+      <div class="navbar">
+        <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/application-developer.html">Application Writer's Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="camera-sensor-model.html">Camera Sensor Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">Environment variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_requirements.html">Feature Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/ipa.html">IPA Writer's guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lens_driver_requirements.html">Lens driver requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libcamera_architecture.html">libcamera Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/pipeline-handler.html">Pipeline Handler Writer's Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-bindings.html">Python Bindings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensor_driver_requirements.html">Sensor driver requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software-isp-benchmarking.html">SoftwareISP Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/tracing.html">Tracing guide</a></li>
+</ul>
+
+        <div class="searchbox" role="search">
+          <form class="search" action="search.html" method="get">
+            <input type="text" name="q" />
+	    <input type="submit" value="Go" />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <div id="content">
+    
+    <div class="block">
+      
+  <div class="documentation-nav docutils container">
+<ul>
+<li><p><strong>Documentation for Users</strong></p></li>
+<li><p><a class="reference internal" href="#"><span class="doc">Introduction</span></a></p></li>
+<li><p><a class="reference internal" href="feature_requirements.html"><span class="doc">Feature Requirements</span></a></p></li>
+<li><p><a class="reference internal" href="guides/application-developer.html"><span class="doc">Using libcamera in a C++ application</span></a></p></li>
+<li><p><a class="reference internal" href="python-bindings.html"><span class="doc">Python Bindings for libcamera</span></a></p></li>
+<li><p><a class="reference internal" href="environment_variables.html"><span class="doc">Environment variables</span></a></p></li>
+<li><p><a class="reference internal" href="api-html/index.html"><span class="doc">API Reference</span></a></p></li>
+<li><p><a class="reference internal" href="code-of-conduct.html"><span class="doc">Contributor Covenant Code of Conduct</span></a></p></li>
+<li><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p><strong>Documentation for Developers</strong></p></li>
+<li><p><a class="reference internal" href="libcamera_architecture.html"><span class="doc">libcamera Architecture</span></a></p></li>
+<li><p><a class="reference internal" href="guides/pipeline-handler.html"><span class="doc">Pipeline Handler Writers Guide</span></a></p></li>
+<li><p><a class="reference internal" href="guides/ipa.html"><span class="doc">IPA Writer’s Guide</span></a></p></li>
+<li><p><a class="reference internal" href="camera-sensor-model.html"><span class="doc">The libcamera camera sensor model</span></a></p></li>
+<li><p><a class="reference internal" href="guides/tracing.html"><span class="doc">Tracing Guide</span></a></p></li>
+<li><p><a class="reference internal" href="software-isp-benchmarking.html"><span class="doc">Software ISP benchmarking</span></a></p></li>
+<li><p><a class="reference internal" href="coding-style.html"><span class="doc">Coding Style Guidelines</span></a></p></li>
+<li><p><a class="reference internal" href="internal-api-html/index.html"><span class="doc">Internal API Reference</span></a></p></li>
+<li><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p><strong>Documentation for System Integrators</strong></p></li>
+<li><p><a class="reference internal" href="lens_driver_requirements.html"><span class="doc">Lens Driver Requirements</span></a></p></li>
+<li><p><a class="reference internal" href="sensor_driver_requirements.html"><span class="doc">Sensor Driver Requirements</span></a></p></li>
+</ul>
+</div>
+<section class="documentation" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<section id="what-is-libcamera">
+<h2>What is libcamera?<a class="headerlink" href="#what-is-libcamera" title="Link to this heading">¶</a></h2>
+<p>libcamera is an open source complex camera support library for Linux, Android
+and ChromeOS. The library interfaces with Linux kernel device drivers and
+provides an intuitive API to developers in order to simplify the complexity
+involved in capturing images from complex cameras on Linux systems.</p>
+</section>
+<section id="what-is-a-complex-camera">
+<h2>What is a “complex camera”?<a class="headerlink" href="#what-is-a-complex-camera" title="Link to this heading">¶</a></h2>
+<p>A modern “camera” tends to infact be several different pieces of hardware which
+must all be controlled together in order to produce and capture images of
+appropriate quality. A hardware pipeline typically consists of a camera sensor
+that captures raw frames and transmits them on a bus, a receiver that decodes
+the bus signals, and an image signal processor that processes raw frames to
+produce usable images in a standard format. The Linux kernel handles these
+multimedia devices through the ‘Linux media’ subsystem and provides a set of
+application programming interfaces known collectively as the
+V4L2 (<a class="reference external" href="https://www.linuxtv.org/downloads/v4l-dvb-apis-new/userspace-api/v4l/v4l2.html">Video for Linux 2</a>) and the <a class="reference external" href="https://www.linuxtv.org/downloads/v4l-dvb-apis-new/userspace-api/mediactl/media-controller.html">Media Controller</a> APIs, which provide an
+interface to interact and control media devices.</p>
+<p>Included in this subsystem are drivers for camera sensors, CSI2 (Camera
+Serial Interface) receivers, and ISPs (Image Signal Processors).</p>
+<p>The usage of these drivers to provide a functioning camera stack is a
+responsibility that lies in userspace, and is commonly implemented separately
+by vendors without a common architecture or API for application developers. This
+adds a lot of complexity to the task, particularly when considering that the
+differences in hardware pipelines and their representation in the kernel’s APIs
+often necessitate bespoke handling.</p>
+</section>
+<section id="what-is-libcamera-for">
+<h2>What is libcamera for?<a class="headerlink" href="#what-is-libcamera-for" title="Link to this heading">¶</a></h2>
+<p>libcamera provides a complete camera stack for Linux-based systems to abstract
+the configuration of hardware and image control algorithms required to obtain
+desirable results from the camera through the kernel’s APIs, reducing those
+operations to a simple and consistent method for developers. In short instead of
+having to deal with this:</p>
+<div class="graphviz"><object data="_images/graphviz-e142acb09d9365e9e4062be8fefa6d7655856a40.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">/* SPDX-License-Identifier: CC-BY-SA-4.0 */
+
+digraph board {
+        rankdir=TB
+        n00000001 [label=&quot;{{} | mali-c55 tpg\n/dev/v4l-subdev0 | {&lt;port0&gt; 0}}&quot;, shape=Mrecord, style=filled, fillcolor=green]
+        n00000001:port0 -&gt; n00000003:port0 [style=dashed]
+        n00000003 [label=&quot;{{&lt;port0&gt; 0 | &lt;port4&gt; 4} | mali-c55 isp\n/dev/v4l-subdev1 | {&lt;port1&gt; 1 | &lt;port2&gt; 2 | &lt;port3&gt; 3}}&quot;, shape=Mrecord, style=filled, fillcolor=green]
+        n00000003:port1 -&gt; n00000009:port0 [style=bold]
+        n00000003:port2 -&gt; n00000009:port2 [style=bold]
+        n00000003:port1 -&gt; n0000000d:port0 [style=bold]
+        n00000003:port3 -&gt; n0000001c
+        n00000009 [label=&quot;{{&lt;port0&gt; 0 | &lt;port2&gt; 2} | mali-c55 resizer fr\n/dev/v4l-subdev2 | {&lt;port1&gt; 1}}&quot;, shape=Mrecord, style=filled, fillcolor=green]
+        n00000009:port1 -&gt; n00000010
+        n0000000d [label=&quot;{{&lt;port0&gt; 0} | mali-c55 resizer ds\n/dev/v4l-subdev3 | {&lt;port1&gt; 1}}&quot;, shape=Mrecord, style=filled, fillcolor=green]
+        n0000000d:port1 -&gt; n00000014
+        n00000010 [label=&quot;mali-c55 fr\n/dev/video0&quot;, shape=box, style=filled, fillcolor=yellow]
+        n00000014 [label=&quot;mali-c55 ds\n/dev/video1&quot;, shape=box, style=filled, fillcolor=yellow]
+        n00000018 [label=&quot;mali-c55 3a params\n/dev/video2&quot;, shape=box, style=filled, fillcolor=yellow]
+        n00000018 -&gt; n00000003:port4
+        n0000001c [label=&quot;mali-c55 3a stats\n/dev/video3&quot;, shape=box, style=filled, fillcolor=yellow]
+        n00000030 [label=&quot;{{&lt;port0&gt; 0} | lte-csi2-rx\n/dev/v4l-subdev4 | {&lt;port1&gt; 1}}&quot;, shape=Mrecord, style=filled, fillcolor=green]
+        n00000030:port1 -&gt; n00000003:port0
+        n00000035 [label=&quot;{{} | imx415 1-001a\n/dev/v4l-subdev5 | {&lt;port0&gt; 0}}&quot;, shape=Mrecord, style=filled, fillcolor=green]
+        n00000035:port0 -&gt; n00000030:port0 [style=bold]
+}</p></object></div>
+<p>you can instead simply deal with:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">libcamera</span> <span class="k">as</span> <span class="nn">lc</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">camera_manager</span> <span class="o">=</span> <span class="n">lc</span><span class="o">.</span><span class="n">CameraManager</span><span class="o">.</span><span class="n">singleton</span><span class="p">()</span>
+<span class="go">[0:15:59.582029920] [504]  INFO Camera camera_manager.cpp:313 libcamera v0.3.0+182-01e57380</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">camera</span> <span class="ow">in</span> <span class="n">camera_manager</span><span class="o">.</span><span class="n">cameras</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; - </span><span class="si">{</span><span class="n">camera</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go"> - mali-c55 tpg</span>
+<span class="go"> - imx415 1-001a</span>
+</pre></div>
+</div>
+<p>The library handles the rest for you. These documentary pages give more
+information on the internal workings of libcamera (and the kernel camera stack
+that lies behind it) as well as guidance on using libcamera in an application or
+extending the library with support for your hardware (through the pipeline
+handler and IPA module writer’s guides).</p>
+</section>
+<section id="how-should-i-use-it">
+<h2>How should I use it?<a class="headerlink" href="#how-should-i-use-it" title="Link to this heading">¶</a></h2>
+<p>There are a few ways you might want to use libcamera, depending on your
+application. It’s always possible to use the library directly, and you can find
+detailed information on how to do so in the
+<a class="reference internal" href="guides/application-developer.html"><span class="doc">application writer’s guide</span></a>.</p>
+<p>It is often more appropriate to use one of the frameworks with libcamera
+support. For example an application powering an embedded media device
+incorporating capture, encoding and streaming of both video and audio would
+benefit from using <a class="reference external" href="https://gstreamer.freedesktop.org/">GStreamer</a>, for which libcamera provides a plugin.
+Similarly an application for user-facing devices like a laptop would likely
+benefit accessing cameras through the XDG camera portal and <a class="reference external" href="https://pipewire.org/">pipewire</a>, which
+brings the advantages of resource sharing (multiple applications accessing the
+stream at the same time) and access control.</p>
+</section>
+<section id="camera-stack">
+<h2>Camera Stack<a class="headerlink" href="#camera-stack" title="Link to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> a c /    +-------------+  +-------------+  +-------------+  +-------------+
+ p a |    |   Native    |  |  Framework  |  |   Native    |  |   Android   |
+ p t |    |    V4L2     |  | Application |  |  libcamera  |  |   Camera    |
+ l i |    | Application |  | (gstreamer) |  | Application |  |  Framework  |
+ i o \    +-------------+  +-------------+  +-------------+  +-------------+
+   n             ^                ^                ^                ^
+                 |                |                |                |
+ l a             |                |                |                |
+ i d             v                v                |                v
+ b a /    +-------------+  +-------------+         |         +-------------+
+ c p |    |    V4L2     |  |   Camera    |         |         |   Android   |
+ a t |    |   Compat.   |  |  Framework  |         |         |   Camera    |
+ m a |    |             |  | (gstreamer) |         |         |     HAL     |
+ e t \    +-------------+  +-------------+         |         +-------------+
+ r i             ^                ^                |                ^
+ a o             |                |                |                |
+   n             |                |                |                |
+     /           |         ,................................................
+     |           |         !      :            Language             :      !
+ l f |           |         !      :            Bindings             :      !
+ i r |           |         !      :           (optional)            :      !
+ b a |           |         \...............................................&#39;
+ c m |           |                |                |                |
+ a e |           |                |                |                |
+ m w |           v                v                v                v
+ e o |    +----------------------------------------------------------------+
+ r r |    |                                                                |
+ a k |    |                           libcamera                            |
+     |    |                                                                |
+     \    +----------------------------------------------------------------+
+                         ^                  ^                  ^
+ Userspace               |                  |                  |
+------------------------ | ---------------- | ---------------- | ---------------
+ Kernel                  |                  |                  |
+                         v                  v                  v
+                   +-----------+      +-----------+      +-----------+
+                   |   Media   | &lt;--&gt; |   Video   | &lt;--&gt; |   V4L2    |
+                   |  Device   |      |  Device   |      |  Subdev   |
+                   +-----------+      +-----------+      +-----------+
+</pre></div>
+</div>
+<p>The camera stack comprises four software layers. From bottom to top:</p>
+<ul>
+<li><p>The kernel drivers control the camera hardware and expose a
+low-level interface to userspace through the Linux kernel V4L2
+family of APIs (Media Controller API, V4L2 Video Device API and
+V4L2 Subdev API).</p></li>
+<li><p>The libcamera framework is the core part of the stack. It
+handles all control of the camera devices in its core component,
+libcamera, and exposes a native C++ API to upper layers. Optional
+language bindings allow interfacing to libcamera from other
+programming languages.</p>
+<p>Those components live in the same source code repository and
+all together constitute the libcamera framework.</p>
+</li>
+<li><p>The libcamera adaptation is an umbrella term designating the
+components that interface to libcamera in other frameworks.
+Notable examples are a V4L2 compatibility layer, a gstreamer
+libcamera element, and an Android camera HAL implementation based
+on libcamera.</p>
+<p>Those components can live in the libcamera project source code
+in separate repositories, or move to their respective project’s
+repository (for instance the gstreamer libcamera element).</p>
+</li>
+<li><p>The applications and upper level frameworks are based on the
+libcamera framework or libcamera adaptation, and are outside of
+the scope of the libcamera project.</p></li>
+</ul>
+<dl>
+<dt>V4L2 Compatibility Layer</dt><dd><p>V4L2 compatibility is achieved through a shared library that traps all
+accesses to camera devices and routes them to libcamera to emulate high-level
+V4L2 camera devices. It is injected in a process address space through
+<code class="docutils literal notranslate"><span class="pre">LD_PRELOAD</span></code> and is completely transparent for applications.</p>
+<p>The compatibility layer exposes camera device features on a best-effort basis,
+and aims for the level of features traditionally available from a UVC camera
+designed for video conferencing.</p>
+</dd>
+<dt>Android Camera HAL</dt><dd><p>Camera support for Android is achieved through a generic Android camera HAL
+implementation on top of libcamera. The HAL implements features required by
+Android and out of scope from libcamera, such as JPEG encoding support.</p>
+<p>This component is used to provide support for ChromeOS platforms.</p>
+</dd>
+<dt>GStreamer element (gstlibcamerasrc)</dt><dd><p>A <a class="reference external" href="https://gstreamer.freedesktop.org/documentation/application-development/basics/elements.html">GStreamer element</a> is provided to allow capture from libcamera supported
+devices through GStreamer pipelines, and connect to other elements for further
+processing.</p>
+</dd>
+<dt>Native libcamera API</dt><dd><p>Applications can make use of the libcamera API directly using the C++
+API. An example application and walkthrough using the libcamera API can be
+followed in the <a class="reference internal" href="guides/application-developer.html"><span class="doc">Application writer’s guide</span></a></p>
+</dd>
+</dl>
+</section>
+<section id="licensing">
+<h2>Licensing<a class="headerlink" href="#licensing" title="Link to this heading">¶</a></h2>
+<p>The libcamera core is covered by the <a class="reference external" href="https://spdx.org/licenses/LGPL-2.1-or-later.html">LGPL-2.1-or-later</a> license. Pipeline
+Handlers are a part of the libcamera code base and need to be contributed
+upstream by device vendors. IPA modules included in libcamera are covered by a
+free software license, however third-parties may develop IPA modules outside of
+libcamera and distribute them under a closed-source license, provided they do
+not include source code from the libcamera project.</p>
+<p>The libcamera project itself contains multiple libraries, applications and
+utilities. Licenses are expressed through SPDX tags in text-based files that
+support comments, and through the .reuse/dep5 file otherwise. A copy of all
+licenses are stored in the LICENSES directory, and a full summary of the
+licensing used throughout the project can be found in the COPYING.rst document.</p>
+<p>Applications which link dynamically against libcamera and use only the public
+API are an independent work of the authors and have no license restrictions
+imposed upon them from libcamera.</p>
+</section>
+</section>
+
+
+    </div>
+  </div>
+
+  
+<footer>
+  <div id="signature">
+        &copy; Copyright 2018-2019, The libcamera documentation authors.
+  </div>
+</footer>
+</body>
+</html>

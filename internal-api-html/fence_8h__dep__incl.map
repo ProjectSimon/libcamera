@@ -1,0 +1,10 @@
+<map id="include/libcamera/fence.h" name="include/libcamera/fence.h">
+<area shape="rect" id="node1" title="Definition of the Fence class." alt="" coords="345,5,535,32"/>
+<area shape="rect" id="node2" href="$internal_2framebuffer_8h.html" title="Internal frame buffer handling support." alt="" coords="59,80,251,121"/>
+<area shape="rect" id="node4" href="$request_8h.html" title="Describes a frame capture request to be processed by a camera." alt="" coords="339,87,541,114"/>
+<area shape="rect" id="node7" href="$libcamera_8h_source.html" title=" " alt="" coords="387,259,562,300"/>
+<area shape="rect" id="node3" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="5,169,176,211"/>
+<area shape="rect" id="node5" href="$camera_8h.html" title="Camera device handling." alt="" coords="200,177,403,203"/>
+<area shape="rect" id="node8" href="$internal_2request_8h.html" title="Internal support for request handling." alt="" coords="477,169,669,211"/>
+<area shape="rect" id="node6" href="$internal_2camera_8h.html" title="Internal camera device handling." alt="" coords="171,259,363,300"/>
+</map>

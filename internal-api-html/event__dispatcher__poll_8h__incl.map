@@ -1,0 +1,13 @@
+<map id="include/libcamera/base/event_dispatcher_poll.h" name="include/libcamera/base/event_dispatcher_poll.h">
+<area shape="rect" id="node1" title=" " alt="" coords="123,5,304,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,102,48,129"/>
+<area shape="rect" id="node3" title=" " alt="" coords="72,102,123,129"/>
+<area shape="rect" id="node4" title=" " alt="" coords="147,102,210,129"/>
+<area shape="rect" id="node5" href="$private_8h_source.html" title=" " alt="" coords="176,184,360,211"/>
+<area shape="rect" id="node6" href="$event__dispatcher_8h.html" title=" " alt="" coords="285,95,448,136"/>
+<area shape="rect" id="node7" href="$unique__fd_8h.html" title="File descriptor wrapper that owns a file descriptor." alt="" coords="472,102,675,129"/>
+<area shape="rect" id="node8" title=" " alt="" coords="403,184,463,211"/>
+<area shape="rect" id="node9" href="$class_8h.html" title="Utilities to help constructing class interfaces." alt="" coords="488,184,659,211"/>
+<area shape="rect" id="node11" href="$compiler_8h_source.html" title=" " alt="" coords="683,184,877,211"/>
+<area shape="rect" id="node10" title=" " alt="" coords="535,259,612,285"/>
+</map>

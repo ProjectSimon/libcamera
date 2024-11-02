@@ -1,0 +1,4 @@
+<map id="libcamera::Message" name="libcamera::Message">
+<area shape="rect" id="node1" title="A message that can be posted to a Thread." alt="" coords="27,5,180,32"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1InvokeMessage.html" title="A message carrying a method invocation across threads." alt="" coords="5,80,201,107"/>
+</map>

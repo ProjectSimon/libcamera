@@ -1,0 +1,8 @@
+<map id="include/libcamera/controls.h" name="include/libcamera/controls.h">
+<area shape="rect" id="node1" title="Framework to manage controls related to an object." alt="" coords="154,5,361,32"/>
+<area shape="rect" id="node2" href="$camera_8h.html" title="Camera device handling." alt="" coords="31,177,234,203"/>
+<area shape="rect" id="node3" href="$libcamera_8h_source.html" title=" " alt="" coords="184,259,358,300"/>
+<area shape="rect" id="node4" href="$request_8h.html" title="Describes a frame capture request to be processed by a camera." alt="" coords="156,87,359,114"/>
+<area shape="rect" id="node5" href="$control__ids_8h.html" title="Camera controls identifiers." alt="" coords="309,169,484,211"/>
+<area shape="rect" id="node6" href="$property__ids_8h.html" title="Camera properties identifiers." alt="" coords="434,80,609,121"/>
+</map>

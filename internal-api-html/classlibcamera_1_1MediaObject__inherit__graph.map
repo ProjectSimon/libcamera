@@ -1,0 +1,6 @@
+<map id="libcamera::MediaObject" name="libcamera::MediaObject">
+<area shape="rect" id="node1" title="Base class for all media objects." alt="" coords="195,5,373,32"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1MediaEntity.html" title="The MediaEntity represents an entity in the media graph." alt="" coords="5,80,179,107"/>
+<area shape="rect" id="node3" href="$classlibcamera_1_1MediaLink.html" title="The MediaLink represents a link between two pads in the media graph." alt="" coords="203,80,365,107"/>
+<area shape="rect" id="node4" href="$classlibcamera_1_1MediaPad.html" title="The MediaPad represents a pad of an entity in the media graph." alt="" coords="390,80,549,107"/>
+</map>

@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['scaleby_712',['scaleBy',['../classlibcamera_1_1Rectangle.html#a0a99c55674394664d346fc2987670bbc',1,'libcamera::Rectangle']]],
+  ['scaledby_713',['scaledBy',['../classlibcamera_1_1Rectangle.html#afc1a9811450bb71a3272022cf26ecc8f',1,'libcamera::Rectangle']]],
+  ['sequence_714',['sequence',['../classlibcamera_1_1Request.html#a73dbf491ae133bedc9ec4f9bdd8461e2',1,'libcamera::Request']]],
+  ['set_715',['set',['../classlibcamera_1_1ControlValue.html#a6920dc8d2e785a83ba7bc1765b6ba4c8',1,'libcamera::ControlValue::set()'],['../classlibcamera_1_1ControlList.html#aa41c425f3075349747fdbfc1e3a6fc46',1,'libcamera::ControlList::set(const Control&lt; T &gt; &amp;ctrl, const V &amp;value)'],['../classlibcamera_1_1ControlList.html#a9c471db41dd2a864f7837ccf84cc0954',1,'libcamera::ControlList::set(const Control&lt; Span&lt; T, Size &gt;&gt; &amp;ctrl, const std::initializer_list&lt; V &gt; &amp;value)'],['../classlibcamera_1_1ControlList.html#a1767710105b2d146dd22e2bebc841419',1,'libcamera::ControlList::set(unsigned int id, const ControlValue &amp;value)']]],
+  ['setcookie_716',['setCookie',['../classlibcamera_1_1FrameBuffer.html#adfe3240fb277e23a4427ae51a7fae76e',1,'libcamera::FrameBuffer']]],
+  ['setstream_717',['setStream',['../structlibcamera_1_1StreamConfiguration.html#a74a0eb44dad1b00112c7c0443ae54a12',1,'libcamera::StreamConfiguration']]],
+  ['sharedfd_718',['SharedFD',['../classlibcamera_1_1SharedFD.html#a465dd27b9d95e65e44e8c3326d1f8fe8',1,'libcamera::SharedFD::SharedFD(const int &amp;fd=-1)'],['../classlibcamera_1_1SharedFD.html#a0be2e5ccf888246e63210685d0bd93f9',1,'libcamera::SharedFD::SharedFD(int &amp;&amp;fd)'],['../classlibcamera_1_1SharedFD.html#a7ed7ee6c08634cc971c93f5fb1984c59',1,'libcamera::SharedFD::SharedFD(UniqueFD fd)'],['../classlibcamera_1_1SharedFD.html#a1cc2c655ccc3044484d8e32920c6c825',1,'libcamera::SharedFD::SharedFD(const SharedFD &amp;other)'],['../classlibcamera_1_1SharedFD.html#ad5a4139e5ccd5525c5115b59fdcb1df9',1,'libcamera::SharedFD::SharedFD(SharedFD &amp;&amp;other)']]],
+  ['shrinkby_719',['shrinkBy',['../classlibcamera_1_1Size.html#a25eace20ab63d8db8213556f8edefa99',1,'libcamera::Size']]],
+  ['shrunkby_720',['shrunkBy',['../classlibcamera_1_1Size.html#a07b98cdb48088ad83231117d3c31b400',1,'libcamera::Size']]],
+  ['size_721',['size',['../classlibcamera_1_1Rectangle.html#abd7077289114b7248b8fcef678ad5c2a',1,'libcamera::Rectangle::size()'],['../classlibcamera_1_1ControlList.html#a7f88c79adbf702ada7be98c35b2f2664',1,'libcamera::ControlList::size()']]],
+  ['size_722',['Size',['../classlibcamera_1_1Size.html#a86de8d4499e905783f355061de7d2b72',1,'libcamera::Size::Size(unsigned int w, unsigned int h)'],['../classlibcamera_1_1Size.html#a44fd09edc6b2da725585cb00be6906a8',1,'libcamera::Size::Size()']]],
+  ['size_723',['size',['../classlibcamera_1_1CameraConfiguration.html#a8adb176f4055bc7ec55393650fb541a2',1,'libcamera::CameraConfiguration']]],
+  ['sizerange_724',['SizeRange',['../classlibcamera_1_1SizeRange.html#a9acedeeab8ab8691ac70accac73ad75c',1,'libcamera::SizeRange::SizeRange()'],['../classlibcamera_1_1SizeRange.html#a518a3f671616ee2e85349456749ff5d6',1,'libcamera::SizeRange::SizeRange(const Size &amp;size)'],['../classlibcamera_1_1SizeRange.html#a2d9d41d94ab58c7b50fae33e32d11a30',1,'libcamera::SizeRange::SizeRange(const Size &amp;minSize, const Size &amp;maxSize)'],['../classlibcamera_1_1SizeRange.html#a0aa0da51cf936075d6d254dfa04f082d',1,'libcamera::SizeRange::SizeRange(const Size &amp;minSize, const Size &amp;maxSize, unsigned int hstep, unsigned int vstep)']]],
+  ['sizes_725',['sizes',['../classlibcamera_1_1StreamFormats.html#a4321746fcfffed9750f6f9dbffcf102b',1,'libcamera::StreamFormats']]],
+  ['start_726',['start',['../classlibcamera_1_1Camera.html#a5c033a72ac66fbdd2c2bb9f934389dcf',1,'libcamera::Camera::start()'],['../classlibcamera_1_1CameraManager.html#a49e322880a2a26013bb0076788b298c5',1,'libcamera::CameraManager::start()']]],
+  ['status_727',['status',['../classlibcamera_1_1Request.html#abc893618b9f8f2dec3f06a828cd51e63',1,'libcamera::Request']]],
+  ['stop_728',['stop',['../classlibcamera_1_1Camera.html#a4dce0183a1031b5a560167266cdfc7ef',1,'libcamera::Camera::stop()'],['../classlibcamera_1_1CameraManager.html#abcf2a1b9ca720891e6bd83b3c542bb61',1,'libcamera::CameraManager::stop()']]],
+  ['stream_729',['stream',['../structlibcamera_1_1StreamConfiguration.html#ad0e405752ad033249b515165e4864bbb',1,'libcamera::StreamConfiguration']]],
+  ['stream_730',['Stream',['../classlibcamera_1_1Stream.html#ac4dccfedb5dca7e2e475ad5de07ce79c',1,'libcamera::Stream']]],
+  ['streamconfiguration_731',['StreamConfiguration',['../structlibcamera_1_1StreamConfiguration.html#a396e09188db732ef3f8a149808d876f7',1,'libcamera::StreamConfiguration::StreamConfiguration()'],['../structlibcamera_1_1StreamConfiguration.html#ade701e3cc4581ae516c96e423f742fe8',1,'libcamera::StreamConfiguration::StreamConfiguration(const StreamFormats &amp;formats)']]],
+  ['streamformats_732',['StreamFormats',['../classlibcamera_1_1StreamFormats.html#a4df654520c2d6b9abdfaddbe0cfa7577',1,'libcamera::StreamFormats']]],
+  ['streams_733',['streams',['../classlibcamera_1_1Camera.html#a0f56ce353e6d2e4db9d8ff1ae4db1b95',1,'libcamera::Camera']]],
+  ['swap_734',['swap',['../classlibcamera_1_1UniqueFD.html#abc38f20b8c283a4d59e0033f6d3ef25b',1,'libcamera::UniqueFD']]]
+];

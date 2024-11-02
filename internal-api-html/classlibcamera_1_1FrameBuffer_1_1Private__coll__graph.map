@@ -1,0 +1,4 @@
+<map id="libcamera::FrameBuffer::Private" name="libcamera::FrameBuffer::Private">
+<area shape="rect" id="node1" title="Base class for FrameBuffer private data." alt="" coords="5,95,180,136"/>
+<area shape="rect" id="node2" href="$classlibcamera_1_1Extensible_1_1Private.html" title="Base class for private data managed through a d&#45;pointer." alt="" coords="11,5,174,47"/>
+</map>

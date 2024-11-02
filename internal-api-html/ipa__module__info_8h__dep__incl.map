@@ -1,0 +1,6 @@
+<map id="include/libcamera/ipa/ipa_module_info.h" name="include/libcamera/ipa/ipa_module_info.h">
+<area shape="rect" id="node1" title="Image Processing Algorithm module information." alt="" coords="20,5,183,47"/>
+<area shape="rect" id="node2" href="$ipa__manager_8h.html" title="Image Processing Algorithm module manager." alt="" coords="5,184,197,225"/>
+<area shape="rect" id="node4" href="$ipa__module_8h.html" title="Image Processing Algorithm module." alt="" coords="72,95,264,136"/>
+<area shape="rect" id="node3" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="16,273,187,315"/>
+</map>
