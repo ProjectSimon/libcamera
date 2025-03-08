@@ -1,6 +1,9 @@
 <map id="libcamera::ThreadMain" name="libcamera::ThreadMain">
-<area shape="rect" id="node1" title="Thread wrapper for the main thread." alt="" coords="5,261,177,288"/>
-<area shape="rect" id="node2" href="$classlibcamera_1_1Thread.html" title="A thread of execution." alt="" coords="21,185,161,212"/>
-<area shape="rect" id="node3" href="$classlibcamera_1_1Signal.html" title="Generic signal and slot communication mechanism." alt="" coords="18,81,165,123"/>
-<area shape="rect" id="node4" title=" " alt="" coords="8,5,175,32"/>
+<area shape="rect" id="Node000001" title="Thread wrapper for the main thread." alt="" coords="5,257,177,283"/>
+<area shape="rect" id="Node000002" href="$classlibcamera_1_1Thread.html" title="A thread of execution." alt="" coords="21,183,161,208"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,222,94,257,89,257,89,222"/>
+<area shape="rect" id="Node000003" href="$classlibcamera_1_1Signal.html" title="Generic signal and slot communication mechanism." alt="" coords="18,80,165,120"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="94,134,94,182,89,182,89,134"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="8,5,175,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="94,44,94,80,89,80,89,44"/>
 </map>

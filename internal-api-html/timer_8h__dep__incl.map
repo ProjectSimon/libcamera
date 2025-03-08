@@ -1,5 +1,7 @@
 <map id="include/libcamera/base/timer.h" name="include/libcamera/base/timer.h">
-<area shape="rect" id="node1" title="Generic timer." alt="" coords="123,5,296,47"/>
-<area shape="rect" id="node2" href="$internal_2request_8h.html" title="Internal support for request handling." alt="" coords="5,95,197,136"/>
-<area shape="rect" id="node3" href="$v4l2__videodevice_8h.html" title="V4L2 Video Device." alt="" coords="221,95,413,136"/>
+<area shape="rect" id="Node000001" title="Generic timer." alt="" coords="123,5,296,45"/>
+<area shape="rect" id="Node000002" href="$internal_2request_8h.html" title="Internal support for request handling." alt="" coords="5,93,197,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,56,127,95,124,91,173,52"/>
+<area shape="rect" id="Node000003" href="$v4l2__videodevice_8h.html" title="V4L2 Video Device." alt="" coords="221,93,413,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="246,52,295,91,292,95,242,56"/>
 </map>

@@ -1,4 +1,5 @@
 <map id="libcamera::V4L2SubdeviceCapability" name="libcamera::V4L2SubdeviceCapability">
-<area shape="rect" id="node1" title="struct v4l2_subdev_capability object wrapper and helpers" alt="" coords="5,80,200,121"/>
-<area shape="rect" id="node2" title=" " alt="" coords="15,5,190,32"/>
+<area shape="rect" id="Node000001" title="struct v4l2_subdev_capability object wrapper and helpers" alt="" coords="5,79,200,119"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="15,5,190,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,44,105,79,100,79,100,44"/>
 </map>

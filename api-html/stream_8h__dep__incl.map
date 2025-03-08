@@ -1,5 +1,8 @@
 <map id="include/libcamera/stream.h" name="include/libcamera/stream.h">
-<area shape="rect" id="node1" title="Video stream for a Camera." alt="" coords="76,5,276,32"/>
-<area shape="rect" id="node2" href="$camera_8h.html" title="Camera device handling." alt="" coords="5,80,208,107"/>
-<area shape="rect" id="node3" href="$libcamera_8h_source.html" title=" " alt="" coords="89,155,263,196"/>
+<area shape="rect" id="Node000001" title="Video stream for a Camera." alt="" coords="5,5,205,31"/>
+<area shape="rect" id="Node000002" href="$libcamera_8h_source.html" title=" " alt="" coords="18,152,193,192"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,42,73,60,64,79,62,98,67,117,89,150,85,153,62,119,57,99,59,78,69,57,82,39"/>
+<area shape="rect" id="Node000003" href="$camera_8h.html" title="Camera device handling." alt="" coords="73,79,276,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="128,39,165,77,162,80,124,43"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="157,116,124,154,120,150,153,113"/>
 </map>

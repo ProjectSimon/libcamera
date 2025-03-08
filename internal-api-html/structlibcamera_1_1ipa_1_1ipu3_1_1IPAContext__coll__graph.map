@@ -1,9 +1,15 @@
 <map id="libcamera::ipa::ipu3::IPAContext" name="libcamera::ipa::ipu3::IPAContext">
-<area shape="rect" id="node1" title="Global IPA context data shared between all algorithms." alt="" coords="907,113,1057,154"/>
-<area shape="rect" id="node2" href="$structlibcamera_1_1ipa_1_1ipu3_1_1IPASessionConfiguration.html" title="Session configuration for the IPA module." alt="" coords="571,47,757,89"/>
-<area shape="rect" id="node3" href="$classlibcamera_1_1utils_1_1Duration.html" title="Helper class from std::chrono::duration that represents a time duration in nanoseconds with double pr..." alt="" coords="219,25,405,52"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,18,169,59"/>
-<area shape="rect" id="node5" href="$classlibcamera_1_1Size.html" title="Describe a two&#45;dimensional size." alt="" coords="251,85,373,112"/>
-<area shape="rect" id="node6" href="$structlibcamera_1_1ipa_1_1ipu3_1_1IPAActiveState.html" title="The active state of the IPA algorithms." alt="" coords="589,113,739,154"/>
-<area shape="rect" id="node7" href="$classlibcamera_1_1ipa_1_1FCQueue.html" title=" " alt="" coords="573,179,755,235"/>
+<area shape="rect" id="Node000001" title="Global IPA context data shared between all algorithms." alt="" coords="912,103,1063,143"/>
+<area shape="rect" id="Node000002" href="$structlibcamera_1_1ipa_1_1ipu3_1_1IPASessionConfiguration.html" title="Session configuration for the IPA module." alt="" coords="576,39,763,79"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="777,77,889,100,912,105,911,110,887,105,776,83"/>
+<area shape="rect" id="Node000003" href="$classlibcamera_1_1Size.html" title="Describe a two&#45;dimensional size." alt="" coords="251,9,373,34"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="387,26,576,46,576,52,387,32"/>
+<area shape="rect" id="Node000004" href="$classlibcamera_1_1utils_1_1Duration.html" title="Helper class from std::chrono::duration that represents a time duration in nanoseconds with double pr..." alt="" coords="219,83,405,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="419,100,485,100,551,93,610,76,612,81,553,99,485,105,420,106"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,76,169,116"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="183,93,218,93,218,99,183,99"/>
+<area shape="rect" id="Node000006" href="$structlibcamera_1_1ipa_1_1ipu3_1_1IPAActiveState.html" title="The active state of the IPA algorithms." alt="" coords="594,103,745,143"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="759,120,912,120,912,125,759,125"/>
+<area shape="rect" id="Node000007" href="$classlibcamera_1_1ipa_1_1FCQueue.html" title=" " alt="" coords="578,167,761,222"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="774,168,911,137,912,142,775,174"/>
 </map>

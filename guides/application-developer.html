@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Using libcamera in a C++ application &mdash; libcamera v0.3.2+rpt20241101+6-22e19df9 documentation</title>
+  <title>Using libcamera in a C++ application &mdash; libcamera v0.4.0+5314-fc77c53d-nvm documentation</title>
   
 
   
@@ -33,7 +33,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="libcamera v0.3.2+rpt20241101+6-22e19df9 documentation" href="../index.html"/>
+    <link rel="top" title="libcamera v0.4.0+5314-fc77c53d-nvm documentation" href="../index.html"/>
         <link rel="next" title="The libcamera camera sensor model" href="../camera-sensor-model.html"/>
         <link rel="prev" title="Getting Started" href="../getting-started.html"/> 
 
@@ -502,7 +502,7 @@ seq: 000042 bytesused: 1843200
 <p>A completed buffer contains of course image data which can be accessed through
 the per-plane dma-buf file descriptor transported by the <code class="docutils literal notranslate"><span class="pre">FrameBuffer</span></code>
 instance. An example of how to write image data to disk is available in the
-<a class="reference external" href="https://git.libcamera.org/libcamera/libcamera.git/tree/src/cam/file_sink.cpp">FileSink class</a> which is a part of the <code class="docutils literal notranslate"><span class="pre">cam</span></code> utility application in the
+<a class="reference external" href="https://git.libcamera.org/libcamera/libcamera.git/tree/src/apps/cam/file_sink.cpp">FileSink class</a> which is a part of the <code class="docutils literal notranslate"><span class="pre">cam</span></code> utility application in the
 libcamera repository.</p>
 <p>With the handling of this request completed, it is possible to re-use the
 request and the associated buffers and re-queue it to the camera

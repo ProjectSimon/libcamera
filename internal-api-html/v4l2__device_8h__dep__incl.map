@@ -1,8 +1,13 @@
 <map id="include/libcamera/internal/v4l2_device.h" name="include/libcamera/internal/v4l2_device.h">
-<area shape="rect" id="node1" title="Common base for V4L2 devices and subdevices." alt="" coords="121,5,313,47"/>
-<area shape="rect" id="node2" href="$v4l2__subdevice_8h.html" title="V4L2 Subdevice API." alt="" coords="13,95,205,136"/>
-<area shape="rect" id="node6" href="$v4l2__videodevice_8h.html" title="V4L2 Video Device." alt="" coords="229,95,421,136"/>
-<area shape="rect" id="node3" href="$camera__sensor_8h.html" title="A camera sensor." alt="" coords="13,184,205,225"/>
-<area shape="rect" id="node4" href="$software__isp_8h_source.html" title=" " alt="" coords="5,273,212,315"/>
-<area shape="rect" id="node5" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="23,363,194,404"/>
+<area shape="rect" id="Node000001" title="Common base for V4L2 devices and subdevices." alt="" coords="121,5,313,45"/>
+<area shape="rect" id="Node000002" href="$v4l2__subdevice_8h.html" title="V4L2 Subdevice API." alt="" coords="13,93,205,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,56,134,95,131,91,180,52"/>
+<area shape="rect" id="Node000006" href="$v4l2__videodevice_8h.html" title="V4L2 Video Device." alt="" coords="229,93,421,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="253,52,302,91,299,95,250,56"/>
+<area shape="rect" id="Node000003" href="$camera__sensor_8h.html" title="A camera sensor." alt="" coords="13,181,205,221"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="111,147,111,181,106,181,106,147"/>
+<area shape="rect" id="Node000004" href="$software__isp_8h_source.html" title=" " alt="" coords="5,269,212,309"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="111,235,111,269,106,269,106,235"/>
+<area shape="rect" id="Node000005" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="23,357,194,397"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="111,323,111,357,106,357,106,323"/>
 </map>

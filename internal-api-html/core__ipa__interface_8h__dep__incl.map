@@ -1,6 +1,0 @@
-<map id="build/include/libcamera/ipa/core_ipa_interface.h" name="build/include/libcamera/ipa/core_ipa_interface.h">
-<area shape="rect" id="node1" title="libcamera structs for IPAs" alt="" coords="17,5,200,47"/>
-<area shape="rect" id="node2" href="$camera__sensor_8h.html" title="A camera sensor." alt="" coords="13,95,205,136"/>
-<area shape="rect" id="node3" href="$software__isp_8h_source.html" title=" " alt="" coords="5,184,212,225"/>
-<area shape="rect" id="node4" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="23,273,194,315"/>
-</map>

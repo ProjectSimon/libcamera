@@ -1,6 +1,9 @@
 <map id="libcamera::Stream" name="libcamera::Stream">
-<area shape="rect" id="node1" title="Video stream for a camera." alt="" coords="105,184,248,211"/>
-<area shape="rect" id="node2" href="$structlibcamera_1_1StreamConfiguration.html" title="Configuration parameters for a stream." alt="" coords="62,95,291,121"/>
-<area shape="rect" id="node3" href="$classlibcamera_1_1PixelFormat.html" title="libcamera image pixel format" alt="" coords="5,5,177,32"/>
-<area shape="rect" id="node4" href="$classlibcamera_1_1Size.html" title="Describe a two&#45;dimensional size." alt="" coords="202,5,325,32"/>
+<area shape="rect" id="Node000001" title="Video stream for a camera." alt="" coords="105,181,248,207"/>
+<area shape="rect" id="Node000002" href="$structlibcamera_1_1StreamConfiguration.html" title="Configuration parameters for a stream." alt="" coords="62,93,291,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,133,179,181,174,181,174,133"/>
+<area shape="rect" id="Node000003" href="$classlibcamera_1_1PixelFormat.html" title="libcamera image pixel format" alt="" coords="5,5,177,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="115,39,167,91,163,95,111,43"/>
+<area shape="rect" id="Node000004" href="$classlibcamera_1_1Size.html" title="Describe a two&#45;dimensional size." alt="" coords="202,5,325,31"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="251,44,228,71,197,95,194,91,224,67,247,40"/>
 </map>

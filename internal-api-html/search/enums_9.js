@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['noisereductionmodeenum_2518',['NoiseReductionModeEnum',['../namespacelibcamera_1_1controls_1_1draft.html#a1b20de6837fe558585420060c1eb9c19',1,'libcamera::controls::draft']]]
+  ['mapflag_0',['mapflag',['../classlibcamera_1_1File.html#a128efbbcacb7cdaa1986ffc943e89ae0',1,'libcamera::File::MapFlag'],['../classlibcamera_1_1MappedFrameBuffer.html#a1d9341a27d2d986c51faf79c68e312bf',1,'libcamera::MappedFrameBuffer::MapFlag']]],
+  ['mergepolicy_1',['MergePolicy',['../classlibcamera_1_1ControlList.html#a61c8b9a57df34e40716d3664d24df80d',1,'libcamera::ControlList']]]
 ];

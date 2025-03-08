@@ -1,6 +1,11 @@
 <map id="include/libcamera/color_space.h" name="include/libcamera/color_space.h">
-<area shape="rect" id="node1" title="Class and enums to represent color spaces." alt="" coords="139,5,314,47"/>
-<area shape="rect" id="node2" href="$stream_8h.html" title="Video stream for a Camera." alt="" coords="59,95,259,121"/>
-<area shape="rect" id="node4" href="$libcamera_8h_source.html" title=" " alt="" coords="158,244,333,285"/>
-<area shape="rect" id="node3" href="$camera_8h.html" title="Camera device handling." alt="" coords="5,169,208,196"/>
+<area shape="rect" id="Node000001" title="Class and enums to represent color spaces." alt="" coords="23,5,197,45"/>
+<area shape="rect" id="Node000002" href="$libcamera_8h_source.html" title=" " alt="" coords="5,240,180,280"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,58,70,94,65,134,68,174,77,211,87,239,82,241,72,212,63,175,59,134,65,93,83,55"/>
+<area shape="rect" id="Node000003" href="$stream_8h.html" title="Video stream for a Camera." alt="" coords="79,93,279,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="138,54,171,91,167,95,134,58"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="155,129,136,147,120,168,105,205,97,240,92,239,100,204,116,165,132,144,151,125"/>
+<area shape="rect" id="Node000004" href="$camera_8h.html" title="Camera device handling." alt="" coords="130,167,333,192"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="198,128,225,165,221,168,194,131"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="200,201,127,242,125,238,198,197"/>
 </map>

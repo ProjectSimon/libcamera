@@ -1,6 +1,11 @@
 <map id="include/libcamera/fence.h" name="include/libcamera/fence.h">
-<area shape="rect" id="node1" title="Definition of the Fence class." alt="" coords="131,5,322,32"/>
-<area shape="rect" id="node2" href="$request_8h.html" title="Describes a frame capture request to be processed by a camera." alt="" coords="56,80,259,107"/>
-<area shape="rect" id="node4" href="$libcamera_8h_source.html" title=" " alt="" coords="158,229,333,271"/>
-<area shape="rect" id="node3" href="$camera_8h.html" title="Camera device handling." alt="" coords="5,155,208,181"/>
+<area shape="rect" id="Node000001" title="Definition of the Fence class." alt="" coords="16,5,207,31"/>
+<area shape="rect" id="Node000002" href="$libcamera_8h_source.html" title=" " alt="" coords="5,225,180,265"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,42,79,60,70,79,64,119,67,159,76,196,87,224,82,226,71,197,62,160,58,119,65,78,75,57,88,39"/>
+<area shape="rect" id="Node000003" href="$request_8h.html" title="Describes a frame capture request to be processed by a camera." alt="" coords="79,79,282,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="134,39,171,77,168,80,130,43"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="155,115,136,133,120,153,105,191,97,226,92,225,100,189,116,151,132,129,151,111"/>
+<area shape="rect" id="Node000004" href="$camera_8h.html" title="Camera device handling." alt="" coords="130,152,333,177"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="199,114,225,150,221,153,195,117"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="200,187,127,228,125,223,198,182"/>
 </map>

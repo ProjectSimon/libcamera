@@ -1,7 +1,13 @@
 <map id="libcamera::SoftwareIsp" name="libcamera::SoftwareIsp">
-<area shape="rect" id="node1" title="Class for the Software ISP." alt="" coords="629,78,800,105"/>
-<area shape="rect" id="node2" href="$classlibcamera_1_1Signal.html" title="Generic signal and slot communication mechanism." alt="" coords="267,5,413,47"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,78,172,105"/>
-<area shape="rect" id="node4" href="$classlibcamera_1_1Signal.html" title=" " alt="" coords="237,71,443,112"/>
-<area shape="rect" id="node5" href="$classlibcamera_1_1Signal.html" title=" " alt="" coords="221,136,459,177"/>
+<area shape="rect" id="Node000001" title="Class for the Software ISP." alt="" coords="629,77,800,102"/>
+<area shape="rect" id="Node000002" href="$classlibcamera_1_1Signal.html" title=" " alt="" coords="237,5,443,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="457,41,606,67,646,74,645,79,605,72,456,47"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,77,172,102"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="152,71,260,43,261,48,153,76"/>
+<area shape="rect" id="Node000004" href="$classlibcamera_1_1Signal.html" title=" " alt="" coords="263,69,417,109"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="186,87,263,87,263,92,186,92"/>
+<area shape="rect" id="Node000005" href="$classlibcamera_1_1Signal.html" title=" " alt="" coords="221,133,459,173"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="153,103,261,131,260,136,152,108"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="431,87,629,87,629,92,431,92"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="472,129,605,107,645,99,646,105,606,112,473,135"/>
 </map>

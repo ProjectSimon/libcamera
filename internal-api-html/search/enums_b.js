@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['packing_2522',['Packing',['../classlibcamera_1_1BayerFormat.html#a2c2c8def2a008fae9fd23616e59086a7',1,'libcamera::BayerFormat']]],
-  ['primaries_2523',['Primaries',['../classlibcamera_1_1ColorSpace.html#a03b56b3ffdc2338345c15d08143260ba',1,'libcamera::ColorSpace']]],
-  ['proxystate_2524',['ProxyState',['../classlibcamera_1_1IPAProxy.html#ae59a8a916c5e244be8bdd6860503886f',1,'libcamera::IPAProxy']]]
+  ['openmodeflag_0',['OpenModeFlag',['../classlibcamera_1_1File.html#a6df7f0036263a0a04610e586e9e604cb',1,'libcamera::File']]],
+  ['order_1',['Order',['../classlibcamera_1_1BayerFormat.html#a72f709c68ce975ab0cbfc65cc5a73b95',1,'libcamera::BayerFormat']]],
+  ['orientation_2',['Orientation',['../namespacelibcamera.html#a80ea01625b93ecfe879249ac60c79384',1,'libcamera']]]
 ];

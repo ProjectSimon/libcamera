@@ -1,10 +1,19 @@
 <map id="libcamera::Camera" name="libcamera::Camera">
-<area shape="rect" id="node1" title="Camera device." alt="" coords="615,140,761,167"/>
-<area shape="rect" id="node2" href="$classlibcamera_1_1Object.html" title="Base object to support automatic signal disconnection." alt="" coords="263,5,400,32"/>
-<area shape="rect" id="node3" title=" " alt="" coords="245,57,417,98"/>
-<area shape="rect" id="node4" href="$classlibcamera_1_1Extensible.html" title="Base class to manage private data through a d&#45;pointer." alt="" coords="250,123,413,149"/>
-<area shape="rect" id="node5" href="$classlibcamera_1_1Signal.html" title="Generic signal and slot communication mechanism." alt="" coords="258,174,405,215"/>
-<area shape="rect" id="node6" title=" " alt="" coords="5,255,172,281"/>
-<area shape="rect" id="node7" href="$classlibcamera_1_1Signal.html" title=" " alt="" coords="221,240,441,296"/>
-<area shape="rect" id="node8" href="$classlibcamera_1_1Signal.html" title=" " alt="" coords="242,321,421,362"/>
+<area shape="rect" id="Node000001" title="Camera device." alt="" coords="615,137,761,163"/>
+<area shape="rect" id="Node000002" href="$classlibcamera_1_1Object.html" title="Base object to support automatic signal disconnection." alt="" coords="263,5,400,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="407,31,497,56,592,92,669,135,666,140,590,96,495,61,406,36"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="245,55,417,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="432,90,591,122,642,135,640,140,590,127,431,95"/>
+<area shape="rect" id="Node000004" href="$classlibcamera_1_1Extensible.html" title="Base class to manage private data through a d&#45;pointer." alt="" coords="250,120,413,145"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="427,135,615,144,614,149,426,140"/>
+<area shape="rect" id="Node000005" href="$classlibcamera_1_1Signal.html" title=" " alt="" coords="221,169,441,224"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="455,181,590,163,614,160,615,165,591,169,455,186"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="5,256,172,281"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="145,249,238,221,240,227,146,255"/>
+<area shape="rect" id="Node000007" href="$classlibcamera_1_1Signal.html" title=" " alt="" coords="242,249,421,289"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="186,266,242,266,242,271,186,271"/>
+<area shape="rect" id="Node000008" href="$classlibcamera_1_1Signal.html" title="Generic signal and slot communication mechanism." alt="" coords="258,313,405,353"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="152,282,259,311,257,316,150,288"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="434,246,511,226,590,200,630,180,665,161,668,165,633,185,592,204,513,231,435,251"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="418,320,504,298,548,282,589,260,618,237,643,210,677,161,681,164,647,213,622,241,592,264,550,286,506,303,419,325"/>
 </map>

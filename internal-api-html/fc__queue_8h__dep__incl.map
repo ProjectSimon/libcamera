@@ -1,5 +1,7 @@
 <map id="src/ipa/libipa/fc_queue.h" name="src/ipa/libipa/fc_queue.h">
-<area shape="rect" id="node1" title="Queue of per&#45;frame contexts." alt="" coords="10,5,190,32"/>
-<area shape="rect" id="node2" href="$ipa__context_8h.html" title="Context and state information shared between the algorithms." alt="" coords="5,80,195,107"/>
-<area shape="rect" id="node3" href="$ipu3_2module_8h_source.html" title=" " alt="" coords="19,155,181,181"/>
+<area shape="rect" id="Node000001" title="Queue of per&#45;frame contexts." alt="" coords="10,5,190,31"/>
+<area shape="rect" id="Node000002" href="$ipa__context_8h.html" title="Context and state information shared between the algorithms." alt="" coords="5,79,195,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,44,103,79,97,79,97,44"/>
+<area shape="rect" id="Node000003" href="$ipu3_2module_8h_source.html" title=" " alt="" coords="19,152,181,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="103,118,103,152,97,152,97,118"/>
 </map>

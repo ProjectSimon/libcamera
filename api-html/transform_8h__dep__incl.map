@@ -1,4 +1,5 @@
 <map id="include/libcamera/transform.h" name="include/libcamera/transform.h">
-<area shape="rect" id="node1" title="Enum to represent and manipulate 2D plane transforms." alt="" coords="5,5,224,32"/>
-<area shape="rect" id="node2" href="$libcamera_8h_source.html" title=" " alt="" coords="27,80,202,121"/>
+<area shape="rect" id="Node000001" title="Enum to represent and manipulate 2D plane transforms." alt="" coords="5,5,224,31"/>
+<area shape="rect" id="Node000002" href="$libcamera_8h_source.html" title=" " alt="" coords="27,79,202,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,44,117,79,112,79,112,44"/>
 </map>

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['lensshadingmapmodeoff_1063',['LensShadingMapModeOff',['../namespacelibcamera_1_1controls_1_1draft.html#a92a006a51019b636613c35a4ae25ff26ad7bdf2f38065e74cdc756b997fa01eba',1,'libcamera::controls::draft']]],
-  ['lensshadingmapmodeon_1064',['LensShadingMapModeOn',['../namespacelibcamera_1_1controls_1_1draft.html#a92a006a51019b636613c35a4ae25ff26a102ae6f0232818a3f03aa65c77af5af8',1,'libcamera::controls::draft']]]
+  ['keepexisting_0',['KeepExisting',['../classlibcamera_1_1ControlList.html#a61c8b9a57df34e40716d3664d24df80da52a9854287113e3ba9a005ff73c54c7b',1,'libcamera::ControlList']]]
 ];

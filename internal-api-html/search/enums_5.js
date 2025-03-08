@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['hdrchannelenum_2509',['HdrChannelEnum',['../namespacelibcamera_1_1controls.html#ae0b385406bfae9e3f8f52632dee63c63',1,'libcamera::controls']]],
-  ['hdrmodeenum_2510',['HdrModeEnum',['../namespacelibcamera_1_1controls.html#a716de7c2d3556258c6787c02e41ee85e',1,'libcamera::controls']]]
+  ['facedetectmodeenum_0',['FaceDetectModeEnum',['../namespacelibcamera_1_1controls_1_1draft.html#ab1789ad01e93a3c35ff81ef1e7ce8def',1,'libcamera::controls::draft']]],
+  ['feature_1',['Feature',['../classlibcamera_1_1Converter.html#aad8df1624aace6e89bbee69c7cac9bff',1,'libcamera::Converter']]]
 ];

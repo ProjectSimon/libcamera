@@ -1,11 +1,16 @@
 <map id="include/libcamera/ipa/ipa_interface.h" name="include/libcamera/ipa/ipa_interface.h">
-<area shape="rect" id="node1" title="Image Processing Algorithm interface." alt="" coords="287,5,449,47"/>
-<area shape="rect" id="node2" href="$ipa__data__serializer_8h.html" title="IPA Data Serializer." alt="" coords="5,95,197,136"/>
-<area shape="rect" id="node3" href="$ipa__manager_8h.html" title="Image Processing Algorithm module manager." alt="" coords="272,184,464,225"/>
-<area shape="rect" id="node5" href="$ipa__module_8h.html" title="Image Processing Algorithm module." alt="" coords="272,95,464,136"/>
-<area shape="rect" id="node6" href="$ipa__proxy_8h.html" title="IPA Proxy." alt="" coords="488,95,680,136"/>
-<area shape="rect" id="node7" href="$core__ipa__interface_8h.html" title="libcamera structs for IPAs" alt="" coords="705,95,887,136"/>
-<area shape="rect" id="node4" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="391,363,561,404"/>
-<area shape="rect" id="node8" href="$camera__sensor_8h.html" title="A camera sensor." alt="" coords="593,184,785,225"/>
-<area shape="rect" id="node9" href="$software__isp_8h_source.html" title=" " alt="" coords="462,273,669,315"/>
+<area shape="rect" id="Node000001" title="Image Processing Algorithm interface." alt="" coords="361,5,523,45"/>
+<area shape="rect" id="Node000002" href="$core__ipa__interface_8h.html" title="libcamera structs for IPAs" alt="" coords="5,93,188,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="354,51,173,96,172,91,352,46"/>
+<area shape="rect" id="Node000003" href="$ipa__data__serializer_8h.html" title="IPA Data Serializer." alt="" coords="213,93,405,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="402,55,340,95,337,91,400,51"/>
+<area shape="rect" id="Node000004" href="$ipa__manager_8h.html" title="Image Processing Algorithm module manager." alt="" coords="413,181,605,221"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="449,58,457,95,470,132,497,180,492,182,465,134,452,96,444,60"/>
+<area shape="rect" id="Node000006" href="$ipa__module_8h.html" title="Image Processing Algorithm module." alt="" coords="479,93,671,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="484,51,547,91,544,95,482,55"/>
+<area shape="rect" id="Node000007" href="$ipa__proxy_8h.html" title="IPA Proxy." alt="" coords="695,93,887,133"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="533,46,715,91,714,96,531,51"/>
+<area shape="rect" id="Node000005" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="423,269,594,309"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="511,235,511,269,506,269,506,235"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="554,146,526,183,521,179,550,143"/>
 </map>

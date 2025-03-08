@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ycbcrencoding_2536',['YcbcrEncoding',['../classlibcamera_1_1ColorSpace.html#a6c38886cf640948d04502d365d9e0ec9',1,'libcamera::ColorSpace']]]
+  ['whence_0',['Whence',['../classlibcamera_1_1V4L2Subdevice.html#a9e0329816bbda2b6745b5c72233d5091',1,'libcamera::V4L2Subdevice']]]
 ];

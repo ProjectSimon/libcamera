@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['openmodeflag_2519',['OpenModeFlag',['../classlibcamera_1_1File.html#a6df7f0036263a0a04610e586e9e604cb',1,'libcamera::File']]],
-  ['order_2520',['Order',['../classlibcamera_1_1BayerFormat.html#a72f709c68ce975ab0cbfc65cc5a73b95',1,'libcamera::BayerFormat']]],
-  ['orientation_2521',['Orientation',['../namespacelibcamera.html#a80ea01625b93ecfe879249ac60c79384',1,'libcamera']]]
+  ['noisereductionmodeenum_0',['NoiseReductionModeEnum',['../namespacelibcamera_1_1controls_1_1draft.html#a1b20de6837fe558585420060c1eb9c19',1,'libcamera::controls::draft']]]
 ];

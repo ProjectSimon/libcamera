@@ -1,5 +1,8 @@
 <map id="include/libcamera/request.h" name="include/libcamera/request.h">
-<area shape="rect" id="node1" title="Describes a frame capture request to be processed by a camera." alt="" coords="75,5,277,32"/>
-<area shape="rect" id="node2" href="$camera_8h.html" title="Camera device handling." alt="" coords="5,80,208,107"/>
-<area shape="rect" id="node3" href="$libcamera_8h_source.html" title=" " alt="" coords="89,155,263,196"/>
+<area shape="rect" id="Node000001" title="Describes a frame capture request to be processed by a camera." alt="" coords="5,5,208,31"/>
+<area shape="rect" id="Node000002" href="$libcamera_8h_source.html" title=" " alt="" coords="19,152,194,192"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,42,75,60,65,79,63,98,69,117,90,150,86,153,64,119,58,99,60,78,70,57,83,39"/>
+<area shape="rect" id="Node000003" href="$camera_8h.html" title="Camera device handling." alt="" coords="75,79,277,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="129,39,167,77,163,80,126,43"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="159,116,125,154,121,150,155,113"/>
 </map>

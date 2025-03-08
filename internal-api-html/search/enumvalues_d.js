@@ -1,25 +1,5 @@
 var searchData=
 [
-  ['raw_2670',['Raw',['../namespacelibcamera.html#a295d1f5e7828d95c0b0aabc0a8baac03a65e65c8ab0d8609ce12fc68a03cb8e00',1,'libcamera']]],
-  ['read_2671',['Read',['../classlibcamera_1_1MappedFrameBuffer.html#a1d9341a27d2d986c51faf79c68e312bfa7a1a5f3e79fdc91edf2f5ead9d66abb4',1,'libcamera::MappedFrameBuffer::Read()'],['../classlibcamera_1_1EventNotifier.html#adceea4fbe37e9a3833dce6e258e35238a5bb1c9edc7705f6c57b1291f322c86a4',1,'libcamera::EventNotifier::Read()']]],
-  ['readwrite_2672',['ReadWrite',['../classlibcamera_1_1MappedFrameBuffer.html#a1d9341a27d2d986c51faf79c68e312bfa70a2a84088d405a2e3f1e3accaa16723',1,'libcamera::MappedFrameBuffer']]],
-  ['requestcancelled_2673',['RequestCancelled',['../classlibcamera_1_1Request.html#a2209ba8d51af8167b25f6e3e94d5c45ba4b19d33e627aec32f831a30269aaa555',1,'libcamera::Request']]],
-  ['requestcomplete_2674',['RequestComplete',['../classlibcamera_1_1Request.html#a2209ba8d51af8167b25f6e3e94d5c45badbacf3012a30a35bd19cfd9a9a41c499',1,'libcamera::Request']]],
-  ['requestpending_2675',['RequestPending',['../classlibcamera_1_1Request.html#a2209ba8d51af8167b25f6e3e94d5c45ba24117202d19400478ba2e01d2e9a5812',1,'libcamera::Request']]],
-  ['reusebuffers_2676',['ReuseBuffers',['../classlibcamera_1_1Request.html#a81bca5d1ba778455434506574e4286faa15458e90ae3fbfb75fe6f0d5001a0a12',1,'libcamera::Request']]],
-  ['rgb_2677',['RGB',['../namespacelibcamera_1_1properties_1_1draft.html#ae4dac9d6f57db34b666c70f88196e092ad7a9a316efe740e20993ab407f6c301c',1,'libcamera::properties::draft']]],
-  ['rggb_2678',['RGGB',['../classlibcamera_1_1BayerFormat.html#a72f709c68ce975ab0cbfc65cc5a73b95aa150cae483435c52ad231fc5b88619b2',1,'libcamera::BayerFormat::RGGB()'],['../namespacelibcamera_1_1properties_1_1draft.html#ae4dac9d6f57db34b666c70f88196e092ae52aa662d7315cbb3ba7a912c046d437',1,'libcamera::properties::draft::RGGB()']]],
-  ['rot0_2679',['Rot0',['../namespacelibcamera.html#a371b6d17d531b85c035c4e889b116571a4bb6c9559a08829b1fd0a5eedd2eecb5',1,'libcamera']]],
-  ['rot180_2680',['Rot180',['../namespacelibcamera.html#a371b6d17d531b85c035c4e889b116571af35f5bfafcf9cdad2100127dfc0109fd',1,'libcamera']]],
-  ['rot180transpose_2681',['Rot180Transpose',['../namespacelibcamera.html#a371b6d17d531b85c035c4e889b116571adaa7494d424939ff93c1c9396b065732',1,'libcamera']]],
-  ['rot270_2682',['Rot270',['../namespacelibcamera.html#a371b6d17d531b85c035c4e889b116571abd039fd6afddf90dab22307d3a18d11a',1,'libcamera']]],
-  ['rot90_2683',['Rot90',['../namespacelibcamera.html#a371b6d17d531b85c035c4e889b116571ad5251a97af7b4036b4528a54405ea2ad',1,'libcamera']]],
-  ['rotate0_2684',['Rotate0',['../namespacelibcamera.html#a80ea01625b93ecfe879249ac60c79384a291b44223b90e70be1fade1eff8a55e0',1,'libcamera']]],
-  ['rotate0mirror_2685',['Rotate0Mirror',['../namespacelibcamera.html#a80ea01625b93ecfe879249ac60c79384a8c0ca32ba7e4de48842b5828d1cc4bbb',1,'libcamera']]],
-  ['rotate180_2686',['Rotate180',['../namespacelibcamera.html#a80ea01625b93ecfe879249ac60c79384a371980c5d153a94cf022d6b4daa4d34c',1,'libcamera']]],
-  ['rotate180mirror_2687',['Rotate180Mirror',['../namespacelibcamera.html#a80ea01625b93ecfe879249ac60c79384a9299b4523bc8f8a8a3cf874fccc39e56',1,'libcamera']]],
-  ['rotate270_2688',['Rotate270',['../namespacelibcamera.html#a80ea01625b93ecfe879249ac60c79384a59c609399b2fb3956ecac7df34a76c2f',1,'libcamera']]],
-  ['rotate270mirror_2689',['Rotate270Mirror',['../namespacelibcamera.html#a80ea01625b93ecfe879249ac60c79384a42099bec2daf386b1daeffe0854cab21',1,'libcamera']]],
-  ['rotate90_2690',['Rotate90',['../namespacelibcamera.html#a80ea01625b93ecfe879249ac60c79384a1d20b3969ea74725dd1a5b7669d60a98',1,'libcamera']]],
-  ['rotate90mirror_2691',['Rotate90Mirror',['../namespacelibcamera.html#a80ea01625b93ecfe879249ac60c79384ad3e952bbaf7e50a879f42b7968e07a79',1,'libcamera']]]
+  ['out_0',['Out',['../classlibcamera_1_1ControlId.html#ab94c6b82fe3778c152e2c053878dc0b4a7c147cda9e49590f6abe83d118b7353b',1,'libcamera::ControlId']]],
+  ['overwriteexisting_1',['OverwriteExisting',['../classlibcamera_1_1ControlList.html#a61c8b9a57df34e40716d3664d24df80da213fc6f9c23a879020bc94b79cc51d62',1,'libcamera::ControlList']]]
 ];

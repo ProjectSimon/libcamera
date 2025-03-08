@@ -1,7 +1,12 @@
 <map id="include/libcamera/base/thread.h" name="include/libcamera/base/thread.h">
-<area shape="rect" id="node1" title="Thread support." alt="" coords="127,5,300,47"/>
-<area shape="rect" id="node2" href="$internal_2camera__manager_8h.html" title="Internal camera manager support." alt="" coords="51,95,243,136"/>
-<area shape="rect" id="node5" href="$software__isp_8h_source.html" title=" " alt="" coords="222,184,429,225"/>
-<area shape="rect" id="node3" href="$ipa__manager_8h.html" title="Image Processing Algorithm module manager." alt="" coords="5,184,197,225"/>
-<area shape="rect" id="node4" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="128,273,299,315"/>
+<area shape="rect" id="Node000001" title="Thread support." alt="" coords="127,5,300,45"/>
+<area shape="rect" id="Node000002" href="$internal_2camera__manager_8h.html" title="Internal camera manager support." alt="" coords="51,93,243,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,58,164,95,159,91,188,55"/>
+<area shape="rect" id="Node000005" href="$software__isp_8h_source.html" title=" " alt="" coords="222,181,429,221"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="235,56,315,180,311,183,231,59"/>
+<area shape="rect" id="Node000003" href="$ipa__manager_8h.html" title="Image Processing Algorithm module manager." alt="" coords="5,181,197,221"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="133,147,114,182,109,180,128,144"/>
+<area shape="rect" id="Node000004" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="128,269,299,309"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="139,228,190,267,187,271,136,232"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="291,232,240,271,237,267,288,228"/>
 </map>

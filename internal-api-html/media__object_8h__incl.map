@@ -1,8 +1,13 @@
 <map id="include/libcamera/internal/media_object.h" name="include/libcamera/internal/media_object.h">
-<area shape="rect" id="node1" title="Provides a class hierarchy that represents the media objects exposed by the Linux kernel Media Contro..." alt="" coords="79,5,271,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,95,64,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="89,95,151,121"/>
-<area shape="rect" id="node4" title=" " alt="" coords="175,95,286,121"/>
-<area shape="rect" id="node5" href="$class_8h.html" title="Utilities to help constructing class interfaces." alt="" coords="311,95,481,121"/>
-<area shape="rect" id="node6" title=" " alt="" coords="357,169,435,196"/>
+<area shape="rect" id="Node000001" title="Provides a class hierarchy that represents the media objects exposed by the Linux kernel Media Contro..." alt="" coords="79,5,271,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,64,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,48,69,89,66,84,140,43"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="89,93,151,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="164,47,138,84,134,80,159,44"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="175,93,286,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="190,44,217,80,212,84,186,47"/>
+<area shape="rect" id="Node000005" href="$class_8h.html" title="Utilities to help constructing class interfaces." alt="" coords="311,93,481,119"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="229,43,351,86,350,91,227,48"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="357,167,435,192"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="399,119,399,153,393,153,393,119"/>
 </map>

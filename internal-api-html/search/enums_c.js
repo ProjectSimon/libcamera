@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['range_2525',['Range',['../classlibcamera_1_1ColorSpace.html#ad3dd58d644ebcee4201886e4619f118f',1,'libcamera::ColorSpace']]],
-  ['reuseflag_2526',['ReuseFlag',['../classlibcamera_1_1Request.html#a81bca5d1ba778455434506574e4286fa',1,'libcamera::Request']]],
-  ['role_2527',['Role',['../classlibcamera_1_1ControlSerializer.html#ab9e1ddb99053ced82820d33788e1d3c5',1,'libcamera::ControlSerializer']]]
+  ['packing_0',['Packing',['../classlibcamera_1_1BayerFormat.html#a2c2c8def2a008fae9fd23616e59086a7',1,'libcamera::BayerFormat']]],
+  ['primaries_1',['Primaries',['../classlibcamera_1_1ColorSpace.html#a03b56b3ffdc2338345c15d08143260ba',1,'libcamera::ColorSpace']]],
+  ['proxystate_2',['ProxyState',['../classlibcamera_1_1IPAProxy.html#ae59a8a916c5e244be8bdd6860503886f',1,'libcamera::IPAProxy']]]
 ];

@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['noisereductionmodefast_1070',['NoiseReductionModeFast',['../namespacelibcamera_1_1controls_1_1draft.html#a1b20de6837fe558585420060c1eb9c19acc8dc1f8e9201da6063e4dcb13909e8c',1,'libcamera::controls::draft']]],
-  ['noisereductionmodehighquality_1071',['NoiseReductionModeHighQuality',['../namespacelibcamera_1_1controls_1_1draft.html#a1b20de6837fe558585420060c1eb9c19a25d579ef22b374ffa4b4ac24c1067111',1,'libcamera::controls::draft']]],
-  ['noisereductionmodeminimal_1072',['NoiseReductionModeMinimal',['../namespacelibcamera_1_1controls_1_1draft.html#a1b20de6837fe558585420060c1eb9c19aa65618a99630bfe5b15d5cda5f231277',1,'libcamera::controls::draft']]],
-  ['noisereductionmodeoff_1073',['NoiseReductionModeOff',['../namespacelibcamera_1_1controls_1_1draft.html#a1b20de6837fe558585420060c1eb9c19ab4fff75b7c2146e863343ef4878a432a',1,'libcamera::controls::draft']]],
-  ['noisereductionmodezsl_1074',['NoiseReductionModeZSL',['../namespacelibcamera_1_1controls_1_1draft.html#a1b20de6837fe558585420060c1eb9c19aba70ba432ee6b788b978d2081558574d',1,'libcamera::controls::draft']]]
+  ['meteringcentreweighted_0',['MeteringCentreWeighted',['../namespacelibcamera_1_1controls.html#aacb79b8f4e3078976993af97cec6d4fca1883a65339da411055005d04c643d3b5',1,'libcamera::controls']]],
+  ['meteringcustom_1',['MeteringCustom',['../namespacelibcamera_1_1controls.html#aacb79b8f4e3078976993af97cec6d4fcac81bf69da16a1b0e989fa65b58f58f30',1,'libcamera::controls']]],
+  ['meteringmatrix_2',['MeteringMatrix',['../namespacelibcamera_1_1controls.html#aacb79b8f4e3078976993af97cec6d4fcaa61960c705e376114f9c7c6cc7ce87db',1,'libcamera::controls']]],
+  ['meteringspot_3',['MeteringSpot',['../namespacelibcamera_1_1controls.html#aacb79b8f4e3078976993af97cec6d4fcae14bf89ae3d97f4b4b1bafd8f020e8ef',1,'libcamera::controls']]],
+  ['mono_4',['MONO',['../namespacelibcamera_1_1properties_1_1draft.html#ae4dac9d6f57db34b666c70f88196e092ace1d6e05bf340fd82fcac43ac8380ece',1,'libcamera::properties::draft']]]
 ];

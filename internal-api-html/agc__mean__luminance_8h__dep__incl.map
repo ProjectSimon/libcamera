@@ -1,4 +1,5 @@
 <map id="src/ipa/libipa/agc_mean_luminance.h" name="src/ipa/libipa/agc_mean_luminance.h">
-<area shape="rect" id="node1" title="Base class implementing mean luminance AEGC." alt="" coords="14,5,167,47"/>
-<area shape="rect" id="node2" href="$agc_8h.html" title=" " alt="" coords="5,95,176,136"/>
+<area shape="rect" id="Node000001" title="Base class implementing mean luminance AEGC." alt="" coords="14,5,167,45"/>
+<area shape="rect" id="Node000002" href="$agc_8h.html" title=" " alt="" coords="5,93,176,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,59,93,93,88,93,88,59"/>
 </map>

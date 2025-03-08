@@ -1,5 +1,0 @@
-<map id="libcamera::ipa::CameraSensorHelper::AnalogueGainConstants" name="libcamera::ipa::CameraSensorHelper::AnalogueGainConstants">
-<area shape="rect" id="node1" title="Analogue gain model constants." alt="" coords="364,39,593,80"/>
-<area shape="rect" id="node2" href="$structlibcamera_1_1ipa_1_1CameraSensorHelper_1_1AnalogueGainLinearConstants.html" title="Analogue gain constants for the linear gain model." alt="" coords="5,5,275,47"/>
-<area shape="rect" id="node3" href="$structlibcamera_1_1ipa_1_1CameraSensorHelper_1_1AnalogueGainExpConstants.html" title="Analogue gain constants for the exponential gain model." alt="" coords="13,71,267,112"/>
-</map>

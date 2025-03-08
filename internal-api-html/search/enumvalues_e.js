@@ -1,6 +1,10 @@
 var searchData=
 [
-  ['signalexit_2692',['SignalExit',['../classlibcamera_1_1Process.html#a826f917f3d1118206f0621254db23f21af193df19fb924fff7384bbdcb1037452',1,'libcamera::Process']]],
-  ['stillcapture_2693',['StillCapture',['../namespacelibcamera.html#a295d1f5e7828d95c0b0aabc0a8baac03ab6d498e09460a56e1c69af18830c9b9a',1,'libcamera']]],
-  ['systemheap_2694',['SystemHeap',['../classlibcamera_1_1DmaBufAllocator.html#a9851564b25894680b3691d7fc9d92a21ab64c7aa121df3b9c86823aa5c3c3ccf8',1,'libcamera::DmaBufAllocator']]]
+  ['pisp1_0',['PISP1',['../classlibcamera_1_1BayerFormat.html#a2c2c8def2a008fae9fd23616e59086a7a48b7caf82273abe98560a047b013f4f0',1,'libcamera::BayerFormat']]],
+  ['pisp2_1',['PISP2',['../classlibcamera_1_1BayerFormat.html#a2c2c8def2a008fae9fd23616e59086a7a54955f0203dab85ad82efebb2371b4ed',1,'libcamera::BayerFormat']]],
+  ['private_2',['Private',['../classlibcamera_1_1File.html#a128efbbcacb7cdaa1986ffc943e89ae0a47f9082fc380ca62d531096aa1d110f1',1,'libcamera::File']]],
+  ['proxy_3',['Proxy',['../classlibcamera_1_1ControlSerializer.html#ab9e1ddb99053ced82820d33788e1d3c5af56ec2ab97d604832d90f6394e3f341f',1,'libcamera::ControlSerializer']]],
+  ['proxyrunning_4',['ProxyRunning',['../classlibcamera_1_1IPAProxy.html#ae59a8a916c5e244be8bdd6860503886fa5693bea4bc91f54262d7cc997a4ce905',1,'libcamera::IPAProxy']]],
+  ['proxystopped_5',['ProxyStopped',['../classlibcamera_1_1IPAProxy.html#ae59a8a916c5e244be8bdd6860503886fac9ed4dc1759305a24dc8976966b4779d',1,'libcamera::IPAProxy']]],
+  ['proxystopping_6',['ProxyStopping',['../classlibcamera_1_1IPAProxy.html#ae59a8a916c5e244be8bdd6860503886fab89e2a142e3398b19d9c24c28fb33dba',1,'libcamera::IPAProxy']]]
 ];

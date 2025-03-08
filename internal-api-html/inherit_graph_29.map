@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structlibcamera_1_1FrameBuffer_1_1Plane.html" title="A memory region to store a single plane of a frame." alt="" coords="5,5,180,47"/>
+<area shape="rect" id="Node000000" href="$classlibcamera_1_1EventDispatcher.html" title="Interface to manage the libcamera events and timers." alt="" coords="5,5,208,31"/>
+<area shape="rect" id="Node000001" href="$classlibcamera_1_1EventDispatcherPoll.html" title="A poll&#45;based event dispatcher." alt="" coords="256,5,483,31"/>
+<area shape="poly" id="edge28_Node000000_Node000001" title=" " alt="" coords="222,15,256,15,256,21,222,21"/>
 </map>

@@ -1,5 +1,7 @@
 <map id="libcamera::PipelineHandler" name="libcamera::PipelineHandler">
-<area shape="rect" id="node1" title="Create and manage cameras based on a set of media devices." alt="" coords="121,95,319,121"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,229,47"/>
-<area shape="rect" id="node3" href="$classlibcamera_1_1Object.html" title="Base object to support automatic signal disconnection." alt="" coords="254,13,391,39"/>
+<area shape="rect" id="Node000001" title="Create and manage cameras based on a set of media devices." alt="" coords="121,93,319,119"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,229,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="155,52,206,91,203,95,152,56"/>
+<area shape="rect" id="Node000003" href="$classlibcamera_1_1Object.html" title="Base object to support automatic signal disconnection." alt="" coords="254,13,391,38"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="298,49,237,95,234,91,295,44"/>
 </map>

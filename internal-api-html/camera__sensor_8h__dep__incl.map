@@ -1,5 +1,7 @@
 <map id="include/libcamera/internal/camera_sensor.h" name="include/libcamera/internal/camera_sensor.h">
-<area shape="rect" id="node1" title="A camera sensor." alt="" coords="13,5,205,47"/>
-<area shape="rect" id="node2" href="$software__isp_8h_source.html" title=" " alt="" coords="5,95,212,136"/>
-<area shape="rect" id="node3" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="23,184,194,225"/>
+<area shape="rect" id="Node000001" title="A camera sensor." alt="" coords="13,5,205,45"/>
+<area shape="rect" id="Node000002" href="$software__isp_8h_source.html" title=" " alt="" coords="5,93,212,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,59,111,93,106,93,106,59"/>
+<area shape="rect" id="Node000003" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="23,181,194,221"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="111,147,111,181,106,181,106,147"/>
 </map>

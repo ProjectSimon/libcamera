@@ -1,6 +1,9 @@
 <map id="libcamera::ipa::ipu3::IPASessionConfiguration" name="libcamera::ipa::ipu3::IPASessionConfiguration">
-<area shape="rect" id="node1" title="Session configuration for the IPA module." alt="" coords="109,215,296,256"/>
-<area shape="rect" id="node2" href="$classlibcamera_1_1utils_1_1Duration.html" title="Helper class from std::chrono::duration that represents a time duration in nanoseconds with double pr..." alt="" coords="5,96,192,123"/>
-<area shape="rect" id="node3" title=" " alt="" coords="17,5,181,47"/>
-<area shape="rect" id="node4" href="$classlibcamera_1_1Size.html" title="Describe a two&#45;dimensional size." alt="" coords="216,96,339,123"/>
+<area shape="rect" id="Node000001" title="Session configuration for the IPA module." alt="" coords="49,212,236,252"/>
+<area shape="rect" id="Node000002" href="$classlibcamera_1_1Size.html" title="Describe a two&#45;dimensional size." alt="" coords="5,95,128,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,133,81,160,94,186,117,210,113,214,90,190,76,162,68,134"/>
+<area shape="rect" id="Node000003" href="$classlibcamera_1_1utils_1_1Duration.html" title="Helper class from std::chrono::duration that represents a time duration in nanoseconds with double pr..." alt="" coords="152,95,339,120"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="234,133,193,190,168,214,164,210,189,186,229,130"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="163,5,327,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="248,59,248,94,243,94,243,59"/>
 </map>

@@ -1,3 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classlibcamera_1_1PixelFormat.html" title="libcamera image pixel format" alt="" coords="5,5,177,32"/>
+<area shape="rect" id="Node000000" href="$classlibcamera_1_1MediaObject.html" title="Base class for all media objects." alt="" coords="5,55,183,80"/>
+<area shape="rect" id="Node000001" href="$classlibcamera_1_1MediaEntity.html" title="The MediaEntity represents an entity in the media graph." alt="" coords="231,5,404,31"/>
+<area shape="poly" id="edge43_Node000000_Node000001" title=" " alt="" coords="165,49,258,28,260,33,166,54"/>
+<area shape="rect" id="Node000002" href="$classlibcamera_1_1MediaLink.html" title="The MediaLink represents a link between two pads in the media graph." alt="" coords="236,55,399,80"/>
+<area shape="poly" id="edge44_Node000000_Node000002" title=" " alt="" coords="197,65,236,65,236,70,197,70"/>
+<area shape="rect" id="Node000003" href="$classlibcamera_1_1MediaPad.html" title="The MediaPad represents a pad of an entity in the media graph." alt="" coords="238,104,397,129"/>
+<area shape="poly" id="edge45_Node000000_Node000003" title=" " alt="" coords="166,80,260,101,258,107,165,86"/>
 </map>

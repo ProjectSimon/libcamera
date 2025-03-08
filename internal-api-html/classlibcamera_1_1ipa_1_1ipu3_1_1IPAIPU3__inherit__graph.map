@@ -1,6 +1,9 @@
 <map id="libcamera::ipa::ipu3::IPAIPU3" name="libcamera::ipa::ipu3::IPAIPU3">
-<area shape="rect" id="node1" title="The IPU3 IPA implementation." alt="" coords="58,155,209,196"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,80,136,107"/>
-<area shape="rect" id="node3" href="$classlibcamera_1_1ipa_1_1Module.html" title="The base class for all IPA modules." alt="" coords="161,80,231,107"/>
-<area shape="rect" id="node4" href="$classlibcamera_1_1Loggable.html" title="Base class to support log message extensions." alt="" coords="119,5,273,32"/>
+<area shape="rect" id="Node000001" title="The IPU3 IPA implementation." alt="" coords="58,152,209,192"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,136,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,113,120,150,116,154,86,116"/>
+<area shape="rect" id="Node000003" href="$classlibcamera_1_1ipa_1_1Module.html" title="The base class for all IPA modules." alt="" coords="161,79,231,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="180,116,151,154,146,150,176,113"/>
+<area shape="rect" id="Node000004" href="$classlibcamera_1_1Loggable.html" title="Base class to support log message extensions." alt="" coords="119,5,273,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="199,44,199,79,193,79,193,44"/>
 </map>

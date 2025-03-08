@@ -1,0 +1,47 @@
+<map id="include/libcamera/internal/debug_controls.h" name="include/libcamera/internal/debug_controls.h">
+<area shape="rect" id="Node000001" title="Helper to easily record debug metadata inside libcamera." alt="" coords="204,5,396,45"/>
+<area shape="rect" id="Node000002" href="$control__ids_8h.html" title="Camera controls identifiers." alt="" coords="213,93,387,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="303,46,303,79,297,79,297,46"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="156,167,212,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="283,121,216,162,213,157,280,116"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,240,56,265"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="295,121,267,157,248,177,225,194,70,242,68,237,223,190,244,173,263,153,290,117"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="81,240,151,265"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="301,119,292,155,283,176,270,194,252,206,226,218,166,240,164,235,224,213,250,201,266,190,279,173,287,154,296,118"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="1331,313,1389,339"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="387,108,659,121,1007,146,1174,163,1319,184,1427,209,1464,223,1486,238,1493,251,1493,264,1486,276,1473,286,1440,303,1404,316,1402,311,1438,298,1470,282,1482,272,1488,263,1488,253,1482,242,1461,228,1426,214,1318,189,1174,169,1006,151,659,126,387,113"/>
+<area shape="rect" id="Node000007" href="$controls_8h.html" title="Framework to manage controls related to an object." alt="" coords="521,167,676,192"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="349,116,538,161,536,166,347,121"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="521,188,320,205,197,221,70,243,69,237,196,216,320,200,521,182"/>
+<area shape="poly" id="edge11_Node000007_Node000005" title=" " alt="" coords="521,192,361,212,165,243,164,237,361,206,521,186"/>
+<area shape="poly" id="edge12_Node000007_Node000006" title=" " alt="" coords="676,179,848,184,1054,195,1236,212,1300,223,1336,238,1348,251,1356,267,1362,299,1357,300,1351,269,1343,254,1333,242,1299,229,1235,217,1054,200,847,190,676,185"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="1397,240,1472,265"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="677,181,985,198,1181,214,1379,237,1384,238,1383,243,1378,243,1181,220,984,203,676,186"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="371,240,445,265"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="569,195,453,237,451,232,567,190"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="469,240,512,265"/>
+<area shape="poly" id="edge10_Node000007_Node000010" title=" " alt="" coords="583,194,521,235,518,230,580,190"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="537,240,661,265"/>
+<area shape="poly" id="edge13_Node000007_Node000011" title=" " alt="" coords="601,192,601,226,596,226,596,192"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="685,240,747,265"/>
+<area shape="poly" id="edge14_Node000007_Node000012" title=" " alt="" coords="619,190,686,230,684,235,616,194"/>
+<area shape="rect" id="Node000013" href="$class_8h.html" title="Utilities to help constructing class interfaces." alt="" coords="176,240,347,265"/>
+<area shape="poly" id="edge15_Node000007_Node000013" title=" " alt="" coords="545,195,330,240,329,234,544,189"/>
+<area shape="rect" id="Node000015" href="$flags_8h.html" title="Enum&#45;based bit fields." alt="" coords="771,240,941,265"/>
+<area shape="poly" id="edge17_Node000007_Node000015" title=" " alt="" coords="641,189,802,234,801,239,639,195"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="1153,240,1322,265"/>
+<area shape="poly" id="edge19_Node000007_Node000017" title=" " alt="" coords="677,186,1139,237,1139,242,676,192"/>
+<area shape="rect" id="Node000018" href="$geometry_8h.html" title="Data structures related to geometric objects." alt="" coords="965,240,1129,265"/>
+<area shape="poly" id="edge20_Node000007_Node000018" title=" " alt="" coords="671,189,961,235,960,240,670,195"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="223,313,300,339"/>
+<area shape="poly" id="edge16_Node000013_Node000014" title=" " alt="" coords="264,266,264,300,259,300,259,266"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="783,313,875,339"/>
+<area shape="poly" id="edge18_Node000015_Node000016" title=" " alt="" coords="854,267,841,302,836,300,849,265"/>
+<area shape="poly" id="edge23_Node000018_Node000006" title=" " alt="" coords="1102,263,1318,311,1318,311,1317,316,1317,316,1101,268"/>
+<area shape="rect" id="Node000019" title=" " alt="" coords="900,313,985,339"/>
+<area shape="poly" id="edge21_Node000018_Node000019" title=" " alt="" coords="1031,268,973,307,970,303,1028,263"/>
+<area shape="rect" id="Node000020" title=" " alt="" coords="1010,313,1086,339"/>
+<area shape="poly" id="edge22_Node000018_Node000020" title=" " alt="" coords="1050,266,1050,300,1045,300,1044,266"/>
+<area shape="rect" id="Node000021" href="$compiler_8h_source.html" title=" " alt="" coords="1111,313,1305,339"/>
+<area shape="poly" id="edge24_Node000018_Node000021" title=" " alt="" coords="1074,263,1170,305,1168,310,1072,268"/>
+</map>

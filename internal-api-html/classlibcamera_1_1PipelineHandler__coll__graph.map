@@ -1,9 +1,16 @@
 <map id="libcamera::PipelineHandler" name="libcamera::PipelineHandler">
-<area shape="rect" id="node1" title="Create and manage cameras based on a set of media devices." alt="" coords="925,71,1124,98"/>
-<area shape="rect" id="node2" title=" " alt="" coords="584,5,808,47"/>
-<area shape="rect" id="node3" href="$classlibcamera_1_1Object.html" title="Base object to support automatic signal disconnection." alt="" coords="254,79,391,106"/>
-<area shape="rect" id="node4" href="$classlibcamera_1_1CameraManager.html" title="Provide access and manage all cameras in the system." alt="" coords="595,130,797,157"/>
-<area shape="rect" id="node5" href="$classlibcamera_1_1Extensible.html" title="Base class to manage private data through a d&#45;pointer." alt="" coords="241,138,404,165"/>
-<area shape="rect" id="node6" title=" " alt="" coords="221,189,424,245"/>
-<area shape="rect" id="node7" title=" " alt="" coords="5,203,172,230"/>
+<area shape="rect" id="Node000001" title="Create and manage cameras based on a set of media devices." alt="" coords="925,70,1124,95"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="584,5,808,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="822,45,952,67,951,73,821,50"/>
+<area shape="rect" id="Node000003" href="$classlibcamera_1_1Object.html" title="Base object to support automatic signal disconnection." alt="" coords="254,79,391,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="405,88,925,81,925,87,405,94"/>
+<area shape="rect" id="Node000004" href="$classlibcamera_1_1CameraManager.html" title="Provide access and manage all cameras in the system." alt="" coords="595,129,797,154"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="405,100,600,126,599,131,405,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="810,128,901,113,982,93,983,98,902,119,811,133"/>
+<area shape="rect" id="Node000005" href="$classlibcamera_1_1Extensible.html" title="Base class to manage private data through a d&#45;pointer." alt="" coords="241,137,404,162"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="418,145,594,141,595,146,418,150"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="221,186,424,241"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="438,199,559,179,657,152,658,157,561,184,438,204"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="5,201,172,226"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="186,211,221,211,221,216,186,216"/>
 </map>

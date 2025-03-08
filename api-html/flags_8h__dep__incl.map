@@ -1,5 +1,21 @@
 <map id="include/libcamera/base/flags.h" name="include/libcamera/base/flags.h">
-<area shape="rect" id="node1" title="Enum&#45;based bit fields." alt="" coords="20,5,193,47"/>
-<area shape="rect" id="node2" href="$camera_8h.html" title="Camera device handling." alt="" coords="5,95,208,121"/>
-<area shape="rect" id="node3" href="$libcamera_8h_source.html" title=" " alt="" coords="19,169,194,211"/>
+<area shape="rect" id="Node000001" title="Enum&#45;based bit fields." alt="" coords="276,5,450,45"/>
+<area shape="rect" id="Node000002" href="$camera_8h.html" title="Camera device handling." alt="" coords="390,262,592,287"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="409,51,438,72,469,98,496,130,518,166,523,192,519,220,501,263,496,261,514,218,517,193,513,168,492,133,465,102,435,76,406,55"/>
+<area shape="rect" id="Node000004" href="$controls_8h.html" title="Framework to manage controls related to an object." alt="" coords="165,93,372,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="331,56,284,95,281,91,328,52"/>
+<area shape="rect" id="Node000003" href="$libcamera_8h_source.html" title=" " alt="" coords="149,343,324,383"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="444,294,293,345,292,340,443,289"/>
+<area shape="poly" id="edge9_Node000004_Node000002" title=" " alt="" coords="362,119,439,137,471,150,491,165,502,190,505,217,497,262,492,261,500,217,497,191,486,168,468,155,438,142,361,124"/>
+<area shape="poly" id="edge6_Node000004_Node000003" title=" " alt="" coords="153,122,99,139,74,152,52,169,34,188,24,206,14,255,8,276,9,284,13,293,33,308,66,322,150,344,148,349,65,327,31,313,9,296,4,286,3,276,9,254,19,205,29,185,48,165,71,148,97,135,151,117"/>
+<area shape="rect" id="Node000005" href="$control__ids_8h.html" title="Camera controls identifiers." alt="" coords="24,255,198,295"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="183,124,110,143,81,155,64,168,59,178,57,189,63,211,76,233,93,253,89,256,72,237,58,213,52,189,54,177,60,165,79,150,108,138,182,119"/>
+<area shape="rect" id="Node000006" href="$property__ids_8h.html" title="Camera properties identifiers." alt="" coords="74,167,249,207"/>
+<area shape="poly" id="edge7_Node000004_Node000006" title=" " alt="" coords="243,129,189,169,186,164,240,125"/>
+<area shape="rect" id="Node000007" href="$request_8h.html" title="Describes a frame capture request to be processed by a camera." alt="" coords="274,174,476,199"/>
+<area shape="poly" id="edge10_Node000004_Node000007" title=" " alt="" coords="297,125,361,172,358,176,294,129"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="152,300,210,340,207,345,149,305"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="189,216,212,254,228,301,237,342,231,343,223,302,207,256,185,219"/>
+<area shape="poly" id="edge12_Node000007_Node000002" title=" " alt="" coords="403,205,477,260,474,264,400,210"/>
+<area shape="poly" id="edge11_Node000007_Node000003" title=" " alt="" coords="360,212,254,344,249,341,355,208"/>
 </map>

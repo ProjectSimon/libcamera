@@ -1,7 +1,11 @@
 <map id="libcamera::DebayerCpu" name="libcamera::DebayerCpu">
-<area shape="rect" id="node1" title="Class for debayering on the CPU." alt="" coords="146,276,321,303"/>
-<area shape="rect" id="node2" href="$classlibcamera_1_1Debayer.html" title="Base debayering class." alt="" coords="33,200,183,227"/>
-<area shape="rect" id="node3" href="$classlibcamera_1_1Signal.html" title=" " alt="" coords="5,81,211,123"/>
-<area shape="rect" id="node4" title=" " alt="" coords="25,5,191,32"/>
-<area shape="rect" id="node5" href="$classlibcamera_1_1Object.html" title="Base object to support automatic signal disconnection." alt="" coords="207,200,345,227"/>
+<area shape="rect" id="Node000001" title="Class for debayering on the CPU." alt="" coords="146,272,321,297"/>
+<area shape="rect" id="Node000002" href="$classlibcamera_1_1Debayer.html" title="Base debayering class." alt="" coords="33,197,183,223"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,227,215,269,212,274,139,232"/>
+<area shape="rect" id="Node000003" href="$classlibcamera_1_1Signal.html" title=" " alt="" coords="5,80,211,120"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="111,134,111,197,105,197,105,134"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="25,5,191,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="111,44,111,80,105,80,105,44"/>
+<area shape="rect" id="Node000005" href="$classlibcamera_1_1Object.html" title="Base object to support automatic signal disconnection." alt="" coords="207,197,345,223"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="264,236,243,273,238,270,260,234"/>
 </map>

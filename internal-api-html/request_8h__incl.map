@@ -1,28 +1,69 @@
 <map id="include/libcamera/request.h" name="include/libcamera/request.h">
-<area shape="rect" id="node1" title="Describes a frame capture request to be processed by a camera." alt="" coords="666,5,869,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="127,80,178,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="521,319,598,345"/>
-<area shape="rect" id="node4" title=" " alt="" coords="1336,244,1412,271"/>
-<area shape="rect" id="node5" title=" " alt="" coords="805,162,876,189"/>
-<area shape="rect" id="node6" title=" " alt="" coords="1719,244,1778,271"/>
-<area shape="rect" id="node7" href="$class_8h.html" title="Utilities to help constructing class interfaces." alt="" coords="474,244,645,271"/>
-<area shape="rect" id="node8" href="$signal_8h.html" title="Signal &amp; slot implementation." alt="" coords="203,80,380,107"/>
-<area shape="rect" id="node15" href="$controls_8h.html" title="Framework to manage controls related to an object." alt="" coords="1169,80,1323,107"/>
-<area shape="rect" id="node25" href="$fence_8h.html" title="Definition of the Fence class." alt="" coords="559,80,698,107"/>
-<area shape="rect" id="node9" title=" " alt="" coords="315,162,401,189"/>
-<area shape="rect" id="node10" title=" " alt="" coords="247,162,290,189"/>
-<area shape="rect" id="node11" title=" " alt="" coords="164,244,256,271"/>
-<area shape="rect" id="node12" href="$bound__method_8h.html" title="Method bind and invocation." alt="" coords="5,155,172,196"/>
-<area shape="rect" id="node13" title=" " alt="" coords="85,244,140,271"/>
-<area shape="rect" id="node14" title=" " alt="" coords="335,244,395,271"/>
-<area shape="rect" id="node16" title=" " alt="" coords="1786,162,1861,189"/>
-<area shape="rect" id="node17" title=" " alt="" coords="901,162,975,189"/>
-<area shape="rect" id="node18" title=" " alt="" coords="999,162,1042,189"/>
-<area shape="rect" id="node19" title=" " alt="" coords="1067,162,1191,189"/>
-<area shape="rect" id="node20" title=" " alt="" coords="1215,162,1277,189"/>
-<area shape="rect" id="node21" title=" " alt="" coords="1301,162,1471,189"/>
-<area shape="rect" id="node22" href="$geometry_8h.html" title="Data structures related to geometric objects." alt="" coords="1547,162,1711,189"/>
-<area shape="rect" id="node23" title=" " alt="" coords="1586,244,1671,271"/>
-<area shape="rect" id="node24" href="$compiler_8h_source.html" title=" " alt="" coords="818,244,1013,271"/>
-<area shape="rect" id="node26" href="$unique__fd_8h.html" title="File descriptor wrapper that owns a file descriptor." alt="" coords="527,162,730,189"/>
+<area shape="rect" id="Node000001" title="Describes a frame capture request to be processed by a camera." alt="" coords="763,5,966,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="754,159,805,185"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="861,32,795,148,790,146,856,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="581,313,658,339"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="966,18,1193,22,1478,32,1753,49,1867,61,1953,76,2059,105,2111,123,2158,145,2193,170,2206,184,2214,199,2218,215,2216,231,2208,249,2193,267,2169,278,2122,287,1969,301,1757,311,1511,319,1014,326,672,327,672,322,1014,321,1511,313,1757,306,1969,296,2121,281,2168,273,2190,263,2203,246,2211,230,2213,215,2209,201,2202,187,2190,174,2155,150,2109,128,2058,110,1952,81,1866,66,1753,54,1477,37,1193,27,966,23"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="2103,240,2179,265"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="966,19,1433,38,1683,55,1785,65,1864,76,1985,95,2035,112,2090,150,2107,167,2119,187,2136,226,2131,228,2115,189,2102,170,2087,154,2033,117,1984,100,1863,81,1785,70,1682,60,1433,43,966,25"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="829,159,900,185"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="867,31,867,146,862,146,862,31"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="2019,240,2078,265"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="966,20,1245,34,1593,58,1759,76,1903,96,2010,121,2046,135,2068,150,2077,169,2078,190,2065,228,2060,227,2073,189,2072,170,2064,154,2043,140,2008,126,1902,102,1759,81,1592,64,1244,39,966,26"/>
+<area shape="rect" id="Node000007" href="$class_8h.html" title="Utilities to help constructing class interfaces." alt="" coords="534,240,705,265"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="763,32,639,51,585,65,549,81,520,105,500,131,496,145,495,159,498,174,506,190,530,216,561,233,558,238,526,220,501,194,493,176,489,159,491,143,496,128,516,101,546,76,584,60,638,46,763,27"/>
+<area shape="rect" id="Node000008" href="$signal_8h.html" title="Signal &amp; slot implementation." alt="" coords="179,79,356,104"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="769,33,370,81,369,75,768,28"/>
+<area shape="rect" id="Node000015" href="$controls_8h.html" title="Framework to manage controls related to an object." alt="" coords="1126,79,1281,104"/>
+<area shape="poly" id="edge17_Node000001_Node000015" title=" " alt="" coords="920,28,1136,73,1135,78,919,33"/>
+<area shape="rect" id="Node000026" href="$fence_8h.html" title="Definition of the Fence class." alt="" coords="559,79,698,104"/>
+<area shape="poly" id="edge35_Node000001_Node000026" title=" " alt="" coords="828,33,681,77,679,72,826,28"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="622,266,622,300,617,300,617,266"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="5,159,92,185"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="236,107,94,157,93,152,235,101"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="117,159,159,185"/>
+<area shape="poly" id="edge10_Node000008_Node000010" title=" " alt="" coords="250,106,170,154,167,150,247,102"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="399,240,491,265"/>
+<area shape="poly" id="edge11_Node000008_Node000011" title=" " alt="" coords="291,102,326,122,364,150,402,189,431,227,427,230,398,193,360,154,323,127,288,106"/>
+<area shape="rect" id="Node000012" href="$bound__method_8h.html" title="Method bind and invocation." alt="" coords="184,152,351,192"/>
+<area shape="poly" id="edge12_Node000008_Node000012" title=" " alt="" coords="270,104,270,138,265,138,265,104"/>
+<area shape="poly" id="edge13_Node000012_Node000003" title=" " alt="" coords="272,192,281,229,290,248,304,263,323,275,350,285,420,301,498,312,567,318,567,324,497,317,419,306,348,290,320,279,300,267,286,251,276,231,266,193"/>
+<area shape="poly" id="edge15_Node000012_Node000011" title=" " alt="" coords="311,190,407,232,405,237,309,194"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="184,240,239,265"/>
+<area shape="poly" id="edge14_Node000012_Node000013" title=" " alt="" coords="256,194,230,230,225,227,252,191"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="315,240,375,265"/>
+<area shape="poly" id="edge16_Node000012_Node000014" title=" " alt="" coords="288,190,326,228,322,232,284,194"/>
+<area shape="poly" id="edge19_Node000015_Node000002" title=" " alt="" coords="1126,100,982,118,899,133,819,155,814,156,812,151,817,149,898,128,981,113,1125,95"/>
+<area shape="poly" id="edge22_Node000015_Node000005" title=" " alt="" coords="1138,107,1035,127,920,155,910,158,908,152,919,149,1034,122,1137,101"/>
+<area shape="poly" id="edge23_Node000015_Node000006" title=" " alt="" coords="1281,90,1475,92,1714,100,1828,108,1926,118,2000,132,2025,140,2041,150,2053,167,2058,188,2057,227,2052,227,2053,188,2048,170,2037,154,2023,145,1999,137,1926,123,1827,113,1714,106,1475,97,1281,95"/>
+<area shape="poly" id="edge26_Node000015_Node000007" title=" " alt="" coords="1126,106,1046,124,1004,138,965,154,950,164,940,174,930,185,914,194,866,213,815,228,719,246,718,240,814,223,864,208,911,190,926,180,936,170,947,160,962,150,1003,133,1045,119,1125,101"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="1763,159,1838,185"/>
+<area shape="poly" id="edge18_Node000015_Node000016" title=" " alt="" coords="1281,92,1377,98,1495,108,1624,124,1752,149,1762,152,1761,157,1751,155,1623,130,1494,113,1376,103,1281,98"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="975,159,1050,185"/>
+<area shape="poly" id="edge20_Node000015_Node000017" title=" " alt="" coords="1177,106,1054,157,1052,152,1175,102"/>
+<area shape="rect" id="Node000018" title=" " alt="" coords="1074,159,1117,185"/>
+<area shape="poly" id="edge21_Node000015_Node000018" title=" " alt="" coords="1189,106,1124,153,1121,149,1186,102"/>
+<area shape="rect" id="Node000019" title=" " alt="" coords="1141,159,1265,185"/>
+<area shape="poly" id="edge24_Node000015_Node000019" title=" " alt="" coords="1206,104,1206,145,1201,145,1201,104"/>
+<area shape="rect" id="Node000020" title=" " alt="" coords="1289,159,1352,185"/>
+<area shape="poly" id="edge25_Node000015_Node000020" title=" " alt="" coords="1222,102,1293,149,1290,154,1219,106"/>
+<area shape="rect" id="Node000021" href="$flags_8h.html" title="Enum&#45;based bit fields." alt="" coords="1569,159,1739,185"/>
+<area shape="poly" id="edge27_Node000015_Node000021" title=" " alt="" coords="1275,101,1558,149,1584,154,1583,159,1558,155,1274,107"/>
+<area shape="rect" id="Node000022" title=" " alt="" coords="1376,159,1545,185"/>
+<area shape="poly" id="edge29_Node000015_Node000022" title=" " alt="" coords="1242,101,1411,153,1409,158,1240,107"/>
+<area shape="rect" id="Node000023" href="$geometry_8h.html" title="Data structures related to geometric objects." alt="" coords="1863,159,2027,185"/>
+<area shape="poly" id="edge30_Node000015_Node000023" title=" " alt="" coords="1281,95,1535,114,1692,129,1850,149,1880,154,1879,159,1850,155,1692,135,1534,119,1281,100"/>
+<area shape="poly" id="edge28_Node000021_Node000011" title=" " alt="" coords="1603,187,1558,195,1401,211,1268,219,1040,223,813,224,680,230,522,243,505,245,504,239,522,237,679,225,813,219,1040,217,1267,214,1401,205,1558,189,1602,182"/>
+<area shape="poly" id="edge32_Node000023_Node000004" title=" " alt="" coords="1974,182,2101,232,2099,237,1972,187"/>
+<area shape="poly" id="edge33_Node000023_Node000006" title=" " alt="" coords="1962,183,2024,230,2021,234,1958,187"/>
+<area shape="rect" id="Node000024" title=" " alt="" coords="1902,240,1987,265"/>
+<area shape="poly" id="edge31_Node000023_Node000024" title=" " alt="" coords="1947,185,1947,226,1942,226,1942,185"/>
+<area shape="rect" id="Node000025" href="$compiler_8h_source.html" title=" " alt="" coords="1202,240,1397,265"/>
+<area shape="poly" id="edge34_Node000023_Node000025" title=" " alt="" coords="1892,187,1850,195,1616,225,1411,245,1410,240,1615,219,1850,189,1891,182"/>
+<area shape="poly" id="edge36_Node000026_Node000007" title=" " alt="" coords="584,106,547,124,531,137,518,153,511,172,518,191,540,215,569,232,566,237,536,219,513,193,506,172,513,151,527,134,544,120,582,102"/>
+<area shape="rect" id="Node000027" href="$unique__fd_8h.html" title="File descriptor wrapper that owns a file descriptor." alt="" coords="527,159,730,185"/>
+<area shape="poly" id="edge37_Node000026_Node000027" title=" " alt="" coords="631,104,631,145,626,145,626,104"/>
+<area shape="poly" id="edge39_Node000027_Node000007" title=" " alt="" coords="630,185,625,226,620,226,625,185"/>
+<area shape="poly" id="edge38_Node000027_Node000014" title=" " alt="" coords="588,187,388,242,387,237,587,182"/>
+<area shape="poly" id="edge40_Node000027_Node000025" title=" " alt="" coords="694,182,742,189,981,218,1189,239,1188,244,981,223,742,195,693,187"/>
 </map>

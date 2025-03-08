@@ -1,4 +1,5 @@
 <map id="libcamera::PipelineHandlerFactoryBase" name="libcamera::PipelineHandlerFactoryBase">
-<area shape="rect" id="node1" title="Base class for pipeline handler factories." alt="" coords="11,5,209,47"/>
-<area shape="rect" id="node2" href="$classlibcamera_1_1PipelineHandlerFactory.html" title="Registration of PipelineHandler classes and creation of instances." alt="" coords="5,95,215,136"/>
+<area shape="rect" id="Node000001" title="Base class for pipeline handler factories." alt="" coords="11,5,209,45"/>
+<area shape="rect" id="Node000002" href="$classlibcamera_1_1PipelineHandlerFactory.html" title="Registration of PipelineHandler classes and creation of instances." alt="" coords="5,93,215,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,59,113,93,107,93,107,59"/>
 </map>

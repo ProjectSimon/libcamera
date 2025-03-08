@@ -1,7 +1,11 @@
 <map id="libcamera::CameraManager" name="libcamera::CameraManager">
-<area shape="rect" id="node1" title="Provide access and manage all cameras in the system." alt="" coords="584,56,787,83"/>
-<area shape="rect" id="node2" href="$classlibcamera_1_1Object.html" title="Base object to support automatic signal disconnection." alt="" coords="254,5,391,32"/>
-<area shape="rect" id="node3" href="$classlibcamera_1_1Extensible.html" title="Base class to manage private data through a d&#45;pointer." alt="" coords="241,56,404,83"/>
-<area shape="rect" id="node4" title=" " alt="" coords="221,107,424,163"/>
-<area shape="rect" id="node5" title=" " alt="" coords="5,121,172,148"/>
+<area shape="rect" id="Node000001" title="Provide access and manage all cameras in the system." alt="" coords="584,55,787,80"/>
+<area shape="rect" id="Node000002" href="$classlibcamera_1_1Object.html" title="Base object to support automatic signal disconnection." alt="" coords="254,5,391,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="406,26,560,46,602,52,601,57,560,51,405,31"/>
+<area shape="rect" id="Node000003" href="$classlibcamera_1_1Extensible.html" title="Base class to manage private data through a d&#45;pointer." alt="" coords="241,55,404,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="418,65,584,65,584,70,418,70"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="221,104,424,159"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="438,118,559,99,643,78,645,83,561,105,438,123"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,119,172,144"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="186,129,221,129,221,134,186,134"/>
 </map>

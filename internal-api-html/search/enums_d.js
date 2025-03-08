@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['seal_2528',['Seal',['../classlibcamera_1_1MemFd.html#a37a1a2ad43912f4beae004b2cd1c742a',1,'libcamera::MemFd']]],
-  ['status_2529',['Status',['../classlibcamera_1_1CameraConfiguration.html#a64163f21db2fe1ce0a6af5a6f6847744',1,'libcamera::CameraConfiguration::Status()'],['../structlibcamera_1_1FrameMetadata.html#a0ba5ab50b5169a1d94f6963c429c9846',1,'libcamera::FrameMetadata::Status()'],['../classlibcamera_1_1Request.html#a2209ba8d51af8167b25f6e3e94d5c45b',1,'libcamera::Request::Status()']]],
-  ['streamrole_2530',['StreamRole',['../namespacelibcamera.html#a295d1f5e7828d95c0b0aabc0a8baac03',1,'libcamera']]]
+  ['range_0',['Range',['../classlibcamera_1_1ColorSpace.html#ad3dd58d644ebcee4201886e4619f118f',1,'libcamera::ColorSpace']]],
+  ['reuseflag_1',['ReuseFlag',['../classlibcamera_1_1Request.html#a81bca5d1ba778455434506574e4286fa',1,'libcamera::Request']]],
+  ['role_2',['Role',['../classlibcamera_1_1ControlSerializer.html#ab9e1ddb99053ced82820d33788e1d3c5',1,'libcamera::ControlSerializer']]]
 ];

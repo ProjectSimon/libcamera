@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structlibcamera_1_1DelayedControls_1_1ControlParams.html" title="Parameters associated with controls handled by the DelayedControls helper class." alt="" coords="5,5,208,47"/>
+<area shape="rect" id="Node000000" href="$classlibcamera_1_1ConverterFactoryBase.html" title="Base class for converter factories." alt="" coords="5,13,244,38"/>
+<area shape="rect" id="Node000001" href="$classlibcamera_1_1ConverterFactory.html" title="Registration of ConverterFactory classes and creation of instances." alt="" coords="292,5,499,45"/>
+<area shape="poly" id="edge14_Node000000_Node000001" title=" " alt="" coords="258,23,292,23,292,28,258,28"/>
 </map>

@@ -1,9 +1,18 @@
 <map id="build/include/libcamera/control_ids.h" name="build/include/libcamera/control_ids.h">
-<area shape="rect" id="node1" title="Camera controls identifiers." alt="" coords="359,5,533,47"/>
-<area shape="rect" id="node2" href="$camera__sensor_8h.html" title="A camera sensor." alt="" coords="13,95,205,136"/>
-<area shape="rect" id="node5" href="$camera__sensor__properties_8h.html" title="Database of camera sensor properties." alt="" coords="229,95,439,136"/>
-<area shape="rect" id="node6" href="$ipa__data__serializer_8h.html" title="IPA Data Serializer." alt="" coords="463,95,655,136"/>
-<area shape="rect" id="node7" href="$libcamera_8h_source.html" title=" " alt="" coords="680,95,855,136"/>
-<area shape="rect" id="node3" href="$software__isp_8h_source.html" title=" " alt="" coords="5,184,212,225"/>
-<area shape="rect" id="node4" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="23,273,194,315"/>
+<area shape="rect" id="Node000001" title="Camera controls identifiers." alt="" coords="273,5,448,45"/>
+<area shape="rect" id="Node000002" href="$libcamera_8h_source.html" title=" " alt="" coords="5,93,180,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="290,52,152,96,151,91,288,47"/>
+<area shape="rect" id="Node000003" href="$camera__sensor_8h.html" title="A camera sensor." alt="" coords="193,181,385,221"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="291,54,265,71,246,95,240,116,246,139,258,161,272,180,268,183,253,164,241,141,235,116,241,92,262,67,288,49"/>
+<area shape="rect" id="Node000006" href="$camera__sensor__properties_8h.html" title="Database of camera sensor properties." alt="" coords="255,93,466,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="363,59,363,93,358,93,358,59"/>
+<area shape="rect" id="Node000007" href="$debug__controls_8h.html" title="Helper to easily record debug metadata inside libcamera." alt="" coords="490,93,682,133"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="424,48,538,91,536,96,422,53"/>
+<area shape="rect" id="Node000008" href="$ipa__data__serializer_8h.html" title="IPA Data Serializer." alt="" coords="706,93,898,133"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="462,44,706,91,705,96,461,49"/>
+<area shape="rect" id="Node000004" href="$software__isp_8h_source.html" title=" " alt="" coords="185,269,392,309"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="291,235,291,269,286,269,286,235"/>
+<area shape="rect" id="Node000005" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="203,357,374,397"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="291,323,291,357,286,357,286,323"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="338,146,307,183,303,179,334,142"/>
 </map>

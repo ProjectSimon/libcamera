@@ -65,7 +65,16 @@ var menudata={children:[
 {text:"t",url:"namespacemembers_vars.html#index_t"},
 {text:"u",url:"namespacemembers_vars.html#index_u"}]},
 {text:"Typedefs",url:"namespacemembers_type.html"},
-{text:"Enumerations",url:"namespacemembers_enum.html"},
+{text:"Enumerations",url:"namespacemembers_enum.html",children:[
+{text:"a",url:"namespacemembers_enum.html#index_a"},
+{text:"c",url:"namespacemembers_enum.html#index_c"},
+{text:"f",url:"namespacemembers_enum.html#index_f"},
+{text:"h",url:"namespacemembers_enum.html#index_h"},
+{text:"l",url:"namespacemembers_enum.html#index_l"},
+{text:"n",url:"namespacemembers_enum.html#index_n"},
+{text:"o",url:"namespacemembers_enum.html#index_o"},
+{text:"s",url:"namespacemembers_enum.html#index_s"},
+{text:"t",url:"namespacemembers_enum.html#index_t"}]},
 {text:"Enumerator",url:"namespacemembers_eval.html",children:[
 {text:"a",url:"namespacemembers_eval.html#index_a"},
 {text:"b",url:"namespacemembers_eval.html#index_b"},
@@ -78,6 +87,7 @@ var menudata={children:[
 {text:"m",url:"namespacemembers_eval.html#index_m"},
 {text:"n",url:"namespacemembers_eval.html#index_n"},
 {text:"r",url:"namespacemembers_eval.html#index_r"},
+{text:"s",url:"namespacemembers_eval.html#index_s"},
 {text:"t",url:"namespacemembers_eval.html#index_t"}]}]}]},
 {text:"Classes",url:"annotated.html",children:[
 {text:"Class List",url:"annotated.html"},

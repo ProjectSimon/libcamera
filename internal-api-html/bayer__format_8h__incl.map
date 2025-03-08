@@ -1,11 +1,26 @@
 <map id="include/libcamera/internal/bayer_format.h" name="include/libcamera/internal/bayer_format.h">
-<area shape="rect" id="node1" title="Class to represent Bayer formats and manipulate them." alt="" coords="75,5,267,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="133,259,209,285"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,259,76,285"/>
-<area shape="rect" id="node4" title=" " alt="" coords="598,259,657,285"/>
-<area shape="rect" id="node5" href="$pixel__format_8h.html" title="libcamera pixel format" alt="" coords="79,184,264,211"/>
-<area shape="rect" id="node6" href="$v4l2__pixelformat_8h.html" title="V4L2 Pixel Format." alt="" coords="337,95,485,136"/>
-<area shape="rect" id="node7" title=" " alt="" coords="503,184,589,211"/>
-<area shape="rect" id="node8" title=" " alt="" coords="665,184,728,211"/>
-<area shape="rect" id="node9" title=" " alt="" coords="289,184,427,211"/>
+<area shape="rect" id="Node000001" title="Class to represent Bayer formats and manipulate them." alt="" coords="75,5,267,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="133,255,209,280"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="155,47,108,105,86,142,69,182,65,194,68,205,92,231,122,248,119,253,88,235,64,208,60,194,63,180,81,139,104,101,151,44"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,255,76,280"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="138,48,110,68,86,95,66,132,54,171,44,241,39,240,49,170,61,129,81,92,107,64,135,43"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="598,255,657,280"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="268,35,397,55,540,86,607,105,666,127,712,152,743,180,749,193,748,206,731,227,702,244,670,256,669,251,700,239,727,223,743,204,743,194,738,183,709,156,664,132,605,110,539,91,396,61,267,41"/>
+<area shape="rect" id="Node000005" href="$pixel__format_8h.html" title="libcamera pixel format" alt="" coords="79,181,264,207"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="174,46,174,168,169,168,169,46"/>
+<area shape="rect" id="Node000006" href="$v4l2__pixelformat_8h.html" title="V4L2 Pixel Format." alt="" coords="337,93,485,133"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="225,43,347,86,345,91,223,48"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="174,207,174,241,169,241,169,207"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="152,209,75,250,73,246,149,204"/>
+<area shape="poly" id="edge7_Node000005_Node000004" title=" " alt="" coords="245,204,584,257,584,262,244,209"/>
+<area shape="poly" id="edge10_Node000006_Node000002" title=" " alt="" coords="429,132,447,169,449,189,441,208,427,221,405,231,348,247,283,258,223,265,222,259,282,253,347,242,403,226,424,216,437,205,444,189,442,170,424,135"/>
+<area shape="poly" id="edge11_Node000006_Node000003" title=" " alt="" coords="337,123,263,131,183,143,113,161,86,171,68,183,58,196,51,210,44,241,39,240,46,209,53,193,64,179,84,167,111,155,182,138,262,125,337,117"/>
+<area shape="poly" id="edge12_Node000006_Node000004" title=" " alt="" coords="487,122,548,142,578,158,604,180,621,209,628,241,623,242,616,211,600,183,575,162,546,147,485,127"/>
+<area shape="poly" id="edge15_Node000006_Node000005" title=" " alt="" coords="355,136,220,180,219,175,353,131"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="503,181,589,207"/>
+<area shape="poly" id="edge9_Node000006_Node000007" title=" " alt="" coords="445,131,516,172,513,177,442,136"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="665,181,728,207"/>
+<area shape="poly" id="edge13_Node000006_Node000008" title=" " alt="" coords="480,131,652,178,651,183,479,136"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="289,181,427,207"/>
+<area shape="poly" id="edge14_Node000006_Node000009" title=" " alt="" coords="401,135,376,171,372,168,396,132"/>
 </map>

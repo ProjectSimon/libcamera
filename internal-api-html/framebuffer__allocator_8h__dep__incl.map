@@ -1,4 +1,5 @@
 <map id="include/libcamera/framebuffer_allocator.h" name="include/libcamera/framebuffer_allocator.h">
-<area shape="rect" id="node1" title="FrameBuffer allocator." alt="" coords="5,5,224,47"/>
-<area shape="rect" id="node2" href="$libcamera_8h_source.html" title=" " alt="" coords="27,95,202,136"/>
+<area shape="rect" id="Node000001" title="FrameBuffer allocator." alt="" coords="5,5,224,45"/>
+<area shape="rect" id="Node000002" href="$libcamera_8h_source.html" title=" " alt="" coords="27,93,202,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,59,117,93,112,93,112,59"/>
 </map>

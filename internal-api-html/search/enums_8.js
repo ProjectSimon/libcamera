@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['mapflag_2516',['MapFlag',['../classlibcamera_1_1File.html#a128efbbcacb7cdaa1986ffc943e89ae0',1,'libcamera::File::MapFlag()'],['../classlibcamera_1_1MappedFrameBuffer.html#a1d9341a27d2d986c51faf79c68e312bf',1,'libcamera::MappedFrameBuffer::MapFlag()']]],
-  ['mergepolicy_2517',['MergePolicy',['../classlibcamera_1_1ControlList.html#a61c8b9a57df34e40716d3664d24df80d',1,'libcamera::ControlList']]]
+  ['lensshadingmapmodeenum_0',['LensShadingMapModeEnum',['../namespacelibcamera_1_1controls_1_1draft.html#a92a006a51019b636613c35a4ae25ff26',1,'libcamera::controls::draft']]],
+  ['locationenum_1',['LocationEnum',['../namespacelibcamera_1_1properties.html#a1c909e0747a35f79a92a566803f9b577',1,'libcamera::properties']]],
+  ['loggingtarget_2',['LoggingTarget',['../namespacelibcamera.html#ac7785b09b0faadf7fb6e3536795e3d1f',1,'libcamera']]],
+  ['logseverity_3',['LogSeverity',['../namespacelibcamera.html#a68f26f5a54a5bb105f2e7422215a0ca3',1,'libcamera']]]
 ];

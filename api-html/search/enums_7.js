@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['primaries_962',['Primaries',['../classlibcamera_1_1ColorSpace.html#a03b56b3ffdc2338345c15d08143260ba',1,'libcamera::ColorSpace']]]
+  ['noisereductionmodeenum_0',['NoiseReductionModeEnum',['../namespacelibcamera_1_1controls_1_1draft.html#a1b20de6837fe558585420060c1eb9c19',1,'libcamera::controls::draft']]]
 ];

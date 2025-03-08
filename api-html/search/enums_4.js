@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['mergepolicy_959',['MergePolicy',['../classlibcamera_1_1ControlList.html#a61c8b9a57df34e40716d3664d24df80d',1,'libcamera::ControlList']]]
+  ['hdrchannelenum_0',['HdrChannelEnum',['../namespacelibcamera_1_1controls.html#ae0b385406bfae9e3f8f52632dee63c63',1,'libcamera::controls']]],
+  ['hdrmodeenum_1',['HdrModeEnum',['../namespacelibcamera_1_1controls.html#a716de7c2d3556258c6787c02e41ee85e',1,'libcamera::controls']]]
 ];

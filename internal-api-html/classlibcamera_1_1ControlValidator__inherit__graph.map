@@ -1,4 +1,5 @@
 <map id="libcamera::ControlValidator" name="libcamera::ControlValidator">
-<area shape="rect" id="node1" title="Interface for the control validator." alt="" coords="5,5,205,32"/>
-<area shape="rect" id="node2" href="$classlibcamera_1_1CameraControlValidator.html" title="A control validator for Camera instances." alt="" coords="9,80,202,121"/>
+<area shape="rect" id="Node000001" title="Interface for the control validator." alt="" coords="5,5,205,31"/>
+<area shape="rect" id="Node000002" href="$classlibcamera_1_1CameraControlValidator.html" title="A control validator for Camera instances." alt="" coords="9,79,202,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,44,108,79,103,79,103,44"/>
 </map>

@@ -1,5 +1,8 @@
 <map id="include/libcamera/orientation.h" name="include/libcamera/orientation.h">
-<area shape="rect" id="node1" title="Image orientation definition." alt="" coords="63,5,289,32"/>
-<area shape="rect" id="node2" href="$camera_8h.html" title="Camera device handling." alt="" coords="5,80,208,107"/>
-<area shape="rect" id="node3" href="$libcamera_8h_source.html" title=" " alt="" coords="89,155,263,196"/>
+<area shape="rect" id="Node000001" title="Image orientation definition." alt="" coords="5,5,231,31"/>
+<area shape="rect" id="Node000002" href="$libcamera_8h_source.html" title=" " alt="" coords="31,152,205,192"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,42,86,60,77,79,75,98,80,117,102,150,97,153,75,119,69,99,71,78,82,57,95,39"/>
+<area shape="rect" id="Node000003" href="$camera_8h.html" title="Camera device handling." alt="" coords="86,79,289,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="141,39,178,77,174,80,137,43"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="170,116,137,154,133,150,166,113"/>
 </map>

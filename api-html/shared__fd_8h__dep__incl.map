@@ -1,7 +1,13 @@
 <map id="include/libcamera/base/shared_fd.h" name="include/libcamera/base/shared_fd.h">
-<area shape="rect" id="node1" title="File descriptor wrapper." alt="" coords="140,5,313,47"/>
-<area shape="rect" id="node2" href="$framebuffer_8h.html" title="Frame buffer handling." alt="" coords="111,95,342,121"/>
-<area shape="rect" id="node3" href="$stream_8h.html" title="Video stream for a Camera." alt="" coords="59,169,259,196"/>
-<area shape="rect" id="node5" href="$libcamera_8h_source.html" title=" " alt="" coords="158,319,333,360"/>
-<area shape="rect" id="node4" href="$camera_8h.html" title="Camera device handling." alt="" coords="5,244,208,271"/>
+<area shape="rect" id="Node000001" title="File descriptor wrapper." alt="" coords="34,5,207,45"/>
+<area shape="rect" id="Node000002" href="$framebuffer_8h.html" title="Frame buffer handling." alt="" coords="5,93,236,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,59,123,93,118,93,118,59"/>
+<area shape="rect" id="Node000003" href="$libcamera_8h_source.html" title=" " alt="" coords="16,313,191,353"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="102,131,90,148,81,167,75,207,78,247,87,284,97,312,92,314,82,285,73,248,69,207,75,166,85,145,98,127"/>
+<area shape="rect" id="Node000004" href="$stream_8h.html" title="Video stream for a Camera." alt="" coords="90,167,290,192"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="143,127,181,165,177,168,140,131"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="165,203,147,220,131,241,116,279,108,314,103,313,111,277,126,239,143,217,162,199"/>
+<area shape="rect" id="Node000005" href="$camera_8h.html" title="Camera device handling." alt="" coords="141,240,343,265"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="209,202,236,238,231,241,204,205"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="211,275,138,316,135,311,208,270"/>
 </map>

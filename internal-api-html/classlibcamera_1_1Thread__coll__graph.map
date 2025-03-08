@@ -1,5 +1,7 @@
 <map id="libcamera::Thread" name="libcamera::Thread">
-<area shape="rect" id="node1" title="A thread of execution." alt="" coords="19,185,159,212"/>
-<area shape="rect" id="node2" href="$classlibcamera_1_1Signal.html" title="Generic signal and slot communication mechanism." alt="" coords="15,81,162,123"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,5,172,32"/>
+<area shape="rect" id="Node000001" title="A thread of execution." alt="" coords="19,183,159,208"/>
+<area shape="rect" id="Node000002" href="$classlibcamera_1_1Signal.html" title="Generic signal and slot communication mechanism." alt="" coords="15,80,162,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,134,91,182,86,182,86,134"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,172,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="91,44,91,80,86,80,86,44"/>
 </map>

@@ -1,5 +1,8 @@
 <map id="src/ipa/libipa/histogram.h" name="src/ipa/libipa/histogram.h">
-<area shape="rect" id="node1" title="Class to represent Histograms and manipulate them." alt="" coords="5,5,192,32"/>
-<area shape="rect" id="node2" href="$agc_8h.html" title=" " alt="" coords="13,169,184,211"/>
-<area shape="rect" id="node3" href="$agc__mean__luminance_8h.html" title="Base class implementing mean luminance AEGC." alt="" coords="79,80,233,121"/>
+<area shape="rect" id="Node000001" title="Class to represent Histograms and manipulate them." alt="" coords="5,5,192,31"/>
+<area shape="rect" id="Node000002" href="$agc_8h.html" title=" " alt="" coords="13,167,184,207"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,44,71,79,68,99,71,118,79,143,90,165,85,167,74,145,65,119,62,99,65,78,81,41"/>
+<area shape="rect" id="Node000003" href="$agc__mean__luminance_8h.html" title="Base class implementing mean luminance AEGC." alt="" coords="79,79,233,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="117,40,144,77,140,80,113,43"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="138,132,114,168,109,165,133,129"/>
 </map>

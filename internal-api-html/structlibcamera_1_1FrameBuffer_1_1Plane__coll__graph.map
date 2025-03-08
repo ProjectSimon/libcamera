@@ -1,4 +1,5 @@
 <map id="libcamera::FrameBuffer::Plane" name="libcamera::FrameBuffer::Plane">
-<area shape="rect" id="node1" title="A memory region to store a single plane of a frame." alt="" coords="5,95,180,136"/>
-<area shape="rect" id="node2" href="$classlibcamera_1_1SharedFD.html" title="RAII&#45;style wrapper for file descriptors." alt="" coords="13,5,172,32"/>
+<area shape="rect" id="Node000001" title="A memory region to store a single plane of a frame." alt="" coords="5,93,180,133"/>
+<area shape="rect" id="Node000002" href="$classlibcamera_1_1SharedFD.html" title="RAII&#45;style wrapper for file descriptors." alt="" coords="13,5,172,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,44,95,93,90,93,90,44"/>
 </map>

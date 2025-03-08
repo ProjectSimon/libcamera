@@ -1,4 +1,5 @@
 <map id="include/libcamera/internal/source_paths.h" name="include/libcamera/internal/source_paths.h">
-<area shape="rect" id="node1" title="Identify the build and source path of a not&#45;yet&#45;installed library." alt="" coords="5,5,197,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="72,95,131,121"/>
+<area shape="rect" id="Node000001" title="Identify the build and source path of a not&#45;yet&#45;installed library." alt="" coords="5,5,197,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="72,93,131,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,46,104,79,99,79,99,46"/>
 </map>

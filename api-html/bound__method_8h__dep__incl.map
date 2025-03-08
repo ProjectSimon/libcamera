@@ -1,8 +1,16 @@
 <map id="include/libcamera/base/bound_method.h" name="include/libcamera/base/bound_method.h">
-<area shape="rect" id="node1" title="Method bind and invocation." alt="" coords="166,5,339,47"/>
-<area shape="rect" id="node2" href="$signal_8h.html" title="Signal &amp; slot implementation." alt="" coords="166,95,339,136"/>
-<area shape="rect" id="node3" href="$camera_8h.html" title="Camera device handling." alt="" coords="221,266,423,293"/>
-<area shape="rect" id="node5" href="$camera__manager_8h.html" title="The camera manager." alt="" coords="5,259,196,300"/>
-<area shape="rect" id="node6" href="$request_8h.html" title="Describes a frame capture request to be processed by a camera." alt="" coords="290,184,493,211"/>
-<area shape="rect" id="node4" href="$libcamera_8h_source.html" title=" " alt="" coords="235,348,409,389"/>
+<area shape="rect" id="Node000001" title="Method bind and invocation." alt="" coords="166,5,339,45"/>
+<area shape="rect" id="Node000002" href="$signal_8h.html" title="Signal &amp; slot implementation." alt="" coords="166,93,339,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="255,59,255,93,250,93,250,59"/>
+<area shape="rect" id="Node000003" href="$camera_8h.html" title="Camera device handling." alt="" coords="221,262,423,287"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="261,146,280,206,297,236,315,260,311,263,293,239,276,208,256,148"/>
+<area shape="rect" id="Node000005" href="$camera__manager_8h.html" title="The camera manager." alt="" coords="5,255,196,295"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="227,145,121,256,117,253,223,141"/>
+<area shape="rect" id="Node000006" href="$request_8h.html" title="Describes a frame capture request to be processed by a camera." alt="" coords="290,181,493,207"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="299,138,372,179,370,183,296,142"/>
+<area shape="rect" id="Node000004" href="$libcamera_8h_source.html" title=" " alt="" coords="235,343,409,383"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="325,301,325,342,319,342,319,301"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="163,297,275,340,273,345,161,302"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="374,219,334,264,330,260,370,215"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="415,215,428,233,439,253,443,275,438,296,412,325,379,345,376,340,408,321,433,293,438,275,434,255,423,236,410,219"/>
 </map>

@@ -1,6 +1,11 @@
 <map id="libcamera::V4L2M2MConverter" name="libcamera::V4L2M2MConverter">
-<area shape="rect" id="node1" title="The V4L2 M2M converter implements the converter interface based on V4L2 M2M device." alt="" coords="5,276,228,303"/>
-<area shape="rect" id="node2" href="$classlibcamera_1_1Converter.html" title="Abstract Base Class for converter." alt="" coords="37,200,196,227"/>
-<area shape="rect" id="node3" href="$classlibcamera_1_1Signal.html" title=" " alt="" coords="14,81,219,123"/>
-<area shape="rect" id="node4" title=" " alt="" coords="33,5,200,32"/>
+<area shape="rect" id="Node000001" title="The V4L2 M2M converter implements the converter interface based on V4L2 M2M device." alt="" coords="113,272,335,297"/>
+<area shape="rect" id="Node000002" href="$classlibcamera_1_1Converter.html" title="Abstract Base Class for converter." alt="" coords="145,197,303,223"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="227,237,227,272,221,272,221,237"/>
+<area shape="rect" id="Node000003" href="$classlibcamera_1_1Signal.html" title=" " alt="" coords="5,80,211,120"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="140,128,213,195,209,199,137,131"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="25,5,191,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="111,44,111,80,105,80,105,44"/>
+<area shape="rect" id="Node000005" href="$classlibcamera_1_1Flags.html" title=" " alt="" coords="235,87,445,113"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="338,127,328,152,313,175,293,190,272,200,270,195,291,185,309,171,324,150,333,125"/>
 </map>

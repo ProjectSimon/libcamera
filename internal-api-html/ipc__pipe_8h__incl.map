@@ -1,19 +1,41 @@
 <map id="include/libcamera/internal/ipc_pipe.h" name="include/libcamera/internal/ipc_pipe.h">
-<area shape="rect" id="node1" title="IPC mechanism for IPA isolation." alt="" coords="385,5,577,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="508,184,571,211"/>
-<area shape="rect" id="node3" href="$shared__fd_8h.html" title="File descriptor wrapper." alt="" coords="310,102,513,129"/>
-<area shape="rect" id="node5" href="$signal_8h.html" title="Signal &amp; slot implementation." alt="" coords="213,184,391,211"/>
-<area shape="rect" id="node12" href="$ipc__unixsocket_8h.html" title="IPC mechanism based on Unix sockets." alt="" coords="587,95,729,136"/>
-<area shape="rect" id="node4" title=" " alt="" coords="421,348,498,375"/>
-<area shape="rect" id="node6" title=" " alt="" coords="268,266,355,293"/>
-<area shape="rect" id="node7" title=" " alt="" coords="379,266,422,293"/>
-<area shape="rect" id="node8" title=" " alt="" coords="5,348,97,375"/>
-<area shape="rect" id="node9" href="$bound__method_8h.html" title="Method bind and invocation." alt="" coords="77,259,244,300"/>
-<area shape="rect" id="node10" title=" " alt="" coords="133,348,188,375"/>
-<area shape="rect" id="node11" title=" " alt="" coords="708,348,768,375"/>
-<area shape="rect" id="node13" title=" " alt="" coords="595,184,665,211"/>
-<area shape="rect" id="node14" title=" " alt="" coords="690,184,786,211"/>
-<area shape="rect" id="node15" href="$unique__fd_8h.html" title="File descriptor wrapper that owns a file descriptor." alt="" coords="810,184,1013,211"/>
-<area shape="rect" id="node16" href="$class_8h.html" title="Utilities to help constructing class interfaces." alt="" coords="497,266,667,293"/>
-<area shape="rect" id="node17" href="$compiler_8h_source.html" title=" " alt="" coords="691,266,886,293"/>
+<area shape="rect" id="Node000001" title="IPC mechanism for IPA isolation." alt="" coords="385,5,577,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="508,181,571,207"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="499,44,514,66,527,92,537,131,541,167,536,168,532,132,522,94,509,69,494,47"/>
+<area shape="rect" id="Node000003" href="$shared__fd_8h.html" title="File descriptor wrapper." alt="" coords="310,101,513,126"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="467,47,431,91,427,88,463,44"/>
+<area shape="rect" id="Node000005" href="$signal_8h.html" title="Signal &amp; slot implementation." alt="" coords="213,181,391,207"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="385,42,338,61,317,76,300,95,293,112,290,130,296,167,291,168,285,131,287,110,296,92,313,72,335,57,383,37"/>
+<area shape="rect" id="Node000012" href="$ipc__unixsocket_8h.html" title="IPC mechanism based on Unix sockets." alt="" coords="587,93,729,133"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="521,43,608,85,606,90,518,48"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="421,343,498,368"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="416,126,457,328,452,329,411,127"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="268,262,355,287"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="306,207,311,248,306,248,301,207"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="379,262,422,287"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="318,205,377,251,374,255,315,209"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="5,343,97,368"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="216,209,126,228,90,241,67,257,57,273,51,291,50,329,45,329,46,291,52,271,63,253,87,237,125,223,215,204"/>
+<area shape="rect" id="Node000009" href="$bound__method_8h.html" title="Method bind and invocation." alt="" coords="77,255,244,295"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="282,209,208,250,205,246,280,205"/>
+<area shape="poly" id="edge9_Node000009_Node000004" title=" " alt="" coords="233,292,408,338,407,343,232,297"/>
+<area shape="poly" id="edge11_Node000009_Node000008" title=" " alt="" coords="136,297,80,337,77,332,133,293"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="133,343,188,368"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="163,295,163,329,158,329,158,295"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="708,343,768,368"/>
+<area shape="poly" id="edge12_Node000009_Node000011" title=" " alt="" coords="245,290,256,292,504,326,695,347,694,352,503,331,255,297,244,295"/>
+<area shape="poly" id="edge16_Node000012_Node000002" title=" " alt="" coords="631,136,570,176,567,172,628,131"/>
+<area shape="poly" id="edge17_Node000012_Node000005" title=" " alt="" coords="588,133,368,181,367,176,587,128"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="595,181,665,207"/>
+<area shape="poly" id="edge14_Node000012_Node000013" title=" " alt="" coords="654,134,641,169,636,167,649,133"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="690,181,786,207"/>
+<area shape="poly" id="edge15_Node000012_Node000014" title=" " alt="" coords="679,132,718,170,714,173,676,135"/>
+<area shape="rect" id="Node000015" href="$unique__fd_8h.html" title="File descriptor wrapper that owns a file descriptor." alt="" coords="810,181,1013,207"/>
+<area shape="poly" id="edge18_Node000012_Node000015" title=" " alt="" coords="719,131,862,175,860,180,718,136"/>
+<area shape="poly" id="edge19_Node000015_Node000011" title=" " alt="" coords="916,207,917,249,912,274,900,296,875,320,844,336,812,346,782,353,781,347,811,341,842,331,872,315,896,293,907,272,912,249,911,207"/>
+<area shape="rect" id="Node000016" href="$class_8h.html" title="Utilities to help constructing class interfaces." alt="" coords="497,262,667,287"/>
+<area shape="poly" id="edge20_Node000015_Node000016" title=" " alt="" coords="864,209,644,261,642,256,863,204"/>
+<area shape="rect" id="Node000017" href="$compiler_8h_source.html" title=" " alt="" coords="691,262,886,287"/>
+<area shape="poly" id="edge22_Node000015_Node000017" title=" " alt="" coords="895,209,820,257,817,252,892,205"/>
+<area shape="poly" id="edge21_Node000016_Node000004" title=" " alt="" coords="565,290,490,337,487,333,562,285"/>
 </map>

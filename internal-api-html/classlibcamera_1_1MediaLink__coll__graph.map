@@ -1,8 +1,13 @@
 <map id="libcamera::MediaLink" name="libcamera::MediaLink">
-<area shape="rect" id="node1" title="The MediaLink represents a link between two pads in the media graph." alt="" coords="56,351,219,377"/>
-<area shape="rect" id="node2" href="$classlibcamera_1_1MediaObject.html" title="Base class for all media objects." alt="" coords="49,275,226,301"/>
-<area shape="rect" id="node3" href="$classlibcamera_1_1MediaDevice.html" title="The MediaDevice represents a Media Controller device with its full graph of connected objects." alt="" coords="47,185,227,212"/>
-<area shape="rect" id="node4" href="$classlibcamera_1_1Loggable.html" title="Base class to support log message extensions." alt="" coords="5,89,160,115"/>
-<area shape="rect" id="node5" href="$classlibcamera_1_1Signal.html" title="Generic signal and slot communication mechanism." alt="" coords="184,81,331,123"/>
-<area shape="rect" id="node6" title=" " alt="" coords="174,5,341,32"/>
+<area shape="rect" id="Node000001" title="The MediaLink represents a link between two pads in the media graph." alt="" coords="56,345,219,371"/>
+<area shape="rect" id="Node000002" href="$classlibcamera_1_1MediaObject.html" title="Base class for all media objects." alt="" coords="49,271,226,296"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,310,140,345,135,345,135,310"/>
+<area shape="rect" id="Node000003" href="$classlibcamera_1_1MediaDevice.html" title="The MediaDevice represents a Media Controller device with its full graph of connected objects." alt="" coords="47,183,227,208"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="140,222,140,270,135,270,135,222"/>
+<area shape="rect" id="Node000004" href="$classlibcamera_1_1Loggable.html" title="Base class to support log message extensions." alt="" coords="5,87,160,113"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="98,123,133,181,128,184,94,126"/>
+<area shape="rect" id="Node000005" href="$classlibcamera_1_1Signal.html" title="Generic signal and slot communication mechanism." alt="" coords="184,80,331,120"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="224,131,154,185,150,180,221,126"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="174,5,341,31"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="260,44,260,80,255,80,255,44"/>
 </map>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['orientation_961',['Orientation',['../namespacelibcamera.html#a80ea01625b93ecfe879249ac60c79384',1,'libcamera']]]
+  ['mergepolicy_0',['MergePolicy',['../classlibcamera_1_1ControlList.html#a61c8b9a57df34e40716d3664d24df80d',1,'libcamera::ControlList']]]
 ];

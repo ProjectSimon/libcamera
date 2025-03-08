@@ -1,13 +1,28 @@
 <map id="include/libcamera/stream.h" name="include/libcamera/stream.h">
-<area shape="rect" id="node1" title="Video stream for a Camera." alt="" coords="475,5,675,32"/>
-<area shape="rect" id="node2" href="$camera_8h.html" title="Camera device handling." alt="" coords="201,87,404,114"/>
-<area shape="rect" id="node4" href="$libcamera_8h_source.html" title=" " alt="" coords="222,169,397,211"/>
-<area shape="rect" id="node5" href="$pipeline__handler_8h.html" title="Create pipelines and cameras from a set of media devices." alt="" coords="479,80,671,121"/>
-<area shape="rect" id="node7" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="644,348,815,389"/>
-<area shape="rect" id="node10" href="$debayer_8h_source.html" title=" " alt="" coords="837,80,1008,121"/>
-<area shape="rect" id="node3" href="$internal_2camera_8h.html" title="Internal camera device handling." alt="" coords="5,169,197,211"/>
-<area shape="rect" id="node6" href="$ipa__manager_8h.html" title="Image Processing Algorithm module manager." alt="" coords="339,259,531,300"/>
-<area shape="rect" id="node8" href="$ipa__module_8h.html" title="Image Processing Algorithm module." alt="" coords="472,169,664,211"/>
-<area shape="rect" id="node9" href="$software__isp_8h_source.html" title=" " alt="" coords="555,259,762,300"/>
-<area shape="rect" id="node11" href="$debayer__cpu_8h_source.html" title=" " alt="" coords="837,259,1008,300"/>
+<area shape="rect" id="Node000001" title="Video stream for a Camera." alt="" coords="467,5,667,31"/>
+<area shape="rect" id="Node000002" href="$libcamera_8h_source.html" title=" " alt="" coords="5,167,180,207"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="454,31,302,51,235,64,189,81,162,100,139,123,106,168,102,165,135,119,159,96,186,76,234,59,301,45,453,26"/>
+<area shape="rect" id="Node000003" href="$camera_8h.html" title="Camera device handling." alt="" coords="199,86,402,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="516,37,340,89,339,83,515,32"/>
+<area shape="rect" id="Node000005" href="$pipeline__handler_8h.html" title="Create pipelines and cameras from a set of media devices." alt="" coords="471,79,663,119"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="570,44,570,79,565,79,565,44"/>
+<area shape="rect" id="Node000007" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="643,343,814,383"/>
+<area shape="poly" id="edge15_Node000001_Node000007" title=" " alt="" coords="612,34,646,52,677,77,717,119,742,157,760,199,777,254,780,275,777,295,764,322,748,344,744,341,760,319,771,294,775,275,771,255,755,200,738,159,712,122,674,81,643,57,610,39"/>
+<area shape="rect" id="Node000010" href="$debayer_8h_source.html" title=" " alt="" coords="837,79,1007,119"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="633,31,838,76,837,81,632,36"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="261,119,140,169,138,164,259,114"/>
+<area shape="rect" id="Node000004" href="$internal_2camera_8h.html" title="Internal camera device handling." alt="" coords="205,167,397,207"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="303,125,303,166,298,166,298,125"/>
+<area shape="rect" id="Node000006" href="$ipa__manager_8h.html" title="Image Processing Algorithm module manager." alt="" coords="338,255,530,295"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="510,127,483,145,461,168,450,189,443,213,437,255,432,254,437,211,445,187,457,165,480,141,507,123"/>
+<area shape="rect" id="Node000008" href="$ipa__module_8h.html" title="Image Processing Algorithm module." alt="" coords="471,167,663,207"/>
+<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="570,133,570,166,565,166,565,133"/>
+<area shape="rect" id="Node000009" href="$software__isp_8h_source.html" title=" " alt="" coords="555,255,761,295"/>
+<area shape="poly" id="edge10_Node000005_Node000009" title=" " alt="" coords="633,123,658,141,678,165,685,189,684,213,671,255,665,254,679,212,680,189,673,168,654,145,630,127"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="512,296,665,340,663,345,511,301"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="528,217,465,257,462,252,525,212"/>
+<area shape="poly" id="edge11_Node000009_Node000007" title=" " alt="" coords="684,304,715,341,711,344,680,307"/>
+<area shape="rect" id="Node000011" href="$debayer__cpu_8h_source.html" title=" " alt="" coords="837,255,1007,295"/>
+<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="925,132,925,254,919,254,919,132"/>
+<area shape="poly" id="edge14_Node000011_Node000007" title=" " alt="" coords="868,303,772,345,770,340,866,298"/>
 </map>

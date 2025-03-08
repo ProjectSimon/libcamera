@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x_2122',['x',['../classlibcamera_1_1ipa_1_1Vector.html#a33f56e128b8a2917a4ca84f2fea39f22',1,'libcamera::ipa::Vector']]]
+  ['x_0',['x',['../classlibcamera_1_1ipa_1_1Vector.html#a22f6ff655081ca2232c1d98d9f980e7b',1,'libcamera::ipa::Vector::x() const'],['../classlibcamera_1_1ipa_1_1Vector.html#a0259e4ef34ac64bab42560543a426ed0',1,'libcamera::ipa::Vector::x()']]]
 ];

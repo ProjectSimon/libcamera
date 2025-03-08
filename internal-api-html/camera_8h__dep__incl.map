@@ -1,5 +1,7 @@
 <map id="include/libcamera/camera.h" name="include/libcamera/camera.h">
-<area shape="rect" id="node1" title="Camera device handling." alt="" coords="104,5,307,32"/>
-<area shape="rect" id="node2" href="$internal_2camera_8h.html" title="Internal camera device handling." alt="" coords="5,80,197,121"/>
-<area shape="rect" id="node3" href="$libcamera_8h_source.html" title=" " alt="" coords="222,80,397,121"/>
+<area shape="rect" id="Node000001" title="Camera device handling." alt="" coords="95,5,298,31"/>
+<area shape="rect" id="Node000002" href="$libcamera_8h_source.html" title=" " alt="" coords="5,79,180,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,41,119,81,116,76,169,37"/>
+<area shape="rect" id="Node000003" href="$internal_2camera_8h.html" title="Internal camera device handling." alt="" coords="205,79,397,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="224,37,277,76,274,81,221,41"/>
 </map>

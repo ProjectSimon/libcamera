@@ -1,8 +1,13 @@
 <map id="include/libcamera/internal/media_object.h" name="include/libcamera/internal/media_object.h">
-<area shape="rect" id="node1" title="Provides a class hierarchy that represents the media objects exposed by the Linux kernel Media Contro..." alt="" coords="113,5,305,47"/>
-<area shape="rect" id="node2" href="$media__device_8h.html" title="Provide a representation of a Linux kernel Media Controller device that exposes the full graph topolo..." alt="" coords="5,95,197,136"/>
-<area shape="rect" id="node3" href="$v4l2__subdevice_8h.html" title="V4L2 Subdevice API." alt="" coords="221,95,413,136"/>
-<area shape="rect" id="node4" href="$camera__sensor_8h.html" title="A camera sensor." alt="" coords="221,184,413,225"/>
-<area shape="rect" id="node5" href="$software__isp_8h_source.html" title=" " alt="" coords="214,273,421,315"/>
-<area shape="rect" id="node6" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="232,363,403,404"/>
+<area shape="rect" id="Node000001" title="Provides a class hierarchy that represents the media objects exposed by the Linux kernel Media Contro..." alt="" coords="113,5,305,45"/>
+<area shape="rect" id="Node000002" href="$media__device_8h.html" title="Provide a representation of a Linux kernel Media Controller device that exposes the full graph topolo..." alt="" coords="5,93,197,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,56,127,95,124,91,173,52"/>
+<area shape="rect" id="Node000003" href="$v4l2__subdevice_8h.html" title="V4L2 Subdevice API." alt="" coords="221,93,413,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="246,52,295,91,292,95,242,56"/>
+<area shape="rect" id="Node000004" href="$camera__sensor_8h.html" title="A camera sensor." alt="" coords="221,181,413,221"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="320,147,320,181,315,181,315,147"/>
+<area shape="rect" id="Node000005" href="$software__isp_8h_source.html" title=" " alt="" coords="214,269,421,309"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="320,235,320,269,315,269,315,235"/>
+<area shape="rect" id="Node000006" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="232,357,403,397"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="320,323,320,357,315,357,315,323"/>
 </map>

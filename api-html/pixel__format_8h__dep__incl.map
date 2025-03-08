@@ -1,7 +1,14 @@
 <map id="include/libcamera/pixel_format.h" name="include/libcamera/pixel_format.h">
-<area shape="rect" id="node1" title="libcamera pixel format" alt="" coords="209,5,383,47"/>
-<area shape="rect" id="node2" href="$stream_8h.html" title="Video stream for a Camera." alt="" coords="59,95,259,121"/>
-<area shape="rect" id="node4" href="$libcamera_8h_source.html" title=" " alt="" coords="183,259,358,300"/>
-<area shape="rect" id="node5" href="$formats_8h_source.html" title=" " alt="" coords="334,169,509,211"/>
-<area shape="rect" id="node3" href="$camera_8h.html" title="Camera device handling." alt="" coords="5,177,208,203"/>
+<area shape="rect" id="Node000001" title="libcamera pixel format" alt="" coords="131,5,305,45"/>
+<area shape="rect" id="Node000002" href="$formats_8h_source.html" title=" " alt="" coords="5,167,180,207"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,58,110,168,105,165,193,54"/>
+<area shape="rect" id="Node000003" href="$libcamera_8h_source.html" title=" " alt="" coords="156,255,331,295"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="224,59,244,254,239,255,219,59"/>
+<area shape="rect" id="Node000004" href="$stream_8h.html" title="Video stream for a Camera." alt="" coords="255,93,455,119"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="264,50,336,91,334,95,261,54"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="139,211,212,252,209,257,136,216"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="332,130,296,168,270,214,252,256,247,253,265,212,292,165,328,126"/>
+<area shape="rect" id="Node000005" href="$camera_8h.html" title="Camera device handling." alt="" coords="306,174,509,199"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="373,129,402,172,397,175,368,132"/>
+<area shape="poly" id="edge7_Node000005_Node000003" title=" " alt="" coords="374,208,281,257,278,252,372,203"/>
 </map>

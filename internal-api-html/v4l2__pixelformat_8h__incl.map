@@ -1,10 +1,20 @@
 <map id="include/libcamera/internal/v4l2_pixelformat.h" name="include/libcamera/internal/v4l2_pixelformat.h">
-<area shape="rect" id="node1" title="V4L2 Pixel Format." alt="" coords="215,5,407,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,95,92,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="133,169,209,196"/>
-<area shape="rect" id="node4" title=" " alt="" coords="255,169,325,196"/>
-<area shape="rect" id="node5" title=" " alt="" coords="381,169,439,196"/>
-<area shape="rect" id="node6" title=" " alt="" coords="480,95,543,121"/>
-<area shape="rect" id="node7" title=" " alt="" coords="567,95,706,121"/>
-<area shape="rect" id="node8" href="$pixel__format_8h.html" title="libcamera pixel format" alt="" coords="219,95,404,121"/>
+<area shape="rect" id="Node000001" title="V4L2 Pixel Format." alt="" coords="215,5,407,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,92,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="249,48,101,92,99,87,248,43"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="133,167,209,192"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="264,48,230,68,200,95,185,124,177,154,172,152,180,122,196,92,227,63,261,43"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="255,167,325,192"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="262,48,232,67,208,94,205,113,214,130,231,145,252,158,249,163,228,149,210,133,200,113,204,92,228,63,260,43"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="381,167,439,192"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="363,43,394,63,419,92,425,107,426,123,422,153,416,153,421,123,419,108,414,95,391,67,360,48"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="480,93,543,119"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="360,43,470,86,468,91,358,48"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="567,93,706,119"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="390,43,577,88,575,93,389,48"/>
+<area shape="rect" id="Node000008" href="$pixel__format_8h.html" title="libcamera pixel format" alt="" coords="219,93,404,119"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="314,46,314,79,309,79,309,46"/>
+<area shape="poly" id="edge8_Node000008_Node000003" title=" " alt="" coords="290,121,207,163,205,158,288,116"/>
+<area shape="poly" id="edge9_Node000008_Node000004" title=" " alt="" coords="310,120,300,154,295,153,305,118"/>
+<area shape="poly" id="edge10_Node000008_Node000005" title=" " alt="" coords="329,117,384,156,381,161,326,121"/>
 </map>

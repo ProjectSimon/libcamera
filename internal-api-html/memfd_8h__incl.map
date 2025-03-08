@@ -1,10 +1,17 @@
 <map id="include/libcamera/base/memfd.h" name="include/libcamera/base/memfd.h">
-<area shape="rect" id="node1" title="Anonymous file creation." alt="" coords="109,5,282,47"/>
-<area shape="rect" id="node2" href="$flags_8h.html" title="Enum&#45;based bit fields." alt="" coords="5,95,175,121"/>
-<area shape="rect" id="node4" href="$unique__fd_8h.html" title="File descriptor wrapper that owns a file descriptor." alt="" coords="206,95,409,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="29,169,121,196"/>
-<area shape="rect" id="node5" title=" " alt="" coords="145,169,205,196"/>
-<area shape="rect" id="node6" href="$class_8h.html" title="Utilities to help constructing class interfaces." alt="" coords="230,169,401,196"/>
-<area shape="rect" id="node8" href="$compiler_8h_source.html" title=" " alt="" coords="425,169,619,196"/>
-<area shape="rect" id="node7" title=" " alt="" coords="277,244,354,271"/>
+<area shape="rect" id="Node000001" title="Anonymous file creation." alt="" coords="109,5,282,45"/>
+<area shape="rect" id="Node000002" href="$flags_8h.html" title="Enum&#45;based bit fields." alt="" coords="5,93,175,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,48,118,87,115,83,168,43"/>
+<area shape="rect" id="Node000004" href="$unique__fd_8h.html" title="File descriptor wrapper that owns a file descriptor." alt="" coords="206,93,409,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="224,43,281,83,278,87,221,48"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="29,167,121,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="90,120,83,154,78,153,85,118"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="145,167,205,192"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="287,121,210,162,208,158,285,116"/>
+<area shape="rect" id="Node000006" href="$class_8h.html" title="Utilities to help constructing class interfaces." alt="" coords="230,167,401,192"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="311,119,315,153,310,153,306,119"/>
+<area shape="rect" id="Node000008" href="$compiler_8h_source.html" title=" " alt="" coords="425,167,619,192"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="343,116,475,160,473,165,341,121"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="277,240,354,265"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="318,192,318,226,313,226,313,192"/>
 </map>

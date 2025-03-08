@@ -1,10 +1,18 @@
 <map id="include/libcamera/base/object.h" name="include/libcamera/base/object.h">
-<area shape="rect" id="node1" title="Base object to support automatic signal disconnection." alt="" coords="33,5,207,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,102,48,129"/>
-<area shape="rect" id="node3" title=" " alt="" coords="57,184,135,211"/>
-<area shape="rect" id="node4" title=" " alt="" coords="123,102,186,129"/>
-<area shape="rect" id="node5" href="$bound__method_8h.html" title="Method bind and invocation." alt="" coords="210,95,377,136"/>
-<area shape="rect" id="node6" title=" " alt="" coords="169,184,223,211"/>
-<area shape="rect" id="node7" title=" " alt="" coords="247,184,339,211"/>
-<area shape="rect" id="node8" title=" " alt="" coords="363,184,423,211"/>
+<area shape="rect" id="Node000001" title="Base object to support automatic signal disconnection." alt="" coords="33,5,207,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,101,48,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,48,51,93,48,89,97,44"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="57,181,135,207"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="120,46,102,168,97,167,115,45"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="123,101,186,126"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="130,45,147,87,142,89,125,47"/>
+<area shape="rect" id="Node000005" href="$bound__method_8h.html" title="Method bind and invocation." alt="" coords="210,93,377,133"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="159,43,245,85,242,90,157,48"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="247,136,139,179,137,174,245,131"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="169,181,223,207"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="271,136,223,175,219,170,268,131"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="247,181,339,207"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="296,134,296,167,291,167,291,134"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="363,181,423,207"/>
+<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="319,131,369,170,366,175,316,136"/>
 </map>

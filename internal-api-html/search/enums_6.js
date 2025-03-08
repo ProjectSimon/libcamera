@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['ipa_5fcontrols_5fid_5fmap_5ftype_2511',['ipa_controls_id_map_type',['../namespacelibcamera.html#a15081aa9ebc49a6db6aff905354d1366',1,'libcamera']]]
+  ['hdrchannelenum_0',['HdrChannelEnum',['../namespacelibcamera_1_1controls.html#ae0b385406bfae9e3f8f52632dee63c63',1,'libcamera::controls']]],
+  ['hdrmodeenum_1',['HdrModeEnum',['../namespacelibcamera_1_1controls.html#a716de7c2d3556258c6787c02e41ee85e',1,'libcamera::controls']]]
 ];

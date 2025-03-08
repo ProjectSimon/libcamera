@@ -1,4 +1,9 @@
 <map id="src/ipa/libipa/vector.h" name="src/ipa/libipa/vector.h">
-<area shape="rect" id="node1" title="Vector class." alt="" coords="5,5,167,32"/>
-<area shape="rect" id="node2" href="$pwl_8h.html" title="Piecewise linear functions." alt="" coords="14,80,158,107"/>
+<area shape="rect" id="Node000001" title="Vector class." alt="" coords="203,5,365,31"/>
+<area shape="rect" id="Node000002" href="$awb_8h.html" title=" " alt="" coords="5,79,176,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="244,38,138,81,136,76,242,33"/>
+<area shape="rect" id="Node000003" href="$colours_8h.html" title="Functions to reduce code duplication between IPA modules." alt="" coords="200,86,368,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="287,44,287,86,281,86,281,44"/>
+<area shape="rect" id="Node000004" href="$pwl_8h.html" title="Piecewise linear functions." alt="" coords="392,86,536,111"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="324,34,439,84,437,88,322,39"/>
 </map>

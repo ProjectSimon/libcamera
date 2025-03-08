@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['z_1292',['z',['../classlibcamera_1_1ipa_1_1Vector.html#a90976c36aeb266bd8ce1e7c701b3ed2f',1,'libcamera::ipa::Vector']]]
+  ['z_0',['z',['../classlibcamera_1_1ipa_1_1Vector.html#a42f0c73b462e844227f31261a2788669',1,'libcamera::ipa::Vector::z() const'],['../classlibcamera_1_1ipa_1_1Vector.html#afb15b0a0a05c52342810443c87c36868',1,'libcamera::ipa::Vector::z()']]],
+  ['zoom_1',['Digital Zoom',['../camera-model.html#digital-zoom',1,'']]]
 ];

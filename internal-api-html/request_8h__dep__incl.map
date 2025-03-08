@@ -1,7 +1,12 @@
 <map id="include/libcamera/request.h" name="include/libcamera/request.h">
-<area shape="rect" id="node1" title="Describes a frame capture request to be processed by a camera." alt="" coords="208,5,411,32"/>
-<area shape="rect" id="node2" href="$camera_8h.html" title="Camera device handling." alt="" coords="69,87,272,114"/>
-<area shape="rect" id="node4" href="$libcamera_8h_source.html" title=" " alt="" coords="222,169,397,211"/>
-<area shape="rect" id="node5" href="$internal_2request_8h.html" title="Internal support for request handling." alt="" coords="347,80,539,121"/>
-<area shape="rect" id="node3" href="$internal_2camera_8h.html" title="Internal camera device handling." alt="" coords="5,169,197,211"/>
+<area shape="rect" id="Node000001" title="Describes a frame capture request to be processed by a camera." alt="" coords="130,5,333,31"/>
+<area shape="rect" id="Node000002" href="$libcamera_8h_source.html" title=" " alt="" coords="5,167,180,207"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,38,148,55,120,80,108,101,101,124,95,167,90,166,96,123,103,99,116,77,145,51,178,33"/>
+<area shape="rect" id="Node000003" href="$camera_8h.html" title="Camera device handling." alt="" coords="130,86,333,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="234,44,234,86,229,86,229,44"/>
+<area shape="rect" id="Node000005" href="$internal_2request_8h.html" title="Internal support for request handling." alt="" coords="357,79,549,119"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="277,33,400,76,399,81,276,38"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="202,121,125,169,122,164,199,117"/>
+<area shape="rect" id="Node000004" href="$internal_2camera_8h.html" title="Internal camera device handling." alt="" coords="205,167,397,207"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="251,120,287,165,283,168,247,124"/>
 </map>

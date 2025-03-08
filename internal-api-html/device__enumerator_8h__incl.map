@@ -1,13 +1,25 @@
 <map id="include/libcamera/internal/device_enumerator.h" name="include/libcamera/internal/device_enumerator.h">
-<area shape="rect" id="node1" title="Enumeration and matching of media devices." alt="" coords="277,5,469,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,259,83,285"/>
-<area shape="rect" id="node3" title=" " alt="" coords="416,95,475,121"/>
-<area shape="rect" id="node4" title=" " alt="" coords="499,95,562,121"/>
-<area shape="rect" id="node5" href="$signal_8h.html" title="Signal &amp; slot implementation." alt="" coords="214,95,391,121"/>
-<area shape="rect" id="node6" title=" " alt="" coords="259,177,346,203"/>
-<area shape="rect" id="node7" title=" " alt="" coords="371,177,413,203"/>
-<area shape="rect" id="node8" title=" " alt="" coords="341,259,433,285"/>
-<area shape="rect" id="node9" href="$bound__method_8h.html" title="Method bind and invocation." alt="" coords="69,169,235,211"/>
-<area shape="rect" id="node10" title=" " alt="" coords="198,259,253,285"/>
-<area shape="rect" id="node11" title=" " alt="" coords="114,259,174,285"/>
+<area shape="rect" id="Node000001" title="Enumeration and matching of media devices." alt="" coords="277,5,469,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,255,83,280"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="278,44,220,61,159,86,103,121,79,143,58,168,50,185,45,204,43,241,38,240,40,203,45,183,54,165,75,139,100,117,157,81,218,56,276,39"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="416,93,475,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="393,44,427,81,423,85,389,47"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="499,93,562,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="412,43,496,85,494,89,410,48"/>
+<area shape="rect" id="Node000005" href="$signal_8h.html" title="Signal &amp; slot implementation." alt="" coords="214,93,391,119"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="358,47,324,85,320,81,354,44"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="259,174,346,199"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="305,119,305,160,300,160,300,119"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="371,174,413,199"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="318,117,370,163,367,167,314,121"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="341,255,433,280"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="356,116,395,134,413,148,428,165,434,186,430,207,421,228,409,245,404,242,416,225,425,206,429,186,423,168,410,152,393,139,354,121"/>
+<area shape="rect" id="Node000009" href="$bound__method_8h.html" title="Method bind and invocation." alt="" coords="69,167,235,207"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="282,121,202,163,199,158,279,116"/>
+<area shape="poly" id="edge9_Node000009_Node000002" title=" " alt="" coords="127,209,73,248,70,244,124,205"/>
+<area shape="poly" id="edge11_Node000009_Node000008" title=" " alt="" coords="209,204,340,248,339,253,207,209"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="198,255,253,280"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="172,205,207,243,203,246,168,209"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="114,255,174,280"/>
+<area shape="poly" id="edge12_Node000009_Node000011" title=" " alt="" coords="153,207,149,241,144,240,147,207"/>
 </map>

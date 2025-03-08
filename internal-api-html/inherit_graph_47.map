@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1Accumulator.html" title="RGB statistics for a given zone." alt="" coords="5,5,196,47"/>
+<area shape="rect" id="Node000000" href="$classlibcamera_1_1ipa_1_1CameraSensorHelperFactoryBase.html" title="Base class for camera sensor helper factories." alt="" coords="5,5,224,45"/>
+<area shape="rect" id="Node000001" href="$classlibcamera_1_1ipa_1_1CameraSensorHelperFactory.html" title="Registration of CameraSensorHelperFactory classes and creation of instances." alt="" coords="272,5,491,45"/>
+<area shape="poly" id="edge39_Node000000_Node000001" title=" " alt="" coords="238,23,272,23,272,28,238,28"/>
 </map>

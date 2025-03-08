@@ -1,3 +1,21 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structlibcamera_1_1SwIspStats.html" title="Struct that holds the statistics for the Software ISP." alt="" coords="5,5,172,32"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,284,172,309"/>
+<area shape="rect" id="Node000001" href="$classlibcamera_1_1Signal.html" title=" " alt="" coords="233,5,453,60"/>
+<area shape="poly" id="edge51_Node000000_Node000001" title=" " alt="" coords="96,270,112,227,138,173,173,118,194,93,218,71,237,58,240,63,222,75,198,97,177,121,142,176,117,229,101,272"/>
+<area shape="rect" id="Node000002" href="$classlibcamera_1_1Signal.html" title=" " alt="" coords="254,85,433,125"/>
+<area shape="poly" id="edge52_Node000000_Node000002" title=" " alt="" coords="101,270,147,202,180,166,219,134,253,118,255,123,221,139,184,169,151,206,105,273"/>
+<area shape="rect" id="Node000003" href="$classlibcamera_1_1Signal.html" title=" " alt="" coords="241,149,446,189"/>
+<area shape="poly" id="edge53_Node000000_Node000003" title=" " alt="" coords="112,273,159,235,219,198,249,186,251,191,221,203,163,239,116,277"/>
+<area shape="rect" id="Node000004" href="$classlibcamera_1_1Signal.html" title=" " alt="" coords="220,213,467,253"/>
+<area shape="poly" id="edge54_Node000000_Node000004" title=" " alt="" coords="153,278,262,250,264,255,154,283"/>
+<area shape="rect" id="Node000005" href="$classlibcamera_1_1Signal.html" title=" " alt="" coords="257,277,430,317"/>
+<area shape="poly" id="edge55_Node000000_Node000005" title=" " alt="" coords="186,294,256,294,256,299,186,299"/>
+<area shape="rect" id="Node000006" href="$classlibcamera_1_1Signal.html" title=" " alt="" coords="266,341,421,381"/>
+<area shape="poly" id="edge56_Node000000_Node000006" title=" " alt="" coords="154,310,267,339,265,344,153,315"/>
+<area shape="rect" id="Node000007" href="$classlibcamera_1_1Signal.html" title=" " alt="" coords="225,405,462,445"/>
+<area shape="poly" id="edge57_Node000000_Node000007" title=" " alt="" coords="116,317,163,354,221,390,251,402,249,407,219,395,159,359,112,321"/>
+<area shape="rect" id="Node000008" href="$classlibcamera_1_1Signal.html" title=" " alt="" coords="270,469,417,509"/>
+<area shape="poly" id="edge58_Node000000_Node000008" title=" " alt="" coords="105,320,151,388,184,424,221,454,245,467,271,475,269,480,243,471,219,459,180,428,147,391,101,323"/>
+<area shape="rect" id="Node000009" href="$classlibcamera_1_1Signal.html" title="Generic signal and slot communication mechanism." alt="" coords="270,533,417,573"/>
+<area shape="poly" id="edge59_Node000000_Node000009" title=" " alt="" coords="100,322,116,365,141,418,176,473,198,497,222,519,245,532,271,541,269,546,243,537,218,523,194,501,172,476,137,421,111,367,95,323"/>
 </map>

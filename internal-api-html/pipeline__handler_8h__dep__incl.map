@@ -1,7 +1,13 @@
 <map id="include/libcamera/internal/pipeline_handler.h" name="include/libcamera/internal/pipeline_handler.h">
-<area shape="rect" id="node1" title="Create pipelines and cameras from a set of media devices." alt="" coords="96,5,288,47"/>
-<area shape="rect" id="node2" href="$ipa__manager_8h.html" title="Image Processing Algorithm module manager." alt="" coords="5,184,197,225"/>
-<area shape="rect" id="node4" href="$ipa__module_8h.html" title="Image Processing Algorithm module." alt="" coords="96,95,288,136"/>
-<area shape="rect" id="node5" href="$software__isp_8h_source.html" title=" " alt="" coords="222,184,429,225"/>
-<area shape="rect" id="node3" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="128,273,299,315"/>
+<area shape="rect" id="Node000001" title="Create pipelines and cameras from a set of media devices." alt="" coords="96,5,288,45"/>
+<area shape="rect" id="Node000002" href="$ipa__manager_8h.html" title="Image Processing Algorithm module manager." alt="" coords="5,181,197,221"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,54,105,72,86,95,80,116,81,139,94,180,89,182,75,140,75,115,82,92,101,68,126,50"/>
+<area shape="rect" id="Node000004" href="$ipa__module_8h.html" title="Image Processing Algorithm module." alt="" coords="96,93,288,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="195,59,195,93,189,93,189,59"/>
+<area shape="rect" id="Node000005" href="$software__isp_8h_source.html" title=" " alt="" coords="222,181,429,221"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="252,50,279,68,302,92,314,114,322,138,328,181,322,182,317,139,309,116,298,95,276,72,249,54"/>
+<area shape="rect" id="Node000003" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="128,269,299,309"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="139,228,190,267,187,271,136,232"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="164,145,123,183,120,179,160,141"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="291,232,240,271,237,267,288,228"/>
 </map>

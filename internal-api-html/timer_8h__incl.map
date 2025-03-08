@@ -1,15 +1,31 @@
 <map id="include/libcamera/base/timer.h" name="include/libcamera/base/timer.h">
-<area shape="rect" id="node1" title="Generic timer." alt="" coords="204,5,377,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,95,72,121"/>
-<area shape="rect" id="node3" href="$private_8h_source.html" title=" " alt="" coords="96,95,280,121"/>
-<area shape="rect" id="node4" href="$object_8h.html" title="Base object to support automatic signal disconnection." alt="" coords="304,95,483,121"/>
-<area shape="rect" id="node12" href="$signal_8h.html" title="Signal &amp; slot implementation." alt="" coords="507,95,685,121"/>
-<area shape="rect" id="node5" title=" " alt="" coords="408,177,451,203"/>
-<area shape="rect" id="node6" title=" " alt="" coords="301,259,379,285"/>
-<area shape="rect" id="node7" title=" " alt="" coords="321,177,383,203"/>
-<area shape="rect" id="node8" href="$bound__method_8h.html" title="Method bind and invocation." alt="" coords="475,169,642,211"/>
-<area shape="rect" id="node9" title=" " alt="" coords="455,259,510,285"/>
-<area shape="rect" id="node10" title=" " alt="" coords="629,259,721,285"/>
-<area shape="rect" id="node11" title=" " alt="" coords="534,259,594,285"/>
-<area shape="rect" id="node13" title=" " alt="" coords="718,177,805,203"/>
+<area shape="rect" id="Node000001" title="Generic timer." alt="" coords="204,5,377,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,72,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="231,48,86,93,85,88,230,43"/>
+<area shape="rect" id="Node000003" href="$private_8h_source.html" title=" " alt="" coords="96,93,280,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="267,48,216,87,212,83,264,43"/>
+<area shape="rect" id="Node000004" href="$object_8h.html" title="Base object to support automatic signal disconnection." alt="" coords="304,93,483,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="317,43,369,83,366,87,314,48"/>
+<area shape="rect" id="Node000012" href="$signal_8h.html" title="Signal &amp; slot implementation." alt="" coords="507,93,685,119"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="364,43,539,87,537,92,363,48"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="408,174,451,199"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="401,118,421,160,416,163,396,120"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="301,255,379,280"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="366,121,335,140,321,153,310,168,306,186,308,206,325,242,320,244,303,207,300,186,306,166,317,149,332,136,363,117"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="321,174,383,199"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="390,120,367,163,362,161,385,118"/>
+<area shape="rect" id="Node000008" href="$bound__method_8h.html" title="Method bind and invocation." alt="" coords="475,167,642,207"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="419,116,507,158,505,163,416,121"/>
+<area shape="poly" id="edge8_Node000008_Node000006" title=" " alt="" coords="507,209,386,252,384,247,505,204"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="455,255,510,280"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="542,209,506,246,502,243,538,205"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="629,255,721,280"/>
+<area shape="poly" id="edge10_Node000008_Node000010" title=" " alt="" coords="588,205,648,245,645,249,585,209"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="534,255,594,280"/>
+<area shape="poly" id="edge11_Node000008_Node000011" title=" " alt="" coords="563,207,565,241,560,241,557,207"/>
+<area shape="poly" id="edge14_Node000012_Node000005" title=" " alt="" coords="570,121,465,169,463,170,461,165,463,164,568,116"/>
+<area shape="poly" id="edge16_Node000012_Node000008" title=" " alt="" coords="593,120,576,155,571,153,588,118"/>
+<area shape="poly" id="edge15_Node000012_Node000010" title=" " alt="" coords="613,117,636,138,657,165,671,204,676,240,671,241,666,205,652,168,632,141,610,121"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="718,174,805,199"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="621,116,726,166,724,171,619,121"/>
 </map>

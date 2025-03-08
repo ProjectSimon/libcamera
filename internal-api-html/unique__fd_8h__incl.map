@@ -1,7 +1,11 @@
 <map id="include/libcamera/base/unique_fd.h" name="include/libcamera/base/unique_fd.h">
-<area shape="rect" id="node1" title="File descriptor wrapper that owns a file descriptor." alt="" coords="89,5,262,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,95,65,121"/>
-<area shape="rect" id="node3" href="$class_8h.html" title="Utilities to help constructing class interfaces." alt="" coords="90,95,261,121"/>
-<area shape="rect" id="node5" href="$compiler_8h_source.html" title=" " alt="" coords="285,95,479,121"/>
-<area shape="rect" id="node4" title=" " alt="" coords="137,169,214,196"/>
+<area shape="rect" id="Node000001" title="File descriptor wrapper that owns a file descriptor." alt="" coords="89,5,262,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,65,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,48,69,89,67,84,141,43"/>
+<area shape="rect" id="Node000003" href="$class_8h.html" title="Utilities to help constructing class interfaces." alt="" coords="90,93,261,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="178,46,178,79,173,79,173,46"/>
+<area shape="rect" id="Node000005" href="$compiler_8h_source.html" title=" " alt="" coords="285,93,479,119"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="226,43,340,86,338,91,224,48"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="137,167,214,192"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="178,119,178,153,173,153,173,119"/>
 </map>

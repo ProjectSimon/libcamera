@@ -1,6 +1,9 @@
 <map id="libcamera::V4L2Device" name="libcamera::V4L2Device">
-<area shape="rect" id="node1" title="Base class for V4L2VideoDevice and V4L2Subdevice." alt="" coords="51,185,223,212"/>
-<area shape="rect" id="node2" href="$classlibcamera_1_1Loggable.html" title="Base class to support log message extensions." alt="" coords="5,89,160,115"/>
-<area shape="rect" id="node3" href="$classlibcamera_1_1Signal.html" title=" " alt="" coords="184,81,331,123"/>
-<area shape="rect" id="node4" title=" " alt="" coords="174,5,341,32"/>
+<area shape="rect" id="Node000001" title="Base class for V4L2VideoDevice and V4L2Subdevice." alt="" coords="51,183,223,208"/>
+<area shape="rect" id="Node000002" href="$classlibcamera_1_1Loggable.html" title="Base class to support log message extensions." alt="" coords="5,87,160,113"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,123,133,181,128,184,94,126"/>
+<area shape="rect" id="Node000003" href="$classlibcamera_1_1Signal.html" title=" " alt="" coords="184,80,331,120"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="224,131,154,185,150,180,221,126"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="174,5,341,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="260,44,260,80,255,80,255,44"/>
 </map>

@@ -1,5 +1,9 @@
 <map id="libcamera::Converter" name="libcamera::Converter">
-<area shape="rect" id="node1" title="Abstract Base Class for converter." alt="" coords="29,200,187,227"/>
-<area shape="rect" id="node2" href="$classlibcamera_1_1Signal.html" title=" " alt="" coords="5,81,211,123"/>
-<area shape="rect" id="node3" title=" " alt="" coords="25,5,191,32"/>
+<area shape="rect" id="Node000001" title="Abstract Base Class for converter." alt="" coords="145,197,303,223"/>
+<area shape="rect" id="Node000002" href="$classlibcamera_1_1Signal.html" title=" " alt="" coords="5,80,211,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,128,213,195,209,199,137,131"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="25,5,191,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="111,44,111,80,105,80,105,44"/>
+<area shape="rect" id="Node000004" href="$classlibcamera_1_1Flags.html" title=" " alt="" coords="235,87,445,113"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="338,127,328,152,313,175,293,190,272,200,270,195,291,185,309,171,324,150,333,125"/>
 </map>

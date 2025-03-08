@@ -1,4 +1,7 @@
 <map id="libcamera::CameraSensorProperties" name="libcamera::CameraSensorProperties">
-<area shape="rect" id="node1" title="Database of camera sensor properties." alt="" coords="5,95,261,121"/>
-<area shape="rect" id="node2" href="$classlibcamera_1_1Size.html" title="Describe a two&#45;dimensional size." alt="" coords="72,5,195,32"/>
+<area shape="rect" id="Node000001" title="Database of camera sensor properties." alt="" coords="45,108,301,133"/>
+<area shape="rect" id="Node000002" href="$classlibcamera_1_1Size.html" title="Describe a two&#45;dimensional size." alt="" coords="5,13,128,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,45,162,106,158,110,88,49"/>
+<area shape="rect" id="Node000003" href="$structlibcamera_1_1CameraSensorProperties_1_1SensorDelays.html" title="Sensor control application delay values." alt="" coords="152,5,408,45"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="251,57,219,86,190,110,187,106,216,82,248,53"/>
 </map>

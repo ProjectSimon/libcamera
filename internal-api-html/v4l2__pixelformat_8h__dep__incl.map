@@ -1,13 +1,29 @@
 <map id="include/libcamera/internal/v4l2_pixelformat.h" name="include/libcamera/internal/v4l2_pixelformat.h">
-<area shape="rect" id="node1" title="V4L2 Pixel Format." alt="" coords="303,5,495,47"/>
-<area shape="rect" id="node2" href="$bayer__format_8h.html" title="Class to represent Bayer formats and manipulate them." alt="" coords="30,273,222,315"/>
-<area shape="rect" id="node8" href="$include_2libcamera_2internal_2formats_8h.html" title="Types and helper functions to handle libcamera image formats." alt="" coords="303,95,495,136"/>
-<area shape="rect" id="node11" href="$v4l2__videodevice_8h.html" title="V4L2 Video Device." alt="" coords="462,273,654,315"/>
-<area shape="rect" id="node3" href="$camera__sensor_8h.html" title="A camera sensor." alt="" coords="246,363,438,404"/>
-<area shape="rect" id="node5" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="22,541,193,583"/>
-<area shape="rect" id="node6" href="$debayer__cpu_8h_source.html" title=" " alt="" coords="22,452,193,493"/>
-<area shape="rect" id="node7" href="$swstats__cpu_8h_source.html" title=" " alt="" coords="51,363,222,404"/>
-<area shape="rect" id="node4" href="$software__isp_8h_source.html" title=" " alt="" coords="228,452,435,493"/>
-<area shape="rect" id="node9" href="$v4l2__device_8h.html" title="Common base for V4L2 devices and subdevices." alt="" coords="303,184,495,225"/>
-<area shape="rect" id="node10" href="$v4l2__subdevice_8h.html" title="V4L2 Subdevice API." alt="" coords="246,273,438,315"/>
+<area shape="rect" id="Node000001" title="V4L2 Pixel Format." alt="" coords="282,5,474,45"/>
+<area shape="rect" id="Node000002" href="$bayer__format_8h.html" title="Class to represent Bayer formats and manipulate them." alt="" coords="9,269,201,309"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="331,54,272,95,224,141,181,190,120,271,116,268,177,187,220,137,268,91,328,50"/>
+<area shape="rect" id="Node000008" href="$include_2libcamera_2internal_2formats_8h.html" title="Types and helper functions to handle libcamera image formats." alt="" coords="282,93,474,133"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="381,59,381,93,375,93,375,59"/>
+<area shape="rect" id="Node000011" href="$v4l2__videodevice_8h.html" title="V4L2 Video Device." alt="" coords="441,269,633,309"/>
+<area shape="poly" id="edge16_Node000001_Node000011" title=" " alt="" coords="436,50,464,68,488,92,514,137,530,186,537,233,539,269,534,269,532,234,524,188,509,139,484,95,460,72,433,54"/>
+<area shape="rect" id="Node000003" href="$camera__sensor_8h.html" title="A camera sensor." alt="" coords="222,357,414,397"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="165,312,272,355,270,360,163,317"/>
+<area shape="rect" id="Node000006" href="$debayer__cpu_8h_source.html" title=" " alt="" coords="19,445,190,485"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="53,318,31,336,14,359,8,377,14,396,36,423,64,443,61,447,32,427,9,399,3,377,9,356,27,333,49,314"/>
+<area shape="rect" id="Node000007" href="$swstats__cpu_8h_source.html" title=" " alt="" coords="23,357,194,397"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="109,323,111,357,105,357,104,323"/>
+<area shape="rect" id="Node000004" href="$software__isp_8h_source.html" title=" " alt="" coords="215,445,421,485"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="321,411,321,445,315,445,315,411"/>
+<area shape="rect" id="Node000005" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="126,533,297,573"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="286,496,237,535,233,531,282,492"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="141,492,189,531,186,535,137,496"/>
+<area shape="poly" id="edge8_Node000007_Node000006" title=" " alt="" coords="110,411,108,445,103,445,105,411"/>
+<area shape="rect" id="Node000009" href="$v4l2__device_8h.html" title="Common base for V4L2 devices and subdevices." alt="" coords="282,181,474,221"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="381,147,381,181,375,181,375,147"/>
+<area shape="rect" id="Node000010" href="$v4l2__subdevice_8h.html" title="V4L2 Subdevice API." alt="" coords="225,269,417,309"/>
+<area shape="poly" id="edge14_Node000008_Node000010" title=" " alt="" coords="316,142,291,160,273,182,268,205,274,227,287,249,303,267,299,271,283,252,269,229,262,205,268,180,287,156,312,138"/>
+<area shape="poly" id="edge15_Node000008_Node000011" title=" " alt="" coords="434,138,462,156,488,180,504,201,517,225,534,268,529,270,512,228,500,204,484,183,459,161,431,142"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="360,234,336,271,331,268,356,232"/>
+<area shape="poly" id="edge13_Node000009_Node000011" title=" " alt="" coords="426,226,503,267,501,272,424,230"/>
+<area shape="poly" id="edge12_Node000010_Node000003" title=" " alt="" coords="322,323,321,357,316,357,317,323"/>
 </map>

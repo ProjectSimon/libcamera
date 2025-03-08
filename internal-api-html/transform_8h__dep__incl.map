@@ -1,7 +1,11 @@
 <map id="include/libcamera/transform.h" name="include/libcamera/transform.h">
-<area shape="rect" id="node1" title="Enum to represent and manipulate 2D plane transforms." alt="" coords="103,5,322,32"/>
-<area shape="rect" id="node2" href="$camera__sensor_8h.html" title="A camera sensor." alt="" coords="13,80,205,121"/>
-<area shape="rect" id="node5" href="$libcamera_8h_source.html" title=" " alt="" coords="229,80,404,121"/>
-<area shape="rect" id="node3" href="$software__isp_8h_source.html" title=" " alt="" coords="5,169,212,211"/>
-<area shape="rect" id="node4" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="23,259,194,300"/>
+<area shape="rect" id="Node000001" title="Enum to represent and manipulate 2D plane transforms." alt="" coords="87,5,306,31"/>
+<area shape="rect" id="Node000002" href="$libcamera_8h_source.html" title=" " alt="" coords="5,79,180,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,41,119,81,116,76,169,37"/>
+<area shape="rect" id="Node000003" href="$camera__sensor_8h.html" title="A camera sensor." alt="" coords="205,79,397,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="224,37,277,76,274,81,221,41"/>
+<area shape="rect" id="Node000004" href="$software__isp_8h_source.html" title=" " alt="" coords="197,167,404,207"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="303,133,303,166,298,166,298,133"/>
+<area shape="rect" id="Node000005" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="215,255,386,295"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="303,221,303,254,298,254,298,221"/>
 </map>

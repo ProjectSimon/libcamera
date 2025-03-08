@@ -1,10 +1,17 @@
 <map id="include/libcamera/base/message.h" name="include/libcamera/base/message.h">
-<area shape="rect" id="node1" title="Message queue support." alt="" coords="101,5,275,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,102,72,129"/>
-<area shape="rect" id="node3" href="$private_8h_source.html" title=" " alt="" coords="96,102,280,129"/>
-<area shape="rect" id="node4" href="$bound__method_8h.html" title="Method bind and invocation." alt="" coords="305,95,471,136"/>
-<area shape="rect" id="node5" title=" " alt="" coords="209,184,287,211"/>
-<area shape="rect" id="node6" title=" " alt="" coords="311,184,366,211"/>
-<area shape="rect" id="node7" title=" " alt="" coords="390,184,482,211"/>
-<area shape="rect" id="node8" title=" " alt="" coords="506,184,566,211"/>
+<area shape="rect" id="Node000001" title="Message queue support." alt="" coords="101,5,275,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,101,72,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,48,72,96,69,92,154,43"/>
+<area shape="rect" id="Node000003" href="$private_8h_source.html" title=" " alt="" coords="96,101,280,126"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="191,46,191,87,185,87,185,46"/>
+<area shape="rect" id="Node000004" href="$bound__method_8h.html" title="Method bind and invocation." alt="" coords="305,93,471,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="233,43,333,85,331,90,231,48"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="209,181,287,207"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="356,136,282,177,280,172,353,131"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="311,181,366,207"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="378,135,355,171,351,168,374,132"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="390,181,482,207"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="402,132,424,168,419,171,397,135"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="506,181,566,207"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="425,131,503,172,501,177,422,136"/>
 </map>

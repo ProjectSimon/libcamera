@@ -1,9 +1,16 @@
 <map id="include/libcamera/orientation.h" name="include/libcamera/orientation.h">
-<area shape="rect" id="node1" title="Image orientation definition." alt="" coords="217,5,442,32"/>
-<area shape="rect" id="node2" href="$camera_8h.html" title="Camera device handling." alt="" coords="89,87,292,114"/>
-<area shape="rect" id="node4" href="$libcamera_8h_source.html" title=" " alt="" coords="222,169,397,211"/>
-<area shape="rect" id="node5" href="$camera__sensor_8h.html" title="A camera sensor." alt="" coords="407,80,599,121"/>
-<area shape="rect" id="node3" href="$internal_2camera_8h.html" title="Internal camera device handling." alt="" coords="5,169,197,211"/>
-<area shape="rect" id="node6" href="$software__isp_8h_source.html" title=" " alt="" coords="421,169,627,211"/>
-<area shape="rect" id="node7" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="439,259,609,300"/>
+<area shape="rect" id="Node000001" title="Image orientation definition." alt="" coords="171,5,396,31"/>
+<area shape="rect" id="Node000002" href="$libcamera_8h_source.html" title=" " alt="" coords="5,167,180,207"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="241,39,206,57,172,81,132,125,105,168,101,165,128,122,168,77,203,52,239,34"/>
+<area shape="rect" id="Node000003" href="$camera_8h.html" title="Camera device handling." alt="" coords="182,86,385,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="286,44,286,86,281,86,281,44"/>
+<area shape="rect" id="Node000005" href="$camera__sensor_8h.html" title="A camera sensor." alt="" coords="418,79,610,119"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="331,33,459,76,458,81,329,38"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="246,119,136,169,134,164,244,115"/>
+<area shape="rect" id="Node000004" href="$internal_2camera_8h.html" title="Internal camera device handling." alt="" coords="205,167,397,207"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="291,124,299,166,294,167,286,125"/>
+<area shape="rect" id="Node000006" href="$software__isp_8h_source.html" title=" " alt="" coords="421,167,628,207"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="521,132,525,166,520,167,515,133"/>
+<area shape="rect" id="Node000007" href="$software__isp_8cpp.html" title="Simple software ISP implementation." alt="" coords="439,255,610,295"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="527,221,527,254,522,254,522,221"/>
 </map>

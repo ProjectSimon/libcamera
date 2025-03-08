@@ -1,10 +1,26 @@
 var searchData=
 [
-  ['testpatternmodecolorbars_1096',['TestPatternModeColorBars',['../namespacelibcamera_1_1controls_1_1draft.html#a9e2b11917516968c45d8daa2ff2cabebaf5fc8e55578f5c85c33df414885ca290',1,'libcamera::controls::draft']]],
-  ['testpatternmodecolorbarsfadetogray_1097',['TestPatternModeColorBarsFadeToGray',['../namespacelibcamera_1_1controls_1_1draft.html#a9e2b11917516968c45d8daa2ff2cabeba450027e983df7097ac24e6a3894b20e5',1,'libcamera::controls::draft']]],
-  ['testpatternmodecustom1_1098',['TestPatternModeCustom1',['../namespacelibcamera_1_1controls_1_1draft.html#a9e2b11917516968c45d8daa2ff2cabeba581e29537477a5ff711c106336a7a48d',1,'libcamera::controls::draft']]],
-  ['testpatternmodeoff_1099',['TestPatternModeOff',['../namespacelibcamera_1_1controls_1_1draft.html#a9e2b11917516968c45d8daa2ff2cabeba692aa3ff294606e99abb15a9ee658b5e',1,'libcamera::controls::draft']]],
-  ['testpatternmodepn9_1100',['TestPatternModePn9',['../namespacelibcamera_1_1controls_1_1draft.html#a9e2b11917516968c45d8daa2ff2cabeba5cf7a7d6c3dfc67c09c45a8c926d122e',1,'libcamera::controls::draft']]],
-  ['testpatternmodesolidcolor_1101',['TestPatternModeSolidColor',['../namespacelibcamera_1_1controls_1_1draft.html#a9e2b11917516968c45d8daa2ff2cabebab211afb89f6c19fe8b1f4518a77cac39',1,'libcamera::controls::draft']]],
-  ['transpose_1102',['Transpose',['../namespacelibcamera.html#a371b6d17d531b85c035c4e889b116571aaf70b1ac863830a4e1ce6268c8399f54',1,'libcamera']]]
+  ['raw_0',['raw',['../namespacelibcamera.html#a295d1f5e7828d95c0b0aabc0a8baac03a65e65c8ab0d8609ce12fc68a03cb8e00',1,'libcamera::Raw'],['../classlibcamera_1_1ColorSpace.html#a03b56b3ffdc2338345c15d08143260baa65e65c8ab0d8609ce12fc68a03cb8e00',1,'libcamera::ColorSpace::Raw']]],
+  ['rec2020_1',['rec2020',['../classlibcamera_1_1ColorSpace.html#a03b56b3ffdc2338345c15d08143260baae7ae2f86f32ce77c2580e609605e9f09',1,'libcamera::ColorSpace::Rec2020'],['../classlibcamera_1_1ColorSpace.html#a6c38886cf640948d04502d365d9e0ec9ae7ae2f86f32ce77c2580e609605e9f09',1,'libcamera::ColorSpace::Rec2020']]],
+  ['rec601_2',['Rec601',['../classlibcamera_1_1ColorSpace.html#a6c38886cf640948d04502d365d9e0ec9aa00983dd9b4d11879c9c04cf307eb3ac',1,'libcamera::ColorSpace']]],
+  ['rec709_3',['rec709',['../classlibcamera_1_1ColorSpace.html#a03b56b3ffdc2338345c15d08143260baafbd64bc8f23fcba2321c6efbb5b3814a',1,'libcamera::ColorSpace::Rec709'],['../classlibcamera_1_1ColorSpace.html#a473cdced52821b9c2b370ea9b3e2c1d2afbd64bc8f23fcba2321c6efbb5b3814a',1,'libcamera::ColorSpace::Rec709'],['../classlibcamera_1_1ColorSpace.html#a6c38886cf640948d04502d365d9e0ec9afbd64bc8f23fcba2321c6efbb5b3814a',1,'libcamera::ColorSpace::Rec709']]],
+  ['requestcancelled_4',['RequestCancelled',['../classlibcamera_1_1Request.html#a2209ba8d51af8167b25f6e3e94d5c45ba4b19d33e627aec32f831a30269aaa555',1,'libcamera::Request']]],
+  ['requestcomplete_5',['RequestComplete',['../classlibcamera_1_1Request.html#a2209ba8d51af8167b25f6e3e94d5c45badbacf3012a30a35bd19cfd9a9a41c499',1,'libcamera::Request']]],
+  ['requestpending_6',['RequestPending',['../classlibcamera_1_1Request.html#a2209ba8d51af8167b25f6e3e94d5c45ba24117202d19400478ba2e01d2e9a5812',1,'libcamera::Request']]],
+  ['reusebuffers_7',['ReuseBuffers',['../classlibcamera_1_1Request.html#a81bca5d1ba778455434506574e4286faa15458e90ae3fbfb75fe6f0d5001a0a12',1,'libcamera::Request']]],
+  ['rgb_8',['RGB',['../namespacelibcamera_1_1properties_1_1draft.html#ae4dac9d6f57db34b666c70f88196e092ad7a9a316efe740e20993ab407f6c301c',1,'libcamera::properties::draft']]],
+  ['rggb_9',['RGGB',['../namespacelibcamera_1_1properties_1_1draft.html#ae4dac9d6f57db34b666c70f88196e092ae52aa662d7315cbb3ba7a912c046d437',1,'libcamera::properties::draft']]],
+  ['rot0_10',['Rot0',['../namespacelibcamera.html#a371b6d17d531b85c035c4e889b116571a4bb6c9559a08829b1fd0a5eedd2eecb5',1,'libcamera']]],
+  ['rot180_11',['Rot180',['../namespacelibcamera.html#a371b6d17d531b85c035c4e889b116571af35f5bfafcf9cdad2100127dfc0109fd',1,'libcamera']]],
+  ['rot180transpose_12',['Rot180Transpose',['../namespacelibcamera.html#a371b6d17d531b85c035c4e889b116571adaa7494d424939ff93c1c9396b065732',1,'libcamera']]],
+  ['rot270_13',['Rot270',['../namespacelibcamera.html#a371b6d17d531b85c035c4e889b116571abd039fd6afddf90dab22307d3a18d11a',1,'libcamera']]],
+  ['rot90_14',['Rot90',['../namespacelibcamera.html#a371b6d17d531b85c035c4e889b116571ad5251a97af7b4036b4528a54405ea2ad',1,'libcamera']]],
+  ['rotate0_15',['Rotate0',['../namespacelibcamera.html#a80ea01625b93ecfe879249ac60c79384a291b44223b90e70be1fade1eff8a55e0',1,'libcamera']]],
+  ['rotate0mirror_16',['Rotate0Mirror',['../namespacelibcamera.html#a80ea01625b93ecfe879249ac60c79384a8c0ca32ba7e4de48842b5828d1cc4bbb',1,'libcamera']]],
+  ['rotate180_17',['Rotate180',['../namespacelibcamera.html#a80ea01625b93ecfe879249ac60c79384a371980c5d153a94cf022d6b4daa4d34c',1,'libcamera']]],
+  ['rotate180mirror_18',['Rotate180Mirror',['../namespacelibcamera.html#a80ea01625b93ecfe879249ac60c79384a9299b4523bc8f8a8a3cf874fccc39e56',1,'libcamera']]],
+  ['rotate270_19',['Rotate270',['../namespacelibcamera.html#a80ea01625b93ecfe879249ac60c79384a59c609399b2fb3956ecac7df34a76c2f',1,'libcamera']]],
+  ['rotate270mirror_20',['Rotate270Mirror',['../namespacelibcamera.html#a80ea01625b93ecfe879249ac60c79384a42099bec2daf386b1daeffe0854cab21',1,'libcamera']]],
+  ['rotate90_21',['Rotate90',['../namespacelibcamera.html#a80ea01625b93ecfe879249ac60c79384a1d20b3969ea74725dd1a5b7669d60a98',1,'libcamera']]],
+  ['rotate90mirror_22',['Rotate90Mirror',['../namespacelibcamera.html#a80ea01625b93ecfe879249ac60c79384ad3e952bbaf7e50a879f42b7968e07a79',1,'libcamera']]]
 ];

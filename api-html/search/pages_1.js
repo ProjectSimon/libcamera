@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['libcamera_20api_20reference_1109',['libcamera API reference',['../index.html',1,'']]]
+  ['camera_20model_0',['Camera Model',['../camera-model.html',1,'']]]
 ];
