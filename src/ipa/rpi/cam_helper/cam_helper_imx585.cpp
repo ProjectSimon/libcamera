@@ -17,8 +17,6 @@ public:
 	CamHelperImx585();
 	uint32_t gainCode(double gain) const override;
 	double gain(uint32_t gainCode) const override;
-	void getDelays(int &exposureDelay, int &gainDelay,
-		       int &vblankDelay, int &hblankDelay) const override;
 	unsigned int hideFramesModeSwitch() const override;
 
 private:
@@ -51,17 +49,6 @@ double CamHelperImx585::gain(uint32_t gainCode) const
 	return pow(10, 0.015 * gainCode);
 }
 
-
-
-void CamHelperImx585::getDelays(int &exposureDelay, int &gainDelay,
-				int &vblankDelay, int &hblankDelay) const
-{
-	/* The driver appears to behave as follows: */
-	exposureDelay = 2;
-	gainDelay = 2;
-	vblankDelay = 2;
-	hblankDelay = 2;
-}
 
 unsigned int CamHelperImx585::hideFramesModeSwitch() const
 {
